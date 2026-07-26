@@ -1,0 +1,26 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Dependencies and generated caches
+node_modules/
+.cache/
+.tmp/
+tmp/
+coverage/
+playwright-report/
+test-results/
+
+# Secrets and local browser state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.auth/
+browser-profile/
+
+# Logs
+*.log

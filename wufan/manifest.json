@@ -1,0 +1,43 @@
+{
+  "id": "wufan",
+  "name": "wufan",
+  "version": "0.1.0",
+  "status": "intake",
+  "createdAt": "2026-07-26T14:43:19Z",
+  "updatedAt": "2026-07-26T15:00:30Z",
+  "description": "尚未提供原始资料的设计风格档案。",
+  "referenceMode": "strict",
+  "requiredThemes": ["light", "dark"],
+  "sourceCount": 0,
+  "completion": {
+    "requiredItems": 14,
+    "completedItems": 1,
+    "openItems": 13,
+    "blockingItems": 7,
+    "openRequests": 7,
+    "selfAuditPassed": false
+  },
+  "coverage": {
+    "desktop": "none",
+    "mobile": "none",
+    "lightTheme": "none",
+    "darkTheme": "none",
+    "componentStates": "none",
+    "motion": "none",
+    "accessibility": "none"
+  },
+  "entrypoints": {
+    "agent": "AGENTS.md",
+    "guide": "system/style-guide.md",
+    "tokens": "system/tokens.json",
+    "lightTokens": "system/themes/light.tokens.json",
+    "darkTokens": "system/themes/dark.tokens.json",
+    "implementation": "system/implementation.md",
+    "acceptance": "quality/acceptance.md",
+    "todo": "quality/TODO.md",
+    "requests": "quality/REQUESTS.md",
+    "completionReport": "quality/completion-report.md"
+  },
+  "lastValidated": null,
+  "sources": []
+}
