@@ -1,0 +1,2138 @@
+{
+  "capturedAt": "2026-07-26T23:33:26.276Z",
+  "requestedTheme": "light",
+  "url": "https://www.wufanai.com/login",
+  "title": "悟帆AI - 企业级 AI Agent 平台",
+  "htmlAttributes": {
+    "lang": "zh-CN",
+    "data-theme": "light",
+    "style": "background-color: rgb(250, 249, 247); color-scheme: light;"
+  },
+  "body": {
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+    },
+    "style": {
+      "display": "block",
+      "position": "static",
+      "width": "390px",
+      "height": "844px",
+      "margin": "0px",
+      "padding": "0px",
+      "gap": "normal",
+      "color": "rgb(26, 26, 26)",
+      "background": "rgb(250, 249, 247) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundColor": "rgb(250, 249, 247)",
+      "border": "0px solid rgb(229, 231, 235)",
+      "borderRadius": "0px",
+      "boxShadow": "none",
+      "opacity": "1",
+      "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "25.6px",
+      "letterSpacing": "normal",
+      "textAlign": "start",
+      "transform": "none",
+      "transition": "all",
+      "animation": "0s ease 0s 1 normal none paused none",
+      "zIndex": "auto",
+      "overflow": "visible",
+      "backdropFilter": "none"
+    }
+  },
+  "customProperties": {
+    "--bubble-agent": "#FFFFFF",
+    "--file-card-bg": "rgba(0, 0, 0, .05)",
+    "--input-border": "#E4E4E7",
+    "--bg-primary": "#FAF9F7",
+    "--stage-typing-dot": "rgba(0,0,0,.3)",
+    "--text-placeholder": "#9A9A9A",
+    "--agent-card-bg": "rgba(0, 0, 0, .02)",
+    "--rtscene-paper-line": "#B9C2D0",
+    "--glass-bg-light": "rgba(255, 255, 255, .95)",
+    "--tag-talent-fg": "#6d28d9",
+    "--ch-msg-name": "#1a1a2e",
+    "--btn-active-bg": "#1F1F23",
+    "--wufan-logo-oblique-correction": "2deg",
+    "--ch-expanded-border": "rgba(0, 0, 0, .04)",
+    "--file-card-border": "rgba(0, 0, 0, .06)",
+    "--equipment-off-card-bg": "color-mix(in srgb, #F5F4F2 72%, #FAF9F7)",
+    "--rtscene-beam": "255, 243, 196",
+    "--ch-conclusion-bg": "rgba(59, 130, 246, .04)",
+    "--glass-shadow": "0 1px 3px rgba(0, 0, 0, .04), 0 4px 12px rgba(0, 0, 0, .03)",
+    "--plan-indicator-border": "rgba(139, 92, 246, .35)",
+    "--plan-review-badge-bg": "rgba(22, 163, 74, .15)",
+    "--q-emboss-lo": "rgba(120, 105, 75, .07)",
+    "--collab-card-bg": "linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)",
+    "--card-shadow-hover": "0 2px 4px rgba(0, 0, 0, .06), 0 4px 12px rgba(0, 0, 0, .03)",
+    "--skeleton-shine": "rgba(0, 0, 0, .04)",
+    "--ch-card-moderator": "#DDD0F2",
+    "--hover-bg": "rgba(0, 0, 0, .04)",
+    "--hover-bg-strong": "rgba(0, 0, 0, .06)",
+    "--kernel-mode-icon": "#10B981",
+    "--plan-indicator-shimmer": "linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, .2) 50%, transparent 100%)",
+    "--toggle-active-bg": "#2563EB",
+    "--code-preview-bar": "rgba(0, 0, 0, .04)",
+    "--ch-group-label": "rgba(0, 0, 0, .25)",
+    "--q-accent-wash": "#f0f4e9",
+    "--thinking-disabled-bg": "rgba(217, 119, 6, .08)",
+    "--tag-learned-bg": "rgba(5, 150, 105, .1)",
+    "--color-file-markdown": "#22C55E",
+    "--ch-msg-text": "#444444",
+    "--border-faint": "rgba(0, 0, 0, .03)",
+    "--q-paper-tint": "#f7f4eb",
+    "--q-envelope": "#f5f1e6",
+    "--agent-card-border": "rgba(0, 0, 0, .06)",
+    "--tw-ring-color": "rgb(59 130 246 / .5)",
+    "--ch-create-btn-border": "#E5E5E5",
+    "--plan-review-approve-bg": "#18181B",
+    "--ch-indicator": "rgba(0, 0, 0, .7)",
+    "--upload-preview-border": "rgba(0, 0, 0, .08)",
+    "--dropdown-bg": "#FFFFFF",
+    "--upload-remove-btn-bg": "rgba(0, 0, 0, .6)",
+    "--panel-shadow": "0 1px 3px rgba(0, 0, 0, .02), 0 4px 12px rgba(0, 0, 0, .015)",
+    "--studio-toggle-track-mid": "rgba(0, 0, 0, .09)",
+    "--plan-indicator-icon": "#7C3AED",
+    "--stage-text-muted": "#7A7A7A",
+    "--ch-input-border": "rgba(0, 0, 0, .08)",
+    "--studio-dropdown-bg": "rgba(255, 255, 255, .96)",
+    "--slogan-dim": "#9A9AA0",
+    "--bg-tertiary": "#F5F4F2",
+    "--radius-sm": "8px",
+    "--collab-glass-blur": "14px",
+    "--sidebar-bg": "#FFFFFF",
+    "--rt-card-shadow": "0 1px 3px rgba(0,0,0,.03), 0 4px 16px rgba(0,0,0,.02)",
+    "--file-icon-pdf": "#DC2626",
+    "--ch-create-btn-bg": "#FFFFFF",
+    "--asset-tool-bg": "#F4F5F8",
+    "--auth-divider": "rgba(0, 0, 0, .06)",
+    "--studio-surface-hover": "rgba(0, 0, 0, .06)",
+    "--ch-bar-border": "rgba(0, 0, 0, .07)",
+    "--ch-row-active-bg": "rgba(0, 0, 0, .03)",
+    "--input-bg": "#FAFAFA",
+    "--rt-card-border": "1px solid rgba(0, 0, 0, .06)",
+    "--toggle-bg": "#F4F4F5",
+    "--tw-gradient-via-position": "",
+    "--q-envelope-hi": "#f7f3ea",
+    "--studio-text-placeholder": "rgba(0, 0, 0, .35)",
+    "--file-card-icon-bg": "rgba(0, 0, 0, .05)",
+    "--btn-active-fg": "#FAFAFA",
+    "--tw-saturate": "",
+    "--studio-text-desc": "rgba(0, 0, 0, .55)",
+    "--task-search-glass-bg": "rgba(255, 255, 255, .7)",
+    "--tw-grayscale": "",
+    "--interactive-active": "#FFFFFF",
+    "--collab-on-glass": "#1C1C2E",
+    "--logo-primary": "#1A1A1A",
+    "--bubble-user": "#F0EFED",
+    "--spacing-5": "12px",
+    "--q-terracotta": "#c2664b",
+    "--text-on-accent": "#FFFFFF",
+    "--tw-gradient-to-position": "",
+    "--hero-usecase-border": "rgba(0, 0, 0, .06)",
+    "--text-on-muted-bg": "#5A5A5A",
+    "--q-envelope-edge": "#e3dcca",
+    "--glass-bg": "rgba(255, 255, 255, .92)",
+    "--file-icon-code": "#EA580C",
+    "--rtscene-laptop-body": "#6B7280",
+    "--asset-tool-accent": "#3B82F6",
+    "--tooltip-bg": "#1F1F23",
+    "--q-shadow-1": "rgba(70, 60, 40, .05)",
+    "--radius-md": "10px",
+    "--radius-2xl": "20px",
+    "--color-info": "#3B82F6",
+    "--rtscene-paper": "#FFFFFF",
+    "--tag-learnable-bg": "rgba(2, 132, 199, .1)",
+    "--user-avatar-text": "#3F3F46",
+    "--radius-lg": "12px",
+    "--rtscene-laptop-on": "#7DD3FC",
+    "--code-block-bg": "#F8F8F8",
+    "--pricing-page-control-shadow": "0 1px 2px rgba(0, 0, 0, .05)",
+    "--logo-accent": "#3A3A3A",
+    "--studio-text-secondary": "rgba(0, 0, 0, .78)",
+    "--agent-create-btn-hover-bg": "rgba(0, 0, 0, .04)",
+    "--auth-panel-border": "rgba(0, 0, 0, .06)",
+    "--pricing-page-input-border": "rgba(17, 24, 39, .1)",
+    "--pricing-page-invalid-bg": "rgba(180, 35, 24, .055)",
+    "--tab-active-bg": "#FFFFFF",
+    "--file-icon-table": "#059669",
+    "--stage-dot-inactive-bg": "rgba(0,0,0,.05)",
+    "--line-subtle": "rgba(0, 0, 0, .03)",
+    "--tw-pinch-zoom": "",
+    "--expert-face-ring": "rgba(0, 0, 0, .08)",
+    "--preview-card-bg": "#FFFFFF",
+    "--pricing-page-input-border-focused": "rgba(17, 24, 39, .5)",
+    "--ch-msg-bg-human": "rgba(99, 102, 241, .06)",
+    "--rtscene-plate-text": "#3A3A3A",
+    "--ch-pill-border": "rgba(0, 0, 0, .03)",
+    "--spacing-4": "10px",
+    "--ch-empty-btn-border": "#EEEEEE",
+    "--spacing-1": "4px",
+    "--rt-card-bg": "#FFFFFF",
+    "--btn-primary-bg": "#1A1A1A",
+    "--text-secondary": "#3A3A3A",
+    "--send-btn-active-bg": "#18181B",
+    "--kernel-mode-border": "rgba(16, 185, 129, .2)",
+    "--agent-card-selected-border": "rgba(59, 130, 246, .5)",
+    "--logo-core": "#1A1A1A",
+    "--modal-bg": "#FFFFFF",
+    "--task-search-highlight-fg": "#684A00",
+    "--studio-text-faint": "rgba(0, 0, 0, .45)",
+    "--diff-add-mark": "#16a34a",
+    "--thinking-auto-bg": "rgba(124, 58, 237, .08)",
+    "--collab-on-glass-dim": "rgba(28, 28, 46, .62)",
+    "--plan-indicator-badge-text": "#6D28D9",
+    "--ch-msg-border-human": "rgba(99, 102, 241, .1)",
+    "--spacing-6": "14px",
+    "--transition-normal": ".2s",
+    "--glow-purple": "rgba(124, 58, 237, .04)",
+    "--text-muted": "#7A7A7A",
+    "--equipment-active-icon-ink": "#6F94C2",
+    "--badge-default-bg": "rgba(59, 130, 246, .15)",
+    "--tooltip-fg": "#FAFAFA",
+    "--interactive-default": "#F0EFED",
+    "--skeleton-bg": "rgba(0, 0, 0, .06)",
+    "--q-ink-faint": "#bfb69e",
+    "--tw-numeric-spacing": "",
+    "--drag-icon-color": "#52525B",
+    "--color-file-csv": "#F59E0B",
+    "--ch-expanded-bg": "rgba(255, 255, 255, .93)",
+    "--file-link-color": "#2563EB",
+    "--q-hairline": "#ece6d6",
+    "--spacing-0": "0px",
+    "--ch-send-icon": "#fff",
+    "--custom-mode-text": "#D97706",
+    "--ch-mention-bg": "#EEE9FF",
+    "--tw-scale-y": "1",
+    "--plan-indicator-bg": "linear-gradient(135deg, rgba(99, 102, 241, .12) 0%, rgba(139, 92, 246, .12) 100%)",
+    "--tw-backdrop-contrast": "",
+    "--tw-drop-shadow": "",
+    "--ch-divider": "#E0E0E4",
+    "--studio-surface-right": "rgba(0, 0, 0, .02)",
+    "--stage-dot-inactive-border": "rgba(0,0,0,.1)",
+    "--tw-translate-y": "0",
+    "--tw-pan-x": "",
+    "--rtscene-baseboard": "#B9AE9B",
+    "--rtscene-tree-dark": "#4E9A4E",
+    "--plan-indicator-badge-bg": "rgba(139, 92, 246, .2)",
+    "--scroll-btn-shadow": "0 2px 8px rgba(0, 0, 0, .08)",
+    "--rtscene-lamp-case": "#CFC8B8",
+    "--tw-contain-size": "",
+    "--auth-input-border": "rgba(0, 0, 0, .08)",
+    "--rt-chip-bg": "rgba(0,0,0,.03)",
+    "--q-envelope-deep": "#d3c9b2",
+    "--code-block-border": "rgba(0, 0, 0, .08)",
+    "--studio-text-label": "rgba(0, 0, 0, .5)",
+    "--q-hover": "rgba(58, 52, 42, .06)",
+    "--color-error": "#EF4444",
+    "--ch-input-pill-border": "#E8E8E8",
+    "--studio-toggle-thumb-mid": "rgba(0, 0, 0, .3)",
+    "--text-primary": "#1A1A1A",
+    "--studio-dropdown-shadow": "0 8px 32px rgba(0, 0, 0, .1)",
+    "--tw-translate-x": "0",
+    "--auth-cas-border": "rgba(0, 0, 0, .1)",
+    "--expert-table-edge": "rgba(0, 0, 0, .08)",
+    "--ch-msg-time": "#cccccc",
+    "--font-family": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+    "--drag-icon-bg": "rgba(0, 0, 0, .06)",
+    "--transition-fast": ".15s",
+    "--rtscene-laptop-screen": "#3A3F4A",
+    "--send-btn-default-icon": "#71717A",
+    "--studio-text-inactive": "rgba(0, 0, 0, .4)",
+    "--scroll-btn-border": "rgba(0, 0, 0, .08)",
+    "--tw-border-spacing-y": "0",
+    "--plan-review-approve-text": "#FFFFFF",
+    "--stage-wave-color": "#059669",
+    "--rtscene-sky": "#8EC9F0",
+    "--kernel-mode-bg": "rgba(16, 185, 129, .08)",
+    "--tw-blur": "",
+    "--ch-empty-btn-bg": "#FEFCF6",
+    "--tw-invert": "",
+    "--agent-create-btn-text": "#71717A",
+    "--send-btn-active-icon": "#FFFFFF",
+    "--studio-status-off": "rgba(0, 0, 0, .1)",
+    "--asset-partner-bg": "#F3F7F4",
+    "--rtscene-screen-face": "#FBFAF5",
+    "--ch-send-bg": "#1a1a2e",
+    "--stage-text-primary": "#3A3A3A",
+    "--rtscene-cloud": "#FFFFFF",
+    "--pricing-page-card-featured-shadow": "0 18px 48px rgba(0, 0, 0, .09)",
+    "--tw-contain-layout": "",
+    "--ch-bar-glow": "rgba(255, 255, 255, .6)",
+    "--collab-card-hairline": "rgba(0, 0, 0, .06)",
+    "--equipped-shadow": "0 1px 2px rgba(0, 0, 0, .04)",
+    "--tw-backdrop-sepia": "",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--rtscene-desk-edge": "#86592C",
+    "--tag-learnable-fg": "#0369a1",
+    "--accent-color": "#2563EB",
+    "--asset-partner-accent": "#10B981",
+    "--plan-indicator-btn-bg": "rgba(139, 92, 246, .15)",
+    "--inline-code-bg": "rgba(0, 0, 0, .06)",
+    "--rtscene-tree-light": "#6FBF5F",
+    "--plan-review-badge-text": "#15803D",
+    "--send-btn-bg": "#F0EFED",
+    "--ch-create-btn-text": "#1a1a2e",
+    "--tw-sepia": "",
+    "--studio-pill-bg": "rgba(0, 0, 0, .06)",
+    "--border-muted": "rgba(0, 0, 0, .04)",
+    "--tw-ordinal": "",
+    "--drag-overlay-bg": "rgba(250, 250, 250, .92)",
+    "--chip-tex": "rgba(0, 0, 0, .09)",
+    "--active-bg": "rgba(0, 0, 0, .08)",
+    "--tw-contain-style": "",
+    "--q-highlight": "rgba(255, 255, 255, .65)",
+    "--bg-elevated": "#FFFFFF",
+    "--asset-skill-accent": "#D97706",
+    "--ch-card-text-muted-ord": "#3A5A8A",
+    "--dropdown-border": "rgba(0, 0, 0, .1)",
+    "--logo-text": "#18181B",
+    "--pricing-page-modal-backdrop": "rgba(17, 24, 39, .28)",
+    "--tw-backdrop-invert": "",
+    "--user-avatar-bg": "#E4E4E7",
+    "--q-ink-soft": "#877d69",
+    "--stage-bg-to": "#c9d0e8",
+    "--studio-text-ghost": "rgba(0, 0, 0, .25)",
+    "--plan-indicator-pulse": "rgba(139, 92, 246, .35)",
+    "--tw-border-spacing-x": "0",
+    "--agent-card-selected-bg": "rgba(59, 130, 246, .08)",
+    "--collab-seg-active": "rgba(255, 255, 255, .92)",
+    "--diff-add-bg": "rgba(22, 163, 74, .12)",
+    "--rtscene-window-frame": "#F7F3E9",
+    "--file-icon-persona": "#7C3AED",
+    "--diff-add-text": "#15803d",
+    "--thinking-enabled-bg": "rgba(37, 99, 235, .08)",
+    "--tw-backdrop-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--studio-toggle-track-off": "rgba(0, 0, 0, .06)",
+    "--pricing-page-pill-shadow": "0 4px 12px rgba(0, 0, 0, .1)",
+    "--studio-text-body": "rgba(0, 0, 0, .72)",
+    "--questionnaire-element-bg": "rgba(0, 0, 0, .08)",
+    "--ch-user-msg-bg": "#FFFDF5",
+    "--ch-header-border": "#F0F0F0",
+    "--tw-pan-y": "",
+    "--collab-card-header": "linear-gradient(180deg, rgba(99,102,241,.07) 0%, rgba(99,102,241,.01) 100%)",
+    "--color-file-config": "#71717A",
+    "--agent-create-btn-bg": "transparent",
+    "--bg-secondary": "#FFFFFF",
+    "--spacing-8": "20px",
+    "--preview-card-border": "rgba(0, 0, 0, .1)",
+    "--studio-border-input": "rgba(0, 0, 0, .1)",
+    "--plan-review-header-bg": "linear-gradient(135deg, rgba(34, 197, 94, .1) 0%, rgba(16, 185, 129, .1) 100%)",
+    "--card-shadow": "0 1px 2px rgba(0, 0, 0, .04), 0 2px 8px rgba(0, 0, 0, .02)",
+    "--rtscene-coffee": "#8B5E3C",
+    "--questionnaire-element-text": "rgba(0, 0, 0, .6)",
+    "--mascot-stroke": "rgba(74, 56, 56, .28)",
+    "--selected-bg": "rgba(0, 0, 0, .05)",
+    "--rtscene-lamp-glow": "#FFF3C4",
+    "--tw-rotate": "0",
+    "--pricing-page-invalid-ring": "rgba(180, 35, 24, .045)",
+    "--tw-ring-offset-color": "#fff",
+    "--ch-conclusion-border": "rgba(59, 130, 246, .1)",
+    "--pricing-page-error": "#B42318",
+    "--ch-hero-subtitle": "#888888",
+    "--ease-default": "cubic-bezier(.4, 0, .2, 1)",
+    "--code-block-header": "#F0F0F0",
+    "--custom-mode-border": "rgba(245, 158, 11, .2)",
+    "--studio-surface": "rgba(0, 0, 0, .035)",
+    "--studio-avatar-ring": "rgba(0, 0, 0, .35)",
+    "--collab-chip-icon-bg": "rgba(99, 102, 241, .14)",
+    "--spacing-3": "8px",
+    "--rtscene-wall-shade": "#E2DACB",
+    "--accent-bg": "rgba(37, 99, 235, .1)",
+    "--plan-indicator-btn-text": "#6D28D9",
+    "--shadow-lg": "0 10px 40px rgba(0, 0, 0, .12), 0 4px 16px rgba(0, 0, 0, .08)",
+    "--collab-seg-bg": "rgba(255, 255, 255, .42)",
+    "--pricing-page-modal-shadow": "0 20px 56px rgba(0, 0, 0, .18)",
+    "--pricing-page-input-border-filled": "rgba(17, 24, 39, .2)",
+    "--interactive-hover": "#E8E7E5",
+    "--tw-ring-offset-width": "0px",
+    "--ch-reaction-border": "#EAEAEA",
+    "--task-search-glass-shadow": "0 32px 84px rgba(45, 41, 36, .18), 0 6px 24px rgba(45, 41, 36, .1)",
+    "--ch-bar-bg": "rgba(245, 245, 248, .6)",
+    "--card-hover-scrim": "rgba(255, 255, 255, .55)",
+    "--rtscene-plate-edge": "#C9BFAE",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--upload-remove-btn-icon": "#ffffff",
+    "--pricing-page-card-current-shadow": "0 14px 42px rgba(0, 0, 0, .09)",
+    "--ch-orb-glow-opacity": ".12",
+    "--auth-btn-border": "#1A1A1A",
+    "--stage-bg-from": "#e4e8f5",
+    "--diff-remove-mark": "#dc2626",
+    "--ch-input-focus": "rgba(99, 102, 241, .2)",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--toggle-active-text": "#FFFFFF",
+    "--rtscene-desk-top": "#C89058",
+    "--studio-pill-active": "rgba(0, 0, 0, .09)",
+    "--tw-numeric-fraction": "",
+    "--agent-create-btn-border": "#D4D4D8",
+    "--studio-text-bright": "rgba(0, 0, 0, .92)",
+    "--file-icon-image": "#7C3AED",
+    "--rtscene-mug": "#FFFFFF",
+    "--spacing-10": "32px",
+    "--studio-bg": "#FAF9F7",
+    "--collab-card-border": "rgba(0, 0, 0, .08)",
+    "--chat-composer-border": "rgba(0, 0, 0, .08)",
+    "--file-card-footer": "#EBE8E4",
+    "--ch-card-text-muted-free": "#3A6B4A",
+    "--tw-skew-y": "0",
+    "--ch-reaction-bg": "#F5F5F5",
+    "--tw-slashed-zero": "",
+    "--upload-preview-bg": "rgba(0, 0, 0, .03)",
+    "--pricing-page-card-shadow": "0 8px 28px rgba(0, 0, 0, .035)",
+    "--tw-backdrop-opacity": "",
+    "--studio-text-muted": "rgba(0, 0, 0, .55)",
+    "--transition-slow": ".3s",
+    "--tw-gradient-from-position": "",
+    "--plan-indicator-title": "#6D28D9",
+    "--custom-mode-bg": "rgba(245, 158, 11, .08)",
+    "--rtscene-sun": "#FFD75E",
+    "--tw-contain-paint": "",
+    "--equipped-bg": "#ECEAE8",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--relay-bar-bg": "rgba(202, 138, 4, .08)",
+    "--collab-glass-gray": "0",
+    "--thinking-disabled-icon": "#D97706",
+    "--user-avatar-ring": "rgba(0, 0, 0, .1)",
+    "--spacing-9": "24px",
+    "--ch-input-bg": "rgba(0, 0, 0, .03)",
+    "--equipped-border": "rgba(0, 0, 0, .12)",
+    "--studio-text-primary": "rgba(0, 0, 0, .85)",
+    "--auth-input-bg": "rgba(0, 0, 0, .03)",
+    "--tag-talent-bg": "rgba(124, 58, 237, .1)",
+    "--plan-indicator-icon-bg": "rgba(139, 92, 246, .2)",
+    "--task-search-highlight-bg": "rgba(250, 204, 21, .42)",
+    "--q-paper": "#fefdfa",
+    "--task-search-glass-border": "rgba(255, 255, 255, .78)",
+    "--text-tertiary": "#5A5A5A",
+    "--color-file-image": "#6366F1",
+    "--tw-backdrop-saturate": "",
+    "--kernel-mode-text": "#059669",
+    "--collab-glass-bg": "rgba(255, 255, 255, .4)",
+    "--ch-card-text-muted-mod": "#5B3E8A",
+    "--pricing-page-focus-ring": "rgba(17, 24, 39, .045)",
+    "--tw-ring-inset": "",
+    "--modal-backdrop": "rgba(0, 0, 0, .4)",
+    "--ch-hero-title": "#1a1a2e",
+    "--rtscene-plate": "#FFFFFF",
+    "--collab-card-shadow": "0 10px 30px rgba(17,24,39,.1), 0 2px 8px rgba(17,24,39,.05)",
+    "--rtscene-wall": "#EDE7DB",
+    "--border-subtle": "rgba(0, 0, 0, .06)",
+    "--file-card-inner": "#F5F2EE",
+    "--ch-card-free": "#C2E5D3",
+    "--collab-glass-tint": "transparent",
+    "--rtscene-desk-front": "#A9743F",
+    "--relay-bar-border": "rgba(202, 138, 4, .15)",
+    "--thinking-enabled-icon": "#2563EB",
+    "--color-warning": "#F59E0B",
+    "--btn-primary-fg": "#FAF9F7",
+    "--stage-ground-color": "#bbb",
+    "--studio-text-input": "rgba(0, 0, 0, .85)",
+    "--modal-border": "#E4E4E7",
+    "--tw-brightness": "",
+    "--q-shadow-2": "rgba(70, 60, 40, .08)",
+    "--thinking-auto-icon": "#7C3AED",
+    "--ch-create-bg": "#FEFCF6",
+    "--pricing-page-invalid-border": "rgba(180, 35, 24, .42)",
+    "--color-success": "#16A34A",
+    "--file-icon-markdown": "#2563EB",
+    "--tooltip-border": "rgba(255, 255, 255, .1)",
+    "--tw-backdrop-brightness": "",
+    "--studio-border-marker": "rgba(0, 0, 0, .12)",
+    "--ch-pill-bg": "rgba(255, 255, 255, .93)",
+    "--avatar-bg": "#F0EFED",
+    "--auth-panel-bg": "rgba(255, 255, 255, .65)",
+    "--studio-toggle-thumb-off": "rgba(0, 0, 0, .15)",
+    "--expert-accent": "#6366F1",
+    "--spacing-2": "6px",
+    "--expert-table-face": "linear-gradient(160deg, #F1EBE1 0%, #E6DDCF 100%)",
+    "--category-card-shadow": "0 4px 14px rgba(0, 0, 0, .09), 0 1px 3px rgba(0, 0, 0, .06)",
+    "--scroll-btn-icon": "#71717A",
+    "--tw-contrast": "",
+    "--badge-default-text": "#2563EB",
+    "--q-accent": "#5f8767",
+    "--send-btn-default-bg": "rgba(0, 0, 0, .06)",
+    "--tw-skew-x": "0",
+    "--collab-glass-hover": "rgba(255, 255, 255, .55)",
+    "--inline-code-color": "#C41A16",
+    "--tw-backdrop-blur": "",
+    "--ch-card-ordered": "#C8DDF5",
+    "--logo-primary-deep": "#1A1A1A",
+    "--ch-panel-bg": "#FEFCF6",
+    "--rtscene-floor": "#D9B98C",
+    "--rtscene-screen-frame": "#4A4A55",
+    "--collab-card-glow": "rgba(99, 102, 241, .12)",
+    "--custom-mode-icon": "#F59E0B",
+    "--rt-chip-border": "rgba(0,0,0,.08)",
+    "--tw-shadow": "0 0 #0000",
+    "--diff-remove-text": "#b91c1c",
+    "--tag-learned-fg": "#047857",
+    "--scroll-btn-bg": "rgba(255, 255, 255, .92)",
+    "--rtscene-floor-line": "#C2A071",
+    "--send-btn-icon": "#5A5A5A",
+    "--logo-ring": "#1A1A1A",
+    "--task-search-backdrop": "rgba(37, 35, 32, .14)",
+    "--tw-scale-x": "1",
+    "--asset-skill-bg": "#F8F5F0",
+    "--glow-blue": "rgba(59, 130, 246, .03)",
+    "--ch-panel-border": "rgba(0, 0, 0, .06)",
+    "--modal-shadow": "0 25px 50px -12px rgba(0, 0, 0, .15)",
+    "--q-envelope-lo": "#f0ebdc",
+    "--auth-btn-bg": "#1A1A1A",
+    "--expert-table-glow": "rgba(255, 255, 255, .65)",
+    "--spacing-7": "16px",
+    "--rtscene-desk-hi": "#D9A268",
+    "--glow-violet": "rgba(168, 85, 247, .03)",
+    "--radius-xl": "16px",
+    "--code-preview-bg": "#f5f4f2",
+    "--q-ink": "#3a342a",
+    "--auth-btn-text": "#FAFAFA",
+    "--relay-bar-text": "#92700C",
+    "--equipment-active-icon-gradient": "linear-gradient(145deg, #F5F7FF 0%, #EAF1FC 56%, #F1F4FD 100%)",
+    "--diff-remove-bg": "rgba(220, 38, 38, .1)",
+    "--glass-blur": "8px",
+    "--tw-numeric-figure": "",
+    "--table-header-bg": "#F5F4F2"
+  },
+  "elements": {
+    "h1": {
+      "rect": {
+        "x": 24,
+        "y": 191.8125,
+        "width": 342,
+        "height": 44.796875
+      },
+      "style": {
+        "display": "block",
+        "position": "static",
+        "width": "342px",
+        "height": "44.7969px",
+        "margin": "0px 0px 10px",
+        "padding": "0px",
+        "gap": "normal",
+        "color": "rgb(26, 26, 26)",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "opacity": "1",
+        "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "lineHeight": "44.8px",
+        "letterSpacing": "-0.56px",
+        "textAlign": "start",
+        "transform": "none",
+        "transition": "all",
+        "animation": "0s ease 0s 1 normal none paused none",
+        "zIndex": "auto",
+        "overflow": "visible",
+        "backdropFilter": "none"
+      }
+    },
+    "form": {
+      "rect": {
+        "x": 24,
+        "y": 301,
+        "width": 342,
+        "height": 322.78125
+      },
+      "style": {
+        "display": "flex",
+        "position": "static",
+        "width": "342px",
+        "height": "322.781px",
+        "margin": "0px",
+        "padding": "0px",
+        "gap": "18px",
+        "color": "rgb(26, 26, 26)",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "opacity": "1",
+        "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "letterSpacing": "normal",
+        "textAlign": "start",
+        "transform": "none",
+        "transition": "all",
+        "animation": "0s ease 0s 1 normal none paused none",
+        "zIndex": "auto",
+        "overflow": "visible",
+        "backdropFilter": "none"
+      }
+    },
+    "input": {
+      "rect": {
+        "x": 65,
+        "y": 337,
+        "width": 286,
+        "height": 25.59375
+      },
+      "style": {
+        "display": "block",
+        "position": "static",
+        "width": "286px",
+        "height": "25.5938px",
+        "margin": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "color": "rgb(26, 26, 26)",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px none rgb(26, 26, 26)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "opacity": "1",
+        "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "letterSpacing": "normal",
+        "textAlign": "start",
+        "transform": "none",
+        "transition": "all",
+        "animation": "0s ease 0s 1 normal none paused none",
+        "zIndex": "auto",
+        "overflow": "clip",
+        "backdropFilter": "none"
+      }
+    },
+    "button": {
+      "rect": {
+        "x": 338,
+        "y": 20,
+        "width": 32,
+        "height": 32
+      },
+      "style": {
+        "display": "flex",
+        "position": "absolute",
+        "width": "32px",
+        "height": "32px",
+        "margin": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "color": "rgb(90, 90, 90)",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px none rgb(90, 90, 90)",
+        "borderRadius": "8px",
+        "boxShadow": "none",
+        "opacity": "1",
+        "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "letterSpacing": "normal",
+        "textAlign": "center",
+        "transform": "none",
+        "transition": "color cubic-bezier(0.4, 0, 0.2, 1), background-color cubic-bezier(0.4, 0, 0.2, 1), border-color cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color cubic-bezier(0.4, 0, 0.2, 1), fill cubic-bezier(0.4, 0, 0.2, 1), stroke cubic-bezier(0.4, 0, 0.2, 1)",
+        "animation": "0s ease 0s 1 normal none paused none",
+        "zIndex": "10",
+        "overflow": "visible",
+        "backdropFilter": "none"
+      }
+    }
+  },
+  "fonts": [
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "MiSans",
+      "style": "normal",
+      "weight": "380",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "500",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "600",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kalam",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kalam",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kalam",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kalam",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kalam",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kalam",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Ma Shan Zheng",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "weight": "500",
+      "status": "unloaded"
+    },
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "Smiley Sans Landing",
+      "style": "normal",
+      "weight": "400",
+      "status": "loaded"
+    }
+  ],
+  "stylesheets": [
+    "https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700&family=Kalam:wght@400;700&family=Ma+Shan+Zheng&display=swap",
+    "https://www.wufanai.com/assets/index-CjeRCaxU.css",
+    "inline"
+  ],
+  "environment": {
+    "browser": "Chromium 141.0.7390.37",
+    "os": "darwin",
+    "locale": "zh-CN",
+    "timezone": "Asia/Shanghai",
+    "viewport": {
+      "name": "390x844",
+      "width": 390,
+      "height": 844
+    },
+    "dpr": 1
+  }
+}

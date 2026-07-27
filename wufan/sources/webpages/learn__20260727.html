@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="悟帆学堂：实战直播回放、上手指南与使用技巧，跟着真实案例把想法做成结果。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.wufanai.com/learn">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="悟帆AI">
+  <meta property="og:title" content="教程 | 悟帆AI">
+  <meta property="og:description" content="悟帆学堂：实战直播回放、上手指南与使用技巧。">
+  <meta property="og:url" content="https://www.wufanai.com/learn">
+  <meta property="og:image" content="https://www.wufanai.com/wufan-og-20260603-logo-final.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="教程 | 悟帆AI">
+  <meta name="twitter:description" content="实战直播回放、上手指南与使用技巧。">
+  <meta name="twitter:image" content="https://www.wufanai.com/wufan-og-20260603-logo-final.png">
+  <title>教程 | 悟帆AI</title>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      if (path === '/auth' || path.indexOf('/auth/') === 0) {
+        window.location.replace('/login' + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../img/wf-logo.svg">
+  <link rel="preload" href="../fonts/SmileySans-Oblique.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css">
+  <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap">
+  <link rel="stylesheet" href="../css/index.css?v=herofx19">
+</head>
+
+<body data-cvo-id="wufan-learn">
+  <header class="site-header" data-cvo-id="site-header">
+    <a class="brand" href="/" aria-label="返回悟帆AI 首页">
+      <span class="brand-mark-wrap" aria-hidden="true">
+        <svg class="brand-mark" viewBox="0 0 80 70" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 40 6 A 29 29 0 1 0 40 64 A 20.5 25.2 0 1 1 40 6 Z" fill="#ffffff"/>
+          <circle cx="37" cy="22" r="4.2" fill="#ffffff"/>
+          <circle cx="51" cy="19" r="4.2" fill="#ffffff"/>
+        </svg>
+      </span>
+      <span class="brand-word" aria-label="悟帆AI">
+        <span class="brand-word-cn" data-brand-word-segment>悟帆</span><span class="brand-word-ai" data-brand-word-segment>AI</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="站点导航">
+      <div class="site-nav-item site-nav-item--resources" data-nav-dropdown>
+        <button class="site-nav-link site-nav-trigger" type="button" aria-haspopup="true">资源<span class="site-nav-caret" aria-hidden="true"></span></button>
+        <div class="site-nav-panel">
+          <div class="site-nav-panel-links">
+            <a class="site-nav-panel-link" href="/learn" aria-current="page">
+              <span class="site-nav-panel-link-title">教程</span>
+              <span class="site-nav-panel-link-desc">上手指南与实战玩法</span>
+            </a>
+            <span class="site-nav-panel-link is-disabled" aria-disabled="true">
+              <span class="site-nav-panel-link-title">悟帆视频号</span>
+              <span class="site-nav-panel-link-desc">即将上线</span>
+            </span>
+          </div>
+          <div class="site-nav-panel-qr">
+            <img src="../img/wufan-wecom-qr.png" alt="悟帆AI共创实验室企业微信群二维码" width="132" height="132" loading="lazy">
+            <span class="site-nav-panel-qr-caption">悟帆AI共创实验室</span>
+          </div>
+        </div>
+      </div>
+      <a class="site-nav-link" href="https://hc.wufanai.com/doc/26074">文档</a>
+      <a class="site-nav-link" href="/pricing">定价</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-cta header-cta-ghost" href="/" data-auth-link>登录</a>
+      <a class="header-cta" href="/" data-auth-signup>注册</a>
+    </div>
+  </header>
+
+  <main class="pricing-app-main">
+    <div class="pricing-app-container">
+      <section class="pricing-app-hero" aria-labelledby="learn-title">
+        <h1 id="learn-title">悟帆学堂</h1>
+        <p><span>实战直播、上手指南与使用技巧，</span><span>跟着真实案例把想法做成结果。</span></p>
+      </section>
+
+      <section class="learn-catalog" aria-label="课程与教程">
+        <div class="learn-toolbar">
+          <div class="learn-search">
+            <svg class="learn-search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg>
+            <input type="search" id="learnSearch" placeholder="搜索课程与教程" aria-label="搜索课程与教程" autocomplete="off">
+          </div>
+          <div class="learn-view-toggle" role="group" aria-label="视图切换">
+            <button class="is-active" type="button" data-learn-view="grid">网格</button>
+            <button type="button" data-learn-view="list">列表</button>
+          </div>
+        </div>
+
+        <div class="learn-filters" role="group" aria-label="按类型筛选">
+          <button class="learn-chip is-active" type="button" data-learn-filter="all">全部</button>
+          <button class="learn-chip" type="button" data-learn-filter="guide">上手指南</button>
+          <button class="learn-chip" type="button" data-learn-filter="live">直播回放</button>
+        </div>
+
+        <div class="learn-list-head" aria-hidden="true">
+          <span class="learn-lh-title"></span>
+          <span class="learn-lh-type">类型</span>
+          <span class="learn-lh-form">形式</span>
+          <span class="learn-lh-level">LEVEL</span>
+        </div>
+
+        <div class="learn-grid" data-learn-grid>
+          <a class="learn-card" href="https://www.wufanai.com/file/c6artdf18rujdc04" data-type="guide" data-search="快速上手 上手指南 图文教程 从零上手 入门 悟帆">
+            <div class="learn-card-cover" aria-hidden="true">
+              <video class="learn-card-cover-video" style="filter: invert(1);" src="../img/learn-cover-guide.mp4?v=1" autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="learn-card-body">
+              <span class="learn-card-badge">上手指南</span>
+              <h2>快速上手悟帆AI</h2>
+              <div class="learn-card-meta"><span>图文教程</span><span>从零上手</span></div>
+              <div class="learn-card-foot"><span class="learn-card-tag">入门</span><span class="learn-card-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
+
+          <a class="learn-card" href="https://edu.fanruan.com/video/play/14153" data-type="live" data-search="官方直播 真实业务实战 直播回放 视频回放 悟帆">
+            <div class="learn-card-cover" aria-hidden="true">
+              <img class="learn-card-cover-img" src="../img/learn-cover-live.jpg" alt="" loading="lazy">
+            </div>
+            <div class="learn-card-body">
+              <span class="learn-card-badge">直播回放</span>
+              <h2>官方直播</h2>
+              <div class="learn-card-meta"><span>视频回放</span><span>实战演练</span></div>
+              <div class="learn-card-foot"><span class="learn-card-tag">进阶</span><span class="learn-card-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
+        </div>
+
+        <p class="learn-empty" data-learn-empty hidden>没有匹配的课程或教程，换个关键词试试。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="site-footer-icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">苏ICP备18065767号-41</a>
+    <span class="site-footer-tagline">消费级体验 · 专业级产出 · 业务级底座</span>
+  </footer>
+
+  <script>
+    (function () {
+      var ENV_ORIGIN = window.location.origin && window.location.origin !== 'null'
+        ? window.location.origin
+        : '';
+      var PUBLIC_HOME_URL = ENV_ORIGIN || '/';
+      var OFFICIAL_ATTRIBUTION_URL = buildEnvUrl('/r/Official');
+
+      function buildEnvUrl(path) {
+        if (!ENV_ORIGIN) return path;
+        return ENV_ORIGIN + path;
+      }
+
+      function readStorage(storage, key) {
+        try {
+          return storage && storage.getItem(key);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function hasTokenLikeValue(value) {
+        if (!value || value === 'null' || value === 'undefined') return false;
+        if (/^(eyJ|sk-|pk_|sess_|Bearer\s+)/.test(value)) return true;
+        try {
+          var parsed = JSON.parse(value);
+          var text = JSON.stringify(parsed).toLowerCase();
+          return !!(
+            parsed &&
+            (
+              parsed.token ||
+              parsed.access_token ||
+              parsed.accessToken ||
+              parsed.refresh_token ||
+              parsed.session ||
+              parsed.user ||
+              parsed.state && (parsed.state.token || parsed.state.accessToken || parsed.state.user) ||
+              text.indexOf('access_token') >= 0 ||
+              text.indexOf('refresh_token') >= 0
+            )
+          );
+        } catch (e) {
+          return value.length > 24 && /token|session|auth|jwt/i.test(value);
+        }
+      }
+
+      function isLoggedIn() {
+        var keys = [
+          'token',
+          'access_token',
+          'auth_token',
+          'corevo_token',
+          'corevo-auth',
+          'auth-storage',
+          'cvo-auth-storage',
+          'sb-server-auth-token'
+        ];
+        for (var i = 0; i < keys.length; i++) {
+          if (hasTokenLikeValue(readStorage(window.localStorage, keys[i])) || hasTokenLikeValue(readStorage(window.sessionStorage, keys[i]))) {
+            return true;
+          }
+        }
+        try {
+          if (/(^|;\s*)(token|auth_token|access_token|session|jwt)=/.test(document.cookie)) return true;
+        } catch (e) {}
+        return false;
+      }
+
+      function getAuthClickTarget(mode, redirectPath) {
+        var normalizedRedirect = normalizeInternalPath(redirectPath || '/app');
+        if (isLoggedIn()) return buildEnvUrl(normalizedRedirect);
+        var target = new URL(OFFICIAL_ATTRIBUTION_URL);
+        target.searchParams.set('redirect', normalizedRedirect);
+        if (mode === 'register') target.searchParams.set('mode', 'register');
+        return target.toString();
+      }
+
+      function normalizeInternalPath(path) {
+        if (!path || typeof path !== 'string') return '/app';
+        if (path.charAt(0) !== '/' || path.indexOf('//') === 0) return '/app';
+        return path;
+      }
+
+      function isPlainPrimaryClick(ev) {
+        return ev.button === 0 && !ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey;
+      }
+
+      document.querySelectorAll('[data-auth-link], [data-auth-signup]').forEach(function (el) {
+        el.setAttribute('href', PUBLIC_HOME_URL);
+      });
+      document.addEventListener('click', function (ev) {
+        var link = ev.target.closest && ev.target.closest('[data-auth-link], [data-auth-signup]');
+        if (!link) return;
+        if (!isPlainPrimaryClick(ev)) return;
+        ev.preventDefault();
+        var mode = link.hasAttribute('data-auth-signup') ? 'register' : 'login';
+        window.location.assign(getAuthClickTarget(mode, normalizeInternalPath(link.getAttribute('data-auth-redirect'))));
+      });
+    })();
+
+    (function () {
+      var item = document.querySelector('[data-nav-dropdown]');
+      if (!item) return;
+      var trigger = item.querySelector('.site-nav-trigger');
+      trigger.addEventListener('click', function () {
+        item.classList.toggle('is-open');
+      });
+      document.addEventListener('click', function (ev) {
+        if (!item.contains(ev.target)) item.classList.remove('is-open');
+      });
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') item.classList.remove('is-open');
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var grid = document.querySelector('[data-learn-grid]');
+      if (!grid) return;
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.learn-card'));
+      var search = document.getElementById('learnSearch');
+      var chips = document.querySelectorAll('[data-learn-filter]');
+      var views = document.querySelectorAll('[data-learn-view]');
+      var empty = document.querySelector('[data-learn-empty]');
+      var catalog = grid.closest('.learn-catalog');
+      var activeType = 'all';
+
+      function apply() {
+        var q = ((search && search.value) || '').trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (c) {
+          var typeOk = activeType === 'all' || c.getAttribute('data-type') === activeType;
+          var text = (c.getAttribute('data-search') || '').toLowerCase();
+          var searchOk = !q || text.indexOf(q) >= 0;
+          var show = typeOk && searchOk;
+          c.hidden = !show;
+          if (show) shown++;
+        });
+        if (empty) empty.hidden = shown > 0;
+      }
+
+      if (search) search.addEventListener('input', apply);
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          activeType = chip.getAttribute('data-learn-filter') || 'all';
+          chips.forEach(function (c) { c.classList.toggle('is-active', c === chip); });
+          apply();
+        });
+      });
+      views.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (catalog) catalog.classList.toggle('is-list', btn.getAttribute('data-learn-view') === 'list');
+          views.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    // 卡片封面视频：视口外 / 列表视图（display:none）自动暂停省电
+    (function () {
+      var v = document.querySelector('.learn-card-cover-video');
+      if (!v || !('IntersectionObserver' in window)) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.01 }).observe(v);
+    })();
+  </script>
+</body>
+
+</html>

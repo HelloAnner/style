@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script id="cvo-theme-preload">
+      (function () {
+        var preference = 'system';
+        try {
+          preference = window.localStorage.getItem('corevo-theme') || 'system';
+        } catch (_) {
+          // localStorage may be unavailable in private/restricted browsing contexts.
+        }
+
+        var systemIsDark = window.matchMedia
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : true;
+        var theme = preference === 'light'
+          ? 'light'
+          : preference === 'dark'
+            ? 'dark'
+            : systemIsDark ? 'dark' : 'light';
+
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.backgroundColor = theme === 'dark' ? '#0A0A0F' : '#FAF9F7';
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <meta
+      name="description"
+      content="悟帆AI 是企业级 AI Agent 平台，支持多 Agent 协作、自动化任务、知识与工具编排，帮助团队把复杂工作交给 AI 执行。"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.wufanai.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wufan-20260516" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wufan-20260516" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png?v=wufan-20260516" />
+    <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png?v=wufan-20260516" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png?v=wufan-20260516" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-256.png?v=wufan-20260516" />
+    <link rel="shortcut icon" href="/favicon.png?v=wufan-20260516" />
+    <link rel="preload" href="/fonts/SmileySans-Oblique.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="悟帆AI" />
+    <meta property="og:title" content="悟帆AI - 企业级 AI Agent 平台" />
+    <meta
+      property="og:description"
+      content="通过对话创建 AI 团队，编排工具、知识和自动化任务，让复杂工作持续推进。"
+    />
+    <meta property="og:url" content="https://www.wufanai.com/" />
+    <meta property="og:image" content="https://www.wufanai.com/wufan-og-20260603-logo-final.png" />
+    <meta property="og:image:secure_url" content="https://www.wufanai.com/wufan-og-20260603-logo-final.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="悟帆AI Logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="悟帆AI - 企业级 AI Agent 平台" />
+    <meta
+      name="twitter:description"
+      content="企业级 AI Agent 平台，支持多 Agent 协作、自动化任务、知识与工具编排。"
+    />
+    <meta name="twitter:image" content="https://www.wufanai.com/wufan-og-20260603-logo-final.png" />
+    <title>悟帆AI - 企业级 AI Agent 平台</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700&family=Kalam:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "悟帆AI",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.wufanai.com/",
+        "image": "https://www.wufanai.com/wufan-og-20260603-logo-final.png",
+        "description": "悟帆AI 是企业级 AI Agent 平台，支持多 Agent 协作、自动化任务、知识与工具编排。",
+        "publisher": {
+          "@type": "Organization",
+          "name": "悟帆"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "CNY"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-ChXKQFVA.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CjeRCaxU.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>悟帆AI - 企业级 AI Agent 平台</h1>
+        <p>
+          悟帆帮助团队通过对话创建 AI Agent，连接工具、知识和工作流，
+          将需求分析、资料整理、自动化任务、多 Agent 协作和执行回放整合在同一个工作台。
+        </p>
+        <section>
+          <h2>面向团队的 AI 执行平台</h2>
+          <p>
+            平台支持 SDK、SaaS 和 Desktop 多种使用形态，适合企业内部知识助手、
+            运营自动化、研发协作、数据分析和复杂任务编排。
+          </p>
+        </section>
+      </main>
+    </noscript>
+  </body>
+</html>

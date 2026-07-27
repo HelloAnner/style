@@ -1,0 +1,57 @@
+{
+  "source": {
+    "evidence": "SRC-004",
+    "originPath": "/Users/anner/fine/ai/corevo",
+    "commit": "14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+    "commitDate": "2026-07-23T16:32:46+08:00",
+    "workingTreeNote": "DESIGN.md was untracked and archived as supplemental analysis; it is not commit truth.",
+    "publication": "pending explicit approval"
+  },
+  "frontend": {
+    "framework": "React 18 + TypeScript + Vite",
+    "styling": "Tailwind CSS + CSS custom properties + inline React styles",
+    "motion": "Framer Motion + CSS keyframes",
+    "icons": "lucide-react + inline SVG",
+    "state": "Zustand",
+    "trackedWebFiles": 425,
+    "sanitizedSnapshotFiles": 255,
+    "snapshotBytes": 4187027
+  },
+  "theme": {
+    "modes": ["light", "dark"],
+    "default": "dark",
+    "attribute": "data-theme",
+    "storageKey": "corevo-theme",
+    "sourceFile": "src/components/common/ThemeProvider.tsx"
+  },
+  "layout": {
+    "outerPaddingPx": 12,
+    "panelGapPx": 12,
+    "sidebarExpandedPx": 240,
+    "sidebarCollapsedPx": 56,
+    "headerPx": 56,
+    "mainStageFlex": 1.5,
+    "mainStageMinPx": 480,
+    "chatFlex": 1,
+    "chatMinPx": 400,
+    "messageMaxPx": 880,
+    "composerMaxPx": 800,
+    "mobileBreakpointPxExclusive": 768
+  },
+  "scales": {
+    "spacingPx": [0, 4, 6, 8, 10, 12, 14, 16, 20, 24, 32],
+    "radiusPx": [8, 10, 12, 16, 20],
+    "durationMs": [150, 200, 300],
+    "defaultEasing": "cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "runtimeProduction": {
+    "cssEvidence": "SRC-012",
+    "jsEvidence": "SRC-013",
+    "lightComputedEvidence": "SRC-042",
+    "darkComputedEvidence": "SRC-040",
+    "lightCustomProperties": 453,
+    "darkCustomProperties": 449,
+    "sharedCustomProperties": 93,
+    "versionConflict": "Production assets postdate the provided source commit; production Whats New and logo differ from that commit."
+  }
+}

@@ -1,0 +1,44 @@
+# 覆盖矩阵
+
+枚举：`none | partial | observed | validated | n/a`。`observed` 表示有证据，不表示已通过复刻视觉回归。
+
+## 页面
+
+| 对象 | 类型 | light desktop | dark desktop | light mobile | dark mobile | 状态 | 证据 | TODO |
+|---|---|---:|---:|---:|---:|---|---|---|
+| Marketing 首页 | page | n/a | observed | n/a | observed | default | SRC-016–019, SRC-036–037 | TODO-012 |
+| Marketing 教程 | page | n/a | observed | n/a | observed | default | SRC-020–023, SRC-038–039 | TODO-012 |
+| Marketing 定价 | page | n/a | observed | n/a | observed | default | SRC-028–031, SRC-044–045 | TODO-012 |
+| 登录页 | page | observed | observed | observed | observed | default | SRC-024–027, SRC-032–035, SRC-040–043 | TODO-012 |
+| 新任务空状态 | page | none | observed | none | none | default | SRC-002, SRC-004 | TODO-002,003,007 |
+| 对话详情 | page | observed | none | none | none | populated | SRC-003, SRC-004 | TODO-002,003,007 |
+| What’s New | overlay | observed | none | none | none | default | SRC-014, SRC-013 | TODO-003,006 |
+| Settings/Admin/Showcase | page | source only | source only | none | none | partial | SRC-004, SRC-012–013 | TODO-006,007 |
+| Workspace/Dashboard | pattern | source only | source only | none | none | partial | SRC-004 | TODO-006,007 |
+| Execution/Automation/Roundtable | pattern | source only | source only | none | none | partial | SRC-004 | TODO-006,007 |
+
+## 核心组件
+
+| 组件 | light | dark | hover/focus | disabled/loading/error | open/selected | 响应式 | 证据 |
+|---|---|---|---|---|---|---|---|
+| Sidebar | observed | observed | source only | partial source | observed selected | source only | SRC-002–004 |
+| Chat Header | observed | observed | source only | n/a | source only | source only | SRC-002–004 |
+| Empty State | none | observed | n/a | n/a | tabs observed | none | SRC-002, SRC-004 |
+| InputBar | observed | observed | source only | source only | source only | source only | SRC-002–004 |
+| Message Bubble | observed | source only | source only | source only | source only | source only | SRC-003–004 |
+| Button/Input/Login card | observed | observed | source/runtime CSS | partial | default | observed | SRC-024–027, SRC-032–035, SRC-040–043 |
+| What’s New tabs/cards | observed | none | none | none | observed | partial crop | SRC-014, SRC-013 |
+| Dialog/Popover/Drawer | source only | source only | source only | source only | source only | none | SRC-004, SRC-012–013 |
+| File/Code/Table/Chart | source only | source only | source only | source only | source only | partial source | SRC-004 |
+
+## 主题基础
+
+| 范围 | light | dark | 结论 |
+|---|---|---|---|
+| Product runtime CSS variables | observed 453 | observed 449 | 精确运行时集合，尚未全组件验证 |
+| Product screenshots | partial | partial | 页面未成对 |
+| Marketing | n/a | observed | 固定暗色独立表面 |
+| desktop | partial | partial | 登录和官网较好；登录后产品不足 |
+| mobile | login only | login + marketing | 登录后产品不足 |
+| motion | none | partial | 仅源码/静态暂停截图 |
+| accessibility | partial | partial | 尚未执行完整键盘与对比度验证 |

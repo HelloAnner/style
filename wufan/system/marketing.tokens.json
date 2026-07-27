@@ -1,0 +1,51 @@
+{
+  "$metadata": {
+    "profile": "wufan",
+    "surface": "marketing",
+    "theme": "fixed-dark",
+    "precision": "exact-source/runtime-computed",
+    "evidence": [
+      "SRC-006",
+      "SRC-036"
+    ],
+    "warning": "Do not merge these values into application light/dark modes."
+  },
+  "cssVariables": {
+    "--blue": "#546cff",
+    "--brand-misans-medium-font": "MiSans, \"PingFang SC\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", \"Source Han Sans SC\", system-ui, sans-serif",
+    "--brand-oblique-correction": "2deg",
+    "--brand-smiley-font": "\"Smiley Sans Landing\", \"Smiley Sans\", MiSans, \"PingFang SC\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", \"Source Han Sans SC\", system-ui, sans-serif",
+    "--brand-word-font-ai": "\"Smiley Sans Landing\", \"Smiley Sans\", MiSans, \"PingFang SC\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", \"Source Han Sans SC\", system-ui, sans-serif",
+    "--brand-word-font-cn": "\"Smiley Sans Landing\", \"Smiley Sans\", MiSans, \"PingFang SC\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", \"Source Han Sans SC\", system-ui, sans-serif",
+    "--card": "#13141a",
+    "--card-alt": "#0f1117",
+    "--cyan": "#79e4ff",
+    "--green": "#57d9ad",
+    "--hero-pad": "clamp(28px, 4vw, 82px)",
+    "--ink": "#f5f2ea",
+    "--ink-muted": "rgba(245, 242, 234, 0.52)",
+    "--ink-soft": "rgba(245, 242, 234, 0.72)",
+    "--ink-strong": "#ffffff",
+    "--landing-night": "#050509",
+    "--landing-warm-chrome": "#fbfaf7",
+    "--landing-warm-panel": "#f7f4ed",
+    "--landing-warm-surface": "#f5f2ea",
+    "--landing-warm-surface-light": "#faf8f1",
+    "--landing-warm-surface-soft": "#ede9df",
+    "--line": "rgba(245, 242, 234, 0.14)",
+    "--max": "calc(100% - (clamp(28px, 4vw, 82px) * 2))",
+    "--night": "#050509",
+    "--night-2": "#0f1016",
+    "--output-thread-length": "2600",
+    "--output-thread-offset": "2600",
+    "--output-thread-progress": "0",
+    "--page-pad": "clamp(28px, 4vw, 82px)",
+    "--paper": "#111217",
+    "--paper-ink": "#f5f2ea",
+    "--paper-line": "rgba(245, 242, 234, 0.12)",
+    "--paper-soft": "rgba(245, 242, 234, 0.62)",
+    "--sail": "#e8f2ff",
+    "--site-max": "min(2080px, 92vw)",
+    "--violet": "#9366ff"
+  }
+}

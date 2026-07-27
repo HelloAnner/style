@@ -1,0 +1,122 @@
+{
+  "files": [
+    {
+      "type": "css",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700&family=Kalam:wght@400;700&family=Ma+Shan+Zheng&display=swap",
+      "path": "wufan/sources/assets/fonts/public/css/google-app.css",
+      "sha256": "67a3ecc55ba3f8bd67f39f586742e2aa63d46e2a7dfac5ae2deb1d1826b367da",
+      "bytes": 2654
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__01__1b08e7fc267a.ttf",
+      "sha256": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+      "bytes": 324820,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__02__8c883f63b2c4.ttf",
+      "sha256": "8c883f63b2c4157d997319f2c8bc6995ed4357ef371940d31ca159004a4aae63",
+      "bytes": 325304,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__03__e7a1aaf7eda9.ttf",
+      "sha256": "e7a1aaf7eda9f2fad4131725fa556265ec75ca7b2d756260173a040363e8d4f7",
+      "bytes": 326048,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__04__b37284b5701b.ttf",
+      "sha256": "b37284b5701b6b168dfc770aa1a4ac492106422fd3ba76bc7641e37434e8019c",
+      "bytes": 326468,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPQ.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__05__44ce4a84f20d.ttf",
+      "sha256": "44ce4a84f20d60f24539bd0cef11f79c29e38609e0f8adf18551c9794a5d9dc3",
+      "bytes": 112172,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxjPQ.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__06__3386a05f6ece.ttf",
+      "sha256": "3386a05f6ece969e4537de6be894170d20558e82f7d56c8c5d332972ef172160",
+      "bytes": 112204,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/kalam/v18/YA9dr0Wd4kDdMuhW.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__07__f20e9de66ca0.ttf",
+      "sha256": "f20e9de66ca054e1d1376b3c811d2240b1b5ef831474bda9fbbaf28d67e67902",
+      "bytes": 426488,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/kalam/v18/YA9Qr0Wd4kDdMtDqHQLL.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__08__7463b42e3630.ttf",
+      "sha256": "7463b42e3630f003f355b3f37e1cf8e2c0b0855374d483aef580ff45fdac3ba4",
+      "bytes": 460024,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/mashanzheng/v17/NaPecZTRCLxvwo41b4gvzkXaRMQ.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__09__c29e3244a8d8.ttf",
+      "sha256": "c29e3244a8d833a45f1b056bcbbd1f49175049574fcdd562001904a6f3b1f3d9",
+      "bytes": 5857164,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__10__6a8c9be856a6.ttf",
+      "sha256": "6a8c9be856a6b9e09c66615634904616152c9de5e44db343a3ced240479c586a",
+      "bytes": 47844,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__11__9a9f465776e6.ttf",
+      "sha256": "9a9f465776e653cd6175661d844555e08684d432518f1d2c621bcb3006598f9c",
+      "bytes": 47800,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "font",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf",
+      "path": "wufan/sources/assets/fonts/public/files/google-app__12__49dcdf653a00.ttf",
+      "sha256": "49dcdf653a004a2575b3de649f5e4c549d774fecddf317812330edd0ad70685a",
+      "bytes": 48340,
+      "fromCss": "google-app.css"
+    },
+    {
+      "type": "css",
+      "url": "https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css",
+      "path": "wufan/sources/assets/fonts/public/css/misans-medium.css",
+      "sha256": "70150e846c385eac3b7429b608251dbb74d9443f6783d70ea353d369f82a6f1c",
+      "bytes": 87347
+    },
+    {
+      "type": "css",
+      "url": "https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css",
+      "path": "wufan/sources/assets/fonts/public/css/misans-bold.css",
+      "sha256": "71ec03866e9d6b32d6afd37d739ade0d032b70907dc1bae9f56dcdaed143fe6b",
+      "bytes": 87147
+    }
+  ],
+  "licenseStatus": "Font files are public web dependencies; exact redistribution licenses still require verification."
+}
