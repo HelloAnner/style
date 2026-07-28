@@ -35,7 +35,8 @@
 
 ## 已观察页面
 
-- 登录 desktop/mobile：`SRC-032–SRC-035, SRC-042–SRC-043`；
+- 登录 desktop/mobile：`SRC-032–SRC-035, SRC-042–SRC-043, SRC-054–SRC-055`；
+- 登录小人 desktop：完整页与局部原图由 `SRC-054–SRC-055` 补充；SVG 几何、颜色、浮动、眨眼和视线追踪由生产包 `SRC-013` 精确还原并记录在 `EVD-006`；
 - 登录后聊天 desktop：`SRC-003`；
 - What’s New 局部：`SRC-014`。
 

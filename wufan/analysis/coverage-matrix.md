@@ -27,6 +27,7 @@
 | InputBar | observed | observed | source only | source only | source only | source only | SRC-002–004 |
 | Message Bubble | observed | source only | source only | source only | source only | source only | SRC-003–004 |
 | Button/Input/Login card | observed | observed | source/runtime CSS | partial | default | observed | SRC-024–027, SRC-032–035, SRC-040–043 |
+| Login Mascot | observed | observed | pointer gaze exact-source | n/a | blink/float exact-source | mobile n/a（隐藏） | SRC-013, SRC-024–025, SRC-032–033, SRC-054–055, EVD-006 |
 | What’s New tabs/cards | observed | none | none | none | observed | partial crop | SRC-014, SRC-013 |
 | Dialog/Popover/Drawer | source only | source only | source only | source only | source only | none | SRC-004, SRC-012–013 |
 | File/Code/Table/Chart | source only | source only | source only | source only | source only | partial source | SRC-004 |

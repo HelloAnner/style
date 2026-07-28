@@ -52,6 +52,18 @@
     "lightCustomProperties": 453,
     "darkCustomProperties": 449,
     "sharedCustomProperties": 93,
-    "versionConflict": "Production assets postdate the provided source commit; production Whats New and logo differ from that commit."
+    "versionConflict": "Production assets postdate the provided source commit; production Whats New, logo, auth shell and login mascot differ from that commit.",
+    "exactComponents": {
+      "loginMascot": {
+        "evidence": [
+          "SRC-013",
+          "SRC-054",
+          "SRC-055",
+          "EVD-006"
+        ],
+        "reference": "examples/reference/login-mascot/",
+        "localSourceCommitContainsCurrentImplementation": false
+      }
+    }
   }
 }

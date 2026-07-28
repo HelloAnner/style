@@ -1,6 +1,6 @@
 # 悟帆 AI 档案完整性待办
 
-> 当前 **6/14** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
+> 当前 **7/15** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
 
 - [x] TODO-001 `blocker`
   - 范围：shared
@@ -135,3 +135,13 @@
   - 证据：AGENTS.md, examples/reference/, sources/exploration-log.md, quality/REQUESTS.md
   - 关联请求：无
   - 完成时间：2026-07-26
+
+- [x] TODO-015 `high`
+  - 范围：light | dark
+  - 完成：已定位当前登录小人的生产实现，恢复 React 组件、机器规格和零构建交互演示；明确 mobile 不渲染。
+  - 负责：agent
+  - 完成标准：SVG 几何、渐变、双眼、装饰圆、眨眼、漂浮、视线跟随、面板覆盖与版本来源可重复。
+  - 证据：SRC-013, SRC-024–025, SRC-032–033, SRC-054–055, EVD-006, examples/reference/login-mascot/
+  - 验证：JSON 解析、浏览器渲染、light/dark 来源截图与组件交互检查。
+  - 关联请求：REQ-009, REQ-010（本组件范围已确认；请求整体仍 open）
+  - 完成时间：2026-07-29

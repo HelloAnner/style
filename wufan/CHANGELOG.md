@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.3.0 — 2026-07-29
+
+### Sources
+- 新增用户提供的 1598×961@2x 明色登录页和登录小人局部原图（SRC-054/055）。
+- 重新核对 `/Users/anner/fine/ai/corevo`：当前 `14394dc` 的 `AuthPage.tsx` 不含新版小人；精确实现存在于已归档生产 bundle SRC-013。
+
+### Analysis
+- 新增 EVD-006，恢复登录小人的 SVG 几何、三段渐变、双眼、眨眼、漂浮、视线跟随和面板覆盖关系。
+- 登录小人 light/dark desktop 已有来源证据；mobile 明确为不渲染，而非缩小。
+
+### Implementation
+- 新增 `examples/reference/login-mascot/`：React + Framer Motion 组件、机器规格、零构建交互演示和使用说明。
+- 新增登录小人独立验证入口，防止消费 Agent 误用旧登录页或聊天页流体头像。
+
+### Status / TODO
+- 新增并关闭 TODO-015；当前 7/15 完成，仍有 8 个开放 TODO、6 个 blocker 和 8 个开放用户请求。
+- 档案保持 `analyzed`；本次只完成登录小人组件范围，不提升整体状态。
+
 ## 0.2.0 — 2026-07-26
 
 ### Sources

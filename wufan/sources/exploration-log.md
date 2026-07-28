@@ -29,3 +29,17 @@
 - 限制：无安全登录态；登录后同页双主题/mobile/状态矩阵缺失；源码版本落后；字体与私有资料公开授权待确认；未执行 archive→new-system 视觉回归
 - 新增/关闭 TODO：关闭 TODO-001/004/008/009/011；保留 8 个开放项
 - 需要用户：REQ-002/003/005/006/007/008/009/010
+
+## EXP-20260729-01
+
+- 输入：用户提供的完整明色登录页 SRC-054、登录小人局部图 SRC-055、源码路径 `/Users/anner/fine/ai/corevo`
+- 目标：确认档案是否已有登录小人代码；恢复成其他系统可直接引用的精确组件
+- 环境：macOS；源码只读静态分析；本地 `corevo` commit `14394dc7ca16aa13c62e8a089c6ffff4953424f3`；归档生产 bundle `index-ChXKQFVA.js`
+- 安全检查：未读取/归档 env、凭据或业务数据；两张新图仅含公开登录 UI；用户明确要求把该组件放入 wufan 供其他系统参考
+- 源码动作：检查 `web/src/pages/auth/AuthPage.tsx`、`web/src/components/Chat/ChatContainer.tsx` 和生产 bundle；确认本地登录页是旧版、聊天头像不是目标小人
+- 提取动作：从 SRC-013 恢复生产符号 `La/Oa/zh/nBe`，整理 SVG、颜色、定位、眨眼、漂浮、视线约束和 mobile 隐藏规则
+- 新增文件：SRC-054/055；EVD-006；`examples/reference/login-mascot/` 下 React 组件、JSON 规格、零构建演示与说明
+- 覆盖变化：登录小人 light/dark desktop 从“登录页整体 observed”细化为独立组件 exact-source；移动端以来源壳层和截图证明不渲染
+- 限制：本地 `corevo` 版本仍早于当前线上；完整登录页及全部登录状态的 archive→target 视觉回归仍属于 TODO-012
+- 新增/关闭 TODO：新增并关闭 TODO-015；其他开放项不变
+- 需要用户：无需为本组件新增请求；REQ-009/010 更新为部分已确认，整体仍 open

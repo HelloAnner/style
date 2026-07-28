@@ -15,8 +15,8 @@ def sha(path):
         for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
     return h.hexdigest()
 
-def item(i, typ, origin, path=None, theme='shared', route=None, viewport=None, dpr=None, state=None, authorized='public', notes=None):
-    x={"id":f"SRC-{i:03d}","type":typ,"origin":origin,"localPath":path,"sha256":sha(path),"theme":theme,"route":route,"viewport":viewport,"dpr":dpr,"state":state,"collectedAt":NOW,"authorized":authorized}
+def item(i, typ, origin, path=None, theme='shared', route=None, viewport=None, dpr=None, state=None, authorized='public', notes=None, collected_at=NOW):
+    x={"id":f"SRC-{i:03d}","type":typ,"origin":origin,"localPath":path,"sha256":sha(path),"theme":theme,"route":route,"viewport":viewport,"dpr":dpr,"state":state,"collectedAt":collected_at,"authorized":authorized}
     if notes: x['notes']=notes
     return x
 
@@ -63,6 +63,12 @@ start=16+len(auto)+len(computed)
 for n,p in enumerate(prelim,start):
     sources.append(item(n,'screenshot','https://www.wufanai.com/',p.relative_to(ROOT).as_posix(),'unknown','/',state='loading/animation-unstable',authorized='public',notes='Preliminary emulated-color-scheme capture; superseded by stable SRC-016+ capture and not valid as a product theme reference.'))
 
+# User-provided source screenshots from the login mascot follow-up.
+sources += [
+ item(54,'screenshot','User-provided clipboard screenshot','sources/screenshots/original/light/login__light__1598x961@2x__default__02.png','light','/login',{'width':1598,'height':961,'physicalWidth':3196,'physicalHeight':1922},2,'default','provided','Full login page; no user data. Exact viewport derived from the 2x pixel dimensions and source layout.',collected_at='2026-07-28T23:00:47Z'),
+ item(55,'screenshot','User-provided clipboard screenshot','sources/screenshots/original/light/login-mascot__light__crop__default__01.png','light','/login (mascot crop)',{'physicalWidth':1132,'physicalHeight':1096},2,'default','provided','User-provided crop of the mascot/panel overlap; crop origin is unknown.',collected_at='2026-07-28T23:00:47Z'),
+]
+
 # Capture manifest derives from screenshot sources.
 captures=[]
 for x in sources:
@@ -72,7 +78,7 @@ for x in sources:
     captures.append({
       'evidenceId':x['id'],'url':x['origin'] if str(x['origin']).startswith('http') else None,'route':x['route'],'theme':x['theme'],
       'viewport':x['viewport'],'physicalPixels':physical,'dpr':x['dpr'],'state':x['state'],
-      'captureType':'full-page' if 'full-page' in p.name else ('component-crop' if x['id']=='SRC-014' else 'viewport'),
+      'captureType':'full-page' if 'full-page' in p.name else ('component-crop' if x['id'] in {'SRC-014','SRC-055'} else 'viewport'),
       'selector':None,'waitCondition':'fonts-ready + timed stabilization + animations paused' if x['authorized']=='public' else 'user-provided',
       'path':x['localPath'],'sha256':x['sha256'],'capturedAt':x['collectedAt'],'notes':x.get('notes')
     })

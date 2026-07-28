@@ -1,6 +1,6 @@
 # 来源与证据索引
 
-当前登记 **53** 项来源。`SRC-046`–`SRC-053` 是保留但已判定不稳定的首次自动截图，不应用作主题事实。
+当前登记 **55** 项来源。`SRC-046`–`SRC-053` 是保留但已判定不稳定的首次自动截图，不应用作主题事实。
 
 ## 关键来源
 
@@ -10,6 +10,7 @@
 - `SRC-012` / `SRC-013`：当前线上部署的 CSS/JS，优先于较旧源码判断当前版本。
 - `SRC-014`：明色 What’s New 截图；与线上 JS 一致，但与用户源码 commit 中组件实现不同。
 - `SRC-016`–`SRC-045`：公开页面双视口截图和计算样式。
+- `SRC-054` / `SRC-055`：本轮用户提供的 1598×961@2x 登录页与小人局部原图，用于登录小人精确核对。
 
 ## 完整清单
 
@@ -683,3 +684,28 @@
 - 授权类别：`public`
 - 备注：Preliminary emulated-color-scheme capture; superseded by stable SRC-016+ capture and not valid as a product theme reference.
 
+### SRC-054
+- 类型：`screenshot`
+- 原始来源：User-provided clipboard screenshot
+- 本地路径：`sources/screenshots/original/light/login__light__1598x961@2x__default__02.png`
+- 主题：`light`
+- 页面/路由：`/login`
+- viewport / DPR：`1598×961（3196×1922 physical） / 2`
+- 状态：`default`
+- 获取时间：`2026-07-28T23:00:47Z`
+- SHA-256：`7d102278cce5458745a678a47a8aa7774487e3486bbdd2f422db895abb1b4860`
+- 授权类别：`provided`
+- 备注：完整登录页，无用户数据；CSS viewport 由 2x 像素尺寸和来源布局交叉确认。
+
+### SRC-055
+- 类型：`screenshot`
+- 原始来源：User-provided clipboard screenshot
+- 本地路径：`sources/screenshots/original/light/login-mascot__light__crop__default__01.png`
+- 主题：`light`
+- 页面/路由：`/login (mascot crop)`
+- viewport / DPR：`1132×1096 physical crop / 2（推断）`
+- 状态：`default`
+- 获取时间：`2026-07-28T23:00:47Z`
+- SHA-256：`1bb8011f8f882ca0075b389991a33d532622c6941793c983eb9ceb92568114fd`
+- 授权类别：`provided`
+- 备注：用户提供的登录小人与面板交界局部图；裁切原点未知。

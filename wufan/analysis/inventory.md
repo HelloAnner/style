@@ -23,6 +23,7 @@
 ### B. Application（登录与登录后产品）
 
 - `/login`：公开登录页，light/dark、桌面/移动均已自动采集；
+- `/login` 桌面紫蓝小人：生产 bundle exact-source，实现已恢复为独立 React/HTML 参考；mobile 不渲染；
 - 登录后新任务空状态：dark 桌面截图；
 - 登录后对话状态：light 桌面截图；
 - What’s New：light 局部截图；
@@ -39,6 +40,7 @@
 | 官网教程 | SRC-020–023 | fixed dark | desktop/mobile default |
 | 官网定价 | SRC-028–031 | fixed dark | desktop/mobile default |
 | 登录 | SRC-024–027, SRC-032–035 | light + dark | desktop/mobile default |
+| 登录小人 | SRC-013, SRC-024–025, SRC-032–033, SRC-054–055 | light + dark | desktop default、眨眼、漂浮、视线跟随；mobile n/a |
 | 新任务空状态 | SRC-002 | dark | desktop default |
 | 对话详情 | SRC-003 | light | desktop populated |
 | What’s New | SRC-014 | light | component crop/default |
@@ -57,6 +59,7 @@
 ### 聊天
 
 - EmptyState、渐变 Agent 头像、问候标题与能力 tabs；
+- 登录小人：椭圆 SVG、三段渐变、双眼、装饰圆、眨眼、漂浮和瞳孔跟随；
 - MessageList、用户/Agent 消息、Markdown、代码、附件、操作栏；
 - 复合 InputBar、附件、模型选择、思考模式、快速提示胶囊、发送；
 - loading、streaming、questionnaire、plan review、todo、error 等源码状态。
@@ -74,6 +77,7 @@
 - 品牌字标：Smiley Sans Landing 文件已归档。`SRC-008`
 - 官网 Hero：Fraunces；CTA：Outfit；正文：Inter。`Observed · exact-measured · high · SRC-036`
 - 产品图标：Lucide + 内联 SVG；Agent 头像为 10 组 CSS 渐变。`Observed · exact-source · high · SRC-004`
+- 登录小人：生产内联 SVG，不依赖图片资源；可复用入口为 `examples/reference/login-mascot/`。`Observed · exact-source · high · SRC-013, SRC-054–055, EVD-006`
 - 已归档 12 个公开网页字体文件及 CSS，但再发布许可证仍待核验。`SRC-015`
 
 ## 尚未覆盖

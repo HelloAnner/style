@@ -53,6 +53,10 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 10. 768px mobile 行为；
 11. 两主题视觉回归。
 
+登录页需要小人时，不重新绘制：直接使用
+`../examples/reference/login-mascot/WufanLoginMascot.tsx`，并读取同目录
+`spec.json`。来源面板必须以 `z-index: 2` 覆盖角色；移动端不渲染。
+
 ## 3. Product 基准几何
 
 - outer padding/gap 12；Sidebar 240/56；
@@ -72,7 +76,8 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 - 用户源码 commit 早于线上部署；当前运行时优先 `SRC-012/013`；
 - `WhatsNew.tsx` 源码是旧 560px modal，当前线上/截图是 tabbed updates center；
 - 源码 Logo 仍含 Moss，当前视觉为悟帆 AI 字标；
-- 复刻当前产品时不得照搬这两个旧组件。
+- 本地 `AuthPage.tsx` 没有当前登录小人；聊天 `EmptyState` 的流体头像也不是它；
+- 复刻当前产品时不得照搬这些旧组件。登录小人以 SRC-013/EVD-006/参考组件为准。
 
 ## 6. 禁止近似
 
@@ -80,6 +85,7 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 - 禁止将 Marketing 与 Product 变量混合；
 - 禁止用系统色彩偏好代替 `data-theme`；
 - 禁止用截图作背景伪装组件；
+- 禁止用截图背景或普通圆形近似登录小人；
 - 禁止忽略 hover/focus/loading/error/open；
 - 禁止把 99% 相似度当作没有未解释差异。
 

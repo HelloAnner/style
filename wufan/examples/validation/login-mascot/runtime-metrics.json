@@ -1,0 +1,65 @@
+{
+  "validatedAt": "2026-07-28T23:00:47Z",
+  "environment": {
+    "runner": "agent-browser 0.8.5",
+    "browser": "HeadlessChrome/151.0.7922.34",
+    "os": "macOS",
+    "devicePixelRatio": 1,
+    "locale": "en-US",
+    "note": "The component contains no locale-sensitive text."
+  },
+  "lightDesktop": {
+    "viewport": {
+      "width": 1598,
+      "height": 961
+    },
+    "mascotBox": {
+      "x": 914,
+      "y": 349.71875,
+      "width": 240,
+      "height": 300,
+      "right": 1154,
+      "bottom": 649.71875
+    },
+    "svg": {
+      "width": "240",
+      "height": "300",
+      "viewBox": "0 0 30 38"
+    },
+    "pointerGazeObserved": true,
+    "blinkObserved": true,
+    "screenshot": "login-mascot__light__1598x961__default__actual.png",
+    "sha256": "3598daa4c398da1bace05ca8e1ba6035122be545632534298751898ab7bc4cd9"
+  },
+  "darkDesktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "canvas": "#0a0a0f",
+    "mascotBox": {
+      "x": 791.046875,
+      "y": 318,
+      "width": 240,
+      "height": 300,
+      "right": 1031.046875,
+      "bottom": 618
+    },
+    "screenshot": "login-mascot__dark__1440x900__default__actual.png",
+    "sha256": "3fe3c742f8b5d97ef18440076d324406e1e505279239752b1d1d99b48b6343d8"
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "mascotDisplay": "none",
+    "panelBox": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+    }
+  },
+  "result": "pass-within-component-scope"
+}

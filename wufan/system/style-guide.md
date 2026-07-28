@@ -78,6 +78,7 @@ viewport
 - MessageList：max880；
 - active send：Light 深底白图标，Dark 白底深图标；
 - Modal：r20；backdrop Light .4 / Dark .7。
+- Login Mascot：使用 `examples/reference/login-mascot/` 的 exact-source SVG 组件；240×300、三段粉紫蓝渐变、眨眼/漂浮/视线跟随，mobile 不渲染。
 
 详见 `../analysis/components.md`。
 
@@ -111,6 +112,7 @@ viewport
 - 不用近似字体或另一图标库；
 - 不照较旧源码复刻当前 What’s New；
 - 不在未覆盖范围声称完全一致。
+- 不把登录小人替换成截图、普通半圆、聊天无眼头像或自绘近似 SVG。
 
 ## 证据优先级
 

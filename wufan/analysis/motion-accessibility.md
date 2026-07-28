@@ -8,12 +8,13 @@
 - Whats New 旧源码：200ms scale `.96→1` + y `12→0`，当前线上版本需另采录屏；
 - streaming cursor：1s infinite；skeleton：1.5s ease-in-out；
 - 官网含 Lottie/抽象对象动画，静态截图通过暂停动画获得可重复结果；原始时序尚未录制。
+- 登录小人漂浮为 `5s easeInOut infinite`、Y `0→-5→0px`；每 `3–7s` 随机眨眼 150ms；视线 200ms 延迟后以每帧 `.08` 插值跟随。`Observed · exact-source · high · SRC-013, EVD-006`
 
 `Observed · exact-source · high · SRC-004, SRC-006, SRC-012`
 
 ## reduced motion
 
-源码明确为部分 pulse 动画实现 `prefers-reduced-motion: reduce`，但没有证据证明所有 Framer/CSS/Marketing 动画都覆盖。`Observed + Unknown · medium · TODO-006`
+源码明确为部分 pulse 动画实现 `prefers-reduced-motion: reduce`，但没有证据证明所有 Framer/CSS/Marketing 动画都覆盖。登录小人生产实现未包含 reduced-motion 分支；严格复刻应保留来源事实，同时记录其持续动效风险。`Observed + Unknown · medium · SRC-013, TODO-006`
 
 ## 键盘与焦点
 

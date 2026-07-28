@@ -99,7 +99,45 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 
 390×844 时仅保留 Logo、表单和底部辅助动作，左侧大字/角色图隐藏。`Observed · exact-measured · high · SRC-024–027, SRC-032–035, SRC-040–043`
 
-## 8. What’s New（当前线上）
+## 8. Login Mascot
+
+当前桌面登录页右侧探头的紫蓝小人是独立内联 SVG，不是 PNG，也不是
+`ChatContainer.tsx` 中的无眼流体头像。
+
+### Anatomy 与几何
+
+- 根定位：`right: clamp(384px, 28.4vw, 444px)`、`top: 52%`；
+- 根变换：`translateY(-50%) scaleX(-1)`，`z-index: 1`；
+- 登录面板位于 `z-index: 2`，覆盖小人右侧形成半露效果；
+- SVG `240×300`，`viewBox="0 0 30 38"`，`overflow: visible`；
+- 身体为 ellipse `cx=6 cy=19 rx=24 ry=19`；
+- 装饰圆 `cx=14 cy=1 r=3`、`#EC4899`、opacity `.5`；
+- 渐变沿 `(0,0)→(1,1)`：`#EC4899 0% → #8B5CF6 50% → #3B82F6 100%`。
+
+### 眼睛
+
+- 左眼：中心 `17,14`、白眼半径 `3.8`、瞳孔半径 `2.2`、默认偏移 `+1.8,-.5`；
+- 右眼：中心 `25,18`、白眼半径 `3.2`、瞳孔半径 `1.8`、默认偏移 `+1.5,-.5`；
+- 瞳孔 `#1A1A2E`，高光 `rgba(255,255,255,.85)`；
+- 瞳孔最大位移必须限制在 `orbitR - pupilR`，禁止穿出白眼。
+
+### 动效与响应
+
+- 漂浮：Y `0→-5→0px`，`5s easeInOut infinite`；
+- 眨眼：随机 `3–7s`，闭眼持续 `150ms`；
+- 视线只响应角色左侧 ±70°，200ms 后设置目标，每帧以 `.08` 插值；
+- 距离 300px 达到最大视线强度；
+- mobile 来源壳层完全不渲染，不是缩小后继续显示。
+
+### 主题与实现
+
+SVG 自身在 light/dark 使用同一组值；主题差异由背景、光晕、面板覆盖和周围文字产生。
+直接复用 `examples/reference/login-mascot/WufanLoginMascot.tsx`；完整参数见
+同目录 `spec.json` 和 EVD-006。
+
+`Observed · exact-source + paired-theme screenshot · high · SRC-013, SRC-024–025, SRC-032–033, SRC-054–055, EVD-006`
+
+## 9. What’s New（当前线上）
 
 `SRC-014` 显示当前版本为大型更新中心，不是较旧源码中的 560px modal：
 
@@ -114,7 +152,7 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 
 Dark、desktop 外层上下文、hover、tab 切换和滚动状态未覆盖。
 
-## 9. Buttons 与图标
+## 10. Buttons 与图标
 
 - 图标按钮：28/32px，radius 8；
 - 普通按钮中性背景，hover 仅轻微 surface 变化；
@@ -122,7 +160,7 @@ Dark、desktop 外层上下文、hover、tab 切换和滚动状态未覆盖。
 - 图标 14–18px、stroke 约 2，禁止混用实心粗图标；
 - active 状态使用语义色 10%–20% 背景 + 对应纯色图标。
 
-## 10. Modal / Popover / Feedback
+## 11. Modal / Popover / Feedback
 
 权威主题 Token 已覆盖 modal/dropdown/toast/plan/diff/channel 等大量变量。几何需按对应源码/线上 CSS，不可仅使用通用 modal：
 

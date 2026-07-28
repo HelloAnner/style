@@ -42,4 +42,6 @@
 
 ## 例外
 
-Marketing 页面固定暗色，使用 `system/marketing.tokens.json`，不参与此映射。What’s New 当前生产实现与较旧源码组件不同，应以 `SRC-013/SRC-014` 为准。
+- 登录小人的 SVG 本体、三色渐变、粉色圆点、浮动、眨眼和视线追踪在 light/dark 间共享同一组精确值；不可对其反色或随主题改色。两主题仅替换周边页面 Token。`Observed · exact-source/runtime · high · SRC-013, SRC-024–SRC-025, SRC-054–SRC-055, EVD-006`
+- Marketing 页面固定暗色，使用 `system/marketing.tokens.json`，不参与此映射。
+- What’s New 当前生产实现与较旧源码组件不同，应以 `SRC-013/SRC-014` 为准。

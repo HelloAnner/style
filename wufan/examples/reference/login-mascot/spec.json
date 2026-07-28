@@ -1,0 +1,140 @@
+{
+  "id": "wufan-login-mascot-v1",
+  "surface": "product-auth",
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "precision": "exact-source",
+  "evidence": [
+    "SRC-013",
+    "SRC-054",
+    "SRC-055",
+    "EVD-006"
+  ],
+  "sourceVersion": {
+    "productionAsset": "sources/webpages/assets/app/index-ChXKQFVA.js",
+    "archivedAt": "2026-07-26T23:36:35Z",
+    "localCorevoCommitChecked": "14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+    "localCorevoContainsCurrentMascot": false
+  },
+  "placement": {
+    "position": "absolute",
+    "right": "clamp(384px, 28.4vw, 444px)",
+    "top": "52%",
+    "transform": "translateY(-50%) scaleX(-1)",
+    "zIndex": 1,
+    "pointerEvents": "none",
+    "desktopOnly": true
+  },
+  "svg": {
+    "width": 240,
+    "height": 300,
+    "viewBox": "0 0 30 38",
+    "overflow": "visible"
+  },
+  "body": {
+    "element": "ellipse",
+    "cx": 6,
+    "cy": 19,
+    "rx": 24,
+    "ry": 19,
+    "gradient": {
+      "type": "linear",
+      "x1": 0,
+      "y1": 0,
+      "x2": 1,
+      "y2": 1,
+      "stops": [
+        {
+          "offset": "0%",
+          "color": "#EC4899"
+        },
+        {
+          "offset": "50%",
+          "color": "#8B5CF6"
+        },
+        {
+          "offset": "100%",
+          "color": "#3B82F6"
+        }
+      ]
+    }
+  },
+  "accentDot": {
+    "cx": 14,
+    "cy": 1,
+    "r": 3,
+    "fill": "#EC4899",
+    "opacity": 0.5
+  },
+  "eyes": {
+    "sclera": "#FFFFFF",
+    "pupil": "#1A1A2E",
+    "highlight": "rgba(255,255,255,0.85)",
+    "left": {
+      "cx": 17,
+      "cy": 14,
+      "orbitR": 3.8,
+      "pupilR": 2.2,
+      "defaultOffset": {
+        "x": 1.8,
+        "y": -0.5
+      },
+      "highlightOffset": {
+        "x": -1.2,
+        "y": -1
+      },
+      "highlightR": 0.9,
+      "blinkPath": "M14 14 Q17 11 20 14"
+    },
+    "right": {
+      "cx": 25,
+      "cy": 18,
+      "orbitR": 3.2,
+      "pupilR": 1.8,
+      "defaultOffset": {
+        "x": 1.5,
+        "y": -0.5
+      },
+      "highlightOffset": {
+        "x": -1,
+        "y": -0.8
+      },
+      "highlightR": 0.7,
+      "blinkPath": "M22 18 Q25 15 28 18"
+    },
+    "blink": {
+      "intervalMinMs": 3000,
+      "intervalMaxMs": 7000,
+      "durationMs": 150,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 1.5,
+      "strokeLinecap": "round"
+    },
+    "gaze": {
+      "activationSide": "left of anchor only",
+      "anchorX": "bounds.right - bounds.width * 0.35",
+      "anchorY": "bounds.top + bounds.height * 0.42",
+      "maxAngleDegrees": 70,
+      "fullStrengthDistancePx": 300,
+      "targetDelayMs": 200,
+      "lerpFactorPerFrame": 0.08,
+      "pupilConstraint": "orbitR - pupilR"
+    }
+  },
+  "floatMotion": {
+    "keyframesY": [
+      0,
+      -5,
+      0
+    ],
+    "durationMs": 5000,
+    "easing": "easeInOut",
+    "repeat": "infinite"
+  },
+  "responsive": {
+    "hiddenWhen": "mobile detector is true",
+    "sourceShellSwitch": "desktop content is omitted in the mobile auth shell"
+  }
+}

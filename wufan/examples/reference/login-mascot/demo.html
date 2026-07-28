@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>悟帆 AI 登录小人精确参考</title>
+    <style>
+      :root {
+        --bg-primary: #faf9f7;
+        --auth-panel-bg: rgba(255, 255, 255, 0.65);
+        --auth-panel-border: rgba(0, 0, 0, 0.06);
+        --ambient-primary-opacity: 0.18;
+        --ambient-secondary-opacity: 0.45;
+        --panel-shadow:
+          0 1px 3px rgba(0, 0, 0, 0.02),
+          0 4px 12px rgba(0, 0, 0, 0.015);
+      }
+
+      :root[data-theme="dark"] {
+        --bg-primary: #0a0a0f;
+        --auth-panel-bg: rgba(17, 17, 22, 0.5);
+        --auth-panel-border: rgba(255, 255, 255, 0.024);
+        --ambient-primary-opacity: 0.1;
+        --ambient-secondary-opacity: 0.3;
+        --panel-shadow:
+          0 4px 16px rgba(0, 0, 0, 0.3),
+          0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        overflow: hidden;
+        background: var(--bg-primary);
+      }
+
+      .ambient {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .ambient::before {
+        content: "";
+        position: absolute;
+        width: min(46vw, 660px);
+        height: min(46vw, 660px);
+        left: -12%;
+        top: 4%;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(109, 40, 217, 1) 0%,
+          transparent 55%
+        );
+        opacity: var(--ambient-primary-opacity);
+      }
+
+      .ambient::after {
+        content: "";
+        position: absolute;
+        width: min(35vw, 500px);
+        height: min(35vw, 500px);
+        left: -8%;
+        top: 15%;
+        border-radius: 50%;
+        background: radial-gradient(
+          ellipse at 30% 40%,
+          #a855f7 0%,
+          #c084fc 15%,
+          #7c3aed 30%,
+          #db2777 55%,
+          #ec4899 70%,
+          #4c1d95 85%,
+          transparent 100%
+        );
+        opacity: var(--ambient-secondary-opacity);
+        filter: blur(80px);
+      }
+
+      .mascot {
+        position: absolute;
+        right: clamp(384px, 28.4vw, 444px);
+        top: 52%;
+        z-index: 1;
+        pointer-events: none;
+        transform: translateY(-50%) scaleX(-1);
+      }
+
+      .mascot-float {
+        animation: mascot-float 5s ease-in-out infinite;
+      }
+
+      .mascot svg {
+        display: block;
+        overflow: visible;
+      }
+
+      .mascot-blink {
+        display: none;
+      }
+
+      .mascot[data-blinking="true"] .mascot-open {
+        display: none;
+      }
+
+      .mascot[data-blinking="true"] .mascot-blink {
+        display: block;
+      }
+
+      .panel-mask {
+        position: absolute;
+        z-index: 2;
+        top: 16px;
+        right: 16px;
+        bottom: 16px;
+        width: clamp(400px, 29.4vw, 460px);
+        border: 1px solid var(--auth-panel-border);
+        border-radius: 20px;
+        background: var(--auth-panel-bg);
+        box-shadow: var(--panel-shadow);
+        backdrop-filter: blur(32px);
+        -webkit-backdrop-filter: blur(32px);
+      }
+
+      .label {
+        position: fixed;
+        left: 20px;
+        bottom: 18px;
+        z-index: 4;
+        margin: 0;
+        color: rgba(26, 26, 26, 0.5);
+        font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+
+      @keyframes mascot-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .mascot,
+        .ambient {
+          display: none;
+        }
+
+        .panel-mask {
+          inset: 0;
+          width: 100vw;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <div
+      id="mascot"
+      class="mascot"
+      data-cvo-id="cvo-auth-login-mascot"
+      data-blinking="false"
+      aria-hidden="true"
+    >
+      <div class="mascot-float">
+        <svg width="240" height="300" viewBox="0 0 30 38">
+          <defs>
+            <linearGradient
+              id="mascot-login-peek"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+            >
+              <stop offset="0%" stop-color="#EC4899"></stop>
+              <stop offset="50%" stop-color="#8B5CF6"></stop>
+              <stop offset="100%" stop-color="#3B82F6"></stop>
+            </linearGradient>
+          </defs>
+
+          <ellipse
+            cx="6"
+            cy="19"
+            rx="24"
+            ry="19"
+            fill="url(#mascot-login-peek)"
+          ></ellipse>
+          <circle
+            cx="14"
+            cy="1"
+            r="3"
+            fill="#EC4899"
+            opacity="0.5"
+          ></circle>
+
+          <g class="mascot-open">
+            <circle cx="17" cy="14" r="3.8" fill="white"></circle>
+            <circle
+              id="left-pupil"
+              cx="18.8"
+              cy="13.5"
+              r="2.2"
+              fill="#1a1a2e"
+            ></circle>
+            <circle
+              id="left-highlight"
+              cx="17.6"
+              cy="12.5"
+              r="0.9"
+              fill="rgba(255,255,255,0.85)"
+            ></circle>
+            <circle cx="25" cy="18" r="3.2" fill="white"></circle>
+            <circle
+              id="right-pupil"
+              cx="26.5"
+              cy="17.5"
+              r="1.8"
+              fill="#1a1a2e"
+            ></circle>
+            <circle
+              id="right-highlight"
+              cx="25.5"
+              cy="16.7"
+              r="0.7"
+              fill="rgba(255,255,255,0.85)"
+            ></circle>
+          </g>
+
+          <g class="mascot-blink">
+            <path
+              d="M14 14 Q17 11 20 14"
+              stroke="white"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+            ></path>
+            <path
+              d="M22 18 Q25 15 28 18"
+              stroke="white"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+            ></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel-mask" aria-hidden="true"></div>
+    <p class="label">Move the pointer on the mascot's left side to verify gaze.</p>
+
+    <script>
+      (() => {
+        const theme = new URLSearchParams(window.location.search).get("theme");
+        document.documentElement.dataset.theme =
+          theme === "dark" ? "dark" : "light";
+
+        const LEFT_EYE = {
+          cx: 17,
+          cy: 14,
+          orbitR: 3.8,
+          pupilR: 2.2,
+          defOx: 1.8,
+          defOy: -0.5,
+        };
+        const RIGHT_EYE = {
+          cx: 25,
+          cy: 18,
+          orbitR: 3.2,
+          pupilR: 1.8,
+          defOx: 1.5,
+          defOy: -0.5,
+        };
+        const DEFAULT_GAZE = {
+          lx: LEFT_EYE.defOx,
+          ly: LEFT_EYE.defOy,
+          rx: RIGHT_EYE.defOx,
+          ry: RIGHT_EYE.defOy,
+        };
+
+        const mascot = document.querySelector("#mascot");
+        const leftPupil = document.querySelector("#left-pupil");
+        const leftHighlight = document.querySelector("#left-highlight");
+        const rightPupil = document.querySelector("#right-pupil");
+        const rightHighlight = document.querySelector("#right-highlight");
+
+        let target = { ...DEFAULT_GAZE };
+        let current = { ...DEFAULT_GAZE };
+        let resetTimer;
+
+        const constrain = (eye, offsetX, offsetY) => {
+          const availableRadius = eye.orbitR - eye.pupilR;
+          const distance = Math.hypot(offsetX, offsetY);
+          if (distance <= availableRadius) {
+            return {
+              cx: eye.cx + offsetX,
+              cy: eye.cy + offsetY,
+            };
+          }
+          const scale = availableRadius / distance;
+          return {
+            cx: eye.cx + offsetX * scale,
+            cy: eye.cy + offsetY * scale,
+          };
+        };
+
+        const render = () => {
+          const lerp = (from, to) => from + (to - from) * 0.08;
+          current = {
+            lx: lerp(current.lx, target.lx),
+            ly: lerp(current.ly, target.ly),
+            rx: lerp(current.rx, target.rx),
+            ry: lerp(current.ry, target.ry),
+          };
+
+          const left = constrain(LEFT_EYE, current.lx, current.ly);
+          const right = constrain(RIGHT_EYE, current.rx, current.ry);
+          leftPupil.setAttribute("cx", left.cx);
+          leftPupil.setAttribute("cy", left.cy);
+          leftHighlight.setAttribute("cx", left.cx - 1.2);
+          leftHighlight.setAttribute("cy", left.cy - 1);
+          rightPupil.setAttribute("cx", right.cx);
+          rightPupil.setAttribute("cy", right.cy);
+          rightHighlight.setAttribute("cx", right.cx - 1);
+          rightHighlight.setAttribute("cy", right.cy - 0.8);
+
+          requestAnimationFrame(render);
+        };
+
+        const scheduleBlink = () => {
+          window.setTimeout(() => {
+            mascot.dataset.blinking = "true";
+            window.setTimeout(() => {
+              mascot.dataset.blinking = "false";
+            }, 150);
+            scheduleBlink();
+          }, 3000 + Math.random() * 4000);
+        };
+
+        window.addEventListener("mousemove", (event) => {
+          const bounds = mascot.getBoundingClientRect();
+          const anchorX = bounds.right - bounds.width * 0.35;
+          const anchorY = bounds.top + bounds.height * 0.42;
+          const deltaX = event.clientX - anchorX;
+          const deltaY = event.clientY - anchorY;
+
+          window.clearTimeout(resetTimer);
+
+          if (deltaX > 0) {
+            resetTimer = window.setTimeout(() => {
+              target = { ...DEFAULT_GAZE };
+            }, 200);
+            return;
+          }
+
+          const angle = Math.atan2(deltaY, -deltaX);
+          if (Math.abs(angle) > (70 * Math.PI) / 180) {
+            resetTimer = window.setTimeout(() => {
+              target = { ...DEFAULT_GAZE };
+            }, 200);
+            return;
+          }
+
+          const distance = Math.hypot(deltaX, deltaY);
+          const strength = Math.min(distance / 300, 1);
+          const safeDistance = distance || 1;
+          const directionX = deltaX / safeDistance;
+          const directionY = deltaY / safeDistance;
+          const leftRange = LEFT_EYE.orbitR - LEFT_EYE.pupilR;
+          const rightRange = RIGHT_EYE.orbitR - RIGHT_EYE.pupilR;
+
+          resetTimer = window.setTimeout(() => {
+            target = {
+              lx: -directionX * leftRange * strength,
+              ly: directionY * leftRange * strength,
+              rx: -directionX * rightRange * strength,
+              ry: directionY * rightRange * strength,
+            };
+          }, 200);
+        });
+
+        render();
+        scheduleBlink();
+      })();
+    </script>
+  </body>
+</html>

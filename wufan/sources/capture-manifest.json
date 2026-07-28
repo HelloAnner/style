@@ -699,6 +699,54 @@
       "sha256": "5aadebdbf36dbb7cc681cfd47e6aa8594a6d4b2b40852f1d3b7104705f0d7208",
       "capturedAt": "2026-07-26T23:36:35Z",
       "notes": "Preliminary emulated-color-scheme capture; superseded by stable SRC-016+ capture and not valid as a product theme reference."
+    },
+    {
+      "evidenceId": "SRC-054",
+      "url": null,
+      "route": "/login",
+      "theme": "light",
+      "viewport": {
+        "width": 1598,
+        "height": 961,
+        "physicalWidth": 3196,
+        "physicalHeight": 1922
+      },
+      "physicalPixels": {
+        "width": 3196,
+        "height": 1922
+      },
+      "dpr": 2,
+      "state": "default",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "user-provided",
+      "path": "sources/screenshots/original/light/login__light__1598x961@2x__default__02.png",
+      "sha256": "7d102278cce5458745a678a47a8aa7774487e3486bbdd2f422db895abb1b4860",
+      "capturedAt": "2026-07-28T23:00:47Z",
+      "notes": "Full login page; no user data. Exact viewport derived from the 2x pixel dimensions and source layout."
+    },
+    {
+      "evidenceId": "SRC-055",
+      "url": null,
+      "route": "/login (mascot crop)",
+      "theme": "light",
+      "viewport": {
+        "physicalWidth": 1132,
+        "physicalHeight": 1096
+      },
+      "physicalPixels": {
+        "width": 1132,
+        "height": 1096
+      },
+      "dpr": 2,
+      "state": "default",
+      "captureType": "component-crop",
+      "selector": null,
+      "waitCondition": "user-provided",
+      "path": "sources/screenshots/original/light/login-mascot__light__crop__default__01.png",
+      "sha256": "1bb8011f8f882ca0075b389991a33d532622c6941793c983eb9ceb92568114fd",
+      "capturedAt": "2026-07-28T23:00:47Z",
+      "notes": "User-provided crop of the mascot/panel overlap; crop origin is unknown."
     }
   ]
 }

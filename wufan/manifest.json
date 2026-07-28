@@ -1,20 +1,20 @@
 {
   "id": "wufan",
   "name": "悟帆 AI",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "analyzed",
   "createdAt": "2026-07-26T14:43:19Z",
-  "updatedAt": "2026-07-26T23:36:35Z",
-  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；已完成第一轮深度分析，仍有登录态覆盖和验证缺口。",
+  "updatedAt": "2026-07-28T23:00:47Z",
+  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录页小人已有 exact-source 可复用实现，整体仍有登录态覆盖和验证缺口。",
   "referenceMode": "strict",
   "requiredThemes": [
     "light",
     "dark"
   ],
-  "sourceCount": 53,
+  "sourceCount": 55,
   "completion": {
-    "requiredItems": 14,
-    "completedItems": 6,
+    "requiredItems": 15,
+    "completedItems": 7,
     "openItems": 8,
     "blockingItems": 6,
     "openRequests": 8,
@@ -36,13 +36,18 @@
     "lightTokens": "system/themes/light.tokens.json",
     "darkTokens": "system/themes/dark.tokens.json",
     "marketingTokens": "system/marketing.tokens.json",
+    "loginMascot": "examples/reference/login-mascot/README.md",
     "implementation": "system/implementation.md",
     "acceptance": "quality/acceptance.md",
     "todo": "quality/TODO.md",
     "requests": "quality/REQUESTS.md",
     "completionReport": "quality/completion-report.md"
   },
-  "lastValidated": null,
+  "lastValidated": {
+    "at": "2026-07-28T23:00:47Z",
+    "scope": "Product login mascot / light desktop / source geometry and local reference render",
+    "result": "passed within component scope"
+  },
   "sources": [
     {
       "id": "SRC-001",
@@ -922,6 +927,44 @@
       "collectedAt": "2026-07-26T23:36:35Z",
       "authorized": "public",
       "notes": "Preliminary emulated-color-scheme capture; superseded by stable SRC-016+ capture and not valid as a product theme reference."
+    },
+    {
+      "id": "SRC-054",
+      "type": "screenshot",
+      "origin": "User-provided clipboard screenshot",
+      "localPath": "sources/screenshots/original/light/login__light__1598x961@2x__default__02.png",
+      "sha256": "7d102278cce5458745a678a47a8aa7774487e3486bbdd2f422db895abb1b4860",
+      "theme": "light",
+      "route": "/login",
+      "viewport": {
+        "width": 1598,
+        "height": 961,
+        "physicalWidth": 3196,
+        "physicalHeight": 1922
+      },
+      "dpr": 2,
+      "state": "default",
+      "collectedAt": "2026-07-28T23:00:47Z",
+      "authorized": "provided",
+      "notes": "Full login page; no user data. Exact viewport derived from the 2x pixel dimensions and source layout."
+    },
+    {
+      "id": "SRC-055",
+      "type": "screenshot",
+      "origin": "User-provided clipboard screenshot",
+      "localPath": "sources/screenshots/original/light/login-mascot__light__crop__default__01.png",
+      "sha256": "1bb8011f8f882ca0075b389991a33d532622c6941793c983eb9ceb92568114fd",
+      "theme": "light",
+      "route": "/login (mascot crop)",
+      "viewport": {
+        "physicalWidth": 1132,
+        "physicalHeight": 1096
+      },
+      "dpr": 2,
+      "state": "default",
+      "collectedAt": "2026-07-28T23:00:47Z",
+      "authorized": "provided",
+      "notes": "User-provided crop of the mascot/panel overlap; crop origin is unknown."
     }
   ]
 }

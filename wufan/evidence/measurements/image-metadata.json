@@ -705,6 +705,26 @@
       "height": 844,
       "iccProfilePresent": false,
       "exifPresent": false
+    },
+    {
+      "path": "sources/screenshots/original/light/login-mascot__light__crop__default__01.png",
+      "sha256": "1bb8011f8f882ca0075b389991a33d532622c6941793c983eb9ceb92568114fd",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1132,
+      "height": 1096,
+      "iccProfilePresent": false,
+      "exifPresent": false
+    },
+    {
+      "path": "sources/screenshots/original/light/login__light__1598x961@2x__default__02.png",
+      "sha256": "7d102278cce5458745a678a47a8aa7774487e3486bbdd2f422db895abb1b4860",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 3196,
+      "height": 1922,
+      "iccProfilePresent": false,
+      "exifPresent": false
     }
   ]
 }

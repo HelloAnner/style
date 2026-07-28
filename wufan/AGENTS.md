@@ -38,6 +38,10 @@ Product 的 `light` 与 `dark` 是平行且独立的主题。必须读取对应�
 8. `quality/acceptance.md`
 9. 需要核实时查看 `analysis/`、`sources/index.md` 和证据原件
 
+目标涉及登录页紫蓝小人时，必须直接读取
+`examples/reference/login-mascot/README.md`、`WufanLoginMascot.tsx` 和 `spec.json`。
+禁止从截图重画，也禁止复制当前本地 `corevo` 的旧 `AuthPage.tsx` 或聊天空状态无眼头像。
+
 上述文件已建立初版，但目标范围仍须对照覆盖矩阵。只有 manifest 为 `complete` 且目标范围已 validated，才能无条件声称严格复刻。否则先向用户说明相关缺口；用户允许带缺口继续后，仍需记录推断和偏差。
 
 实现时先做业务语义映射，再按“资源/字体 → Token → 全局基础 → 布局 → 基础组件 → 复合组件 → 页面模式 → 业务页面 → 状态/响应式 → 双主题视觉回归”执行。不能只换颜色，不能用截图充当页面，不能用大量绝对定位硬描。
