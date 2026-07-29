@@ -17,7 +17,7 @@ Sidebar 240px (collapsed 56px)
 - Sidebar、Chat、Main Stage 独立滚动；
 - Sidebar 为 16px 圆角面板、1px 极淡边框；
 - Header 高 56px，水平 padding 16px；
-- 聊天内容最大宽 880px，常见水平 padding 24px；
+- 当前生产聊天内容最大宽 960px（旧本地源码为 880px），常见水平 padding 24px；
 - Composer 外层左右 24px、下 16px，内部最大宽 800px。
 
 `Observed · exact-source · high · SRC-002–004`

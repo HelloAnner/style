@@ -34,7 +34,7 @@
 7. 56px Header、240px Sidebar、12px 外边距与 gap；
 8. 线性 14–18px 图标和低饱和控制层；
 9. 紫蓝渐变 Agent 头像/流体图形是主要品牌色触点；
-10. 内容优先：聊天 880px、Composer 800px、操作栏 hover 才出现。
+10. 内容优先：当前生产聊天 960px、Composer 800px、操作栏 hover 才出现；旧本地源码聊天为 880px。
 
 ## Product 核心主题值
 
@@ -75,10 +75,11 @@ viewport
 - Avatar：24/32/40、圆形；
 - Message：gap12、bubble padding14/r16、body14/1.6；
 - Composer：max800、r16、textarea 24–160；
-- MessageList：max880；
+- MessageList：当前生产 max960（旧本地源码 max880）；
 - active send：Light 深底白图标，Dark 白底深图标；
 - Modal：r20；backdrop Light .4 / Dark .7。
 - Login Mascot：使用 `examples/reference/login-mascot/` 的 exact-source SVG 组件；240×300、三段粉紫蓝渐变、眨眼/漂浮/视线跟随，mobile 不渲染。
+- Chat Page：使用 `examples/reference/chat-page/` 的双主题工作区；包含 Sidebar/对话列表、Header、消息和 Composer，可替换业务数据。
 
 详见 `../analysis/components.md`。
 

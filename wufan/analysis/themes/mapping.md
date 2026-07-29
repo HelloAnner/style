@@ -37,6 +37,8 @@
 
 - 源码机制：`<html data-theme="light|dark">`；默认 dark；localStorage key `corevo-theme`。`Observed · exact-source · high · SRC-004`
 - 当前生产登录页可通过界面按钮切换，自动化已验证两主题渲染。`Observed · high · SRC-024–035`
+- 对话代码参考在同一组件树通过 `data-theme` 切换两套展开值；desktop/mobile 已本地运行，
+  见 `examples/validation/chat-page/`。这不替代缺失的 dark populated/mobile 来源截图。
 - 严格实现不得运行时算法反色；读取完整主题展开文件。
 - 当前切换在 React mount 后读取 localStorage，理论上存在首屏闪烁窗口；复刻来源时保留事实，若优化需用户确认。
 

@@ -26,6 +26,7 @@
 - `/login` 桌面紫蓝小人：生产 bundle exact-source，实现已恢复为独立 React/HTML 参考；mobile 不渲染；
 - 登录后新任务空状态：dark 桌面截图；
 - 登录后对话状态：light 桌面截图；
+- 对话主路径：已恢复为 light/dark 可运行参考，包含 Sidebar/对话列表、Header、消息和 Composer；
 - What’s New：light 局部截图；
 - 源码路由：`/`、`/s/:sessionId`、`/admin`、`/showcase`、`/preview/file`、`/share/:token`、`/file/:token`；
 - 登录后主要布局：Sidebar + 可选 Main Stage + Chat；移动端 Sidebar 变抽屉。
@@ -43,6 +44,7 @@
 | 登录小人 | SRC-013, SRC-024–025, SRC-032–033, SRC-054–055 | light + dark | desktop default、眨眼、漂浮、视线跟随；mobile n/a |
 | 新任务空状态 | SRC-002 | dark | desktop default |
 | 对话详情 | SRC-003 | light | desktop populated |
+| 对话代码参考 | SRC-002–004, SRC-012–013, EVD-007 | light + dark | desktop actual；mobile source-derived actual |
 | What’s New | SRC-014 | light | component crop/default |
 | 主舞台/Workspace/Dashboard | SRC-004 | 双主题源码 | 无完整运行截图 |
 | 自动化/执行链/圆桌/设置/管理 | SRC-004, SRC-012–013 | 双主题源码 | 无完整视觉矩阵 |
@@ -63,6 +65,7 @@
 - MessageList、用户/Agent 消息、Markdown、代码、附件、操作栏；
 - 复合 InputBar、附件、模型选择、思考模式、快速提示胶囊、发送；
 - loading、streaming、questionnaire、plan review、todo、error 等源码状态。
+- 完整可运行主路径位于 `examples/reference/chat-page/`；未把上述长尾状态假装成已验证。
 
 ### 浮层与工具
 
@@ -78,8 +81,13 @@
 - 官网 Hero：Fraunces；CTA：Outfit；正文：Inter。`Observed · exact-measured · high · SRC-036`
 - 产品图标：Lucide + 内联 SVG；Agent 头像为 10 组 CSS 渐变。`Observed · exact-source · high · SRC-004`
 - 登录小人：生产内联 SVG，不依赖图片资源；可复用入口为 `examples/reference/login-mascot/`。`Observed · exact-source · high · SRC-013, SRC-054–055, EVD-006`
+- 对话工作区：React + CSS + 脱敏 mock + 零构建 demo；可复用入口为
+  `examples/reference/chat-page/`。`Observed · exact-source reference · high · SRC-002–004, SRC-012–013, EVD-007`
 - 已归档 12 个公开网页字体文件及 CSS，但再发布许可证仍待核验。`SRC-015`
 
 ## 尚未覆盖
 
-登录后应用的移动端、同一页面双主题配对、hover/focus/disabled/loading/error/open 状态、完整设置/工作区/看板/圆桌等页面、主题切换录屏和视觉回归尚未完成。详见 `coverage-matrix.md`、`quality/gaps.md` 与 `quality/REQUESTS.md`。
+登录后应用的移动端原图、同一页面双主题原图配对、hover/focus/disabled/loading/error/open
+完整状态、完整设置/工作区/看板/圆桌等页面、主题切换录屏和 baseline diff 尚未完成。
+对话代码入口已经完成，不等于这些证据缺口已经关闭。详见 `coverage-matrix.md`、
+`quality/gaps.md` 与 `quality/REQUESTS.md`。

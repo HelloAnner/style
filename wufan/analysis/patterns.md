@@ -8,7 +8,7 @@
 - 12px 外边距和面板 gap；
 - 240px Sidebar；
 - 56px Chat Header；
-- 800px Composer / 880px MessageList；
+- 800px Composer / 当前生产 960px MessageList（旧本地源码为 880px）；
 - 可选 Main Stage 与常驻 Chat 的双舞台关系；
 - 低对比 surface、极淡 border、中等圆角。
 
@@ -21,6 +21,10 @@ Sidebar + Chat Header + 中央 Empty State + Composer + 建议胶囊。适用于
 ## 3. 对话详情页
 
 Sidebar 选中任务 + Header 上下文 + 居中 MessageList + bottom Composer。消息按角色左右区分，正文/Markdown优先，操作仅 hover 出现。`SRC-003–004`
+
+可直接消费 `examples/reference/chat-page/`：React 页面和零构建 demo 已覆盖上述完整主路径，
+并通过 light/dark desktop 与 source-derived mobile 本地运行检查。它不包含 upload、
+streaming、plan review 等完整状态矩阵。`EVD-007`
 
 ## 4. 主舞台工作模式
 

@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.4.0 — 2026-07-29
+
+### Analysis
+- 新增 EVD-007，将当前生产 Sidebar、Logo、MessageList、Composer 与本地源码 anatomy 映射为可读组件。
+- 修正对话 MessageList 的版本事实：当前生产为 960px，旧本地源码为 880px。
+- 继续完善 Sidebar、Header、消息、主题、响应式、动效/可访问性描述，并明确 dark populated/mobile 的 baseline 限制。
+
+### Implementation
+- 新增 `examples/reference/chat-page/`：完整 React 页面、明/暗 CSS、类型、脱敏 mock、机器规格和零构建交互 demo。
+- 示例覆盖左侧任务/对话列表、Chat Header、中间消息区、Composer、主题切换、发送与 mobile drawer。
+- 未复制真实用户数据、私有 store/API 或含个人信息原图。
+
+### Validation
+- 在 1594×974 light/dark 和 390×844 light/dark 实际运行，保存 5 张 actual 与运行时指标。
+- 主题值、240px Sidebar、56px Header、960px MessageList、800px Composer、发送状态和 280px mobile drawer 通过。
+- 缺少 dark populated/mobile 来源原图，因此未伪造 baseline/diff。
+
+### Status / TODO
+- 新增并关闭 TODO-016；当前 8/16 完成，仍有 8 个开放 TODO、6 个 blocker 和 8 个开放用户请求。
+- 档案保持 `analyzed`；对话主路径代码可直接消费，但不提升整个系统为 complete。
+
 ## 0.3.0 — 2026-07-29
 
 ### Sources

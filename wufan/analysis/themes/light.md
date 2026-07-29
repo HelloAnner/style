@@ -38,8 +38,11 @@
 - 登录 desktop/mobile：`SRC-032–SRC-035, SRC-042–SRC-043, SRC-054–SRC-055`；
 - 登录小人 desktop：完整页与局部原图由 `SRC-054–SRC-055` 补充；SVG 几何、颜色、浮动、眨眼和视线追踪由生产包 `SRC-013` 精确还原并记录在 `EVD-006`；
 - 登录后聊天 desktop：`SRC-003`；
+- 对话参考 light desktop/mobile actual：`examples/validation/chat-page/`（desktop 有 SRC-003
+  结构核对；mobile 仅源码行为验证）；
 - What’s New 局部：`SRC-014`。
 
 ## 未完成
 
-新任务、聊天、设置、工作台等页面缺少与 dark 相同页面/状态的 light 配对；组件 hover/focus/error/open 尚未视觉验证。
+新任务、设置、工作台等页面缺少与 dark 相同页面/状态的 light 配对；对话虽已有 light/dark
+可运行代码，但 dark 同状态原图、mobile 原图及 hover/focus/error/open 完整矩阵仍缺失。

@@ -43,3 +43,27 @@
 - 限制：本地 `corevo` 版本仍早于当前线上；完整登录页及全部登录状态的 archive→target 视觉回归仍属于 TODO-012
 - 新增/关闭 TODO：新增并关闭 TODO-015；其他开放项不变
 - 需要用户：无需为本组件新增请求；REQ-009/010 更新为部分已确认，整体仍 open
+
+## EXP-20260729-02
+
+- 输入：用户要求对话页面也提供可被其他系统完整复刻的代码例子，并明确包含左侧对话列表、
+  中间对话区域、整体风格与 light/dark
+- 目标：不依赖私有业务 store/API，恢复可运行的完整对话主路径，同时继续完善风格描述
+- 环境：macOS；agent-browser 0.8.5；本地静态服务器；1594×974 与 390×844；
+  locale zh-CN；Asia/Shanghai
+- 安全检查：只读检查 `/Users/anner/fine/ai/corevo` 与已归档生产资产；不运行私有源码；
+  不复制 SRC-002/003 的个人信息、对话文本或原图；使用新写的脱敏 mock
+- 源码动作：分析 App/Sidebar/ChatContainer/MessageList/MessageBubble/InputBar 组件链；确认本地
+  `14394dc` 与生产在 Logo、导航、Header border、MessageList 宽度和 Composer 细节存在差异
+- 生产动作：从 SRC-013 恢复当前 Logo SVG、Sidebar anatomy、960px MessageList、消息与
+  Composer 几何；从 SRC-012/运行时 Token 分离 light/dark
+- 新增文件：EVD-007；`examples/reference/chat-page/` 下 React、CSS、types、脱敏 mock、
+  spec、零构建 demo 和说明；`examples/validation/chat-page/` 下 5 张 actual、指标与报告
+- 浏览器验证：1594×974 light/dark；390×844 light/dark；Sidebar drawer；theme toggle；
+  Composer empty/active；发送后消息 2→3
+- 覆盖变化：关闭“对话页面没有可运行代码入口”；增加 light/dark desktop/mobile 本地 actual；
+  来源覆盖矩阵不将 dark populated/mobile 升级为 observed
+- 限制：dark populated 和登录后 mobile 仍无来源 baseline；streaming/upload/error 等长尾状态
+  未纳入精简主路径；中文字体和当前生产源码映射仍 open
+- 新增/关闭 TODO：新增并关闭 TODO-016；原 8 个开放项不变
+- 需要用户：REQ-002/003/005/006/007/008/009/010 保持 open

@@ -37,8 +37,11 @@
 - 登录 desktop/mobile：`SRC-024–SRC-027, SRC-040–SRC-041`；
 - 登录小人 desktop：`SRC-024–SRC-025` 观察到与 light 相同的 SVG 本体；精确共享值来自生产包 `SRC-013/EVD-006`，dark 只改变周边画布、面板与文字主题；
 - 登录后新任务 desktop：`SRC-002`；
+- 对话参考 dark desktop/mobile actual：`examples/validation/chat-page/`；主题值精确，但没有
+  dark populated/mobile 来源 baseline；
 - Marketing 也是暗色，但使用独立 `#050509`/serif 系统，不能视作本 Product dark。
 
 ## 未完成
 
-对话详情、What’s New、设置、工作台等缺少 dark 配对；登录后 mobile 及完整状态矩阵未观察。
+对话详情已有 source/runtime 驱动的暗色代码参考，但仍缺 dark populated 原图；What’s New、
+设置、工作台等缺少 dark 配对；登录后 mobile 及完整状态矩阵未观察。

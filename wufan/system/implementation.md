@@ -57,11 +57,15 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 `../examples/reference/login-mascot/WufanLoginMascot.tsx`，并读取同目录
 `spec.json`。来源面板必须以 `z-index: 2` 覆盖角色；移动端不渲染。
 
+对话页优先复用 `../examples/reference/chat-page/WufanChatPage.tsx` 与
+`wufan-chat.css`，不要从旧源码重新拼装 Sidebar。零构建 `demo.html` 可用于先核对主题、
+任务列表、消息区和 Composer 交互。
+
 ## 3. Product 基准几何
 
 - outer padding/gap 12；Sidebar 240/56；
 - Main Stage flex1.5/min480；Chat flex1/min400；
-- Header 56；Message max880；Composer max800；
+- Header 56；当前生产 Message max960（旧本地源码 max880）；Composer max800；
 - icon button 28/32, r8；Avatar 24/32/40；
 - bubble padding14/r16/body14/1.6；
 - Composer r16，textarea 24–160；

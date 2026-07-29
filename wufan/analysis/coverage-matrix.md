@@ -43,3 +43,12 @@
 | mobile | login only | login + marketing | 登录后产品不足 |
 | motion | none | partial | 仅源码/静态暂停截图 |
 | accessibility | partial | partial | 尚未执行完整键盘与对比度验证 |
+
+## 可运行参考实现
+
+此表只描述档案内代码的本地运行覆盖，不把 actual 当成来源 baseline：
+
+| 参考 | light desktop | dark desktop | light mobile | dark mobile | 交互 | 来源限制 |
+|---|---:|---:|---:|---:|---|---|
+| `examples/reference/chat-page/` | actual | actual | actual | actual | 主题切换、发送、drawer 通过 | dark populated/mobile 无同状态原图；EVD-007 |
+| `examples/reference/login-mascot/` | actual | actual | n/a | n/a | 漂浮、眨眼、视线通过 | mobile 来源明确不渲染；EVD-006 |

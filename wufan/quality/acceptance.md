@@ -22,7 +22,7 @@
 
 - [ ] Desktop outer padding/gap 12、Sidebar 240/56、Header 56。
 - [ ] Main Stage/Chat 比例和 min-width 正确。
-- [ ] Message max880、Composer max800。
+- [ ] 当前生产 Message max960（若复刻旧 `14394dc` 才为 880）、Composer max800。
 - [ ] `<768px` Sidebar drawer、overlay、mobile Header 和 full-screen Workspace 正确。
 - [ ] 长文本、滚动、空数据、溢出和窄屏不破坏结构。
 
@@ -36,6 +36,7 @@
 - [ ] dialog/popover/drawer/tooltip/toast 的 overlay、层级、进入/退出与焦点正确。
 - [ ] 当前 What’s New 使用线上 tabbed 结构，而非旧源码 modal。
 - [ ] 登录小人直接使用 exact-source SVG：240×300、正确面板覆盖、三段渐变、双眼、随机眨眼、5s 漂浮与受限视线跟随；mobile 不渲染。
+- [ ] 对话工作区直接核对 `examples/reference/chat-page/`：Sidebar/任务列表、Header、Message、Composer 和 light/dark 变量无静默改值。
 
 ## 状态与交互
 

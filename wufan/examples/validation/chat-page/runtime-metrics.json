@@ -1,0 +1,97 @@
+{
+  "capturedAt": "2026-07-29T00:04:40Z",
+  "runner": "agent-browser 0.8.5",
+  "locale": "zh-CN",
+  "timezone": "Asia/Shanghai",
+  "url": "http://127.0.0.1:4174/wufan/examples/reference/chat-page/demo.html",
+  "desktop": {
+    "viewport": {
+      "width": 1594,
+      "height": 974
+    },
+    "light": {
+      "canvas": "rgb(250, 249, 247)",
+      "sidebarBackground": "rgb(255, 255, 255)",
+      "composerBackground": "rgb(250, 250, 250)",
+      "userBubble": "rgb(240, 239, 237)",
+      "agentBubble": "rgb(255, 255, 255)"
+    },
+    "dark": {
+      "canvas": "rgb(10, 10, 15)",
+      "sidebarBackground": "rgba(18, 18, 24, 0.5)",
+      "composerBackground": "rgb(39, 39, 42)",
+      "userBubble": "rgb(26, 26, 32)",
+      "agentBubble": "rgb(22, 22, 28)"
+    },
+    "geometry": {
+      "sidebar": {
+        "x": 12,
+        "y": 12,
+        "width": 240,
+        "height": 950
+      },
+      "header": {
+        "x": 264,
+        "y": 12,
+        "width": 1318,
+        "height": 56
+      },
+      "messageList": {
+        "x": 443,
+        "y": 68,
+        "width": 960,
+        "maxWidth": 960
+      },
+      "composer": {
+        "x": 523,
+        "width": 800,
+        "contentMaxWidth": 800
+      }
+    },
+    "interaction": {
+      "initialSendDisabled": true,
+      "sendEnabledAfterText": true,
+      "darkActiveSendBackground": "rgb(255, 255, 255)",
+      "darkActiveSendForeground": "rgb(24, 24, 27)",
+      "messageCountAfterSend": 3
+    }
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "closedDrawerTransform": "matrix(1, 0, 0, 1, -296, 0)",
+    "openDrawer": {
+      "x": 8,
+      "y": 8,
+      "width": 280,
+      "height": 828,
+      "scrimOpacity": 1
+    },
+    "darkCanvas": "rgb(10, 10, 15)",
+    "darkComposerBackground": "rgb(39, 39, 42)"
+  },
+  "screenshots": [
+    {
+      "path": "chat-page__light__1594x974__populated__actual.png",
+      "sha256": "ec0b8f65b22176fc309105dcc58753bab62c8e1999bb37969ae9598a81eb3e9b"
+    },
+    {
+      "path": "chat-page__dark__1594x974__populated__actual.png",
+      "sha256": "4f8c7a23d233a431ec08b46d99d9c9c2fd2abc0a89dcb6067f1847b859730bed"
+    },
+    {
+      "path": "chat-page__light__390x844__populated__actual.png",
+      "sha256": "00e383f03fbb8fd985220eefa48de6a9f198a69f15816f93e2f0c25f60236704"
+    },
+    {
+      "path": "chat-page__dark__390x844__populated__actual.png",
+      "sha256": "cfe15700e0de9897bf3eaa5fa6e7b532ad981c75349486e0b6cc4177131d9433"
+    },
+    {
+      "path": "chat-page__light__390x844__sidebar-open__actual.png",
+      "sha256": "0320365cf10df493c38bf9db9abaa26f569c082dadac33df97e25cd1e859940d"
+    }
+  ]
+}

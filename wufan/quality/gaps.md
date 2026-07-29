@@ -3,6 +3,8 @@
 ## GAP-001：登录后页面没有同页双主题配对
 
 - 现有：dark 新任务 `SRC-002`；light 对话 `SRC-003`；light What’s New `SRC-014`。
+- 进展：`examples/reference/chat-page/` 已用当前生产 Token/结构生成 light/dark populated
+  actual，解决“没有代码例子”的消费缺口；它不是 dark 来源 baseline。
 - 影响：无法证明同一页面/状态在两主题的所有组件映射。
 - 关闭：登录后新任务、对话、What’s New 分别提供 light/dark 同视口截图，或授权自动化访问。
 - 关联：TODO-002, TODO-003, REQ-002, REQ-003, REQ-008。
@@ -10,6 +12,8 @@
 ## GAP-002：登录后移动端缺失
 
 - 现有：公开登录和 Marketing 390px；源码声明 `<768px` 行为。
+- 进展：对话参考已在 390×844 验证 closed/open drawer、消息和 Composer，证明代码可运行；
+  仍不能替代真实登录后 mobile 视觉证据。
 - 影响：无法视觉验证 Sidebar drawer、Chat Header、Composer、消息和 Workspace。
 - 关闭：授权登录态自动截图或提供 390×844 配对截图。
 - 关联：TODO-007, REQ-007, REQ-008。
@@ -26,6 +30,8 @@
 - 用户源码 commit 为 2026-07-23；线上资产更新更晚。
 - 当前线上 What’s New 与源码 `WhatsNew.tsx` 结构不同；源码 Logo 文案仍为 Moss。
 - 当前登录小人也只存在于线上生产 bundle；本地 `AuthPage.tsx` 是旧版，聊天 `EmptyState` 的无眼流体头像不是同一组件。
+- 当前生产 MessageList 为 960px，本地旧源码为 880px；对话参考已选择生产值并在 EVD-007
+  记录，不静默混用。
 - 当前决定：复刻当前产品时优先 `SRC-012/013/014`；源码用于仍一致的 Token/anatomy。
 - 登录小人范围已通过 EVD-006 和 `examples/reference/login-mascot/` 单独恢复，不再依赖旧源码猜测。
 - 关闭：提供与当前部署完全对应的源码 commit/构建映射。
@@ -43,6 +49,8 @@
 - `SRC-002/003` 含用户名和会话内容；`SRC-004` 来自私有企业 Git remote 且未发现许可证。
 - 当前处理：本地保存，但通过 `.git/info/exclude` 阻止误推送到公开仓库。
 - 例外：用户本轮明确要求公开复用登录小人；SRC-054/055 无个人数据，组件由公开 SRC-013 恢复，因此该组件与两张登录 UI 图可进入公开档案。
+- 例外：用户明确要求其他系统可复用完整对话代码；派生参考仅含公开生产可观察样式、
+  脱敏 mock 和通用交互，可以进入公开档案。SRC-002/003 原图和私有业务实现仍不进入。
 - 影响：GitHub clone 暂时拿不到这些原件/源码；本地档案可用。
 - 关闭：用户明确选择公开原件、先脱敏，或仅保留分析/公开生产资产。
 - 关联：REQ-010。

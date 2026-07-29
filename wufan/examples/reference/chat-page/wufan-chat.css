@@ -1,0 +1,933 @@
+.wufan-chat-page {
+  --wf-bg-primary: #faf9f7;
+  --wf-bg-secondary: #ffffff;
+  --wf-bg-tertiary: #f5f4f2;
+  --wf-bg-elevated: #ffffff;
+  --wf-sidebar-bg: #ffffff;
+  --wf-input-bg: #fafafa;
+  --wf-bubble-user: #f0efed;
+  --wf-bubble-agent: #ffffff;
+  --wf-text-primary: #1a1a1a;
+  --wf-text-secondary: #3a3a3a;
+  --wf-text-tertiary: #5a5a5a;
+  --wf-text-muted: #7a7a7a;
+  --wf-text-placeholder: #9a9a9a;
+  --wf-border-subtle: rgba(0, 0, 0, 0.06);
+  --wf-border-muted: rgba(0, 0, 0, 0.04);
+  --wf-border-faint: rgba(0, 0, 0, 0.03);
+  --wf-hover-bg: rgba(0, 0, 0, 0.04);
+  --wf-active-bg: #f5f4f2;
+  --wf-scrollbar: rgba(0, 0, 0, 0.12);
+  --wf-send-bg: #18181b;
+  --wf-send-fg: #ffffff;
+  --wf-scrim: rgba(0, 0, 0, 0.4);
+  --wf-panel-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.02),
+    0 4px 12px rgba(0, 0, 0, 0.015);
+  --wf-avatar-user: #eeecea;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 100dvh;
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--wf-bg-primary);
+  color: var(--wf-text-primary);
+  font-family:
+    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wufan-chat-page[data-theme="dark"] {
+  --wf-bg-primary: #0a0a0f;
+  --wf-bg-secondary: #121218;
+  --wf-bg-tertiary: #16161c;
+  --wf-bg-elevated: #1a1a20;
+  --wf-sidebar-bg: rgba(18, 18, 24, 0.5);
+  --wf-input-bg: #27272a;
+  --wf-bubble-user: #1a1a20;
+  --wf-bubble-agent: #16161c;
+  --wf-text-primary: #fafafa;
+  --wf-text-secondary: #e4e4e7;
+  --wf-text-tertiary: #a1a1aa;
+  --wf-text-muted: #71717a;
+  --wf-text-placeholder: #52525b;
+  --wf-border-subtle: rgba(255, 255, 255, 0.04);
+  --wf-border-muted: rgba(255, 255, 255, 0.03);
+  --wf-border-faint: rgba(255, 255, 255, 0.02);
+  --wf-hover-bg: rgba(255, 255, 255, 0.05);
+  --wf-active-bg: #16161c;
+  --wf-scrollbar: rgba(255, 255, 255, 0.12);
+  --wf-send-bg: #ffffff;
+  --wf-send-fg: #18181b;
+  --wf-scrim: rgba(0, 0, 0, 0.58);
+  --wf-panel-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.2);
+  --wf-avatar-user: #27272a;
+}
+
+.wufan-chat-page,
+.wufan-chat-page *,
+.wufan-chat-page *::before,
+.wufan-chat-page *::after {
+  box-sizing: border-box;
+}
+
+.wufan-chat-page button,
+.wufan-chat-page textarea {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.wufan-chat-page button {
+  border: 0;
+}
+
+.wufan-chat-page button:focus,
+.wufan-chat-page textarea:focus {
+  outline: 0;
+}
+
+.wufan-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.wufan-background::before,
+.wufan-background::after {
+  position: absolute;
+  width: min(36vw, 520px);
+  height: min(36vw, 520px);
+  border-radius: 50%;
+  content: "";
+  filter: blur(95px);
+  opacity: 0.025;
+}
+
+.wufan-background::before {
+  top: -18%;
+  right: 8%;
+  background: #8b5cf6;
+}
+
+.wufan-background::after {
+  bottom: -22%;
+  left: 12%;
+  background: #3b82f6;
+}
+
+.wufan-chat-page[data-theme="dark"] .wufan-background::before,
+.wufan-chat-page[data-theme="dark"] .wufan-background::after {
+  opacity: 0.045;
+}
+
+.wufan-app-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+
+.wufan-sidebar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 0 0 240px;
+  flex-direction: column;
+  width: 240px;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--wf-border-subtle);
+  border-radius: 16px;
+  background: var(--wf-sidebar-bg);
+  box-shadow: var(--wf-panel-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wufan-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  min-height: 56px;
+  padding: 14px 14px 14px 18px;
+}
+
+.wufan-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 29px;
+  white-space: nowrap;
+}
+
+.wufan-logo svg {
+  width: 27px;
+  height: 27px;
+  overflow: visible;
+  fill: currentColor;
+}
+
+.wufan-logo span {
+  transform: skew(-2deg);
+  font-family:
+    "Smiley Sans Landing", "Smiley Sans", "MiSans", "PingFang SC",
+    sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 24px;
+}
+
+.wufan-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--wf-text-muted);
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.wufan-icon-button.is-small {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+}
+
+.wufan-icon-button:hover {
+  background: var(--wf-hover-bg);
+  color: var(--wf-text-secondary);
+}
+
+.wufan-primary-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 8px 8px;
+}
+
+.wufan-nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 36px;
+  padding: 0 14px;
+  gap: 9px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--wf-text-tertiary);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.wufan-nav-item:hover,
+.wufan-nav-item.is-active {
+  background: var(--wf-active-bg);
+  color: var(--wf-text-primary);
+}
+
+.wufan-nav-item.is-active {
+  font-weight: 500;
+}
+
+.wufan-nav-item svg {
+  flex: 0 0 auto;
+}
+
+.wufan-sidebar__divider {
+  height: 1px;
+  margin: 0 12px;
+  background: var(--wf-border-muted);
+}
+
+.wufan-task-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+  padding: 2px 10px 0 14px;
+  color: var(--wf-text-muted);
+}
+
+.wufan-task-heading > span {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.82;
+}
+
+.wufan-task-heading > div {
+  display: flex;
+  gap: 0;
+}
+
+.wufan-session-list {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  padding-bottom: 8px;
+}
+
+.wufan-session-list::-webkit-scrollbar,
+.wufan-message-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wufan-session-list::-webkit-scrollbar-thumb,
+.wufan-message-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: var(--wf-scrollbar);
+  background-clip: padding-box;
+}
+
+.wufan-session-group h2 {
+  margin: 0;
+  padding: 9px 14px 5px;
+  color: var(--wf-text-muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 16px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.wufan-session {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 16px);
+  min-height: 35px;
+  margin: 0 8px;
+  padding: 8px 14px;
+  gap: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--wf-text-tertiary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wufan-session:hover,
+.wufan-session.is-active {
+  background: var(--wf-hover-bg);
+  color: var(--wf-text-primary);
+}
+
+.wufan-session.is-active {
+  font-weight: 500;
+}
+
+.wufan-session span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wufan-session svg {
+  flex: 0 0 auto;
+  opacity: 0;
+}
+
+.wufan-session:hover svg,
+.wufan-session.is-active svg {
+  opacity: 1;
+}
+
+.wufan-sidebar__footer {
+  padding: 8px;
+  border-top: 1px solid var(--wf-border-muted);
+}
+
+.wufan-user-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 4px;
+  padding: 5px 8px;
+  gap: 9px;
+  border-radius: 10px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wufan-user-row:hover {
+  background: var(--wf-hover-bg);
+}
+
+.wufan-user-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6 52%, #3b82f6);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wufan-user-row__label {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.wufan-user-row__label strong {
+  overflow: hidden;
+  color: var(--wf-text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wufan-user-row__label small {
+  color: var(--wf-text-muted);
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.wufan-chat-panel {
+  display: flex;
+  min-width: 400px;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 16px;
+  background: transparent;
+}
+
+.wufan-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  min-height: 56px;
+  padding: 0 16px;
+}
+
+.wufan-chat-header__title,
+.wufan-chat-header__actions {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.wufan-chat-header__title {
+  gap: 8px;
+}
+
+.wufan-chat-header__title > strong {
+  color: var(--wf-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.wufan-chat-header__slash {
+  color: var(--wf-text-muted);
+  font-size: 14px;
+}
+
+.wufan-chat-header__title > svg {
+  flex: 0 0 auto;
+  color: var(--wf-text-muted);
+}
+
+.wufan-chat-header__session {
+  max-width: min(40vw, 420px);
+  overflow: hidden;
+  color: var(--wf-text-tertiary);
+  font-size: 13px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wufan-chat-header__actions {
+  gap: 4px;
+}
+
+.wufan-mobile-menu {
+  display: none;
+}
+
+.wufan-message-scroll {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.wufan-message-list {
+  display: flex;
+  width: 100%;
+  max-width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 16px 24px 40px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.wufan-message {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 12px;
+  animation: wufan-message-in 300ms ease-out both;
+}
+
+.wufan-message.is-user {
+  flex-direction: row-reverse;
+}
+
+.wufan-agent-avatar,
+.wufan-message-user-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 50%;
+}
+
+.wufan-agent-avatar {
+  background: conic-gradient(
+    from 45deg at 40% 60%,
+    #ec4899 0deg,
+    #8b5cf6 90deg,
+    #3b82f6 180deg,
+    #ec4899 360deg
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.wufan-message-user-avatar {
+  background: var(--wf-avatar-user);
+  color: var(--wf-text-muted);
+}
+
+.wufan-message__content {
+  min-width: 0;
+  max-width: 85%;
+}
+
+.wufan-message.is-user .wufan-message__content {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.wufan-message__meta {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+
+.wufan-message.is-user .wufan-message__meta {
+  flex-direction: row-reverse;
+}
+
+.wufan-message__meta strong {
+  color: var(--wf-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.wufan-message__meta time {
+  color: var(--wf-text-muted);
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.wufan-message__bubble {
+  padding: 14px;
+  border-radius: 16px;
+  color: var(--wf-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.wufan-message.is-user .wufan-message__bubble {
+  border-top-right-radius: 6px;
+  background: var(--wf-bubble-user);
+}
+
+.wufan-message.is-agent .wufan-message__bubble {
+  border: 1px solid var(--wf-border-muted);
+  border-top-left-radius: 6px;
+  background: var(--wf-bubble-agent);
+}
+
+.wufan-message__bubble > :first-child {
+  margin-top: 0;
+}
+
+.wufan-message__bubble > :last-child {
+  margin-bottom: 0;
+}
+
+.wufan-message__bubble p {
+  margin: 0 0 12px;
+}
+
+.wufan-message__bubble h3 {
+  margin: 16px 0 7px;
+  color: var(--wf-text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.wufan-message__bubble ul,
+.wufan-message__bubble ol {
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+
+.wufan-message__bubble li + li {
+  margin-top: 4px;
+}
+
+.wufan-message__bubble strong {
+  color: var(--wf-text-primary);
+  font-weight: 600;
+}
+
+.wufan-message__bubble code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--wf-bg-tertiary);
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+}
+
+.wufan-message__tools {
+  display: flex;
+  min-height: 26px;
+  margin-top: 4px;
+  gap: 2px;
+  opacity: 0.64;
+  transition: opacity 150ms ease;
+}
+
+.wufan-message.is-user .wufan-message__tools {
+  justify-content: flex-end;
+}
+
+.wufan-message:hover .wufan-message__tools {
+  opacity: 1;
+}
+
+.wufan-message__tools button,
+.wufan-composer__toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  min-width: 26px;
+  padding: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--wf-text-muted);
+  cursor: pointer;
+}
+
+.wufan-message__tools button:hover,
+.wufan-composer__toolbar button:hover {
+  background: var(--wf-hover-bg);
+  color: var(--wf-text-secondary);
+}
+
+.wufan-composer-wrap {
+  width: 100%;
+  max-width: 848px;
+  margin: 0 auto;
+  padding: 4px 24px 16px;
+}
+
+.wufan-composer {
+  overflow: hidden;
+  border: 1px solid var(--wf-border-subtle);
+  border-radius: 16px;
+  background: var(--wf-input-bg);
+  box-shadow: 0 1px 2px var(--wf-border-faint);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.wufan-chat-page[data-theme="dark"] .wufan-composer {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wufan-composer textarea {
+  display: block;
+  width: 100%;
+  min-height: 24px;
+  max-height: 160px;
+  resize: none;
+  overflow-y: auto;
+  padding: 16px 16px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--wf-text-secondary);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.wufan-composer textarea::placeholder {
+  color: var(--wf-text-placeholder);
+}
+
+.wufan-composer__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 12px 16px;
+}
+
+.wufan-composer__tools {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.wufan-composer__toolbar .wufan-tool-pill {
+  width: auto;
+  padding: 0 8px;
+  gap: 5px;
+  color: var(--wf-text-tertiary);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.wufan-composer__toolbar .wufan-send-button {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 12px;
+  background: var(--wf-bg-tertiary);
+  color: var(--wf-text-placeholder);
+  cursor: default;
+}
+
+.wufan-composer__toolbar .wufan-send-button.is-active {
+  background: var(--wf-send-bg);
+  color: var(--wf-send-fg);
+  cursor: pointer;
+}
+
+.wufan-composer__toolbar .wufan-send-button.is-active:hover {
+  background: var(--wf-send-bg);
+  color: var(--wf-send-fg);
+  opacity: 0.9;
+}
+
+.wufan-composer-note {
+  margin: 7px 0 -2px;
+  color: var(--wf-text-muted);
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  opacity: 0.72;
+}
+
+.wufan-sidebar-scrim {
+  display: none;
+}
+
+@keyframes wufan-message-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wufan-message {
+    animation: none;
+  }
+
+  .wufan-chat-page *,
+  .wufan-chat-page *::before,
+  .wufan-chat-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .wufan-chat-page {
+    min-height: 480px;
+  }
+
+  .wufan-app-shell {
+    gap: 0;
+    padding: 0;
+  }
+
+  .wufan-sidebar {
+    position: fixed;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    z-index: 31;
+    width: min(280px, 86vw);
+    height: auto;
+    transform: translateX(calc(-100% - 16px));
+    transition: transform 220ms ease-out;
+  }
+
+  .wufan-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .wufan-sidebar-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: block;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    padding: 0;
+    background: var(--wf-scrim);
+    opacity: 0;
+    transition:
+      visibility 220ms,
+      opacity 220ms ease-out;
+  }
+
+  .wufan-sidebar-scrim.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .wufan-chat-panel {
+    min-width: 0;
+    border-radius: 0;
+  }
+
+  .wufan-mobile-menu {
+    display: inline-flex;
+  }
+
+  .wufan-chat-header {
+    height: 52px;
+    min-height: 52px;
+    padding: 0 10px;
+  }
+
+  .wufan-chat-header__title {
+    gap: 6px;
+  }
+
+  .wufan-chat-header__title > strong,
+  .wufan-chat-header__slash,
+  .wufan-chat-header__title > svg {
+    display: none;
+  }
+
+  .wufan-chat-header__session {
+    max-width: 42vw;
+  }
+
+  .wufan-chat-header__actions .wufan-icon-button:nth-last-child(2) {
+    display: none;
+  }
+
+  .wufan-message-list {
+    padding: 12px 14px 32px;
+  }
+
+  .wufan-message {
+    gap: 8px;
+  }
+
+  .wufan-agent-avatar,
+  .wufan-message-user-avatar {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  .wufan-message__content {
+    max-width: calc(100% - 36px);
+  }
+
+  .wufan-message__bubble {
+    padding: 12px;
+  }
+
+  .wufan-composer-wrap {
+    max-width: none;
+    padding: 4px 10px 8px;
+  }
+
+  .wufan-composer__toolbar {
+    min-height: 52px;
+    padding: 8px 10px;
+  }
+
+  .wufan-composer__toolbar .wufan-tool-pill:first-of-type span {
+    display: none;
+  }
+
+  .wufan-composer__toolbar .wufan-tool-pill {
+    padding: 0 6px;
+  }
+
+  .wufan-composer-note {
+    display: none;
+  }
+}

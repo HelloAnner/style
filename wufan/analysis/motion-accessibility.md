@@ -9,6 +9,8 @@
 - streaming cursor：1s infinite；skeleton：1.5s ease-in-out；
 - 官网含 Lottie/抽象对象动画，静态截图通过暂停动画获得可重复结果；原始时序尚未录制。
 - 登录小人漂浮为 `5s easeInOut infinite`、Y `0→-5→0px`；每 `3–7s` 随机眨眼 150ms；视线 200ms 延迟后以每帧 `.08` 插值跟随。`Observed · exact-source · high · SRC-013, EVD-006`
+- 对话消息进入：opacity `0→1`、Y `20→0px`、300ms ease-out；参考实现的
+  `prefers-reduced-motion` 分支会关闭该进入动效。`Observed source + Recommended explicit deviation · SRC-013, EVD-007`
 
 `Observed · exact-source · high · SRC-004, SRC-006, SRC-012`
 
@@ -22,6 +24,8 @@
 - 源码全局 `input:focus, textarea:focus, button:focus { outline:none }`，需要组件自行提供 focus-visible；
 - 当前证据未验证完整键盘顺序、焦点环、dialog focus trap 和关闭后焦点恢复；
 - 严格复刻时不能擅自新增不同视觉，但应把缺失焦点风险告知用户。
+- 对话参考保留来源的无全局 outline 事实，没有未经批准新增 focus-visible 视觉；消费前仍需
+  通过 REQ-006 补齐当前生产焦点证据。
 
 ## 对比度初步风险
 

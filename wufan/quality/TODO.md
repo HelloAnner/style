@@ -1,6 +1,6 @@
 # 悟帆 AI 档案完整性待办
 
-> 当前 **7/15** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
+> 当前 **8/16** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
 
 - [x] TODO-001 `blocker`
   - 范围：shared
@@ -144,4 +144,18 @@
   - 证据：SRC-013, SRC-024–025, SRC-032–033, SRC-054–055, EVD-006, examples/reference/login-mascot/
   - 验证：JSON 解析、浏览器渲染、light/dark 来源截图与组件交互检查。
   - 关联请求：REQ-009, REQ-010（本组件范围已确认；请求整体仍 open）
+  - 完成时间：2026-07-29
+
+- [x] TODO-016 `high`
+  - 范围：light | dark
+  - 完成：已从当前生产 bundle、用户对话截图和本地源码恢复完整对话主路径，提供
+    Sidebar/任务列表、Chat Header、Message List/Bubble、Composer 的 React + CSS、
+    脱敏 mock、机器规格和零构建 demo。
+  - 负责：agent
+  - 完成标准：其他系统不依赖私有 store/API 即可运行明/暗对话例子，并可替换业务数据。
+  - 证据：SRC-002–004, SRC-012–013, EVD-007, examples/reference/chat-page/
+  - 验证：1594×974 light/dark、390×844 light/dark、mobile drawer、主题切换和发送交互；
+    详见 examples/validation/chat-page/。
+  - 限制：dark populated 与登录后 mobile 无来源 baseline，不关闭 TODO-002/003/006/007/012。
+  - 关联请求：REQ-009, REQ-010（派生脱敏对话代码范围已确认；请求整体仍 open）
   - 完成时间：2026-07-29

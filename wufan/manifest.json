@@ -1,11 +1,11 @@
 {
   "id": "wufan",
   "name": "悟帆 AI",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "status": "analyzed",
   "createdAt": "2026-07-26T14:43:19Z",
-  "updatedAt": "2026-07-28T23:00:47Z",
-  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录页小人已有 exact-source 可复用实现，整体仍有登录态覆盖和验证缺口。",
+  "updatedAt": "2026-07-29T00:04:40Z",
+  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录小人和完整对话主路径已有可运行代码参考，整体仍有登录态覆盖和像素回归缺口。",
   "referenceMode": "strict",
   "requiredThemes": [
     "light",
@@ -13,8 +13,8 @@
   ],
   "sourceCount": 55,
   "completion": {
-    "requiredItems": 15,
-    "completedItems": 7,
+    "requiredItems": 16,
+    "completedItems": 8,
     "openItems": 8,
     "blockingItems": 6,
     "openRequests": 8,
@@ -37,6 +37,7 @@
     "darkTokens": "system/themes/dark.tokens.json",
     "marketingTokens": "system/marketing.tokens.json",
     "loginMascot": "examples/reference/login-mascot/README.md",
+    "chatPage": "examples/reference/chat-page/README.md",
     "implementation": "system/implementation.md",
     "acceptance": "quality/acceptance.md",
     "todo": "quality/TODO.md",
@@ -44,9 +45,9 @@
     "completionReport": "quality/completion-report.md"
   },
   "lastValidated": {
-    "at": "2026-07-28T23:00:47Z",
-    "scope": "Product login mascot / light desktop / source geometry and local reference render",
-    "result": "passed within component scope"
+    "at": "2026-07-29T00:04:40Z",
+    "scope": "Product chat page reference / light and dark desktop / source-derived mobile / local interaction render",
+    "result": "passed within runnable chat-page reference scope"
   },
   "sources": [
     {

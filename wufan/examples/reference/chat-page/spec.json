@@ -1,0 +1,101 @@
+{
+  "id": "wufan-chat-page",
+  "version": "1.0.0",
+  "surface": "product",
+  "themes": {
+    "light": {
+      "canvas": "#FAF9F7",
+      "sidebar": "#FFFFFF",
+      "input": "#FAFAFA",
+      "bubbleUser": "#F0EFED",
+      "bubbleAgent": "#FFFFFF",
+      "textPrimary": "#1A1A1A",
+      "textSecondary": "#3A3A3A",
+      "textTertiary": "#5A5A5A",
+      "textMuted": "#7A7A7A",
+      "borderSubtle": "rgba(0,0,0,.06)",
+      "sendActiveBackground": "#18181B",
+      "sendActiveForeground": "#FFFFFF"
+    },
+    "dark": {
+      "canvas": "#0A0A0F",
+      "sidebar": "rgba(18,18,24,.5)",
+      "input": "#27272A",
+      "bubbleUser": "#1A1A20",
+      "bubbleAgent": "#16161C",
+      "textPrimary": "#FAFAFA",
+      "textSecondary": "#E4E4E7",
+      "textTertiary": "#A1A1AA",
+      "textMuted": "#71717A",
+      "borderSubtle": "rgba(255,255,255,.04)",
+      "sendActiveBackground": "#FFFFFF",
+      "sendActiveForeground": "#18181B"
+    }
+  },
+  "layout": {
+    "outerInset": 12,
+    "panelGap": 12,
+    "sidebarWidth": 240,
+    "sidebarRadius": 16,
+    "headerHeight": 56,
+    "messageListMaxWidth": 960,
+    "composerContentMaxWidth": 800,
+    "composerOuterMaxWidth": 848,
+    "mobileBreakpointMax": 767,
+    "mobileDrawerWidth": "min(280px,86vw)"
+  },
+  "sidebar": {
+    "headerPadding": "14px 14px 14px 18px",
+    "primaryNavPadding": "0 8px 8px",
+    "primaryNavGap": 2,
+    "navMinHeight": 36,
+    "navPadding": "0 14px",
+    "navGap": 9,
+    "navRadius": 10,
+    "navFontSize": 13,
+    "sessionMinHeight": 35,
+    "sessionPadding": "8px 14px",
+    "sessionRadius": 8,
+    "sessionHorizontalMargin": 8,
+    "sessionFontSize": 13
+  },
+  "message": {
+    "rowGap": 12,
+    "listGap": 16,
+    "avatarSize": 32,
+    "contentMaxWidth": "85%",
+    "bubblePadding": 14,
+    "bubbleRadius": 16,
+    "bodyFontSize": 14,
+    "bodyLineHeight": 1.6,
+    "messageEntry": {
+      "opacityFrom": 0,
+      "translateYFrom": 20,
+      "durationMs": 300,
+      "easing": "ease-out"
+    }
+  },
+  "composer": {
+    "radius": 16,
+    "textareaPadding": "16px 16px 12px",
+    "textareaMinHeight": 24,
+    "textareaMaxHeight": 160,
+    "toolbarPadding": "12px 16px",
+    "sendSize": 36,
+    "sendRadius": 12
+  },
+  "evidence": {
+    "productionCss": "SRC-012",
+    "productionJs": "SRC-013",
+    "lightPopulatedDesktop": "SRC-003",
+    "darkShellDesktop": "SRC-002",
+    "localSourceAnatomy": "SRC-004",
+    "measurement": "EVD-007"
+  },
+  "validation": {
+    "lightDesktop": "local render checked against available populated reference",
+    "darkDesktop": "local render checked for exact theme/runtime values; no same-state screenshot baseline",
+    "mobile": "source-derived behavior checked locally; no authenticated mobile screenshot baseline",
+    "status": "pass-within-runnable-reference-scope"
+  }
+}

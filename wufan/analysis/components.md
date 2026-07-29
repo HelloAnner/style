@@ -19,9 +19,10 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 ### Geometry
 
 - 展开 240px，收起 56px；Header 56px；主体 16px radius；
-- Header padding `14px 12px`；图标按钮 28×28/radius 8；
-- 导航/任务常用高度约 40/36px，任务行源码 padding `9px 14px`、radius 10、水平 margin 8；
-- 文字：导航 14/500，任务 13/400，分组 10/500/0.06em；
+- 当前生产 Header padding `14px 14px 14px 18px`；图标按钮 28×28/radius 8；
+- 当前生产导航 min-height 36、padding `0 14px`、radius 10；任务行 min-height 35、
+  padding `8px 14px`、radius 8、水平 margin 8；
+- 文字：导航 13/400（active 500），任务 13/400，分组 10/500/0.06em；
 - 当前项使用 `--hover-bg`，不是品牌色填充；
 - 图标以 16–18px、低对比 muted 为主。
 
@@ -31,17 +32,17 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 - dark：半透明 `rgba(18,18,24,.5)` + 12px blur、白 4% border；
 - 当前截图中的 Sidebar 导航内容比源码 commit 更新，应以截图/线上资产为当前结构。
 
-`Observed · exact-source + screenshot · high · SRC-002–004, EVD-001, EVD-003`
+可读实现见 `examples/reference/chat-page/`。`Observed · exact-source + screenshot · high · SRC-002–004, SRC-013, EVD-001, EVD-003, EVD-007`
 
 ## 3. Chat Header
 
-- 高 56px、padding 0 16、底边 1px subtle；
+- 高 56px、padding 0 16；当前生产对话 Header 不绘制可见底边，旧本地源码曾有 subtle border；
 - 左侧 Agent 14/500 + `/` + 14px 任务图标 + 标题 13/tertiary；
 - 右侧图标按钮 32×32/radius 8/gap 4；
 - 激活工作区用低透明语义色；普通 hover 使用中性 hover；
 - mobile 出现 32×32 hamburger。
 
-`Observed · exact-source · high · SRC-002–004`
+`Observed · exact-source · high · SRC-002–004, SRC-013, EVD-007`
 
 ## 4. Empty State
 
@@ -72,7 +73,9 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 - file references：26px 高、radius 7；
 - upload/error/loading/running/followup 状态存在源码，但缺少完整视觉截图。
 
-`Observed · exact-source + screenshot · high · SRC-002–004, EVD-002, EVD-005`
+完整主路径实现见 `examples/reference/chat-page/`；upload/drag/running/error 未包含在该精简参考中。
+
+`Observed · exact-source + screenshot · high · SRC-002–004, SRC-013, EVD-002, EVD-005, EVD-007`
 
 ## 6. Message Bubble
 
@@ -83,7 +86,10 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 - 操作栏 margin-top 4，按钮 26×26/radius 6，hover 才出现；
 - 图片附件 radius 12；文件附件 radius 10；文件引用 chip radius 8。
 
-`Observed · exact-source + light screenshot · high · SRC-003–004, EVD-004`
+当前生产 MessageList `max-width: 960px`，旧本地源码为 880px。React 与零构建实现见
+`examples/reference/chat-page/`。
+
+`Observed · exact-source + light screenshot · high · SRC-003–004, SRC-013, EVD-004, EVD-007`
 
 ## 7. Login
 
