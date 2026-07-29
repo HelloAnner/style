@@ -24,3 +24,6 @@ browser-profile/
 
 # Logs
 *.log
+
+# Local Git worktrees and registry
+/.worktree/
