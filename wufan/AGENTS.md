@@ -52,6 +52,15 @@ Header、消息区、过程轨迹、反馈、右侧面板、执行结果通知�
 `SRC-012/013` 为准。Dark populated 与登录后 mobile 仍是 source-derived，禁止误写成已有
 像素 baseline。
 
+目标涉及账户管理、空间设置或运营后台时，必须直接读取
+`examples/reference/account-admin/README.md`、`WufanAccountAdmin.tsx`、
+`wufan-account-admin.css` 和 `spec.json`；接入真实数据时再读取
+`backend-contract.md`、`backend-contract.schema.json` 与 `backend-api.example.json`。
+必须保留展开/收起 Sidebar 的入口差异、developer plan 与服务端管理员白名单的授权差异，
+并以服务端已实现的 `/api/admin/teams` 为 canonical；不得静默沿用前端旧
+`/api/admin/tenants` 路径。该参考的 desktop 几何和双主题来自源码，mobile 是显式标注的
+source-derived 适配，不得冒充已有移动端像素 baseline。
+
 上述文件已建立初版，但目标范围仍须对照覆盖矩阵。只有 manifest 为 `complete` 且目标范围已 validated，才能无条件声称严格复刻。否则先向用户说明相关缺口；用户允许带缺口继续后，仍需记录推断和偏差。
 
 实现时先做业务语义映射，再按“资源/字体 → Token → 全局基础 → 布局 → 基础组件 → 复合组件 → 页面模式 → 业务页面 → 状态/响应式 → 双主题视觉回归”执行。不能只换颜色，不能用截图充当页面，不能用大量绝对定位硬描。

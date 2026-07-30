@@ -1,6 +1,6 @@
 # 来源与证据索引
 
-当前登记 **60** 项来源。`SRC-046`–`SRC-053` 是保留但已判定不稳定的首次自动截图，不应用作主题事实。
+当前登记 **61** 项来源。`SRC-046`–`SRC-053` 是保留但已判定不稳定的首次自动截图，不应用作主题事实。
 
 ## 关键来源
 
@@ -15,6 +15,7 @@
 - `SRC-058`：反馈、右侧面板与执行结果通知的用户指定跨系统参考源码子集。
 - `SRC-059`：Wufan 右侧“工作室”、文件画布、多标签与文件预览的用户授权源码子集。
 - `SRC-060`：Wufan 消息反馈、反馈 API 与执行结果通知的用户授权源码子集。
+- `SRC-061`：Wufan 账户设置、Sidebar 入口、运营平台与 admin API 的用户授权源码子集。
 
 ## 完整清单
 
@@ -784,3 +785,17 @@
 - 授权类别：`explicit`
 - 备注：用于校正 Wufan 原生消息反馈 UI/API 和 AutomationToast；固定原因选择器仍保留为用户指定的
   SRC-058 跨系统增强交互。
+
+### SRC-061
+- 类型：`source`
+- 原始来源：`/Users/anner/fine/ai/corevo` commit `14394dc7ca16aa13c62e8a089c6ffff4953424f3`
+- 本地路径：`null`（私有源码不复制进档案）
+- 主题：`shared`
+- 页面/路由：`web account settings, sidebar entry and /admin operations platform`
+- viewport / DPR：`n/a`
+- 状态：`static source analysis`
+- 获取时间：`2026-07-30T00:00:00Z`
+- SHA-256：`null`（逐文件哈希见 EVD-011）
+- 授权类别：`explicit`
+- 备注：只读核对 SettingsPage、Sidebar/CollapsedSidebar、App 路由、AdminPage、
+  admin API 和服务端 require_developer；记录入口、几何、可见标签、权限与接口命名冲突。

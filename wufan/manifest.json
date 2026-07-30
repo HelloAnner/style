@@ -1,20 +1,20 @@
 {
   "id": "wufan",
   "name": "悟帆 AI",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "status": "analyzed",
   "createdAt": "2026-07-26T14:43:19Z",
   "updatedAt": "2026-07-30T00:00:00Z",
-  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录小人、完整对话主路径、过程轨迹、反馈、右侧面板、工作室/文件预览和执行结果通知已有可运行代码参考，整体仍有登录态覆盖和像素回归缺口。",
+  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录小人、完整对话主路径、过程轨迹、反馈、右侧面板、工作室/文件预览、账户设置、运营平台和执行结果通知已有可运行代码参考，整体仍有登录态覆盖和像素回归缺口。",
   "referenceMode": "strict",
   "requiredThemes": [
     "light",
     "dark"
   ],
-  "sourceCount": 60,
+  "sourceCount": 61,
   "completion": {
-    "requiredItems": 19,
-    "completedItems": 11,
+    "requiredItems": 20,
+    "completedItems": 12,
     "openItems": 8,
     "blockingItems": 6,
     "openRequests": 8,
@@ -41,6 +41,7 @@
     "chatRuntimeContract": "examples/reference/chat-page/runtime-contract.md",
     "chatInteractionContract": "examples/reference/chat-page/interaction-contract.md",
     "workspaceFilePreview": "examples/reference/chat-page/WufanWorkspaceFiles.tsx",
+    "accountAdmin": "examples/reference/account-admin/README.md",
     "implementation": "system/implementation.md",
     "acceptance": "quality/acceptance.md",
     "todo": "quality/TODO.md",
@@ -49,8 +50,8 @@
   },
   "lastValidated": {
     "at": "2026-07-30T00:00:00Z",
-    "scope": "Product chat process trace, feedback, right panels, workspace file preview, execution notifications / light desktop actual / source-derived dark and mobile",
-    "result": "passed within reusable chat-interactions and file-preview reference scope"
+    "scope": "Product chat interactions, workspace studio, account settings and admin platform / light-dark desktop actual / source-derived mobile",
+    "result": "passed within reusable chat, workspace, account and admin reference scope"
   },
   "sources": [
     {
@@ -1047,6 +1048,21 @@
       "collectedAt": "2026-07-30T00:00:00Z",
       "authorized": "explicit",
       "notes": "Wufan-native message feedback UI/API and AutomationToast source correction. Raw private source not copied; per-file hashes and mapping in EVD-009."
+    },
+    {
+      "id": "SRC-061",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/corevo at commit 14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "web account settings, sidebar entry and /admin operations platform",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "Raw private source not copied; per-file hashes, entry chain, permission mismatch and API mapping in EVD-011."
     }
   ]
 }

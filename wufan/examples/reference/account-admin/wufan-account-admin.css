@@ -1,0 +1,1198 @@
+.wufan-account-admin {
+  --waa-bg-primary: #faf9f7;
+  --waa-bg-secondary: #ffffff;
+  --waa-bg-tertiary: #f5f4f2;
+  --waa-hover: rgba(0, 0, 0, 0.045);
+  --waa-hover-strong: rgba(0, 0, 0, 0.08);
+  --waa-text-primary: #1a1a1a;
+  --waa-text-secondary: #3a3a3a;
+  --waa-text-muted: #7a7a7a;
+  --waa-border: rgba(0, 0, 0, 0.06);
+  --waa-modal-backdrop: rgba(0, 0, 0, 0.4);
+  --waa-modal-bg: #ffffff;
+  --waa-modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --waa-positive: #168a55;
+  --waa-positive-bg: #e9f8f0;
+  --waa-negative: #d64545;
+  --waa-negative-bg: #fff0f0;
+  color: var(--waa-text-primary);
+  color-scheme: light;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wufan-account-admin[data-theme="dark"] {
+  --waa-bg-primary: #0a0a0f;
+  --waa-bg-secondary: #121218;
+  --waa-bg-tertiary: #16161c;
+  --waa-hover: rgba(255, 255, 255, 0.055);
+  --waa-hover-strong: rgba(255, 255, 255, 0.1);
+  --waa-text-primary: #fafafa;
+  --waa-text-secondary: #e4e4e7;
+  --waa-text-muted: #71717a;
+  --waa-border: rgba(255, 255, 255, 0.06);
+  --waa-modal-backdrop: rgba(0, 0, 0, 0.7);
+  --waa-modal-bg: #121218;
+  --waa-modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --waa-positive: #6ee7a8;
+  --waa-positive-bg: rgba(34, 197, 94, 0.12);
+  --waa-negative: #ff8b8b;
+  --waa-negative-bg: rgba(239, 68, 68, 0.12);
+  color-scheme: dark;
+}
+
+.wufan-account-admin *,
+.wufan-account-admin *::before,
+.wufan-account-admin *::after {
+  box-sizing: border-box;
+}
+
+.wufan-account-admin button,
+.wufan-account-admin input,
+.wufan-account-admin select {
+  font: inherit;
+}
+
+.wufan-settings-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: var(--waa-modal-backdrop);
+  animation: wufan-settings-fade 150ms ease-out;
+}
+
+.wufan-settings-modal {
+  display: flex;
+  width: 840px;
+  height: 600px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  overflow: hidden;
+  border: 1px solid var(--waa-border);
+  border-radius: 20px;
+  background: var(--waa-modal-bg);
+  box-shadow: var(--waa-modal-shadow);
+  animation: wufan-settings-scale 150ms ease-out;
+}
+
+@keyframes wufan-settings-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wufan-settings-scale {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.wufan-settings-nav {
+  display: flex;
+  width: 220px;
+  flex: 0 0 220px;
+  flex-direction: column;
+  padding: 20px 12px;
+  overflow-y: auto;
+  border-right: 1px solid var(--waa-border);
+  background: var(--waa-bg-tertiary);
+}
+
+.wufan-settings-nav h2 {
+  margin: 0 0 20px;
+  padding: 0 10px;
+  color: var(--waa-text-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.wufan-settings-section-label {
+  margin-bottom: 6px;
+  color: var(--waa-text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.wufan-settings-nav > .wufan-settings-section-label {
+  padding: 0 10px;
+}
+
+.wufan-settings-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.wufan-settings-nav nav:last-child {
+  margin-bottom: 0;
+}
+
+.wufan-settings-nav nav button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  transition: color 150ms, background 150ms;
+}
+
+.wufan-settings-nav nav button:hover,
+.wufan-settings-nav nav button[data-active="true"] {
+  background: var(--waa-hover);
+  color: var(--waa-text-primary);
+}
+
+.wufan-settings-nav nav button[data-active="true"] {
+  font-weight: 500;
+}
+
+.wufan-settings-current-space {
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  overflow: hidden;
+  border: 1px solid var(--waa-border);
+  border-radius: 10px;
+  background: var(--waa-bg-tertiary);
+  color: var(--waa-text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wufan-settings-main {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.wufan-settings-main > header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+}
+
+.wufan-settings-main > header h3 {
+  margin: 0;
+  color: var(--waa-text-primary);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.wufan-settings-main > header button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+}
+
+.wufan-settings-main > header button:hover {
+  background: var(--waa-hover);
+  color: var(--waa-text-primary);
+}
+
+.wufan-settings-content {
+  min-height: 0;
+  flex: 1;
+  padding: 4px 28px 28px;
+  overflow-y: auto;
+}
+
+.wufan-settings-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wufan-settings-stack--wide {
+  gap: 28px;
+}
+
+.wufan-settings-stack--subscription {
+  gap: 24px;
+}
+
+.wufan-settings-field-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--waa-border);
+}
+
+.wufan-settings-field-row small,
+.wufan-settings-space-card small,
+.wufan-settings-api-card small,
+.wufan-settings-member small,
+.wufan-settings-danger small {
+  display: block;
+  color: var(--waa-text-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.wufan-settings-field-row small {
+  margin-bottom: 4px;
+}
+
+.wufan-settings-field-row strong {
+  color: var(--waa-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wufan-settings-control-row {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wufan-settings-control-row + .wufan-settings-control-row {
+  margin-top: 12px;
+}
+
+.wufan-settings-segmented {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--waa-border);
+  border-radius: 20px;
+  background: var(--waa-bg-tertiary);
+}
+
+.wufan-settings-segmented button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.wufan-settings-segmented button[data-active="true"] {
+  background: var(--waa-hover-strong);
+  color: var(--waa-text-primary);
+  font-weight: 500;
+}
+
+.wufan-settings-secondary-button,
+.wufan-settings-admin-entry,
+.wufan-settings-invite button {
+  min-height: 38px;
+  padding: 8px 16px;
+  border: 1px solid var(--waa-border);
+  border-radius: 10px;
+  background: var(--waa-bg-tertiary);
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.wufan-settings-secondary-button:hover,
+.wufan-settings-admin-entry:hover {
+  border-color: var(--waa-text-muted);
+  color: var(--waa-text-primary);
+}
+
+.wufan-settings-space-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wufan-settings-space-card,
+.wufan-settings-create-space {
+  min-height: 164px;
+  padding: 16px;
+  border: 1px solid var(--waa-border);
+  border-radius: 12px;
+  background: var(--waa-bg-secondary);
+}
+
+.wufan-settings-space-card[data-current="true"] {
+  box-shadow: inset 0 0 0 1px var(--waa-text-muted);
+}
+
+.wufan-settings-space-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wufan-settings-space-card__head > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.wufan-settings-space-card strong,
+.wufan-settings-create-space strong,
+.wufan-settings-api-card strong,
+.wufan-settings-member strong {
+  display: block;
+  color: var(--waa-text-primary);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.wufan-settings-space-avatar {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6 52%, #3b82f6);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wufan-settings-current,
+.wufan-settings-role {
+  padding: 3px 7px;
+  border-radius: 10px;
+  background: var(--waa-hover);
+  color: var(--waa-text-muted);
+  font-size: 10px;
+}
+
+.wufan-settings-space-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 18px 0 12px;
+}
+
+.wufan-settings-space-stats span {
+  color: var(--waa-text-muted);
+  font-size: 11px;
+}
+
+.wufan-settings-space-stats b {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--waa-text-primary);
+  font-size: 15px;
+}
+
+.wufan-settings-create-space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  text-align: center;
+}
+
+.wufan-settings-create-space > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 8px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--waa-bg-tertiary);
+}
+
+.wufan-settings-create-space small {
+  margin-top: 4px;
+}
+
+.wufan-settings-subtabs {
+  display: flex;
+  gap: 4px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--waa-border);
+}
+
+.wufan-settings-subtabs button {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.wufan-settings-subtabs button[data-active="true"] {
+  background: var(--waa-hover);
+  color: var(--waa-text-primary);
+  font-weight: 600;
+}
+
+.wufan-settings-asset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wufan-settings-asset-list article,
+.wufan-settings-api-card,
+.wufan-settings-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--waa-border);
+  border-radius: 10px;
+  background: var(--waa-bg-secondary);
+}
+
+.wufan-settings-asset-list article > div,
+.wufan-settings-api-card > div,
+.wufan-settings-member > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.wufan-settings-asset-list article strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+}
+
+.wufan-settings-asset-list article small {
+  color: var(--waa-text-muted);
+  font-size: 11px;
+}
+
+.wufan-settings-asset-list article em,
+.wufan-settings-api-card > span,
+.wufan-settings-member em {
+  color: var(--waa-text-muted);
+  font-size: 11px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.wufan-settings-asset-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--waa-bg-tertiary);
+  color: var(--waa-text-secondary);
+}
+
+.wufan-settings-intro,
+.wufan-settings-hint {
+  margin: 0;
+  color: var(--waa-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.wufan-settings-api-card > div small {
+  margin-top: 3px;
+}
+
+.wufan-settings-api-card > button {
+  padding: 6px 12px;
+  border: 1px solid var(--waa-border);
+  border-radius: 7px;
+  background: var(--waa-bg-tertiary);
+  color: var(--waa-text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.wufan-settings-content-title {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.wufan-settings-quota {
+  margin: 12px 0 16px;
+}
+
+.wufan-settings-quota > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.wufan-settings-quota small {
+  color: var(--waa-text-muted);
+}
+
+.wufan-settings-quota__track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--waa-bg-tertiary);
+}
+
+.wufan-settings-quota__track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--waa-text-primary);
+  opacity: 0.72;
+}
+
+.wufan-settings-plan-card {
+  padding: 16px 20px;
+  border: 1px solid var(--waa-border);
+  border-radius: 12px;
+  background: var(--waa-bg-tertiary);
+}
+
+.wufan-settings-plan-card strong {
+  display: block;
+  color: var(--waa-text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wufan-settings-plan-card small {
+  display: block;
+  margin-top: 4px;
+  color: var(--waa-text-muted);
+  font-size: 12px;
+}
+
+.wufan-settings-price {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--waa-text-primary);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.wufan-settings-features {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--waa-text-muted);
+  font-size: 13px;
+  list-style: none;
+}
+
+.wufan-settings-features span {
+  margin-left: 7px;
+  color: var(--waa-text-secondary);
+}
+
+.wufan-settings-admin-entry {
+  width: 100%;
+}
+
+.wufan-settings-invite {
+  display: flex;
+  gap: 8px;
+}
+
+.wufan-settings-invite input {
+  min-width: 0;
+  height: 38px;
+  flex: 1;
+  padding: 0 11px;
+  border: 1px solid var(--waa-border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--waa-bg-secondary);
+  color: var(--waa-text-primary);
+}
+
+.wufan-settings-member em {
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--waa-bg-tertiary);
+}
+
+.wufan-settings-danger {
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--waa-negative) 24%, transparent);
+  border-radius: 10px;
+}
+
+.wufan-settings-danger > strong,
+.wufan-settings-danger > small {
+  display: block;
+}
+
+.wufan-settings-danger > small {
+  margin: 4px 0 12px;
+}
+
+.wufan-settings-danger button {
+  padding: 7px 12px;
+  border: 1px solid color-mix(in srgb, var(--waa-negative) 25%, transparent);
+  border-radius: 7px;
+  background: var(--waa-negative-bg);
+  color: var(--waa-negative);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.wufan-admin-page {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--waa-bg-primary);
+}
+
+.wufan-admin-header {
+  display: flex;
+  min-height: 57px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--waa-border);
+  background: var(--waa-bg-secondary);
+}
+
+.wufan-admin-header > div {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.wufan-admin-header > div button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.wufan-admin-header > div button:hover {
+  background: var(--waa-hover);
+  color: var(--waa-text-primary);
+}
+
+.wufan-admin-header > div strong {
+  color: var(--waa-text-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.wufan-admin-header nav {
+  display: flex;
+  min-width: 0;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wufan-admin-header nav::-webkit-scrollbar {
+  display: none;
+}
+
+.wufan-admin-header nav button {
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--waa-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: color 150ms, background 150ms;
+}
+
+.wufan-admin-header nav button[data-active="true"] {
+  background: var(--waa-text-primary);
+  color: var(--waa-bg-primary);
+  font-weight: 600;
+}
+
+.wufan-admin-main {
+  min-height: 0;
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+}
+
+.wufan-admin-stack {
+  display: flex;
+  min-width: 880px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wufan-admin-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wufan-admin-toolbar input,
+.wufan-admin-toolbar select {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--waa-border);
+  border-radius: 6px;
+  outline: none;
+  background: var(--waa-bg-secondary);
+  color: var(--waa-text-primary);
+  font-size: 13px;
+}
+
+.wufan-admin-toolbar input {
+  min-width: 220px;
+  flex: 1;
+}
+
+.wufan-admin-toolbar button,
+.wufan-admin-view-heading button {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--waa-border);
+  border-radius: 6px;
+  background: var(--waa-text-primary);
+  color: var(--waa-bg-primary);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wufan-admin-summary,
+.wufan-admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.wufan-admin-stat-grid {
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+}
+
+.wufan-admin-summary article,
+.wufan-admin-stat-grid article {
+  padding: 16px 20px;
+  border: 1px solid var(--waa-border);
+  border-radius: 10px;
+  background: var(--waa-bg-secondary);
+}
+
+.wufan-admin-summary small,
+.wufan-admin-stat-grid small {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--waa-text-muted);
+  font-size: 12px;
+}
+
+.wufan-admin-summary strong,
+.wufan-admin-stat-grid strong {
+  color: var(--waa-text-primary);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.wufan-admin-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--waa-border);
+  border-radius: 8px;
+}
+
+.wufan-admin-table-wrap table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.wufan-admin-table-wrap th {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--waa-border);
+  background: var(--waa-bg-secondary);
+  color: var(--waa-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.wufan-admin-table-wrap td {
+  max-width: 280px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--waa-border);
+  color: var(--waa-text-secondary);
+  line-height: 1.45;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.wufan-admin-table-wrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.wufan-admin-table-wrap tr:hover td {
+  background: var(--waa-hover);
+}
+
+.wufan-admin-table-wrap td small {
+  display: block;
+  margin-top: 2px;
+  color: var(--waa-text-muted);
+  font-size: 11px;
+}
+
+.wufan-admin-badge,
+.wufan-admin-sentiment {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--waa-hover);
+  color: var(--waa-text-secondary);
+  font-size: 11px;
+}
+
+.wufan-admin-sentiment[data-sentiment="positive"] {
+  background: var(--waa-positive-bg);
+  color: var(--waa-positive);
+}
+
+.wufan-admin-sentiment[data-sentiment="negative"] {
+  background: var(--waa-negative-bg);
+  color: var(--waa-negative);
+}
+
+.wufan-admin-preview {
+  display: block;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wufan-admin-categories {
+  display: flex;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.wufan-admin-categories em {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--waa-negative-bg);
+  color: var(--waa-negative);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.wufan-admin-view-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.wufan-admin-view-heading h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+
+.wufan-admin-view-heading p {
+  margin: 0;
+  color: var(--waa-text-muted);
+  font-size: 12px;
+}
+
+.wufan-admin-chart {
+  display: flex;
+  height: 280px;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 28px 38px;
+  border: 1px solid var(--waa-border);
+  border-radius: 10px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0, transparent 55px, var(--waa-border) 56px),
+    var(--waa-bg-secondary);
+}
+
+.wufan-admin-chart i {
+  width: 7%;
+  min-width: 28px;
+  border-radius: 6px 6px 2px 2px;
+  background: var(--waa-text-secondary);
+  opacity: 0.72;
+}
+
+.wufan-admin-chart i:nth-child(1) { height: 34%; }
+.wufan-admin-chart i:nth-child(2) { height: 52%; }
+.wufan-admin-chart i:nth-child(3) { height: 44%; }
+.wufan-admin-chart i:nth-child(4) { height: 73%; }
+.wufan-admin-chart i:nth-child(5) { height: 61%; }
+.wufan-admin-chart i:nth-child(6) { height: 86%; }
+.wufan-admin-chart i:nth-child(7) { height: 68%; }
+
+.wufan-account-demo-shell {
+  display: flex;
+  min-height: 100vh;
+  padding: 12px;
+  gap: 12px;
+  background: var(--waa-bg-primary);
+}
+
+.wufan-account-demo-shell > aside {
+  display: flex;
+  width: 240px;
+  flex: 0 0 240px;
+  flex-direction: column;
+  padding: 16px 8px 8px;
+  border: 1px solid var(--waa-border);
+  border-radius: 16px;
+  background: var(--waa-bg-secondary);
+}
+
+.wufan-account-demo-shell > aside > strong {
+  padding: 0 10px 18px;
+  font-size: 16px;
+}
+
+.wufan-account-demo-shell > aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wufan-account-demo-shell > aside nav button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--waa-text-secondary);
+  text-align: left;
+}
+
+.wufan-account-demo-shell > aside nav button:first-child {
+  background: var(--waa-bg-tertiary);
+  color: var(--waa-text-primary);
+}
+
+.wufan-account-user-entry {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--waa-text-primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.wufan-account-user-entry:hover {
+  background: var(--waa-hover);
+}
+
+.wufan-account-user-entry > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+  color: white;
+}
+
+.wufan-account-user-entry strong,
+.wufan-account-user-entry small {
+  display: block;
+}
+
+.wufan-account-user-entry strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wufan-account-user-entry small {
+  margin-top: 2px;
+  color: var(--waa-text-muted);
+  font-size: 10px;
+}
+
+.wufan-account-demo-shell > main {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  place-content: center;
+  place-items: center;
+  border: 1px solid var(--waa-border);
+  border-radius: 16px;
+  background: var(--waa-bg-secondary);
+  color: var(--waa-text-muted);
+}
+
+.wufan-account-demo-shell > main button {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--waa-text-primary);
+  color: var(--waa-bg-primary);
+}
+
+@media (max-width: 767px) {
+  .wufan-settings-backdrop {
+    align-items: stretch;
+    padding: 8px;
+  }
+
+  .wufan-settings-modal {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 16px;
+  }
+
+  .wufan-settings-nav {
+    width: 136px;
+    flex-basis: 136px;
+    padding: 16px 8px;
+  }
+
+  .wufan-settings-nav h2 {
+    padding: 0 8px;
+  }
+
+  .wufan-settings-nav nav button {
+    gap: 7px;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .wufan-settings-nav nav button svg {
+    width: 16px;
+  }
+
+  .wufan-settings-current-space {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .wufan-settings-main > header {
+    padding: 16px;
+  }
+
+  .wufan-settings-content {
+    padding: 2px 16px 20px;
+  }
+
+  .wufan-settings-space-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wufan-settings-control-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .wufan-settings-segmented button {
+    padding: 6px 10px;
+  }
+
+  .wufan-admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .wufan-admin-header nav {
+    width: 100%;
+  }
+
+  .wufan-admin-header nav button {
+    padding: 6px 12px;
+  }
+
+  .wufan-admin-main {
+    padding: 12px;
+  }
+
+  .wufan-admin-stack {
+    min-width: 760px;
+  }
+
+  .wufan-account-demo-shell > aside {
+    width: 72px;
+    flex-basis: 72px;
+  }
+
+  .wufan-account-demo-shell > aside > strong {
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  .wufan-account-demo-shell > aside > strong::before {
+    content: "悟";
+    font-size: 16px;
+  }
+
+  .wufan-account-demo-shell > aside nav button {
+    overflow: hidden;
+    padding: 0 8px;
+    font-size: 0;
+  }
+
+  .wufan-account-user-entry {
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .wufan-account-user-entry div {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wufan-settings-backdrop,
+  .wufan-settings-modal {
+    animation: none;
+  }
+}

@@ -78,6 +78,7 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 - Composer r16，textarea 24–160；
 - trace summary 34；note/tool row 30；反馈 action24/r4；点踩 popover300；
 - 右面板 380–560/约 50%；工作室 Header56、tab36、canvas file cell160；执行通知340；
+- Settings modal 840×600/nav220；Admin fixed full viewport/header p12×24/main p24；
 - spacing 与 radius 只使用档案比例尺。
 
 ## 4. Marketing 接入
@@ -91,6 +92,10 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 - 源码 Logo 仍含 Moss，当前视觉为悟帆 AI 字标；
 - 本地 `AuthPage.tsx` 没有当前登录小人；聊天 `EmptyState` 的流体头像也不是它；
 - 复刻当前产品时不得照搬这些旧组件。登录小人以 SRC-013/EVD-006/参考组件为准。
+- 账户/Admin 直接复用 `../examples/reference/account-admin/`；admin 入口由服务端 capability
+  控制，页面路由和 `/api/admin/*` 都要独立鉴权。
+- admin tenant API 先确认部署版本；当前归档 commit 服务端 canonical 为
+  `/api/admin/teams`，不是旧前端 helper 的 `/api/admin/tenants`。
 
 ## 6. 禁止近似
 

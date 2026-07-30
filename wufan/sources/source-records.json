@@ -994,6 +994,21 @@
       "collectedAt": "2026-07-30T00:00:00Z",
       "authorized": "explicit",
       "notes": "Wufan-native message feedback UI/API and AutomationToast source correction. Raw private source was not copied; per-file hashes and mapping are recorded in EVD-009."
+    },
+    {
+      "id": "SRC-061",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/corevo at commit 14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "web account settings, sidebar entry and /admin operations platform",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "Wufan-native Settings/Admin source subset. Raw private source was not copied; per-file hashes, entry chain, permission mismatch and API mapping are recorded in EVD-011."
     }
   ]
 }

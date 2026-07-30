@@ -252,3 +252,27 @@ Dark、desktop 外层上下文、hover、tab 切换和滚动状态未覆盖。
 `examples/reference/chat-page/interaction-contract.md`。
 
 `Observed · exact-source + local actual · high · SRC-059, EVD-010`
+
+## 16. Account Settings
+
+- portal 到 body；backdrop z100，light `.4` / dark `.7`；
+- panel 840×600/r20；左 nav 220px；
+- group label 11/500；nav 13px、p8×10/r8/gap10；
+- content title 17/600；close 30×30/r8；
+- 七标签：个人信息、加入的空间、资产、接入 API、用量、订阅、空间管理；
+- 进入 150ms fade，panel 同时 scale `.97→1`。
+
+`Observed · exact-source + local actual · high · SRC-061, EVD-011`
+
+## 17. Admin Platform
+
+- `/admin` fixed inset0/z9999；
+- Header p12×24；返回 p4×8/r4；标题 15/600；
+- 11 个可见 nav，p6×16/r6/gap4；active 黑白反转；
+- 默认 `token_usage`；`dashboard/tenants` 源码存在但 nav 不可达；
+- stat card p16×20/r10；panel p16/r10；table shell r8；th/td p10×14；
+- 反馈闭环表格展示 sentiment、categories、content、消息预览与关联用户/Agent。
+
+入口位于 Settings→订阅。UI 的 developer plan 条件不能替代服务端 email 白名单/RBAC。
+
+`Observed · exact-source + local actual · high · SRC-061, EVD-011`

@@ -79,3 +79,22 @@ Desktop 使用“品牌叙事左区 + 人格图形 + 表单右卡”；mobile �
 - 产品发布/品牌官网 → Marketing；
 - 通知/更新 → 当前线上更新中心；
 - 业务字段、文案、模块数量可变；视觉值和同语义组件不可变。
+
+## 12. 账户设置
+
+展开 Sidebar 点击底部用户行进入；收起 Sidebar 可点齿轮或头像。Settings 是
+`840×600` portal modal，左 220px 导航分“我的账户/当前空间”，右侧滚动内容。
+个人信息、空间、资产、BYOK、用量、订阅与空间管理在同一 modal 内切换，不跳多个页面。
+`SRC-061, EVD-011`
+
+运营入口位于“订阅”，不是一级 Sidebar 项。源码显示条件
+`plan === developer && onOpenAdmin` 不等于真实授权；后端按管理员白名单校验。消费实现应由
+服务端 capability 控制展示，并保留 `/api/admin/*` 403。收起 Sidebar 当前没有传
+`onOpenAdmin`，这一差异不能静默忽略。
+
+## 13. 运营平台
+
+`/admin` 为 fixed 全屏独立路由，Header 左侧返回/标题，右侧 11 标签；默认进入 Token 用量。
+卡片、筛选、表格为统一中性 Product 组件，反馈闭环可以查看管理员权限范围内的
+`sentiment/categories/content`。源码保留 `dashboard/tenants` 代码但 nav 不可达，不应额外
+暴露。前端旧 `/tenants` 与服务端 `/teams` 冲突见 backend contract。`SRC-061, EVD-011`

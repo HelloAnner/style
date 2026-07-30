@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>悟帆账户与运营平台参考</title>
+    <link rel="stylesheet" href="./wufan-account-admin.css" />
+    <style>
+      html, body { margin: 0; min-height: 100%; }
+      body { overflow: hidden; }
+      .demo-switch {
+        position: fixed; right: 16px; bottom: 16px; z-index: 10001;
+        display: flex; gap: 4px; padding: 4px; border-radius: 10px;
+        border: 1px solid var(--waa-border); background: var(--waa-modal-bg);
+        box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      }
+      .demo-switch button {
+        height: 28px; padding: 0 9px; border: 0; border-radius: 7px;
+        background: transparent; color: var(--waa-text-muted); font-size: 11px; cursor: pointer;
+      }
+      .demo-switch button[data-active="true"] {
+        background: var(--waa-text-primary); color: var(--waa-bg-primary);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="wufan-account-admin" data-theme="light">
+      <div class="wufan-account-demo-shell" id="app-shell">
+        <aside>
+          <strong>悟帆AI</strong>
+          <nav><button>＋ 新任务</button><button>自动化</button><button>AI 员工</button><button>价值中心</button></nav>
+          <button type="button" class="wufan-account-user-entry" id="user-entry">
+            <span>午</span><div><strong>午饭示例</strong><small>个人空间</small></div>
+          </button>
+        </aside>
+        <main><p>点击左下角用户信息进入账户设置</p><button type="button" id="open-settings">打开设置</button></main>
+      </div>
+      <div id="settings-host"></div>
+      <div id="admin-host"></div>
+      <div class="demo-switch" aria-label="演示控制">
+        <button data-view="settings">设置</button>
+        <button data-view="admin">运营平台</button>
+        <button id="theme-toggle">暗色</button>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const root = document.querySelector("#root");
+        const settingsHost = document.querySelector("#settings-host");
+        const adminHost = document.querySelector("#admin-host");
+        const appShell = document.querySelector("#app-shell");
+        const params = new URLSearchParams(location.search);
+        let theme = params.get("theme") === "dark" ? "dark" : "light";
+        let view = ["app", "settings", "admin"].includes(params.get("view")) ? params.get("view") : "settings";
+        let settingsTab = params.get("tab") || "profile";
+        let adminTab = params.get("adminTab") || "token_usage";
+
+        const icons = {
+          user: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>',
+          spaces: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
+          assets: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+          api: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0ZM12 18v4"/></svg>',
+          chart: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>',
+          card: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>',
+          gear: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>',
+          close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6 18 18M18 6 6 18"/></svg>'
+        };
+
+        const settingsTabs = [
+          ["profile", "个人信息", "user"], ["spaces", "加入的空间", "spaces"],
+          ["assets", "资产", "assets"], ["my-api", "接入 API", "api"],
+          ["usage", "用量", "chart"], ["subscription", "订阅", "card"],
+          ["space-mgmt", "空间管理", "gear"]
+        ];
+        const titles = Object.fromEntries(settingsTabs.map(x => [x[0], x[1]]));
+        const adminTabs = [
+          ["messages", "消息日志"], ["token_usage", "Token用量"], ["performance", "性能监控"],
+          ["feedback", "反馈闭环"], ["mcp_clients", "MCP接入"], ["troubleshoot", "问题排查"],
+          ["tools", "工具统计"], ["user_activity", "用户活跃"], ["realtime", "实时监控"],
+          ["system", "系统"], ["showcase", "案例管理"]
+        ];
+
+        function field(label, value) {
+          return `<div class="wufan-settings-field-row"><small>${label}</small><strong>${value}</strong></div>`;
+        }
+
+        function settingsContent(tab) {
+          if (tab === "profile") return `
+            <div class="wufan-settings-stack wufan-settings-stack--wide">
+              <div>${field("邮箱", "demo@example.com")}${field("姓名", "午饭示例")}</div>
+              <div><div class="wufan-settings-section-label">外观</div>
+                <div class="wufan-settings-control-row"><span>主题</span><div class="wufan-settings-segmented">
+                  <button data-set-theme="light" data-active="${theme === "light"}">☀ 亮色</button>
+                  <button data-set-theme="dark" data-active="${theme === "dark"}">◐ 暗色</button></div></div>
+                <div class="wufan-settings-control-row"><span>语言</span><div class="wufan-settings-segmented">
+                  <button data-active="true">中文</button><button data-active="false">English</button></div></div>
+              </div>
+              <div><div class="wufan-settings-section-label">其他</div><button class="wufan-settings-secondary-button">退出登录</button></div>
+            </div>`;
+          if (tab === "spaces") return `<div class="wufan-settings-space-grid">
+            ${[
+              ["午饭示例的空间", "个人空间", 1, 4, 12, true],
+              ["增长研究组", "团队空间", 8, 6, 21, false]
+            ].map(s => `<article class="wufan-settings-space-card" data-current="${s[5]}">
+              <div class="wufan-settings-space-card__head"><span class="wufan-settings-space-avatar">${s[0][0]}</span><div><strong>${s[0]}</strong><small>${s[1]}</small></div>${s[5] ? '<span class="wufan-settings-current">当前</span>' : ""}</div>
+              <div class="wufan-settings-space-stats"><span><b>${s[2]}</b>成员</span><span><b>${s[3]}</b>Agent</span><span><b>${s[4]}</b>技能</span></div><span class="wufan-settings-role">${s[5] ? "Pro" : "管理员"}</span>
+            </article>`).join("")}
+            <button class="wufan-settings-create-space"><span>＋</span><strong>创建团队空间</strong><small>创建并管理你的团队协作空间</small></button>
+          </div>`;
+          if (tab === "assets") return `<div class="wufan-settings-stack">
+            <div class="wufan-settings-subtabs"><button data-active="true">工具</button><button>技能</button><button>伙伴</button><button>自动化</button><button>卡片</button></div>
+            <div class="wufan-settings-asset-list">${[
+              ["企业信息搜索", "检索并核验企业公开信息", "已启用"],
+              ["文件创作", "生成和编辑工作室文件", "已启用"],
+              ["浏览器", "执行网页访问与交互", "内核级"]
+            ].map(a => `<article><span class="wufan-settings-asset-icon">${icons.gear}</span><div><strong>${a[0]}</strong><small>${a[1]}</small></div><em>${a[2]}</em></article>`).join("")}</div>
+          </div>`;
+          if (tab === "my-api") return `<div class="wufan-settings-stack"><p class="wufan-settings-intro">接入自己的 API Key，对话资源不受每日配额限制。大模型接入后会在 Agent 模型选择器中出现为“个人接入”选项。</p>
+            ${[["大模型","智谱 AI","接入后可在 Agent 模型选择器中使用，不消耗官方配额","已连接"],["生成图片","火山引擎","接入后，生图工具不受每日配额限制","接入"],["生成视频","火山引擎","接入后，视频工具不受每日配额限制","接入"],["网络搜索","Tavily","接入后，搜索工具不受每日配额限制","接入"]].map(p => `<article class="wufan-settings-api-card"><div><strong>${p[0]}</strong><small>${p[2]}</small></div><span>${p[1]}</span><button>${p[3]}</button></article>`).join("")}
+          </div>`;
+          if (tab === "usage") return `<div class="wufan-settings-stack"><div><strong class="wufan-settings-content-title">今日用量</strong><p class="wufan-settings-hint">每日 00:00 (UTC+8) 重置</p></div>
+            ${["对话","工具"].map((g, gi) => `<div><div class="wufan-settings-section-label">${g}</div>${(gi ? [["生成图片",3,10],["生成视频",1,3],["网络搜索",24,30]] : [["GLM-5 对话",18,30],["Claude Haiku 对话",8,30],["Claude Sonnet 对话",11,30]]).map(q => `<div class="wufan-settings-quota"><div><span>${q[0]}</span><small>${q[1]} / ${q[2]}</small></div><div class="wufan-settings-quota__track"><i style="width:${q[1]/q[2]*100}%"></i></div></div>`).join("")}</div>`).join("")}
+          </div>`;
+          if (tab === "subscription") return `<div class="wufan-settings-stack wufan-settings-stack--subscription">
+            <div><div class="wufan-settings-section-label">当前计划</div><div class="wufan-settings-plan-card"><strong>开发者版</strong><small>所有功能与配额无限制</small></div></div>
+            <div><strong class="wufan-settings-price">∞</strong><p class="wufan-settings-hint">开发者专享，全部功能无限制</p></div>
+            <div><div class="wufan-settings-section-label">包含功能</div><ul class="wufan-settings-features">${["无限 Agent","所有模型无限对话","所有工具无限调用","支持接入自有 API","优先体验新功能"].map(f => `<li>✓ <span>${f}</span></li>`).join("")}</ul></div>
+            <button class="wufan-settings-admin-entry" id="admin-entry">运营平台</button>
+          </div>`;
+          return `<div class="wufan-settings-stack">
+            <div><div class="wufan-settings-section-label">空间信息</div>${field("空间名称","午饭示例的空间")}${field("类型","个人空间")}${field("计划","开发者版")}</div>
+            <div><div class="wufan-settings-section-label">邀请成员</div><div class="wufan-settings-invite"><input placeholder="输入邮箱地址"><button>邀请</button></div></div>
+            <div><div class="wufan-settings-section-label">成员列表</div><div class="wufan-settings-member"><span class="wufan-settings-space-avatar">午</span><div><strong>午饭示例</strong><small>demo@example.com</small></div><em>所有者</em></div></div>
+            <div class="wufan-settings-danger"><div class="wufan-settings-section-label">危险操作</div><strong>删除此空间</strong><small>删除后所有成员将被移出，操作不可撤销</small><button>删除空间</button></div>
+          </div>`;
+        }
+
+        function renderSettings() {
+          const navItem = ([id, label, icon]) => `<button data-settings-tab="${id}" data-active="${settingsTab === id}">${icons[icon]}${label}</button>`;
+          settingsHost.innerHTML = `<div class="wufan-settings-backdrop"><section class="wufan-settings-modal" role="dialog" aria-modal="true" aria-label="设置">
+            <aside class="wufan-settings-nav"><h2>设置</h2><div class="wufan-settings-section-label">我的账户</div><nav>${settingsTabs.slice(0,2).map(navItem).join("")}</nav>
+              <div class="wufan-settings-section-label">当前空间</div><div class="wufan-settings-current-space">午饭示例的空间</div><nav>${settingsTabs.slice(2).map(navItem).join("")}</nav></aside>
+            <main class="wufan-settings-main"><header><h3>${titles[settingsTab]}</h3><button id="settings-close" aria-label="关闭设置">${icons.close}</button></header>
+              <div class="wufan-settings-content">${settingsContent(settingsTab)}</div></main></section></div>`;
+          settingsHost.querySelectorAll("[data-settings-tab]").forEach(button => button.addEventListener("click", () => { settingsTab = button.dataset.settingsTab; renderSettings(); }));
+          settingsHost.querySelectorAll("[data-set-theme]").forEach(button => button.addEventListener("click", () => { theme = button.dataset.setTheme; applyTheme(); renderSettings(); }));
+          settingsHost.querySelector("#settings-close").addEventListener("click", () => setView("app"));
+          settingsHost.querySelector(".wufan-settings-backdrop").addEventListener("mousedown", e => e.target === e.currentTarget && setView("app"));
+          settingsHost.querySelector("#admin-entry")?.addEventListener("click", () => setView("admin"));
+        }
+
+        const tokenRows = [
+          ["demo@example.com","客户洞察助手","claude-sonnet-4-5","平台","18,640","4,236","22,876","2026-07-30 10:32"],
+          ["analyst@example.com","周报整理助手","glm-5","团队","9,842","2,113","11,955","2026-07-30 09:18"],
+          ["owner@example.com","项目复盘助手","claude-haiku-4-5","平台","5,312","1,406","6,718","2026-07-29 18:46"]
+        ];
+
+        function table(headers, rows) {
+          return `<div class="wufan-admin-table-wrap"><table><thead><tr>${headers.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map((c,i) => `<td>${i === 3 && ["平台","团队"].includes(c) ? `<span class="wufan-admin-badge">${c}</span>` : c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+        }
+
+        function adminContent(tab) {
+          if (tab === "token_usage") return `<div class="wufan-admin-stack">
+            <div class="wufan-admin-toolbar"><input placeholder="搜索用户邮箱"><select><option>全部模型</option></select><select><option>全部来源</option></select><button>导出</button></div>
+            <div class="wufan-admin-summary"><article><small>Token 总量</small><strong>41,549</strong></article><article><small>Prompt Token</small><strong>33,794</strong></article><article><small>Completion Token</small><strong>7,755</strong></article></div>
+            ${table(["用户","Agent","模型","来源","Prompt","Completion","总量","时间"], tokenRows)}
+          </div>`;
+          if (tab === "feedback") return `<div class="wufan-admin-stack">
+            <div class="wufan-admin-summary"><article><small>反馈总数</small><strong>2</strong></article><article><small>点赞</small><strong>1</strong></article><article><small>点踩</small><strong>1</strong></article></div>
+            <div class="wufan-admin-toolbar"><input placeholder="用户邮箱"><select><option>全部反馈</option><option>点赞</option><option>点踩</option></select><button>查询</button></div>
+            <div class="wufan-admin-table-wrap"><table><thead><tr><th>倾向</th><th>用户 / Agent</th><th>会话</th><th>消息与原因</th><th>反馈内容</th><th>时间</th></tr></thead><tbody>
+              <tr><td><span class="wufan-admin-sentiment" data-sentiment="negative">点踩</span></td><td>demo@example.com<small>客户洞察助手</small></td><td>查询空间信息</td><td><span class="wufan-admin-preview">建议优先推进数据协同与渠道分析……</span><div class="wufan-admin-categories"><em>数据不准</em><em>分析不深</em></div></td><td>主体信息的更新时间不一致</td><td>2026-07-30 10:36</td></tr>
+              <tr><td><span class="wufan-admin-sentiment" data-sentiment="positive">点赞</span></td><td>analyst@example.com<small>周报整理助手</small></td><td>整理本周项目进展</td><td>本周三个项目节点均已汇总……</td><td>—</td><td>2026-07-30 09:24</td></tr>
+            </tbody></table></div>
+          </div>`;
+          const labels = Object.fromEntries(adminTabs);
+          const descriptions = {
+            messages:"按用户、会话、Agent、角色与关键词检索消息", performance:"观察执行耗时、首字延迟、Token 与模型分布",
+            mcp_clients:"管理 Client、Token、工具授权、Agent 绑定与审计日志", troubleshoot:"按关键词、用户与时间定位异常执行",
+            tools:"查看调用量、成功率、平均耗时与失败率", user_activity:"查看新增、活跃、查询量和用户排名",
+            realtime:"在线用户、运行任务和近期会话", system:"Redis、PostgreSQL 与磁盘健康状态", showcase:"维护案例集合、草稿、发布状态与排序"
+          };
+          const cards = ["performance","user_activity","realtime"].includes(tab) ? `<div class="wufan-admin-stat-grid">${[["执行总量","2,846"],["完成率","96.8%"],["工具调用","8,421"],["平均 Token","18,640"]].map(c => `<article><small>${c[0]}</small><strong>${c[1]}</strong></article>`).join("")}</div>` : "";
+          const chart = tab === "performance" ? '<div class="wufan-admin-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>' : "";
+          return `<div class="wufan-admin-stack"><div class="wufan-admin-view-heading"><div><h2>${labels[tab]}</h2><p>${descriptions[tab] || ""}</p></div><button>${tab === "mcp_clients" ? "+ 新建" : "刷新"}</button></div>${cards}${chart}
+            ${table(["对象","用户","Agent","状态","指标","更新时间"], Array.from({length:4},(_,i)=>[`${labels[tab]}示例 ${i+1}`,"demo@example.com","小悟",i ? "正常":"运行中","—","2026-07-30 10:32"]))}</div>`;
+        }
+
+        function renderAdmin() {
+          adminHost.innerHTML = `<section class="wufan-admin-page"><header class="wufan-admin-header"><div><button id="admin-back">‹ 返回</button><strong>运营平台</strong></div>
+            <nav>${adminTabs.map(([id,label]) => `<button data-admin-tab="${id}" data-active="${adminTab === id}">${label}</button>`).join("")}</nav></header>
+            <main class="wufan-admin-main">${adminContent(adminTab)}</main></section>`;
+          adminHost.querySelector("#admin-back").addEventListener("click", () => setView("app"));
+          adminHost.querySelectorAll("[data-admin-tab]").forEach(button => button.addEventListener("click", () => { adminTab = button.dataset.adminTab; renderAdmin(); }));
+        }
+
+        function applyTheme() {
+          root.dataset.theme = theme;
+          document.querySelector("#theme-toggle").textContent = theme === "light" ? "暗色" : "亮色";
+        }
+
+        function setView(next) {
+          view = next;
+          appShell.hidden = next !== "app";
+          settingsHost.innerHTML = "";
+          adminHost.innerHTML = "";
+          if (next === "settings") renderSettings();
+          if (next === "admin") renderAdmin();
+          document.querySelectorAll("[data-view]").forEach(button => button.dataset.active = String(button.dataset.view === next));
+        }
+
+        document.querySelector("#user-entry").addEventListener("click", () => setView("settings"));
+        document.querySelector("#open-settings").addEventListener("click", () => setView("settings"));
+        document.querySelectorAll("[data-view]").forEach(button => button.addEventListener("click", () => setView(button.dataset.view)));
+        document.querySelector("#theme-toggle").addEventListener("click", () => { theme = theme === "light" ? "dark" : "light"; applyTheme(); setView(view); });
+        document.addEventListener("keydown", event => event.key === "Escape" && view === "settings" && setView("app"));
+        applyTheme();
+        setView(view);
+      })();
+    </script>
+  </body>
+</html>

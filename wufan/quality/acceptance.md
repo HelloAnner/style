@@ -45,6 +45,12 @@
 - [ ] 工作区/执行链/自动化入口互斥；桌面右面板压缩 Chat、关闭 300ms，mobile fixed inset8。
 - [ ] 工作室标题、56px header、36px tabs、常驻文件画布、共享/会话分组、8 文件标签上限、
   loading/slow/error/retry、编辑/render/下载/分享/最大化与 SRC-059 一致。
+- [ ] Settings 从正确 Sidebar 入口打开；840×600/r20、220px nav、七标签与 150ms 动画正确。
+- [ ] “运营平台”只在服务端 capability 允许时展示；`/admin` route 与所有 API 仍独立处理
+  401/403，不能只检查 developer plan。
+- [ ] Admin 只显示当前 11 个可见标签，默认 Token 用量；dashboard/tenants 不因残留代码误露出。
+- [ ] Admin Header、nav、stat cards、table 和反馈 categories/content 与 SRC-061 一致。
+- [ ] 部署接入前已解决 `/api/admin/tenants` 与 `/api/admin/teams` 的版本映射。
 - [ ] 执行结果通知分别显示“执行完成/执行异常”，5s 自动关闭、hover 暂停、300ms 进出场，
   “查看详情”按 reference 打开正确面板/会话。
 

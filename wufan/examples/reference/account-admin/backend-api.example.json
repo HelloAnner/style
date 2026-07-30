@@ -1,0 +1,93 @@
+{
+  "auth_me": {
+    "user": {
+      "id": "user_demo_01",
+      "email": "demo@example.com",
+      "name": "午饭示例",
+      "source": "password"
+    },
+    "team": {
+      "id": "team_demo_01",
+      "name": "午饭示例的空间",
+      "plan": "developer",
+      "is_personal": true
+    },
+    "capabilities": {
+      "admin_platform": true,
+      "manage_space": true,
+      "manage_billing": true
+    }
+  },
+  "quota_status": {
+    "quotas": {
+      "chat:glm-5": {
+        "used": 18,
+        "limit": 30,
+        "remaining": 12,
+        "byok": false
+      },
+      "chat:claude-sonnet-4-5": {
+        "used": 11,
+        "limit": 0,
+        "remaining": 0,
+        "byok": true
+      }
+    },
+    "resets_at": "2026-07-31T00:00:00+08:00"
+  },
+  "admin_token_usage": {
+    "items": [
+      {
+        "id": "usage_01",
+        "user_email": "demo@example.com",
+        "agent_name": "客户洞察助手",
+        "model": "claude-sonnet-4-5",
+        "source_type": "platform",
+        "prompt_tokens": 18640,
+        "completion_tokens": 4236,
+        "total_tokens": 22876,
+        "created_at": "2026-07-30T10:32:41+08:00"
+      }
+    ],
+    "summary": {
+      "total_tokens": 22876,
+      "prompt_tokens": 18640,
+      "completion_tokens": 4236
+    },
+    "page": 1,
+    "page_size": 50,
+    "total": 1
+  },
+  "admin_feedback": {
+    "items": [
+      {
+        "id": "feedback_01",
+        "sentiment": "negative",
+        "content": "主体信息的更新时间不一致",
+        "categories": [
+          "数据不准",
+          "分析不深"
+        ],
+        "team_id": "team_demo_01",
+        "team_name": "午饭示例的空间",
+        "user_id": "user_demo_01",
+        "user_email": "demo@example.com",
+        "agent_id": "agent_demo_01",
+        "agent_name": "客户洞察助手",
+        "session_id": "session_demo_01",
+        "session_title": "查询空间信息",
+        "message_id": "message_demo_01",
+        "message_preview": "建议优先推进数据协同与渠道分析……",
+        "created_at": "2026-07-30T10:36:12+08:00"
+      }
+    ],
+    "summary": {
+      "total_count": 1,
+      "positive_count": 0,
+      "negative_count": 1
+    },
+    "page": 1,
+    "page_size": 50,
+    "total": 1
+  }
+}

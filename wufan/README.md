@@ -6,9 +6,9 @@ Product 是暖白/近黑双主题、低对比 surface、紧凑圆角和紫蓝 Ag
 
 ## 档案状态
 
-- 状态：`analyzed`（v0.6.0）
+- 状态：`analyzed`（v0.7.0）
 - 结论：已完成第一轮网站、截图、源码、运行时 CSS 和双主题 Token 深度分析；登录页小人、
-  对话主路径、过程轨迹、反馈、右侧工作室/文件预览和执行结果通知已有可运行参考；
+  对话主路径、过程轨迹、反馈、右侧工作室/文件预览、账户设置、运营平台和执行结果通知已有可运行参考；
   **尚未 complete，不能对所有页面保证完全复刻**。
 - 完成率与 blocker：以 `manifest.json` 和 `quality/TODO.md` 为准。
 
@@ -44,6 +44,9 @@ Product 是暖白/近黑双主题、低对比 surface、紧凑圆角和紫蓝 Ag
 - 后端过程事件：`examples/reference/chat-page/runtime-contract.md`
 - 反馈/面板/通知接口：`examples/reference/chat-page/interaction-contract.md`
 - 工作室/文件预览：`examples/reference/chat-page/WufanWorkspaceFiles.tsx`
+- 账户设置与运营平台：`examples/reference/account-admin/README.md`
+- 账户/Admin React：`examples/reference/account-admin/WufanAccountAdmin.tsx`
+- 账户/Admin 后端契约：`examples/reference/account-admin/backend-contract.md`
 - 登录页紫蓝小人：`examples/reference/login-mascot/README.md`
 - React 实现：`examples/reference/login-mascot/WufanLoginMascot.tsx`
 - 机器规格：`examples/reference/login-mascot/spec.json`
@@ -51,6 +54,8 @@ Product 是暖白/近黑双主题、低对比 surface、紧凑圆角和紫蓝 Ag
 - 对话示例包括 Sidebar、任务/对话列表、Chat Header、Message List/Bubble、Composer、
   过程轨迹、消息反馈、右侧面板、Wufan 工作室/文件预览与执行结果通知；映射见
   `EVD-007/008/009/010`，反馈与通知的 Wufan 原生校正来源为 `SRC-060`。
+- 账户设置与运营平台映射见 `EVD-011/SRC-061`；admin 入口权限和
+  `/tenants`→`/teams` 冲突必须阅读对应契约，不能按表面 UI 猜测。
 - 注意：本地 `corevo` 的 `14394dc` 登录页源码不含当前小人；精确实现来自生产 bundle `SRC-013`，版本核对见 `EVD-006`。
 
 ## 视觉指纹

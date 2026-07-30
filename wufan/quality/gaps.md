@@ -77,3 +77,20 @@
 
 - `SRC-046–053` 在 Lottie/页面稳定前截取，仅保留追溯，已由 `SRC-016+` 重采替代。
 - 这些文件不得用于主题或布局结论。
+
+## GAP-010：Settings/Admin 只有源码与归档 actual
+
+- 已完成：SRC-061/EVD-011 只读源码映射、双主题可运行参考和 1440/390 actual。
+- 缺少：真实登录态 Settings/Admin 的 light/dark desktop/mobile 同状态截图。
+- 影响：desktop 几何可称 exact-source reimplementation，但不能称像素回归通过；mobile 仅为
+  明确标注的 source-derived 适配。
+- 关闭：提供登录态截图/录屏，或授权自动化采集这些页面。
+- 关联：TODO-003, TODO-006, TODO-007, TODO-012, REQ-003, REQ-006, REQ-007, REQ-008。
+
+## GAP-011：Admin 入口与接口存在 commit 内冲突
+
+- 展开 Sidebar 的 Settings 有 `onOpenAdmin`，收起 Sidebar 的 Settings 没有；
+- 前端以 developer plan 显示入口，后端 `require_developer` 按 email 白名单；
+- admin 前端 tenant helper 使用 `/tenants`，同 commit 后端使用 `/teams`。
+- 当前归档：显式记录差异；推荐 capability + route guard；后端路径为 canonical。
+- 关闭：源码统一入口、能力模型和 API 命名，并提供部署 commit/接口兼容策略。

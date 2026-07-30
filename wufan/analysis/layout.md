@@ -61,6 +61,29 @@ Sidebar 240px (collapsed 56px)
 
 登录页已在 390×844 双主题观察，但登录后应用没有移动截图，因此响应式行为尚未视觉验证。`Unknown · TODO-007`
 
+## Settings / Admin
+
+### Settings desktop
+
+- fixed backdrop inset0、z100、padding16；
+- modal 840×600、radius20；
+- nav 220px、padding20×12；
+- content header padding18×28，正文 padding4×28×28；
+- 150ms opacity + scale(.97→1)。
+
+### Admin desktop
+
+- fixed inset0、z9999；
+- header padding12×24，nav gap4；
+- main padding24、overflow auto；
+- stat grid cell min160，card p16×20/r10；
+- table outer r8，cell p10×14。
+
+目标源码没有 Settings/Admin 专用 mobile media rule；归档参考为可消费性增加全高 Settings、
+横向 admin nav 和表格滚动，并标为 source-derived，不升级为来源事实。
+
+`Observed · exact-source desktop + local actual · high · SRC-061, EVD-011`
+
 ## Product 层级
 
 - 背景装饰：fixed、pointer-events none；

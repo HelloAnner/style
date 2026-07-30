@@ -1,0 +1,91 @@
+{
+  "id": "wufan-account-admin",
+  "version": "1.0.0",
+  "source": {
+    "id": "SRC-061",
+    "evidence": "EVD-011",
+    "repository": "/Users/anner/fine/ai/corevo",
+    "commit": "14394dc7ca16aa13c62e8a089c6ffff4953424f3"
+  },
+  "settings": {
+    "entry": {
+      "expandedSidebar": "bottom user row",
+      "collapsedSidebar": [
+        "settings gear",
+        "user avatar"
+      ],
+      "defaultTab": "profile"
+    },
+    "modal": {
+      "width": 840,
+      "height": 600,
+      "sidebarWidth": 220,
+      "radius": 20,
+      "backdropZIndex": 100,
+      "backdropLight": "rgba(0,0,0,.4)",
+      "backdropDark": "rgba(0,0,0,.7)",
+      "sidebarPadding": "20px 12px",
+      "contentHeaderPadding": "18px 28px",
+      "contentPadding": "4px 28px 28px",
+      "enter": "150ms ease-out; opacity + scale(.97)"
+    },
+    "groups": {
+      "我的账户": [
+        "个人信息",
+        "加入的空间"
+      ],
+      "当前空间": [
+        "资产",
+        "接入 API",
+        "用量",
+        "订阅",
+        "空间管理"
+      ]
+    },
+    "adminEntry": {
+      "location": "订阅",
+      "sourceDisplayCondition": "tenant.plan === developer && onOpenAdmin",
+      "canonicalAuthorization": "server capability plus backend whitelist/RBAC",
+      "collapsedSidebarLimitation": "onOpenAdmin is not passed in source"
+    }
+  },
+  "admin": {
+    "route": "/admin",
+    "root": "fixed inset 0; z-index 9999",
+    "defaultTab": "token_usage",
+    "headerPadding": "12px 24px",
+    "mainPadding": 24,
+    "navGap": 4,
+    "navButtonPadding": "6px 16px",
+    "navButtonRadius": 6,
+    "statCardPadding": "16px 20px",
+    "statCardRadius": 10,
+    "tableRadius": 8,
+    "tableCellPadding": "10px 14px",
+    "visibleTabs": [
+      "messages",
+      "token_usage",
+      "performance",
+      "feedback",
+      "mcp_clients",
+      "troubleshoot",
+      "tools",
+      "user_activity",
+      "realtime",
+      "system",
+      "showcase"
+    ],
+    "unreachableSourceTabs": [
+      "dashboard",
+      "tenants"
+    ]
+  },
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "responsive": {
+    "desktop": "exact source geometry",
+    "mobile": "source-derived adaptation; no source media rule or screenshot baseline"
+  }
+}

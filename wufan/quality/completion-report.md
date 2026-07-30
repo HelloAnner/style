@@ -1,12 +1,13 @@
 # 完整性自检报告
 
-- 档案：`wufan` v0.6.0
+- 档案：`wufan` v0.7.0
 - 检查时间：2026-07-30T00:00:00Z
 - 当前状态：`analyzed`
-- 来源：60
-- TODO：11/19 完成；8 open；6 blocker
+- 来源：61
+- TODO：12/20 完成；8 open；6 blocker
 - REQUESTS：8 open
-- 自检结论：**登录小人、对话主路径、过程轨迹、反馈、右侧面板、工作室/文件预览和执行通知的可运行参考
+- 自检结论：**登录小人、对话主路径、过程轨迹、反馈、右侧面板、工作室/文件预览、
+  账户设置、运营平台和执行通知的可运行参考
   范围通过；complete 门槛未通过。**
 
 ## 三阶段自检
@@ -35,6 +36,9 @@
   内容宣称为生产业务数据。
 - 工作室自检：通过 source-derived 组件范围——以 Wufan 源码 SRC-059 重建常驻文件画布、
   共享/会话文件、多标签去重/上限，以及文件预览、编辑和 HTML 渲染；重型解析器仍为 fixture。
+- 账户/Admin 自检：通过 source-derived 组件范围——以 Wufan 源码 SRC-061 重建真实入口、
+  Settings 七标签、订阅运营入口和 `/admin` 11 标签；显式记录 plan/白名单权限差异与
+  `/tenants`/`/teams` 冲突，没有伪造真实运营数据。
 
 ### 结束前
 
@@ -61,6 +65,9 @@
   两份 JSON Schema 与样例通过 Draft 2020-12 + format 校验。
 - 工作室：React bundle和零构建 demo 通过；1594×974 light/dark 与 390×844 dark 验证
   文件画布、共享/会话分组、多标签、Markdown、HTML render、最大化和关闭；保存 4 张 actual。
+- 账户/Admin：React bundle、零构建脚本、JSON 与 Draft 2020-12 Schema 通过；
+  1440×900 light/dark、390×844 dark 验证 profile、subscription admin entry、
+  Token 用量、反馈原因与 tab 切换；保存 8 张 actual。
 - 图像总数：33 项来源截图；登录小人新增 2 张实际渲染截图作为 validation artifact。
 
 ## 未通过 complete 的原因

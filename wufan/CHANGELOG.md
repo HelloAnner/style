@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.7.0 — 2026-07-30
+
+### Sources / analysis
+- 新增 Wufan 源码子集 SRC-061 与 EVD-011，记录展开/收起 Sidebar 的设置入口、
+  Settings 七标签、订阅页运营入口、`/admin` 页面和服务端权限。
+- 明确两项源码冲突：收起 Sidebar 不传 `onOpenAdmin`；前端用 developer plan 显示入口，
+  后端实际按管理员 email 白名单鉴权。
+- 记录 admin 前端旧 `/tenants` 与同 commit 后端 `/teams` 的接口命名冲突，以后端已实现路径
+  作为 canonical。
+
+### Implementation / contract
+- 新增 `examples/reference/account-admin/`：React 账户设置、全屏运营平台、双主题 CSS、
+  脱敏 mock、零构建 demo、机器规格和后端契约。
+- 账户设置覆盖个人信息、空间、资产、BYOK、用量、订阅、空间管理；运营平台覆盖当前 11 个
+  可见标签，默认 Token 用量，并实现反馈原因管理视图。
+- 后端契约覆盖 auth capability、teams、quota、user-configs、admin 鉴权、Token 用量、
+  反馈闭环、MCP secret 与错误语义。
+
+### Validation / status
+- React bundle、零构建脚本、JSON 和 Draft 2020-12 Schema 通过；1440×900 light/dark 和
+  390×844 dark 浏览器实际运行，保存 8 张 actual。
+- 新增并关闭 TODO-020；当前 12/20 完成，仍有 8 个开放 TODO、6 个 blocker 和
+  8 个开放请求。档案保持 `analyzed`。
+
 ## 0.6.0 — 2026-07-30
 
 ### Sources / analysis

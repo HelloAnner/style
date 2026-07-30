@@ -148,3 +148,27 @@
   富文本 Markdown 编辑器未进入当前最小聊天示例
 - 新增/关闭 TODO：新增并关闭 TODO-019；原 8 个开放项不变
 - 需要用户：现有 REQ-002/003/005/006/007/008/009/010 保持 open
+
+## EXP-20260730-04
+
+- 输入：用户要求继续参考并复刻 Wufan 的账户管理、入口、后台管理及后台页面
+- 目标：恢复可消费的 Settings/Admin 入口、页面结构、交互和理论后端契约
+- 环境：macOS；私有源码只读静态分析；`/Users/anner/fine/ai/corevo` commit
+  `14394dc7ca16aa13c62e8a089c6ffff4953424f3`；agent-browser 0.8.5
+- 安全检查：未运行私有服务、未读取 env/管理员邮箱白名单/真实用户/租户/消息/Token 数据；
+  只记录 7 个前端文件哈希、结构和脱敏 mock
+- 源码动作：追踪 `Sidebar.UserInfo / CollapsedSidebar → SettingsPage → subscription →
+  onOpenAdmin → /admin → AdminPage`；核对 `require_developer` 与 admin 路由
+- 关键发现：收起 Sidebar 的 Settings 不传 `onOpenAdmin`；前端用 developer plan 显示入口，
+  后端按 email 白名单鉴权；admin 前端 `/tenants` 与后端 `/teams` 命名不一致
+- 实现动作：新增 account-admin React/CSS/demo，覆盖 Settings 七标签、运营入口、Admin
+  11 标签、默认 Token 用量与反馈原因管理；增加 mobile 显式 source-derived 适配
+- 后端契约：auth capability、teams、quota、BYOK、admin 401/403、Token 用量、反馈、MCP
+  secret 与服务端 canonical 路径
+- 浏览器验证：1440×900 light/dark 与 390×844 dark；入口、tab、主题、反馈表格；
+  console/page errors 为空；保存 8 张 actual
+- 新增来源/证据：SRC-061、EVD-011；私有源码原件未复制
+- 限制：无真实登录态 Settings/Admin screenshot baseline；mobile 无源组件 media rule；
+  运营数据全部为脱敏 fixture
+- 新增/关闭 TODO：新增并关闭 TODO-020；原 8 个开放项不变
+- 需要用户：现有 REQ-002/003/005/006/007/008/009/010 保持 open

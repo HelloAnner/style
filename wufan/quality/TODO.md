@@ -1,6 +1,6 @@
 # 悟帆 AI 档案完整性待办
 
-> 当前 **11/19** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
+> 当前 **12/20** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
 
 - [x] TODO-001 `blocker`
   - 范围：shared
@@ -202,4 +202,20 @@
   - 限制：无同状态产品截图 baseline；重型 PDF/Excel/PPTX 解析器在归档中使用确定性 fixture；
     folder/browser-live、富文本 Markdown 编辑器与右键重命名/删除未进入最小聊天示例。
   - 关联请求：REQ-006, REQ-008（本组件范围已补充；请求整体仍 open）
+  - 完成时间：2026-07-30
+
+- [x] TODO-020 `high`
+  - 范围：light | dark
+  - 完成：已从 Wufan 源码提取展开/收起 Sidebar 的设置入口、840×600 账户 modal、
+    七标签、订阅页运营入口、`/admin` 全屏平台、11 个可见标签、Token 用量和反馈管理；
+    提供 React/CSS/脱敏 mock/零构建 demo/后端契约。
+  - 负责：agent
+  - 完成标准：其他系统能复刻入口与页面壳层；账户/空间和 admin 数据边界清晰；
+    developer plan 与后端白名单差异、`/tenants` 与 `/teams` 冲突不被静默掩盖。
+  - 证据：SRC-061, EVD-011, examples/reference/account-admin/
+  - 验证：React bundle；Draft 2020-12 Schema；1440×900 light/dark；
+    390×844 dark；settings tab、运营入口和 admin tab 交互。
+  - 限制：无真实登录态 Settings/Admin 截图 baseline；mobile 是显式 source-derived 适配；
+    mock 不包含真实运营数据，dashboard/tenants 保留源码不可达事实。
+  - 关联请求：REQ-006, REQ-008, REQ-009, REQ-010（本组件范围已补充；请求整体仍 open）
   - 完成时间：2026-07-30

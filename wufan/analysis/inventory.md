@@ -50,9 +50,11 @@
 | 对话右面板 | SRC-004, SRC-013, SRC-058, EVD-009 | shared source | workspace/execution/automation 互斥 |
 | 工作室与文件预览 | SRC-059, EVD-010 | shared source | canvas、共享/会话文件、多标签、预览/编辑/渲染 |
 | 执行结果通知 | SRC-058, SRC-060, EVD-009 | shared source | completed/failed、查看详情、timer |
+| 账户设置 | SRC-061, EVD-011 | shared source + local actual | Sidebar 入口、七标签、840×600 modal |
+| 运营平台 | SRC-061, EVD-011 | shared source + local actual | `/admin`、11 标签、Token/feedback、权限 |
 | What’s New | SRC-014 | light | component crop/default |
 | 主舞台/Workspace/Dashboard | SRC-004 | 双主题源码 | 无完整运行截图 |
-| 自动化/执行链/圆桌/设置/管理 | SRC-004, SRC-012–013 | 双主题源码 | 无完整视觉矩阵 |
+| 自动化/执行链/圆桌 | SRC-004, SRC-012–013 | 双主题源码 | 无完整视觉矩阵 |
 
 ## 产品组件盘点
 
@@ -78,6 +80,7 @@
 
 - dialog、drawer、popover、tooltip、toast、文件选择器；
 - What’s New、Settings、Share；
+- Settings 的账户/空间/资产/API/用量/订阅/空间管理，以及 Admin 运营平台；
 - Workspace、Dashboard、Execution Chain、Automation、Project/Graph、Roundtable；
 - 文件卡片、图表、代码块、表格、状态反馈。
 
@@ -90,12 +93,12 @@
 - 登录小人：生产内联 SVG，不依赖图片资源；可复用入口为 `examples/reference/login-mascot/`。`Observed · exact-source · high · SRC-013, SRC-054–055, EVD-006`
 - 对话工作区：React + CSS + 脱敏 mock + 零构建 demo；可复用入口为
   `examples/reference/chat-page/`。`Observed · exact-source reference · high · SRC-002–004,
-  SRC-012–013, SRC-056–060, EVD-007/008/009/010`
+  SRC-012–013, SRC-056–061, EVD-007/008/009/010/011`
 - 已归档 12 个公开网页字体文件及 CSS，但再发布许可证仍待核验。`SRC-015`
 
 ## 尚未覆盖
 
 登录后应用的移动端原图、同一页面双主题原图配对、hover/focus/disabled/loading/error/open
-完整状态、完整设置/工作区/看板/圆桌等页面、主题切换录屏和 baseline diff 尚未完成。
-对话代码入口已经完成，不等于这些证据缺口已经关闭。详见 `coverage-matrix.md`、
+完整状态、看板/圆桌等页面、Settings/Admin 的真实登录态截图、主题切换录屏和 baseline diff
+尚未完成。账户/Admin 和对话代码入口已经完成，不等于这些证据缺口已经关闭。详见 `coverage-matrix.md`、
 `quality/gaps.md` 与 `quality/REQUESTS.md`。

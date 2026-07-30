@@ -89,6 +89,10 @@ viewport
 - Execution Notice：340px、top60/right24、5s 自动关闭、hover 暂停；“查看详情”按 reference 路由。
 - Workspace Studio：56px header、36px tabs、常驻文件画布、共享/会话分组、最多 8 个文件
   标签；保留 loading/slow/error/retry、编辑、HTML render、下载/分享/新窗口与最大化。
+- Account Settings：840×600/r20 modal、220px 左 nav、七标签、150ms fade/scale；入口是展开
+  Sidebar 用户行或收起 Sidebar 齿轮/头像。
+- Admin Platform：`/admin` fixed 全屏、header p12×24、11 个可见标签、默认 Token 用量；
+  stat card p16×20/r10，table cell p10×14。
 
 详见 `../analysis/components.md`。
 
@@ -125,6 +129,9 @@ viewport
 - 不把登录小人替换成截图、普通半圆、聊天无眼头像或自绘近似 SVG。
 - 不把过程轨迹、右侧执行链面板和执行结果通知合并成一个组件。
 - 不把 raw reasoning、工具参数、凭据或完整工具返回发送到浏览器过程摘要。
+- 不把 developer plan 当作 admin 授权；入口展示用服务端 capability，接口仍独立校验。
+- 不把源码中不可达的 dashboard/tenants 添加到当前 admin nav；不静默混用
+  frontend `/tenants` 与 backend `/teams`。
 
 ## 证据优先级
 
