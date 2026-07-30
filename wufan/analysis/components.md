@@ -83,7 +83,8 @@ Logo/Header → 新任务与产品导航 → 分割线 → 任务标题/工具 �
 - 角色名 13/500，时间 12/muted，meta 下 margin 6；
 - 气泡 padding 14、radius 16；正文 14、line-height 1.6；
 - user 右对齐、`bubble.user`、无边框；Agent 左对齐、`bubble.agent`、1px muted border；
-- 操作栏 margin-top 4，按钮 26×26/radius 6，hover 才出现；
+- 当前授权参考操作栏 margin-top 12、padding 6×0、gap8，按钮 24×24/radius4；
+  旧 SRC-004 气泡实现曾为 26×26/radius6；
 - 图片附件 radius 12；文件附件 radius 10；文件引用 chip radius 8。
 
 当前生产 MessageList `max-width: 960px`，旧本地源码为 880px。React 与零构建实现见
@@ -174,3 +175,80 @@ Dark、desktop 外层上下文、hover、tab 切换和滚动状态未覆盖。
 - overlay shadow light `0 25px 50px -12px rgba(0,0,0,.15)`，dark alpha `.5`；
 - 进入通常 200ms opacity + translate/scale；
 - 当前线上 What’s New 是结构例外。
+
+### Wufan 原生反馈
+
+- 26×26/r6 点赞与点踩按钮；
+- 点赞直接乐观写入；点踩打开 360px 内联文本面板，标题“这条哪里不对？”；
+- 原生面板没有固定原因 chip；
+- PUT 覆盖当前反馈、DELETE 撤销，失败回滚乐观状态；
+- 消息快照通过当前用户自己的 `feedback` 字段回填。
+
+`Observed · exact-source · high · SRC-060, EVD-009`
+
+### 用户指定的固定原因增强
+
+- 触发源是 24×24 down 按钮的 DOMRect；
+- fixed、z1300、width300、p12、r8、无 border、popover shadow；
+- 距锚点 8px、视口安全边距 8px；下方不足时翻到上方；
+- 5 个多选原因，gap `8px 16px`，item min-width80，checkbox14/r2；
+- textarea 72px、p7×8、r6、14/22、max500；
+- cancel/submit h32、min56、r6；没有原因和文本时 submit disabled；
+- Escape、outside click、resize、capture scroll 完整处理。
+
+点赞/点踩互斥，选中使用实心图标并隐藏相反动作，再次点击撤销。普通用户侧不回显原因文本。
+
+`Observed · exact-source within cross-system enhanced-picker scope · high · SRC-058, EVD-009`
+
+## 12. Process Trace
+
+- 摘要 h34、14/22/500；来源按钮 accent；
+- note 14/22，根 icon slot 16×30；tool 13/20，slot 14×30；
+- tool nesting `ml7.5/pl15.5`，connector 1.25px；
+- 六态：pending/running/completed/failed/cancelled/timeout；
+- running shine 1.4s、spinner 1s、note enter 180ms、chevron 150ms。
+
+`note` 是可公开过程摘要，不是 raw chain-of-thought。实现与契约见
+`examples/reference/chat-page/WufanReasoningTrace.tsx` 和 `runtime-contract.md`。
+
+`Observed · exact-source + light screenshot · high · SRC-056–057, EVD-008`
+
+## 13. Right Panel
+
+- Header 入口 32×32/r8/gap4；工作区 emerald、执行链 amber、自动化 violet active；
+- 三类面板互斥；再点当前入口关闭；
+- 桌面约 50% 固定比例、min380；关闭宽度 300ms 到 0 后卸载；
+- shell r16、8px inset；mobile fixed inset8；
+- 执行链 panel 是会话级 task/iteration/tool 信息，不与消息内 process trace 混为一谈。
+
+`Observed · exact-source cross-version composition · medium-high · SRC-004/013/058, EVD-009`
+
+## 14. Execution Result Notice
+
+“执行完成 / 执行异常 / 查看详情”来源是 AutomationToast：
+
+- fixed top60/right24、vertical gap8、z9999；
+- card 340px、p16×18、r14；
+- enter x40/scale.96，leave x20/scale.97；
+- 300ms cubic-bezier(.34,1.2,.64,1)；
+- 5s 自动关闭，hover 暂停；
+- 点击 mark read，再按 session/automation_pipeline 打开详情并关闭。
+
+`Observed · exact-source · high · SRC-058/060, EVD-009`
+
+## 15. Workspace Studio / File Preview
+
+- 根标题“工作室”，56px header；支持最大化与关闭；
+- 36px tabs，`文件画布` 常驻；普通文件标签最多 8 个，按
+  `file_id → path + level + session_id → path + level` 去重；
+- 文件画布分别显示 Agent 共享文件和当前会话文件，含搜索、上传、空态与轮询语义；
+- 预览请求 15s 超时，超过 5s 显示慢加载；404 可在 session 与 agent-shared 间回退一次；
+- 文件 Header 支持 HTML render、编辑/保存/取消、下载、新窗口、分享；
+- 图片/PDF/DOC/Excel/PPTX/视频/音频/CSV/Markdown/JSON/HTML/文本/unsupported 分流；
+- HTML iframe 使用 `allow-scripts allow-same-origin`；render 预设
+  `375×667 / 768×1024 / 1280×800`。
+
+可运行实现见 `examples/reference/chat-page/WufanWorkspaceFiles.tsx`，服务端路径与响应形状见
+`examples/reference/chat-page/interaction-contract.md`。
+
+`Observed · exact-source + local actual · high · SRC-059, EVD-010`

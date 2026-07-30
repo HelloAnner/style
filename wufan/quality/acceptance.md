@@ -37,6 +37,16 @@
 - [ ] 当前 What’s New 使用线上 tabbed 结构，而非旧源码 modal。
 - [ ] 登录小人直接使用 exact-source SVG：240×300、正确面板覆盖、三段渐变、双眼、随机眨眼、5s 漂浮与受限视线跟随；mobile 不渲染。
 - [ ] 对话工作区直接核对 `examples/reference/chat-page/`：Sidebar/任务列表、Header、Message、Composer 和 light/dark 变量无静默改值。
+- [ ] Process Trace 覆盖 pending/running/completed/failed/cancelled/timeout；正文与工具按 seq
+  排序，最终回答独立；shine/spinner/折叠/更多正确。
+- [ ] 点赞/点踩互斥、可撤销；若复刻 Wufan 原生，使用 26×26/r6 和 360px 内联文本面板；
+  若采用用户指定增强，使用 300px 浮层、五项原因、自由文本、空态禁用、上下翻转及
+  Escape/outside/scroll/resize，并映射到 Wufan `categories/content`。
+- [ ] 工作区/执行链/自动化入口互斥；桌面右面板压缩 Chat、关闭 300ms，mobile fixed inset8。
+- [ ] 工作室标题、56px header、36px tabs、常驻文件画布、共享/会话分组、8 文件标签上限、
+  loading/slow/error/retry、编辑/render/下载/分享/最大化与 SRC-059 一致。
+- [ ] 执行结果通知分别显示“执行完成/执行异常”，5s 自动关闭、hover 暂停、300ms 进出场，
+  “查看详情”按 reference 打开正确面板/会话。
 
 ## 状态与交互
 
@@ -44,6 +54,7 @@
 - [ ] disabled、loading、error、empty、open/closed 分别验收。
 - [ ] 键盘顺序、焦点恢复、Esc、dialog trap 可用。
 - [ ] reduced-motion 不保留危险或不必要循环动效。
+- [ ] 浏览器不接收 raw reasoning、工具原始参数/结果、凭据或内部异常栈。
 - [ ] 触控目标和 hover-only 功能有移动替代。
 
 ## Marketing

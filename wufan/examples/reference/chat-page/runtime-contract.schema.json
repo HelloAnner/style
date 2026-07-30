@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wufan.example/schemas/chat-runtime-contract.v1.json",
+  "title": "Wufan chat trace snapshot or runtime event",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/messageSnapshot"
+    },
+    {
+      "$ref": "#/$defs/runtimeEvent"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/runtimeEvent"
+      }
+    }
+  ],
+  "$defs": {
+    "traceStatus": {
+      "enum": [
+        "pending",
+        "running",
+        "completed",
+        "failed",
+        "cancelled",
+        "timeout"
+      ]
+    },
+    "stepStatus": {
+      "enum": [
+        "pending",
+        "running",
+        "streaming",
+        "completed",
+        "failed",
+        "cancelled",
+        "timeout"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "domain": {
+          "type": "string"
+        }
+      }
+    },
+    "noteStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "seq",
+        "status",
+        "text"
+      ],
+      "properties": {
+        "type": {
+          "const": "note"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "enum": [
+            "running",
+            "completed",
+            "failed",
+            "cancelled",
+            "timeout"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "segment_id": {
+          "type": "string"
+        }
+      }
+    },
+    "toolStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "seq",
+        "status",
+        "tool_name",
+        "display_name",
+        "summary"
+      ],
+      "properties": {
+        "type": {
+          "const": "tool"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "$ref": "#/$defs/stepStatus"
+        },
+        "tool_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "icon": {
+          "enum": [
+            "read",
+            "search",
+            "draw",
+            "warning"
+          ]
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "messageSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "author",
+        "created_at",
+        "response"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "const": "assistant"
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "trace": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "status",
+            "steps",
+            "sources"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "$ref": "#/$defs/traceStatus"
+            },
+            "started_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "completed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "duration_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/noteStep"
+                  },
+                  {
+                    "$ref": "#/$defs/toolStep"
+                  }
+                ]
+              }
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/source"
+              }
+            }
+          }
+        },
+        "response": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "format",
+            "content"
+          ],
+          "properties": {
+            "format": {
+              "enum": [
+                "markdown",
+                "text"
+              ]
+            },
+            "content": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "runtimeEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "event_id",
+        "session_id",
+        "message_id",
+        "execution_id",
+        "seq",
+        "occurred_at",
+        "event_type",
+        "payload"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "wufan.chat.runtime.v1"
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event_type": {
+          "enum": [
+            "execution.started",
+            "trace.note.upsert",
+            "tool.call.started",
+            "tool.call.updated",
+            "tool.call.completed",
+            "sources.reported",
+            "response.delta",
+            "response.completed",
+            "execution.completed"
+          ]
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

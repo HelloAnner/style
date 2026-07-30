@@ -1,6 +1,6 @@
 # 悟帆 AI 档案完整性待办
 
-> 当前 **8/16** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
+> 当前 **11/19** 完成；8 个开放项，其中 6 个 blocker。全部关闭前不得标记 `complete`。
 
 - [x] TODO-001 `blocker`
   - 范围：shared
@@ -159,3 +159,47 @@
   - 限制：dark populated 与登录后 mobile 无来源 baseline，不关闭 TODO-002/003/006/007/012。
   - 关联请求：REQ-009, REQ-010（派生脱敏对话代码范围已确认；请求整体仍 open）
   - 完成时间：2026-07-29
+
+- [x] TODO-017 `high`
+  - 范围：light | dark
+  - 完成：已按用户完成态原图和授权参考源码提取对话过程轨迹，覆盖轮次正文、工具调用、
+    来源、总耗时、折叠、“更多”、spinner、shine、异常图标与六种工具链状态 fixture。
+  - 负责：agent
+  - 完成标准：其他系统可用有序 `note/tool` 数据重建运行与历史过程，最终回答与轨迹独立。
+  - 证据：SRC-056–057, EVD-008, examples/reference/chat-page/WufanReasoningTrace.tsx
+  - 验证：React bundle；静态 demo；light completed/running actual；JSON Schema。
+  - 限制：dark 同状态和真实 streaming 录屏无来源 baseline，不关闭 TODO-006/012。
+  - 关联请求：REQ-006, REQ-008（本组件范围已补充；请求整体仍 open）
+  - 完成时间：2026-07-30
+
+- [x] TODO-018 `high`
+  - 范围：light | dark
+  - 完成：已提取点赞/点踩互斥状态、300px 点踩原因浮层、顶部三类右面板入口、
+    300ms 互斥面板，以及“执行完成/执行异常/查看详情”通知；同步理论 API/事件契约。
+  - 负责：agent
+  - 完成标准：反馈原因可选/可提交/可撤销；右面板可切换/关闭；执行通知可自动关闭、
+    hover 暂停并路由详情；静态 demo 可重放。
+  - 证据：SRC-004, SRC-013, SRC-058, SRC-060, EVD-009, examples/reference/chat-page/
+  - 验证：React bundle；light desktop 浏览器交互；反馈 localStorage；通知到详情面板；
+    JSON/Schema Draft 2020-12 校验。
+  - 限制：固定原因浮层是 SRC-058 跨系统增强，已适配 Wufan 原生反馈字段/API；
+    右面板业务内容为脱敏结构示例，dark/mobile 无同状态产品 baseline。
+  - 关联请求：REQ-006, REQ-008（本组件范围已补充；请求整体仍 open）
+  - 完成时间：2026-07-30
+
+- [x] TODO-019 `high`
+  - 范围：light | dark
+  - 完成：已把右侧 workspace 从静态文件行扩展为真实 Wufan“工作室”，覆盖常驻 canvas、
+    共享/会话文件分组、搜索、上传回调、多标签去重与 8 标签上限、loading/慢加载、错误重试、
+    请求取消、编辑、HTML 渲染、下载/分享/新窗口、最大化，以及
+    图片/PDF/Office/音视频/结构化文本/unsupported 类型分流。
+  - 负责：agent
+  - 完成标准：其他系统可把文件 metadata 与 `onLoadPreview` 接入组件；零构建 demo 可完成
+    canvas → 加载 → file tab → 编辑/渲染路径；后端契约覆盖鉴权、路径、Range、转换和 sandbox。
+  - 证据：SRC-059, EVD-010, examples/reference/chat-page/WufanWorkspaceFiles.tsx
+  - 验证：React bundle；light/dark desktop 与 dark mobile；预览交互；
+    JSON/Schema Draft 2020-12 校验。
+  - 限制：无同状态产品截图 baseline；重型 PDF/Excel/PPTX 解析器在归档中使用确定性 fixture；
+    folder/browser-live、富文本 Markdown 编辑器与右键重命名/删除未进入最小聊天示例。
+  - 关联请求：REQ-006, REQ-008（本组件范围已补充；请求整体仍 open）
+  - 完成时间：2026-07-30

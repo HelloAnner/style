@@ -1,20 +1,20 @@
 {
   "id": "wufan",
   "name": "悟帆 AI",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "status": "analyzed",
   "createdAt": "2026-07-26T14:43:19Z",
-  "updatedAt": "2026-07-29T00:04:40Z",
-  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录小人和完整对话主路径已有可运行代码参考，整体仍有登录态覆盖和像素回归缺口。",
+  "updatedAt": "2026-07-30T00:00:00Z",
+  "description": "悟帆 AI Product 双主题与固定暗色 Marketing 的严格复刻档案；登录小人、完整对话主路径、过程轨迹、反馈、右侧面板、工作室/文件预览和执行结果通知已有可运行代码参考，整体仍有登录态覆盖和像素回归缺口。",
   "referenceMode": "strict",
   "requiredThemes": [
     "light",
     "dark"
   ],
-  "sourceCount": 55,
+  "sourceCount": 60,
   "completion": {
-    "requiredItems": 16,
-    "completedItems": 8,
+    "requiredItems": 19,
+    "completedItems": 11,
     "openItems": 8,
     "blockingItems": 6,
     "openRequests": 8,
@@ -38,6 +38,9 @@
     "marketingTokens": "system/marketing.tokens.json",
     "loginMascot": "examples/reference/login-mascot/README.md",
     "chatPage": "examples/reference/chat-page/README.md",
+    "chatRuntimeContract": "examples/reference/chat-page/runtime-contract.md",
+    "chatInteractionContract": "examples/reference/chat-page/interaction-contract.md",
+    "workspaceFilePreview": "examples/reference/chat-page/WufanWorkspaceFiles.tsx",
     "implementation": "system/implementation.md",
     "acceptance": "quality/acceptance.md",
     "todo": "quality/TODO.md",
@@ -45,9 +48,9 @@
     "completionReport": "quality/completion-report.md"
   },
   "lastValidated": {
-    "at": "2026-07-29T00:04:40Z",
-    "scope": "Product chat page reference / light and dark desktop / source-derived mobile / local interaction render",
-    "result": "passed within runnable chat-page reference scope"
+    "at": "2026-07-30T00:00:00Z",
+    "scope": "Product chat process trace, feedback, right panels, workspace file preview, execution notifications / light desktop actual / source-derived dark and mobile",
+    "result": "passed within reusable chat-interactions and file-preview reference scope"
   },
   "sources": [
     {
@@ -966,6 +969,84 @@
       "collectedAt": "2026-07-28T23:00:47Z",
       "authorized": "provided",
       "notes": "User-provided crop of the mascot/panel overlap; crop origin is unknown."
+    },
+    {
+      "id": "SRC-056",
+      "type": "screenshot",
+      "origin": "User-provided clipboard screenshot",
+      "localPath": "sources/screenshots/original/light/chat-process-trace__light__2072x620__expanded-completed__01.png",
+      "sha256": "4eb83411c9f7fbbfc385fb620940a7cff250d3f828c1f4877f6c2da5b10ca32d",
+      "theme": "light",
+      "route": "authenticated chat / process trace component crop",
+      "viewport": {
+        "physicalWidth": 2072,
+        "physicalHeight": 620
+      },
+      "dpr": 2,
+      "state": "expanded/completed",
+      "collectedAt": "2026-07-29T23:07:06Z",
+      "authorized": "provided",
+      "notes": "Completed process-trace crop; DPR inferred by source typography cross-check."
+    },
+    {
+      "id": "SRC-057",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/dev at commit 9b0765cfbd47533bdd326d42140b29309d29a5eb",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "cross-system reference / frontend chat process trace",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-29T23:07:06Z",
+      "authorized": "explicit",
+      "notes": "Separate corevo-platform cross-system reference, not Wufan source. Raw private source not copied; per-file hashes and mapping in EVD-008."
+    },
+    {
+      "id": "SRC-058",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/dev at commit 9b0765cfbd47533bdd326d42140b29309d29a5eb",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "cross-system reference / frontend chat feedback, right panel, execution notification",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "Separate corevo-platform cross-system reference, not Wufan source. Raw private source not copied; per-file hashes and mapping in EVD-009."
+    },
+    {
+      "id": "SRC-059",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/corevo at commit 14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "web workspace studio, file canvas and file preview",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "Raw private source not copied; per-file hashes, canvas/tab state machine and mapping in EVD-010."
+    },
+    {
+      "id": "SRC-060",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/corevo at commit 14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "web chat message feedback and automation toast",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "Wufan-native message feedback UI/API and AutomationToast source correction. Raw private source not copied; per-file hashes and mapping in EVD-009."
     }
   ]
 }

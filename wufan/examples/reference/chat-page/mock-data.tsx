@@ -1,5 +1,9 @@
 import React from 'react';
-import type { WufanMessage, WufanSessionGroup } from './types';
+import type {
+  WufanExecutionNotice,
+  WufanMessage,
+  WufanSessionGroup,
+} from './types';
 
 export const exampleSessionGroups: WufanSessionGroup[] = [
   {
@@ -40,6 +44,72 @@ export const exampleMessages: WufanMessage[] = [
     role: 'agent',
     author: '小悟',
     time: '10:24',
+    feedback: {
+      sessionId: 'session-workspace-query',
+      runId: 'run-agent-1',
+    },
+    trace: {
+      id: 'trace-agent-1',
+      status: 'completed',
+      durationMs: 521_000,
+      initialExpanded: true,
+      sources: Array.from({ length: 133 }, (_, index) => ({
+        id: `source-${index + 1}`,
+        title: `空间信息来源 ${index + 1}`,
+        url: `https://example.com/sources/${index + 1}`,
+        domain: 'example.com',
+      })),
+      steps: [
+        {
+          id: 'note-1',
+          kind: 'note',
+          seq: 10,
+          status: 'completed',
+          content:
+            '这是一个典型的跨领域深度分析任务，需要三路独立闭环并行执行，最后由我汇总形成合作优先级建议。先读取客户洞察技能完成前置约束，同时锁定三个主体的准确信息，为后续检索做准备。',
+        },
+        {
+          id: 'tool-1',
+          kind: 'tool',
+          seq: 11,
+          toolName: 'read',
+          displayName: '读取文件',
+          summary: '阅读 "skills/customer-insight/SKILL.md"',
+          status: 'completed',
+          icon: 'read',
+          durationMs: 126,
+        },
+        {
+          id: 'note-2',
+          kind: 'note',
+          seq: 20,
+          status: 'completed',
+          content:
+            '技能已读取。完整约束已经进入当前执行上下文，接下来会并行核验三家企业的注册主体、统一社会信用代码与跨境主体差异，并把冲突留到汇总阶段统一解释。',
+        },
+        ...['比亚迪股份有限公司', '蔚来控股有限公司', '理想汽车'].map(
+          (_company, index) => ({
+            id: `tool-company-${index + 1}`,
+            kind: 'tool' as const,
+            seq: 21 + index,
+            toolName: 'enterprise_search',
+            displayName: 'MOSS-企业列表搜索',
+            summary: 'MOSS-企业列表搜索',
+            status: 'completed' as const,
+            icon: 'search' as const,
+            durationMs: 860 + index * 170,
+          }),
+        ),
+        {
+          id: 'note-3',
+          kind: 'note',
+          seq: 30,
+          status: 'completed',
+          content:
+            '主体已锁定： 比亚迪股份有限公司（91440300192317458F） 蔚来控股有限公司（91340111MA2RAD3M4R） 理想汽车：首选返回的是开曼主体（72892972，非境内统一社会信用代码）。',
+        },
+      ],
+    },
     content: (
       <>
         <p>已经找到当前空间的信息，摘要如下：</p>
@@ -61,5 +131,17 @@ export const exampleMessages: WufanMessage[] = [
         </p>
       </>
     ),
+  },
+];
+
+export const exampleExecutionNotices: WufanExecutionNotice[] = [
+  {
+    id: 'notice-success-01',
+    title: '每周客户洞察摘要',
+    summary: '三家企业的主体核验与合作优先级分析已经完成。',
+    status: 'success',
+    createdAt: '2026-07-30T10:32:41+08:00',
+    referenceType: 'session',
+    referenceId: 'session-workspace-query',
   },
 ];

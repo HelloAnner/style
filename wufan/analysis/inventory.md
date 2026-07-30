@@ -45,6 +45,11 @@
 | 新任务空状态 | SRC-002 | dark | desktop default |
 | 对话详情 | SRC-003 | light | desktop populated |
 | 对话代码参考 | SRC-002–004, SRC-012–013, EVD-007 | light + dark | desktop actual；mobile source-derived actual |
+| 对话过程轨迹 | SRC-056–057, EVD-008 | light observed + dark source | 六态 fixture、折叠、来源、正文/工具 |
+| 对话反馈 | SRC-058, SRC-060, EVD-009 | shared source | 原生反馈/API、固定原因增强、撤销 |
+| 对话右面板 | SRC-004, SRC-013, SRC-058, EVD-009 | shared source | workspace/execution/automation 互斥 |
+| 工作室与文件预览 | SRC-059, EVD-010 | shared source | canvas、共享/会话文件、多标签、预览/编辑/渲染 |
+| 执行结果通知 | SRC-058, SRC-060, EVD-009 | shared source | completed/failed、查看详情、timer |
 | What’s New | SRC-014 | light | component crop/default |
 | 主舞台/Workspace/Dashboard | SRC-004 | 双主题源码 | 无完整运行截图 |
 | 自动化/执行链/圆桌/设置/管理 | SRC-004, SRC-012–013 | 双主题源码 | 无完整视觉矩阵 |
@@ -65,6 +70,8 @@
 - MessageList、用户/Agent 消息、Markdown、代码、附件、操作栏；
 - 复合 InputBar、附件、模型选择、思考模式、快速提示胶囊、发送；
 - loading、streaming、questionnaire、plan review、todo、error 等源码状态。
+- 过程 note/tool 六态、来源、总耗时、折叠和运行动效；
+- 消息 feedback、点踩原因浮层、右面板和执行结果通知；
 - 完整可运行主路径位于 `examples/reference/chat-page/`；未把上述长尾状态假装成已验证。
 
 ### 浮层与工具
@@ -82,7 +89,8 @@
 - 产品图标：Lucide + 内联 SVG；Agent 头像为 10 组 CSS 渐变。`Observed · exact-source · high · SRC-004`
 - 登录小人：生产内联 SVG，不依赖图片资源；可复用入口为 `examples/reference/login-mascot/`。`Observed · exact-source · high · SRC-013, SRC-054–055, EVD-006`
 - 对话工作区：React + CSS + 脱敏 mock + 零构建 demo；可复用入口为
-  `examples/reference/chat-page/`。`Observed · exact-source reference · high · SRC-002–004, SRC-012–013, EVD-007`
+  `examples/reference/chat-page/`。`Observed · exact-source reference · high · SRC-002–004,
+  SRC-012–013, SRC-056–060, EVD-007/008/009/010`
 - 已归档 12 个公开网页字体文件及 CSS，但再发布许可证仍待核验。`SRC-015`
 
 ## 尚未覆盖

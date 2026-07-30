@@ -1,6 +1,6 @@
 # 来源与证据索引
 
-当前登记 **55** 项来源。`SRC-046`–`SRC-053` 是保留但已判定不稳定的首次自动截图，不应用作主题事实。
+当前登记 **60** 项来源。`SRC-046`–`SRC-053` 是保留但已判定不稳定的首次自动截图，不应用作主题事实。
 
 ## 关键来源
 
@@ -11,6 +11,10 @@
 - `SRC-014`：明色 What’s New 截图；与线上 JS 一致，但与用户源码 commit 中组件实现不同。
 - `SRC-016`–`SRC-045`：公开页面双视口截图和计算样式。
 - `SRC-054` / `SRC-055`：本轮用户提供的 1598×961@2x 登录页与小人局部原图，用于登录小人精确核对。
+- `SRC-056` / `SRC-057`：过程轨迹完成态原图与用户指定的跨系统参考源码。
+- `SRC-058`：反馈、右侧面板与执行结果通知的用户指定跨系统参考源码子集。
+- `SRC-059`：Wufan 右侧“工作室”、文件画布、多标签与文件预览的用户授权源码子集。
+- `SRC-060`：Wufan 消息反馈、反馈 API 与执行结果通知的用户授权源码子集。
 
 ## 完整清单
 
@@ -709,3 +713,74 @@
 - SHA-256：`1bb8011f8f882ca0075b389991a33d532622c6941793c983eb9ceb92568114fd`
 - 授权类别：`provided`
 - 备注：用户提供的登录小人与面板交界局部图；裁切原点未知。
+
+### SRC-056
+- 类型：`screenshot`
+- 原始来源：User-provided clipboard screenshot
+- 本地路径：`sources/screenshots/original/light/chat-process-trace__light__2072x620__expanded-completed__01.png`
+- 主题：`light`
+- 页面/路由：`authenticated chat / process trace component crop`
+- viewport / DPR：`2072×620 physical crop / 2（由源码 14px 排版与物理像素交叉推断）`
+- 状态：`expanded/completed`
+- 获取时间：`2026-07-29T23:07:06Z`
+- SHA-256：`4eb83411c9f7fbbfc385fb620940a7cff250d3f828c1f4877f6c2da5b10ca32d`
+- 授权类别：`provided`
+- 备注：用户提供的完成态过程轨迹局部图；包含公开企业主体信息，无个人凭据；裁切原点未知。
+
+### SRC-057
+- 类型：`source`
+- 原始来源：`/Users/anner/fine/ai/dev` commit `9b0765cfbd47533bdd326d42140b29309d29a5eb`
+- 本地路径：`null`（私有源码不复制进档案）
+- 主题：`shared`
+- 页面/路由：`cross-system reference / frontend chat process trace`
+- viewport / DPR：`n/a`
+- 状态：`static source analysis`
+- 获取时间：`2026-07-29T23:07:06Z`
+- SHA-256：`null`（逐文件哈希见 EVD-008）
+- 授权类别：`explicit`
+- 备注：该路径属于独立 `corevo-platform` 仓库，不是 Wufan 源码；用户明确指定其过程轨迹作为
+  跨系统复刻参考。只读分析 ReasoningTraceSection/ActionFeed/ActionItem/runtime event，
+  未运行私有服务、未归档凭据或业务 payload。
+
+### SRC-058
+- 类型：`source`
+- 原始来源：`/Users/anner/fine/ai/dev` commit `9b0765cfbd47533bdd326d42140b29309d29a5eb`
+- 本地路径：`null`（私有源码不复制进档案）
+- 主题：`shared`
+- 页面/路由：`cross-system reference / frontend chat feedback, right panel, execution notification`
+- viewport / DPR：`n/a`
+- 状态：`static source analysis`
+- 获取时间：`2026-07-30T00:00:00Z`
+- SHA-256：`null`（逐文件哈希见 EVD-009）
+- 授权类别：`explicit`
+- 备注：该路径属于独立 `corevo-platform` 仓库，不是 Wufan 源码；用户明确要求将其点赞/点踩
+  原因浮层、顶部右侧入口、互斥面板，以及“执行完成/执行异常/查看详情”通知作为跨系统参考。
+  只读分析并重新实现，不复制私有业务 store 或 API 凭据。
+
+### SRC-059
+- 类型：`source`
+- 原始来源：`/Users/anner/fine/ai/corevo` commit `14394dc7ca16aa13c62e8a089c6ffff4953424f3`
+- 本地路径：`null`（私有源码不复制进档案）
+- 主题：`shared`
+- 页面/路由：`web workspace studio, file canvas and file preview`
+- viewport / DPR：`n/a`
+- 状态：`static source analysis`
+- 获取时间：`2026-07-30T00:00:00Z`
+- SHA-256：`null`（逐文件哈希见 EVD-010）
+- 授权类别：`explicit`
+- 备注：用户明确要求同步 Wufan 右侧文件预览逻辑；只读分析 Workspace、FileCanvas、
+  FilePreview、workspaceStore 和 Wufan 文件 API，记录画布、标签、类型分流、状态机、几何与安全边界。
+
+### SRC-060
+- 类型：`source`
+- 原始来源：`/Users/anner/fine/ai/corevo` commit `14394dc7ca16aa13c62e8a089c6ffff4953424f3`
+- 本地路径：`null`（私有源码不复制进档案）
+- 主题：`shared`
+- 页面/路由：`web chat message feedback and automation toast`
+- viewport / DPR：`n/a`
+- 状态：`static source analysis`
+- 获取时间：`2026-07-30T00:00:00Z`
+- SHA-256：`null`（逐文件哈希见 EVD-009）
+- 授权类别：`explicit`
+- 备注：用于校正 Wufan 原生消息反馈 UI/API 和 AutomationToast；固定原因选择器仍保留为用户指定的
+  SRC-058 跨系统增强交互。

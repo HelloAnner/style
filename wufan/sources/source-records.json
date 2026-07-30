@@ -916,6 +916,84 @@
       "collectedAt": "2026-07-28T23:00:47Z",
       "authorized": "provided",
       "notes": "User-provided crop of the mascot/panel overlap; crop origin is unknown."
+    },
+    {
+      "id": "SRC-056",
+      "type": "screenshot",
+      "origin": "User-provided clipboard screenshot",
+      "localPath": "sources/screenshots/original/light/chat-process-trace__light__2072x620__expanded-completed__01.png",
+      "sha256": "4eb83411c9f7fbbfc385fb620940a7cff250d3f828c1f4877f6c2da5b10ca32d",
+      "theme": "light",
+      "route": "authenticated chat / process trace component crop",
+      "viewport": {
+        "physicalWidth": 2072,
+        "physicalHeight": 620
+      },
+      "dpr": 2,
+      "state": "expanded/completed",
+      "collectedAt": "2026-07-29T23:07:06Z",
+      "authorized": "provided",
+      "notes": "Completed process-trace crop. DPR inferred by cross-checking source 14px typography against physical pixels; crop origin is unknown."
+    },
+    {
+      "id": "SRC-057",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/dev at commit 9b0765cfbd47533bdd326d42140b29309d29a5eb",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "cross-system reference / frontend chat process trace",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-29T23:07:06Z",
+      "authorized": "explicit",
+      "notes": "User-designated cross-system reference from the separate corevo-platform repository, not Wufan source. Raw source was not copied; per-file hashes and component mapping are recorded in EVD-008."
+    },
+    {
+      "id": "SRC-058",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/dev at commit 9b0765cfbd47533bdd326d42140b29309d29a5eb",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "cross-system reference / frontend chat feedback, right panel, execution notification",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "User-requested cross-system interaction subset from the separate corevo-platform repository, not Wufan source. Raw private source was not copied; per-file hashes and component mapping are recorded in EVD-009."
+    },
+    {
+      "id": "SRC-059",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/corevo at commit 14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "web workspace studio, file canvas and file preview",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "User-requested Wufan workspace file-preview source subset. Raw private source was not copied; per-file hashes, canvas/tab state machine, geometry, API boundaries and component mapping are recorded in EVD-010."
+    },
+    {
+      "id": "SRC-060",
+      "type": "source",
+      "origin": "/Users/anner/fine/ai/corevo at commit 14394dc7ca16aa13c62e8a089c6ffff4953424f3",
+      "localPath": null,
+      "sha256": null,
+      "theme": "shared",
+      "route": "web chat message feedback and automation toast",
+      "viewport": null,
+      "dpr": null,
+      "state": "static source analysis",
+      "collectedAt": "2026-07-30T00:00:00Z",
+      "authorized": "explicit",
+      "notes": "Wufan-native message feedback UI/API and AutomationToast source correction. Raw private source was not copied; per-file hashes and mapping are recorded in EVD-009."
     }
   ]
 }

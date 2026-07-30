@@ -59,7 +59,14 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 
 对话页优先复用 `../examples/reference/chat-page/WufanChatPage.tsx` 与
 `wufan-chat.css`，不要从旧源码重新拼装 Sidebar。零构建 `demo.html` 可用于先核对主题、
-任务列表、消息区和 Composer 交互。
+任务列表、消息区、Composer、六态工具链、反馈、右面板、工作室/文件预览与执行通知。数据接入前必须同时读：
+
+- `runtime-contract.md`：过程快照、事件顺序、重连和安全边界；
+- `interaction-contract.md`：反馈 PUT/DELETE、Wufan 文件 API、右面板数据和 notification 事件；
+- `runtime-contract.schema.json` / `interaction-contract.schema.json`：机器校验。
+
+不要把后端 raw reasoning 映射到 `note.content`；只接收服务端脱敏的展示摘要。工具行只接收
+安全 `summary`，不接收 arguments/result/authorization。
 
 ## 3. Product 基准几何
 
@@ -69,6 +76,8 @@ Scrollbar 8px、thumb radius4；focus 视觉需按来源组件实现，不能依
 - icon button 28/32, r8；Avatar 24/32/40；
 - bubble padding14/r16/body14/1.6；
 - Composer r16，textarea 24–160；
+- trace summary 34；note/tool row 30；反馈 action24/r4；点踩 popover300；
+- 右面板 380–560/约 50%；工作室 Header56、tab36、canvas file cell160；执行通知340；
 - spacing 与 radius 只使用档案比例尺。
 
 ## 4. Marketing 接入

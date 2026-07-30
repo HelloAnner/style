@@ -11,6 +11,11 @@
 - 登录小人漂浮为 `5s easeInOut infinite`、Y `0→-5→0px`；每 `3–7s` 随机眨眼 150ms；视线 200ms 延迟后以每帧 `.08` 插值跟随。`Observed · exact-source · high · SRC-013, EVD-006`
 - 对话消息进入：opacity `0→1`、Y `20→0px`、300ms ease-out；参考实现的
   `prefers-reduced-motion` 分支会关闭该进入动效。`Observed source + Recommended explicit deviation · SRC-013, EVD-007`
+- Process Trace：note y12/opacity 180ms ease-out；运行文案 shine 1.4s linear；spinner
+  1s linear；chevron 150ms。`prefers-reduced-motion` 关闭循环和迁移。`SRC-057, EVD-008`
+- 右面板：width/flex-basis/padding 300ms ease，关闭后延迟卸载。`SRC-058, EVD-009`
+- 执行通知：x40/scale.96 进入，x20/scale.97 离开，300ms
+  cubic-bezier(.34,1.2,.64,1)；5s timer，hover 暂停。`SRC-058/060, EVD-009`
 
 `Observed · exact-source · high · SRC-004, SRC-006, SRC-012`
 
@@ -26,6 +31,8 @@
 - 严格复刻时不能擅自新增不同视觉，但应把缺失焦点风险告知用户。
 - 对话参考保留来源的无全局 outline 事实，没有未经批准新增 focus-visible 视觉；消费前仍需
   通过 REQ-006 补齐当前生产焦点证据。
+- 点踩浮层支持 Escape、outside click 和 resize/scroll 重定位；参考源码没有完整 focus trap，
+  因此仍不能称 dialog keyboard path validated。`SRC-058`
 
 ## 对比度初步风险
 

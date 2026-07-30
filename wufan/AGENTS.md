@@ -44,8 +44,11 @@ Product 的 `light` 与 `dark` 是平行且独立的主题。必须读取对应�
 
 目标涉及登录后对话工作区时，必须直接读取
 `examples/reference/chat-page/README.md`、`WufanChatPage.tsx`、
-`wufan-chat.css` 和 `spec.json`。该参考已经覆盖 Sidebar/对话列表、Chat Header、
-消息区和 Composer 的 light/dark 代码；当它与本地 `14394dc` 冲突时以当前生产
+`WufanReasoningTrace.tsx`、`WufanMessageFeedback.tsx`、`WufanRightPanel.tsx`、
+`WufanWorkspaceFiles.tsx`（导出 `WufanWorkspaceStudio`）、`WufanExecutionNotice.tsx`、`wufan-chat.css` 和
+`spec.json`。涉及后端数据时再读
+`runtime-contract.md` 与 `interaction-contract.md`。该参考已经覆盖 Sidebar/对话列表、
+Header、消息区、过程轨迹、反馈、右侧面板、执行结果通知和 Composer；当它与本地 `14394dc` 冲突时以当前生产
 `SRC-012/013` 为准。Dark populated 与登录后 mobile 仍是 source-derived，禁止误写成已有
 像素 baseline。
 
@@ -75,3 +78,15 @@ Product 的 `light` 与 `dark` 是平行且独立的主题。必须读取对应�
 ## 安全边界
 
 不绕过登录/付费墙/访问控制，不执行未检查源码，不保存凭据或隐私数据，不触发删除、付款、提交等副作用。品牌 Logo、专有素材和受限字体只有明确授权才用于新业务。
+
+## 本机源码位置
+
+当前 wufan 主源码仓库的绝对路径为 `/Users/anner/fine/ai/corevo`（remote：
+`~anner/corevo.git`）。`/Users/anner/fine/ai/dev` 是独立的 `corevo-platform.git` 工作区，
+不是 wufan 主源码；只有用户明确指定参考其中某项交互时，才可把它作为跨系统补充证据，并且
+必须在结论中标明来源差异，禁止把它写成 wufan 原生实现。
+
+需要回查实现时先确认对应工作区当前 commit、remote 和工作树状态，优先做只读源码分析；
+不得把源码中的凭据、租户数据、用户隐私或未经脱敏的业务内容复制进档案。
+
+如果以上信息都不足以支撑复刻，那么请去查看源码

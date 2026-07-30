@@ -1,0 +1,130 @@
+{
+  "feedback_request": {
+    "sentiment": "negative",
+    "content": "主体信息的更新时间不一致",
+    "categories": [
+      "数据不准",
+      "分析不深"
+    ]
+  },
+  "feedback_response": {
+    "id": "feedback_01",
+    "sentiment": "negative",
+    "content": "主体信息的更新时间不一致",
+    "categories": [
+      "数据不准",
+      "分析不深"
+    ]
+  },
+  "shared_file_list_response": {
+    "path": "",
+    "files": [
+      {
+        "id": "file_04",
+        "name": "主体数据源.json",
+        "path": "files/主体数据源.json",
+        "is_dir": false,
+        "size": 8716,
+        "modified_at": "2026-07-30T10:21:12.000Z",
+        "mime_type": "application/json",
+        "location": "shared"
+      }
+    ]
+  },
+  "session_file_list_response": {
+    "path": "",
+    "files": [
+      {
+        "id": "file_01",
+        "name": "客户洞察分析.md",
+        "path": "客户洞察分析.md",
+        "is_dir": false,
+        "size": 18432,
+        "modified_at": "2026-07-30T10:32:41.000Z",
+        "mime_type": "text/markdown",
+        "location": "session"
+      },
+      {
+        "id": "file_02",
+        "name": "合作优先级建议.pdf",
+        "path": "合作优先级建议.pdf",
+        "is_dir": false,
+        "size": 1258291,
+        "modified_at": "2026-07-30T10:24:41.000Z",
+        "mime_type": "application/pdf",
+        "location": "session"
+      }
+    ]
+  },
+  "panel_snapshot": {
+    "workspace": {
+      "active_tab_id": "file:file_01",
+      "expanded": false,
+      "tabs": [
+        {
+          "id": "canvas",
+          "kind": "canvas",
+          "name": "文件画布",
+          "path": "canvas",
+          "level": "agent-shared"
+        },
+        {
+          "id": "file:file_01",
+          "file_id": "file_01",
+          "kind": "file",
+          "name": "客户洞察分析.md",
+          "path": "客户洞察分析.md",
+          "level": "session",
+          "session_id": "session_01",
+          "preview_kind": "markdown"
+        }
+      ]
+    },
+    "execution": {
+      "selected_execution_id": "exec_01",
+      "items": [
+        {
+          "id": "exec_01",
+          "task": "分析三家汽车企业并给出合作优先级建议",
+          "status": "completed",
+          "iterations": 3,
+          "tool_calls": 4,
+          "prompt_tokens": 18640,
+          "completion_tokens": 4236,
+          "started_at": "2026-07-30T10:24:00.000Z",
+          "completed_at": "2026-07-30T10:32:41.000Z"
+        }
+      ]
+    },
+    "automation": {
+      "items": [
+        {
+          "id": "pipeline_01",
+          "display_name": "每周客户洞察摘要",
+          "schedule_label": "每周一 09:00",
+          "status": "active",
+          "last_run_status": "completed"
+        }
+      ]
+    }
+  },
+  "file_share_response": {
+    "token": "share_token",
+    "url": "/share/files/share_token",
+    "file_name": "客户洞察分析.md",
+    "expires_at": "2026-07-31T10:32:41.000Z"
+  },
+  "notification_event": {
+    "event_type": "notification.created",
+    "payload": {
+      "id": "notice_01",
+      "type": "automation_failed",
+      "title": "竞品变更提醒",
+      "summary": "企业信息服务暂时不可用，任务未能完成全部检索。",
+      "reference_type": "automation_pipeline",
+      "reference_id": "pipeline_01",
+      "is_read": false,
+      "created_at": "2026-07-30T10:33:00.000Z"
+    }
+  }
+}

@@ -747,6 +747,29 @@
       "sha256": "1bb8011f8f882ca0075b389991a33d532622c6941793c983eb9ceb92568114fd",
       "capturedAt": "2026-07-28T23:00:47Z",
       "notes": "User-provided crop of the mascot/panel overlap; crop origin is unknown."
+    },
+    {
+      "evidenceId": "SRC-056",
+      "url": null,
+      "route": "authenticated chat / process trace component crop",
+      "theme": "light",
+      "viewport": {
+        "physicalWidth": 2072,
+        "physicalHeight": 620
+      },
+      "physicalPixels": {
+        "width": 2072,
+        "height": 620
+      },
+      "dpr": 2,
+      "state": "expanded/completed",
+      "captureType": "component-crop",
+      "selector": null,
+      "waitCondition": "user-provided",
+      "path": "sources/screenshots/original/light/chat-process-trace__light__2072x620__expanded-completed__01.png",
+      "sha256": "4eb83411c9f7fbbfc385fb620940a7cff250d3f828c1f4877f6c2da5b10ca32d",
+      "capturedAt": "2026-07-29T23:07:06Z",
+      "notes": "Completed process-trace crop. DPR inferred by cross-checking source typography against physical pixels; crop origin is unknown."
     }
   ]
 }

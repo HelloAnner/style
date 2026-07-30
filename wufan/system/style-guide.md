@@ -80,6 +80,15 @@ viewport
 - Modal：r20；backdrop Light .4 / Dark .7。
 - Login Mascot：使用 `examples/reference/login-mascot/` 的 exact-source SVG 组件；240×300、三段粉紫蓝渐变、眨眼/漂浮/视线跟随，mobile 不渲染。
 - Chat Page：使用 `examples/reference/chat-page/` 的双主题工作区；包含 Sidebar/对话列表、Header、消息和 Composer，可替换业务数据。
+- Process Trace：使用 `WufanReasoningTrace` 和 `trace-state-fixtures.ts`；不得只实现 completed，
+  必须保留等待/运行/失败/取消/超时、shine、spinner 与折叠。
+- Feedback：Wufan 原生消息动作 26×26/r6，点踩打开 360px 文本面板；用户指定增强版使用
+  300px 锚定浮层和固定 5 项原因，并映射到原生 `categories/content`；选中态互斥可撤销。
+- Right Panel：工作区/执行链/自动化入口互斥；桌面约 50% 同舞台宽度，关闭 300ms；
+  mobile fixed inset8。
+- Execution Notice：340px、top60/right24、5s 自动关闭、hover 暂停；“查看详情”按 reference 路由。
+- Workspace Studio：56px header、36px tabs、常驻文件画布、共享/会话分组、最多 8 个文件
+  标签；保留 loading/slow/error/retry、编辑、HTML render、下载/分享/新窗口与最大化。
 
 详见 `../analysis/components.md`。
 
@@ -114,6 +123,8 @@ viewport
 - 不照较旧源码复刻当前 What’s New；
 - 不在未覆盖范围声称完全一致。
 - 不把登录小人替换成截图、普通半圆、聊天无眼头像或自绘近似 SVG。
+- 不把过程轨迹、右侧执行链面板和执行结果通知合并成一个组件。
+- 不把 raw reasoning、工具参数、凭据或完整工具返回发送到浏览器过程摘要。
 
 ## 证据优先级
 

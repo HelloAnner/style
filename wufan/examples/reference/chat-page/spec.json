@@ -1,6 +1,6 @@
 {
   "id": "wufan-chat-page",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "surface": "product",
   "themes": {
     "light": {
@@ -84,18 +84,157 @@
     "sendSize": 36,
     "sendRadius": 12
   },
+  "processTrace": {
+    "statuses": [
+      "pending",
+      "running",
+      "completed",
+      "failed",
+      "cancelled",
+      "timeout"
+    ],
+    "summaryHeight": 34,
+    "noteMinHeight": 30,
+    "noteFont": "14px/22px",
+    "toolMinHeight": 30,
+    "toolFont": "13px/20px",
+    "noteIconSlot": "16px x 30px",
+    "toolIconSlot": "14px x 30px",
+    "connectorWidth": 1.25,
+    "nestedMarginLeft": 7.5,
+    "nestedPaddingLeft": 15.5,
+    "shine": "1.4s linear infinite",
+    "spinner": "1s linear infinite",
+    "noteEntry": "180ms ease-out"
+  },
+  "feedback": {
+    "implementationMode": "user-requested-cross-system-enhancement-adapted-to-wufan-api",
+    "wufanNative": {
+      "actionButton": 26,
+      "actionRadius": 6,
+      "dislikePanelWidth": 360,
+      "dislikePanelType": "inline-free-text",
+      "writeMethod": "PUT",
+      "revokeMethod": "DELETE",
+      "fields": [
+        "sentiment",
+        "content",
+        "categories"
+      ],
+      "rollbackOnFailure": true
+    },
+    "actionButton": 24,
+    "actionRadius": 4,
+    "actionGap": 8,
+    "popoverWidth": 300,
+    "popoverGap": 8,
+    "viewportPadding": 8,
+    "popoverPadding": 12,
+    "popoverRadius": 8,
+    "textareaHeight": 72,
+    "buttonHeight": 32,
+    "commentMaxLength": 500,
+    "reasons": [
+      "数据不准",
+      "反应过慢",
+      "分析不深",
+      "废话冗长",
+      "答非所问"
+    ],
+    "reasonPickerSource": "SRC-058"
+  },
+  "rightPanel": {
+    "types": [
+      "workspace",
+      "execution",
+      "automation"
+    ],
+    "desktopWidth": "clamp(380px,50%,560px)",
+    "shellRadius": 16,
+    "inset": 8,
+    "transitionMs": 300,
+    "mobileInset": 8
+  },
+  "workspaceFiles": {
+    "levels": [
+      "agent-config",
+      "agent-shared",
+      "session"
+    ],
+    "canvasGroups": [
+      "agent-shared",
+      "session"
+    ],
+    "previewKinds": [
+      "image",
+      "pdf",
+      "spreadsheet",
+      "presentation",
+      "video",
+      "audio",
+      "csv",
+      "markdown",
+      "json",
+      "html",
+      "text",
+      "unsupported"
+    ],
+    "canvasPermanent": true,
+    "canvasToolbarPadding": "12px 20px",
+    "canvasCardCell": 160,
+    "canvasGridGap": 16,
+    "tabHeight": 36,
+    "tabPadding": "0 12px",
+    "tabGap": 4,
+    "tabNameMaxWidth": 120,
+    "slowLoadingHintMs": 5000,
+    "textTimeoutMs": 15000,
+    "maxFileTabs": 8,
+    "externalFileDedupe": [
+      "fileId",
+      "path+level+sessionId",
+      "path+level when sessionId absent"
+    ],
+    "cancelStaleRequests": true,
+    "htmlSandbox": "allow-scripts allow-same-origin",
+    "htmlRenderSizes": {
+      "mobile": "375x667",
+      "tablet": "768x1024",
+      "desktop": "1280x800"
+    }
+  },
+  "executionNotice": {
+    "width": 340,
+    "top": 60,
+    "right": 24,
+    "padding": "16px 18px",
+    "radius": 14,
+    "autoDismissMs": 5000,
+    "transition": "300ms cubic-bezier(.34,1.2,.64,1)",
+    "enter": "translateX(40px) scale(.96)",
+    "leave": "translateX(20px) scale(.97)"
+  },
   "evidence": {
     "productionCss": "SRC-012",
     "productionJs": "SRC-013",
     "lightPopulatedDesktop": "SRC-003",
     "darkShellDesktop": "SRC-002",
     "localSourceAnatomy": "SRC-004",
-    "measurement": "EVD-007"
+    "processTraceScreenshot": "SRC-056",
+    "processTraceSource": "SRC-057",
+    "interactionSource": "SRC-058",
+    "filePreviewSource": "SRC-059",
+    "measurement": [
+      "EVD-007",
+      "EVD-008",
+      "EVD-009",
+      "EVD-010"
+    ]
   },
   "validation": {
     "lightDesktop": "local render checked against available populated reference",
     "darkDesktop": "local render checked for exact theme/runtime values; no same-state screenshot baseline",
     "mobile": "source-derived behavior checked locally; no authenticated mobile screenshot baseline",
-    "status": "pass-within-runnable-reference-scope"
+    "status": "pass-within-runnable-chat-interactions-reference-scope"
   }
 }

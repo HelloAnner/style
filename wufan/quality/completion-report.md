@@ -1,12 +1,13 @@
 # 完整性自检报告
 
-- 档案：`wufan` v0.4.0
-- 检查时间：2026-07-29T00:04:40Z
+- 档案：`wufan` v0.6.0
+- 检查时间：2026-07-30T00:00:00Z
 - 当前状态：`analyzed`
-- 来源：55
-- TODO：8/16 完成；8 open；6 blocker
+- 来源：60
+- TODO：11/19 完成；8 open；6 blocker
 - REQUESTS：8 open
-- 自检结论：**登录小人组件与对话可运行参考范围通过；complete 门槛未通过。**
+- 自检结论：**登录小人、对话主路径、过程轨迹、反馈、右侧面板、工作室/文件预览和执行通知的可运行参考
+  范围通过；complete 门槛未通过。**
 
 ## 三阶段自检
 
@@ -28,6 +29,12 @@
 - 对话代码自检：通过可运行参考范围——从 SRC-012/013 恢复当前生产几何，以 SRC-003
   核对 light populated，以 SRC-002 核对 dark shell，并用 SRC-004 补充 mobile anatomy；
   未把 dark populated/mobile actual 冒充来源 baseline。
+- 对话交互自检：通过目标组件范围——以 SRC-056/057 重建过程轨迹与六态 fixtures；
+  以 SRC-058 重建固定原因浮层，以 SRC-060 校正 Wufan 原生反馈 API、回滚和
+  AutomationToast；右面板明确记录为 SRC-004/013/058 的跨版本组合，未把脱敏 panel
+  内容宣称为生产业务数据。
+- 工作室自检：通过 source-derived 组件范围——以 Wufan 源码 SRC-059 重建常驻文件画布、
+  共享/会话文件、多标签去重/上限，以及文件预览、编辑和 HTML 渲染；重型解析器仍为 fixture。
 
 ### 结束前
 
@@ -48,6 +55,12 @@
 - 对话工作区：React/CSS/脱敏 mock/机器规格和零构建 demo 已建立；agent-browser 0.8.5
   在 1594×974 light/dark、390×844 light/dark 运行；主题切换、发送 active/append 和 mobile
   drawer 通过；保存 5 张 actual 与运行时指标。
+- 对话交互：React bundle 通过；静态 demo 在 1594×974 light 验证 running spinner/shine、
+  右侧 execution 面板、300px 点踩浮层、原因提交禁用/互斥 localStorage、failed notice
+  及点击打开 automation；Wufan 原生 PUT/DELETE 反馈字段已写入契约。保存 3 张 actual，
+  两份 JSON Schema 与样例通过 Draft 2020-12 + format 校验。
+- 工作室：React bundle和零构建 demo 通过；1594×974 light/dark 与 390×844 dark 验证
+  文件画布、共享/会话分组、多标签、Markdown、HTML render、最大化和关闭；保存 4 张 actual。
 - 图像总数：33 项来源截图；登录小人新增 2 张实际渲染截图作为 validation artifact。
 
 ## 未通过 complete 的原因
@@ -64,5 +77,5 @@
 
 保持 `analyzed`，不得称整个档案完整。登录小人可标为
 `exact-source, pass-within-component-scope`；对话示例可标为
-`exact-source reference, pass-within-runnable-chat-page-scope`。下一轮仍优先获得安全登录态
+`exact-source reference, pass-within-runnable-chat-interactions-scope`。下一轮仍优先获得安全登录态
 探索方式、dark populated/mobile baseline、当前部署源码映射和其余 private/public 发布范围确认。

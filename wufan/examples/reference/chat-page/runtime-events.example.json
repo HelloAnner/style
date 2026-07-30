@@ -1,0 +1,167 @@
+[
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0001",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 1,
+    "occurred_at": "2026-07-30T10:24:00.000Z",
+    "event_type": "execution.started",
+    "payload": {
+      "started_at": "2026-07-30T10:24:00.000Z"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0002",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 2,
+    "occurred_at": "2026-07-30T10:24:01.000Z",
+    "event_type": "trace.note.upsert",
+    "payload": {
+      "id": "note_01",
+      "step_seq": 10,
+      "status": "running",
+      "text": "先读取客户洞察技能完成前置约束，同时锁定三个主体。",
+      "segment_id": "segment_01"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0003",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 3,
+    "occurred_at": "2026-07-30T10:24:02.000Z",
+    "event_type": "tool.call.started",
+    "payload": {
+      "id": "call_01",
+      "step_seq": 11,
+      "tool_name": "read",
+      "display_name": "读取文件",
+      "summary": "阅读 \"skills/customer-insight/SKILL.md\"",
+      "icon": "read"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0004",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 4,
+    "occurred_at": "2026-07-30T10:24:02.126Z",
+    "event_type": "tool.call.completed",
+    "payload": {
+      "id": "call_01",
+      "status": "completed",
+      "summary": "阅读 \"skills/customer-insight/SKILL.md\"",
+      "duration_ms": 126
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0005",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 5,
+    "occurred_at": "2026-07-30T10:24:03.000Z",
+    "event_type": "trace.note.upsert",
+    "payload": {
+      "id": "note_01",
+      "step_seq": 10,
+      "status": "completed",
+      "text": "先读取客户洞察技能完成前置约束，同时锁定三个主体。",
+      "segment_id": "segment_01"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0006",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 6,
+    "occurred_at": "2026-07-30T10:24:04.000Z",
+    "event_type": "trace.note.upsert",
+    "payload": {
+      "id": "note_02",
+      "step_seq": 20,
+      "status": "completed",
+      "text": "技能已读取。",
+      "segment_id": "segment_02"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0007",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 7,
+    "occurred_at": "2026-07-30T10:24:05.000Z",
+    "event_type": "tool.call.started",
+    "payload": {
+      "id": "call_02",
+      "step_seq": 21,
+      "tool_name": "enterprise_search",
+      "display_name": "MOSS-企业列表搜索",
+      "summary": "MOSS-企业列表搜索",
+      "icon": "search"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0008",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 8,
+    "occurred_at": "2026-07-30T10:32:40.000Z",
+    "event_type": "sources.reported",
+    "payload": {
+      "sources": [
+        {
+          "id": "source_01",
+          "title": "企业基本信息",
+          "url": "https://example.com/source/1",
+          "domain": "example.com"
+        }
+      ]
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0009",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 9,
+    "occurred_at": "2026-07-30T10:32:41.000Z",
+    "event_type": "response.completed",
+    "payload": {
+      "format": "markdown",
+      "content": "已经完成分析，结论如下……"
+    }
+  },
+  {
+    "schema_version": "wufan.chat.runtime.v1",
+    "event_id": "evt_0010",
+    "session_id": "session_01",
+    "message_id": "msg_assistant_01",
+    "execution_id": "exec_01",
+    "seq": 10,
+    "occurred_at": "2026-07-30T10:32:41.000Z",
+    "event_type": "execution.completed",
+    "payload": {
+      "status": "completed",
+      "completed_at": "2026-07-30T10:32:41.000Z",
+      "duration_ms": 521000
+    }
+  }
+]

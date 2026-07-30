@@ -1,10 +1,19 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { exampleMessages, exampleSessionGroups } from './mock-data';
+import {
+  exampleExecutionNotices,
+  exampleMessages,
+  exampleSessionGroups,
+} from './mock-data';
 import type {
   WufanChatPageProps,
   WufanMessage,
+  WufanRightPanelType,
   WufanSessionGroup,
 } from './types';
+import { WufanExecutionNotices } from './WufanExecutionNotice';
+import { WufanMessageActions } from './WufanMessageFeedback';
+import { WufanReasoningTrace } from './WufanReasoningTrace';
+import { WufanRightPanel } from './WufanRightPanel';
 import './wufan-chat.css';
 
 type IconName =
@@ -15,6 +24,8 @@ type IconName =
   | 'chevron-down'
   | 'chevrons-left'
   | 'copy'
+  | 'execution'
+  | 'files'
   | 'globe'
   | 'history'
   | 'image'
@@ -27,6 +38,7 @@ type IconName =
   | 'plus'
   | 'search'
   | 'send'
+  | 'share'
   | 'sparkles'
   | 'star'
   | 'sun'
@@ -62,6 +74,19 @@ const ICON_PATHS: Record<IconName, React.ReactNode> = {
     <>
       <rect width="14" height="14" x="8" y="8" rx="2" />
       <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+    </>
+  ),
+  execution: (
+    <>
+      <circle cx="7" cy="5" r="2.5" />
+      <circle cx="17" cy="19" r="2.5" />
+      <path d="M7 7.5v4c0 3 3 5.5 10 7" />
+    </>
+  ),
+  files: (
+    <>
+      <path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h4l2 2h7A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5v-11Z" />
+      <path d="M3.5 10h17" />
     </>
   ),
   globe: (
@@ -111,6 +136,14 @@ const ICON_PATHS: Record<IconName, React.ReactNode> = {
     <>
       <path d="m22 2-7 20-4-9-9-4Z" />
       <path d="M22 2 11 13" />
+    </>
+  ),
+  share: (
+    <>
+      <circle cx="18" cy="5" r="2.5" />
+      <circle cx="6" cy="12" r="2.5" />
+      <circle cx="18" cy="19" r="2.5" />
+      <path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5" />
     </>
   ),
   sparkles: (
@@ -291,12 +324,18 @@ function ChatHeader({
   theme,
   onOpenSidebar,
   onThemeChange,
+  rightPanel,
+  onToggleRightPanel,
 }: {
   agentName: string;
   sessionTitle: string;
   theme: 'light' | 'dark';
   onOpenSidebar: () => void;
   onThemeChange?: WufanChatPageProps['onThemeChange'];
+  rightPanel: WufanRightPanelType;
+  onToggleRightPanel: (
+    type: Exclude<WufanRightPanelType, 'none'>,
+  ) => void;
 }): React.ReactElement {
   return (
     <header className="wufan-chat-header">
@@ -318,6 +357,40 @@ function ChatHeader({
         </button>
       </div>
       <div className="wufan-chat-header__actions">
+        <button
+          className={`wufan-icon-button wufan-panel-trigger${rightPanel === 'workspace' ? ' is-active' : ''}`}
+          data-panel="workspace"
+          type="button"
+          aria-label={rightPanel === 'workspace' ? '关闭工作室' : '打开工作室'}
+          aria-pressed={rightPanel === 'workspace'}
+          onClick={() => onToggleRightPanel('workspace')}
+        >
+          <Icon name="files" />
+        </button>
+        <button
+          className={`wufan-icon-button wufan-panel-trigger${rightPanel === 'execution' ? ' is-active' : ''}`}
+          data-panel="execution"
+          type="button"
+          aria-label={rightPanel === 'execution' ? '关闭执行链' : '打开执行链'}
+          aria-pressed={rightPanel === 'execution'}
+          onClick={() => onToggleRightPanel('execution')}
+        >
+          <Icon name="execution" />
+        </button>
+        <button className="wufan-icon-button" type="button" aria-label="分享会话">
+          <Icon name="share" />
+        </button>
+        <span className="wufan-chat-header__divider" aria-hidden="true" />
+        <button
+          className={`wufan-icon-button wufan-panel-trigger${rightPanel === 'automation' ? ' is-active' : ''}`}
+          data-panel="automation"
+          type="button"
+          aria-label={rightPanel === 'automation' ? '关闭自动化' : '打开自动化'}
+          aria-pressed={rightPanel === 'automation'}
+          onClick={() => onToggleRightPanel('automation')}
+        >
+          <Icon name="automation" />
+        </button>
         {onThemeChange ? (
           <button
             className="wufan-icon-button"
@@ -328,12 +401,6 @@ function ChatHeader({
             <Icon name={theme === 'light' ? 'moon' : 'sun'} />
           </button>
         ) : null}
-        <button className="wufan-icon-button" type="button" aria-label="会话历史">
-          <Icon name="history" />
-        </button>
-        <button className="wufan-icon-button" type="button" aria-label="归档">
-          <Icon name="archive" />
-        </button>
         <button className="wufan-icon-button" type="button" aria-label="更多操作">
           <Icon name="more" />
         </button>
@@ -354,7 +421,21 @@ function UserAvatar(): React.ReactElement {
   );
 }
 
-function MessageBubble({ message }: { message: WufanMessage }): React.ReactElement {
+function MessageBubble({
+  message,
+  showToolDurations,
+  onSourcesClick,
+  theme,
+  onSubmitFeedback,
+  onRevokeFeedback,
+}: {
+  message: WufanMessage;
+  showToolDurations: boolean;
+  onSourcesClick?: WufanChatPageProps['onSourcesClick'];
+  theme: WufanChatPageProps['theme'];
+  onSubmitFeedback?: WufanChatPageProps['onSubmitFeedback'];
+  onRevokeFeedback?: WufanChatPageProps['onRevokeFeedback'];
+}): React.ReactElement {
   const isUser = message.role === 'user';
   return (
     <article className={`wufan-message is-${message.role}`}>
@@ -364,22 +445,28 @@ function MessageBubble({ message }: { message: WufanMessage }): React.ReactEleme
           <strong>{message.author}</strong>
           <time>{message.time}</time>
         </div>
-        <div className="wufan-message__bubble">{message.content}</div>
-        <div className="wufan-message__tools" aria-label="消息操作">
-          <button type="button" aria-label="复制">
-            <Icon name="copy" size={14} />
-          </button>
-          {!isUser ? (
-            <>
-              <button type="button" aria-label="有帮助">
-                <Icon name="thumbs-up" size={14} />
-              </button>
-              <button type="button" aria-label="没有帮助">
-                <Icon name="thumbs-down" size={14} />
-              </button>
-            </>
-          ) : null}
-        </div>
+        {message.trace ? (
+          <WufanReasoningTrace
+            trace={message.trace}
+            showToolDurations={showToolDurations}
+            onSourcesClick={
+              onSourcesClick
+                ? () => onSourcesClick(message.id, message.trace?.sources ?? [])
+                : undefined
+            }
+          />
+        ) : null}
+        {message.content ? (
+          <div className="wufan-message__bubble">{message.content}</div>
+        ) : null}
+        <WufanMessageActions
+          messageId={message.id}
+          content={typeof message.content === 'string' ? message.content : ''}
+          feedback={isUser ? undefined : message.feedback}
+          theme={theme}
+          onSubmitFeedback={onSubmitFeedback}
+          onRevokeFeedback={onRevokeFeedback}
+        />
       </div>
     </article>
   );
@@ -468,10 +555,23 @@ export function WufanChatPage({
   modelLabel = 'Qwen 3.7 Plus',
   onSend,
   onThemeChange,
+  onSourcesClick,
+  onSubmitFeedback,
+  onRevokeFeedback,
+  initialRightPanel = 'none',
+  workspaceFiles,
+  executionNotices = exampleExecutionNotices,
+  onExecutionNoticeClick,
+  showToolDurations = false,
   className,
 }: WufanChatPageProps): React.ReactElement {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sentMessages, setSentMessages] = useState<WufanMessage[]>([]);
+  const [rightPanel, setRightPanel] =
+    useState<WufanRightPanelType>(initialRightPanel);
+  const [renderedRightPanel, setRenderedRightPanel] = useState<
+    Exclude<WufanRightPanelType, 'none'> | null
+  >(initialRightPanel === 'none' ? null : initialRightPanel);
   const messages = useMemo(
     () => [...initialMessages, ...sentMessages],
     [initialMessages, sentMessages],
@@ -495,6 +595,21 @@ export function WufanChatPage({
     onSend?.(value);
   };
 
+  React.useEffect(() => {
+    if (rightPanel !== 'none') {
+      setRenderedRightPanel(rightPanel);
+      return;
+    }
+    const timer = window.setTimeout(() => setRenderedRightPanel(null), 300);
+    return () => window.clearTimeout(timer);
+  }, [rightPanel]);
+
+  const toggleRightPanel = (
+    type: Exclude<WufanRightPanelType, 'none'>,
+  ) => {
+    setRightPanel((current) => (current === type ? 'none' : type));
+  };
+
   return (
     <main
       className={`wufan-chat-page${className ? ` ${className}` : ''}`}
@@ -508,24 +623,55 @@ export function WufanChatPage({
           open={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
         />
-        <section className="wufan-chat-panel" aria-label={`${sessionTitle} 对话`}>
-          <ChatHeader
-            agentName={agentName}
-            sessionTitle={sessionTitle}
-            theme={theme}
-            onOpenSidebar={() => setSidebarOpen(true)}
-            onThemeChange={onThemeChange}
-          />
-          <div className="wufan-message-scroll">
-            <div className="wufan-message-list" aria-live="polite">
-              {messages.map((message) => (
-                <MessageBubble message={message} key={message.id} />
-              ))}
+        <div className="wufan-main-stage">
+          <section className="wufan-chat-panel" aria-label={`${sessionTitle} 对话`}>
+            <ChatHeader
+              agentName={agentName}
+              sessionTitle={sessionTitle}
+              theme={theme}
+              onOpenSidebar={() => setSidebarOpen(true)}
+              onThemeChange={onThemeChange}
+              rightPanel={rightPanel}
+              onToggleRightPanel={toggleRightPanel}
+            />
+            <div className="wufan-message-scroll">
+              <div className="wufan-message-list" aria-live="polite">
+                {messages.map((message) => (
+                  <MessageBubble
+                    message={message}
+                    showToolDurations={showToolDurations}
+                    onSourcesClick={onSourcesClick}
+                    theme={theme}
+                    onSubmitFeedback={onSubmitFeedback}
+                    onRevokeFeedback={onRevokeFeedback}
+                    key={message.id}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <Composer modelLabel={modelLabel} onSend={handleSend} />
-        </section>
+            <Composer modelLabel={modelLabel} onSend={handleSend} />
+          </section>
+          {renderedRightPanel ? (
+            <WufanRightPanel
+              type={renderedRightPanel}
+              open={rightPanel !== 'none'}
+              onClose={() => setRightPanel('none')}
+              workspaceFiles={workspaceFiles}
+            />
+          ) : null}
+        </div>
       </div>
+      <WufanExecutionNotices
+        notices={executionNotices}
+        onNoticeClick={(notice) => {
+          onExecutionNoticeClick?.(notice);
+          setRightPanel(
+            notice.referenceType === 'automation_pipeline'
+              ? 'automation'
+              : 'execution',
+          );
+        }}
+      />
     </main>
   );
 }

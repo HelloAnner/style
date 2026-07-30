@@ -20,7 +20,28 @@ Sidebar 240px (collapsed 56px)
 - 当前生产聊天内容最大宽 960px（旧本地源码为 880px），常见水平 padding 24px；
 - Composer 外层左右 24px、下 16px，内部最大宽 800px。
 
+### 对话右侧面板
+
+- 顶部工作区/执行链/自动化入口互斥；
+- 当前固定类面板目标宽度为同一可用舞台的 50%，归档参考限制为 380–560px；
+- 右面板内容采用 8px inset，shell radius16；与 Chat 相邻时不另加 12px gap；
+- 打开/关闭通过 width/flex-basis 300ms，关闭保留旧内容到动画完成再卸载；
+- “执行完成/异常”通知不是布局列：fixed top60/right24，width340，z9999。
+
+`Observed · exact-source cross-version composition · medium-high · SRC-004/013/058, EVD-009`
+
 `Observed · exact-source · high · SRC-002–004`
+
+### 工作室内部
+
+- 顶部标题栏 56px；标题“工作室”，右侧为最大化与关闭；
+- 标签栏 36px，常驻“文件画布”不可关闭；文件标签水平 padding12、gap4，active 顶部
+  radius12，文件名最大宽 120px；
+- 画布分为“共享文件”和当前会话文件两组，带搜索与上传入口；
+- 文件标签最多 8 个，优先按 file id 去重，再按 path + level + session id；
+- 画布常驻但非 active 时隐藏，非活动文件预览卸载；最大化时占据整个应用舞台。
+
+`Observed · exact-source + local actual · high · SRC-059, EVD-010`
 
 ### 截图换算
 
@@ -33,6 +54,7 @@ Sidebar 240px (collapsed 56px)
 - drawer overlay `rgba(0,0,0,.4)`；
 - Chat Header 出现 32px 汉堡按钮；
 - Workspace 在移动端 fixed full viewport；
+- 归档右面板参考统一使用 fixed inset8；关闭时向右滑出；
 - Chat/Main Stage min-width 降为 0。
 
 `Observed · exact-source · high · SRC-004`
