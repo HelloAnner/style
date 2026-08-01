@@ -1,0 +1,1864 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Corevo Design System - CSS Tokens ===== */
+
+:root {
+  /* Font */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 6px;
+  --spacing-3: 8px;
+  --spacing-4: 10px;
+  --spacing-5: 12px;
+  --spacing-6: 14px;
+  --spacing-7: 16px;
+  --spacing-8: 20px;
+  --spacing-9: 24px;
+  --spacing-10: 32px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 200ms;
+  --transition-slow: 300ms;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Semantic Colors */
+  --color-file-csv: #F59E0B;
+  --color-file-image: #6366F1;
+  --color-file-markdown: #22C55E;
+  --color-file-config: #71717A;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+}
+
+/* ===== Dark Theme (Default) ===== */
+:root,
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-primary: #0A0A0F;
+  --bg-secondary: #121218;
+  --bg-tertiary: #16161C;
+  --bg-elevated: #1A1A20;
+  --admin-drawer-overlay: rgba(0, 0, 0, 0.58);
+  
+  /* Glass — 性能优化：提高背景不透明度 + 大幅降低 blur
+     旧值 blur(40px) + 50% 透明度 → 每帧滚动都需要 O(pixels*blur²) 重合成
+     新值 blur(12px) + 82% 不透明度 → 视觉效果接近，合成开销降低 ~90% */
+  --glass-bg: rgba(18, 18, 24, 0.82);
+  --glass-bg-light: rgba(22, 22, 28, 0.78);
+  --glass-blur: 12px;
+  
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-muted: rgba(255, 255, 255, 0.03);
+  --border-faint: rgba(255, 255, 255, 0.02);
+
+  /* File preview cards */
+  --preview-card-bg: rgba(255, 255, 255, 0.07);
+  --preview-card-border: rgba(255, 255, 255, 0.12);
+  --code-preview-bg: #1e1e2e;
+  --code-preview-bar: rgba(255, 255, 255, 0.05);
+  
+  /* Text */
+  --text-primary: #FAFAFA;
+  --text-secondary: #E4E4E7;
+  --text-tertiary: #A1A1AA;
+  --text-muted: #71717A;
+  --text-placeholder: #52525B;
+  
+  /* Interactive */
+  --interactive-default: #3F3F46;
+  --interactive-hover: #52525B;
+  --interactive-active: #27272A;
+  
+  /* Glows */
+  --glow-purple: rgba(124, 58, 237, 0.03);
+  --glow-blue: rgba(59, 130, 246, 0.02);
+  --glow-violet: rgba(168, 85, 247, 0.02);
+  
+  /* Lines */
+  --line-subtle: rgba(255, 255, 255, 0.01);
+  
+  /* Component specific */
+  --sidebar-bg: rgba(18, 18, 24, 0.5);
+  --input-bg: rgba(22, 22, 28, 0.5);
+  --sender-bg: var(--bg-secondary);
+  --sender-border: var(--input-border);
+  --sender-shadow: 0 0 2px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+  --chat-main-bg: var(--bg-primary);
+  --chat-toast-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  --chat-popover-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  --chat-tooltip-bg: #3F506A;
+  --chat-tooltip-text: #FFFFFF;
+  --chat-followup-bg: var(--bg-secondary);
+  --chat-followup-hover-bg: rgba(255, 255, 255, 0.07);
+  --chat-followup-border: rgba(255, 255, 255, 0.08);
+  --chat-followup-text: rgba(250, 250, 250, 0.66);
+  --chat-followup-text-hover: rgba(250, 250, 250, 0.9);
+  --chat-feedback-option-muted: rgba(250, 250, 250, 0.47);
+  --chat-feedback-option-selected-text: rgba(250, 250, 250, 0.9);
+  --chat-feedback-face-ink: rgba(11, 11, 11, 0.85);
+  --chat-feedback-face-solved-bg: #FFD75A;
+  --chat-feedback-face-partial-bg: #F2D15D;
+  --chat-feedback-face-unsolved-bg: #FF8652;
+  /* Chat running text should read neutral, not blue-tinted. */
+  --chat-running-text-base: color-mix(in srgb, var(--text-muted) 68%, transparent);
+  --chat-running-text-highlight: var(--text-secondary);
+  --chat-checkbox-border: #3F3F46;
+  /* Feedback controls share the same mono action color as upload/reference CTAs. */
+  --chat-checkbox-checked-bg: var(--btn-mono-bg);
+  --chat-button-primary-bg: var(--btn-mono-bg);
+  --chat-button-primary-text: var(--btn-mono-text);
+  --bubble-user: #1A1A20;
+  --bubble-agent: #16161C;
+  --avatar-bg: #27272A;
+  --user-avatar-bg: #3F3F46;
+  --user-avatar-text: #FAFAFA;
+  --send-btn-bg: #3F3F46;
+  --send-btn-icon: #FAFAFA;
+  --tab-active-bg: #16161C;
+  --table-header-bg: #1A1A20;
+
+  /* Roundtable card */
+  --rt-card-bg: #141418;
+  --rt-card-border: none;
+  --rt-card-shadow: none;
+  --rt-topline-opacity: 0.35;
+  --rt-avatar-inner-bg: linear-gradient(145deg, #2A2A30, #18181B);
+  --rt-avatar-fg-gradient: radial-gradient(circle at 50% 45%, transparent 30%, rgba(24,24,27,0.4) 70%);
+  --rt-accent-host: #818CF8;
+  --rt-bar-bg: rgba(255,255,255,0.04);
+  --rt-bar-border: rgba(255,255,255,0.07);
+  --rt-typing-dot: rgba(255,255,255,0.35);
+  --rt-tag-host-bg: rgba(129,140,248,0.12);
+  --rt-tag-host-color: #818CF8;
+  --rt-tag-ord-bg: rgba(96,165,250,0.12);
+  --rt-tag-ord-color: #60A5FA;
+  --rt-tag-free-bg: rgba(52,211,153,0.12);
+  --rt-tag-free-color: #34D399;
+  --rt-dot-line: rgba(255,255,255,0.08);
+  --rt-dot-future-bg: rgba(255,255,255,0.08);
+  --rt-dot-future-border: rgba(255,255,255,0.12);
+  --rt-chip-bg: rgba(255,255,255,0.05);
+  --rt-chip-border: rgba(255,255,255,0.07);
+  --rt-conclusion-bg: rgba(255,255,255,0.03);
+  --rt-conclusion-border: rgba(255,255,255,0.05);
+  --rt-bg-art-opacity: 0.18;
+  --rt-bg-art-hover-opacity: 0.28;
+  
+  /* Hover states */
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --hover-bg-strong: rgba(255, 255, 255, 0.08);
+  --active-bg: rgba(255, 255, 255, 0.1);
+  --selected-bg: rgba(255, 255, 255, 0.06);
+  
+  /* Code blocks */
+  --code-block-bg: var(--bg-secondary);
+  --code-block-header: rgba(255, 255, 255, 0.03);
+  --code-block-border: transparent;
+  --inline-code-bg: rgba(255, 255, 255, 0.08);
+  --inline-code-color: #E879F9;
+  
+  /* Panel shadows - 深色主题下更微妙 */
+  --panel-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+  /* Dropdown */
+  --dropdown-bg: #1F1F23;
+  --dropdown-border: rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3);
+  
+  /* Thinking Mode */
+  --thinking-auto-icon: #A78BFA;
+  --thinking-auto-bg: rgba(167, 139, 250, 0.1);
+  --thinking-enabled-icon: #60A5FA;
+  --thinking-enabled-bg: rgba(96, 165, 250, 0.1);
+  --thinking-disabled-icon: #FBBF24;
+  --thinking-disabled-bg: rgba(251, 191, 36, 0.1);
+  --text-on-accent: #18181B;
+  
+  /* Logo */
+  --logo-ring: #52525B;
+  --logo-core: #71717A;
+  --logo-accent: #A1A1AA;
+  --logo-text: #FAFAFA;
+  
+  /* Send Button */
+  --send-btn-default-bg: rgba(255, 255, 255, 0.1);
+  --send-btn-default-icon: #A1A1AA;
+  --send-btn-active-bg: #DE6A43;
+  --send-btn-active-icon: #FFFFFF;
+  --send-btn-active-shadow: 0 6px 14px rgba(222, 106, 67, 0.28);
+  
+  /* File Icons */
+  --file-icon-persona: #A78BFA;
+  --file-icon-table: #34D399;
+  --file-icon-image: #A78BFA;
+  --file-icon-markdown: #60A5FA;
+  --file-icon-pdf: #F87171;
+  --file-icon-code: #FB923C;
+  
+  /* File Link (clickable file path in messages) */
+  --file-link-color: #60A5FA;
+  
+  /* File Card (attachment in user messages) */
+  --file-card-bg: rgba(255, 255, 255, 0.1);
+  --file-card-icon-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Upload Preview (files in input box) */
+  --upload-preview-bg: rgba(255, 255, 255, 0.10);
+  --upload-preview-border: rgba(255, 255, 255, 0.08);
+  --upload-preview-error-bg: rgba(239, 68, 68, 0.10);
+  --upload-preview-error-border: #EF4444;
+  --upload-preview-error-text: #F87171;
+  --upload-icon-bg: rgba(255, 255, 255, 0.16);
+  --upload-icon-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  --upload-remove-btn-bg: rgba(24, 24, 27, 0.92);
+  --upload-remove-btn-icon: #ffffff;
+  --upload-remove-btn-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+  --upload-progress-bg: #F05A5A;
+  --upload-progress-line: rgba(240, 90, 90, 0.45);
+  --file-ref-token-text: #60A5FA;
+  --file-ref-token-bg: rgba(96, 165, 250, 0.16);
+  
+  /* Drag & Drop Overlay */
+  --drag-overlay-bg: rgba(10, 10, 15, 0.85);
+  --drag-icon-bg: rgba(255, 255, 255, 0.1);
+  --drag-icon-color: #A1A1AA;
+  
+  /* Agent Card */
+  --agent-card-bg: rgba(255, 255, 255, 0.03);
+  --agent-card-border: rgba(255, 255, 255, 0.06);
+  --agent-card-selected-bg: rgba(59, 130, 246, 0.1);
+  --agent-card-selected-border: rgba(59, 130, 246, 0.4);
+  --agent-create-btn-bg: transparent;
+  --agent-create-btn-text: #71717A;
+  --agent-create-btn-border: #3F3F46;
+  --agent-create-btn-hover-bg: rgba(255, 255, 255, 0.05);
+  --badge-default-bg: rgba(59, 130, 246, 0.2);
+  --badge-default-text: #60A5FA;
+  --accent-color: #3B82F6;
+  --accent-bg: rgba(59, 130, 246, 0.15);
+  
+  /* Modal */
+  --modal-backdrop: rgba(0, 0, 0, 0.7);
+  --modal-bg: #18181B;
+  --modal-border: #27272A;
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  /* Form Inputs */
+  --input-bg: #27272A;
+  --input-border: #3F3F46;
+  
+  /* Toggle */
+  --toggle-bg: #27272A;
+  --toggle-active-bg: #3B82F6;
+  --toggle-active-text: #FFFFFF;
+  
+  /* Mode Indicators */
+  --kernel-mode-bg: rgba(16, 185, 129, 0.1);
+  --kernel-mode-border: rgba(16, 185, 129, 0.2);
+  --kernel-mode-text: #34D399;
+  --kernel-mode-icon: #10B981;
+  --custom-mode-bg: rgba(245, 158, 11, 0.1);
+  --custom-mode-border: rgba(245, 158, 11, 0.2);
+  --custom-mode-text: #FBBF24;
+  --custom-mode-icon: #F59E0B;
+  
+  /* Primary Button */
+  --btn-primary-bg: #3B82F6;
+  --btn-primary-text: #FFFFFF;
+  
+  /* Scroll to Bottom Button */
+  --scroll-btn-bg: rgba(24, 24, 27, 0.85);
+  --scroll-btn-border: rgba(255, 255, 255, 0.1);
+  --scroll-btn-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --scroll-btn-icon: #A1A1AA;
+  
+  /* Plan Mode Indicator - 暗色主题 */
+  --plan-indicator-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  --plan-indicator-border: rgba(139, 92, 246, 0.3);
+  --plan-indicator-shimmer: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.3) 50%, transparent 100%);
+  --plan-indicator-pulse: rgba(139, 92, 246, 0.4);
+  --plan-indicator-icon-bg: rgba(139, 92, 246, 0.25);
+  --plan-indicator-icon: #A78BFA;
+  --plan-indicator-title: #C4B5FD;
+  --plan-indicator-badge-bg: rgba(139, 92, 246, 0.25);
+  --plan-indicator-badge-text: #DDD6FE;
+  --plan-indicator-btn-bg: rgba(139, 92, 246, 0.2);
+  --plan-indicator-btn-text: #DDD6FE;
+  
+  /* Plan Review Card - 暗色主题 */
+  --plan-review-header-bg: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+  --plan-review-badge-bg: rgba(34, 197, 94, 0.2);
+  --plan-review-badge-text: #4ADE80;
+  --plan-review-approve-bg: #FFFFFF;
+  --plan-review-approve-text: #18181B;
+  
+  /* Diff Preview - 暗色主题 */
+  --diff-add-bg: rgba(34, 197, 94, 0.1);
+  --diff-add-text: #4ade80;
+  --diff-add-mark: #22c55e;
+  --diff-remove-bg: rgba(239, 68, 68, 0.1);
+  --diff-remove-text: #f87171;
+  --diff-remove-mark: #ef4444;
+  
+  /* Skeleton - 暗色主题 */
+  --skeleton-bg: rgba(255, 255, 255, 0.06);
+  --skeleton-shine: rgba(255, 255, 255, 0.08);
+
+  /* Questionnaire Submitted - 暗色主题（偏白底） */
+  --questionnaire-element-bg: rgba(255, 255, 255, 0.1);
+  --questionnaire-element-text: rgba(255, 255, 255, 0.7);
+
+  /* Agent Studio */
+  --studio-bg: #08080C;
+  --studio-surface: rgba(255, 255, 255, 0.024);
+  --studio-surface-hover: rgba(255, 255, 255, 0.04);
+  --studio-surface-right: rgba(255, 255, 255, 0.008);
+  --studio-prompt-block-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.10) 0%, rgba(168, 85, 247, 0.08) 100%);
+  --studio-prompt-block-border: rgba(147, 197, 253, 0.32);
+  --studio-prompt-block-title: rgba(226, 232, 240, 0.76);
+  --studio-prompt-block-text: rgba(203, 213, 225, 0.72);
+  --studio-editor-bg: var(--bg-primary);
+  --studio-editor-border: rgba(255, 255, 255, 0.10);
+  --studio-editor-text: rgba(248, 250, 252, 0.92);
+  --studio-pill-bg: rgba(255, 255, 255, 0.04);
+  --studio-pill-active: rgba(255, 255, 255, 0.07);
+  --studio-text-bright: rgba(255, 255, 255, 0.93);
+  --studio-text-primary: rgba(255, 255, 255, 0.80);
+  --studio-text-secondary: rgba(255, 255, 255, 0.69);
+  --studio-text-body: rgba(255, 255, 255, 0.50);
+  --studio-text-muted: rgba(255, 255, 255, 0.35);
+  --studio-text-desc: rgba(255, 255, 255, 0.28);
+  --studio-text-label: rgba(255, 255, 255, 0.28);
+  --studio-text-faint: rgba(255, 255, 255, 0.25);
+  --studio-text-inactive: rgba(255, 255, 255, 0.30);
+  --studio-text-ghost: rgba(255, 255, 255, 0.08);
+  --studio-text-placeholder: rgba(255, 255, 255, 0.094);
+  --studio-text-input: rgba(255, 255, 255, 0.70);
+  --studio-border-input: rgba(255, 255, 255, 0.04);
+  --studio-border-marker: rgba(255, 255, 255, 0.08);
+  --studio-toggle-track-off: rgba(255, 255, 255, 0.03);
+  --studio-toggle-track-mid: rgba(255, 255, 255, 0.05);
+  --studio-toggle-thumb-mid: rgba(255, 255, 255, 0.30);
+  --studio-toggle-thumb-off: rgba(255, 255, 255, 0.15);
+  --studio-avatar-ring: rgba(255, 255, 255, 0.50);
+  --studio-status-off: rgba(255, 255, 255, 0.07);
+  --studio-dropdown-bg: rgba(20, 20, 28, 0.96);
+  --studio-dropdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  /* Platform pages aliases — admin/settings/modals 新代码引用的变量别名。
+     这些名字原本没定义，fallback 是 light 色，导致暗色模式整片卡片/按钮/边框走不到主题。
+     统一在此兜底到暗色主题的值。新代码应直接用这些名字，不再写 fallback。 */
+  --border-default: rgba(255, 255, 255, 0.08);
+  --bg-hover: var(--hover-bg);
+  --text-disabled: #52525B;
+  --accent: var(--accent-color);
+  --accent-hover: #60A5FA;
+
+  /* ===== v11 UI Tokens (dark) ===== */
+  --bg-canvas: #0E0E10;
+  --bg-sidebar: #18181B;
+  --bg-drawer: #18181B;
+  --bg-hover-v11: rgba(255, 255, 255, 0.06);
+  --accent-v11: #FAFAFA;
+  --on-accent: #18181B;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --fg-primary: #FAFAFA;
+  --fg-secondary: #A1A1AA;
+  --fg-tertiary: #71717A;
+  --chat-min-w: 400px;
+  /* 单色反色主按钮（admin / settings / modals 用的"黑底白字 / 白底黑字"按钮，
+     区别于 btn-primary 的蓝色强调按钮）。 */
+  --btn-mono-bg: #FAFAFA;
+  --btn-mono-text: #18181B;
+  --btn-mono-hover-bg: #FFFFFF;
+  --btn-mono-disabled-bg: #27272A;
+  --btn-mono-disabled-text: #71717A;
+  --danger: #F87171;
+  --danger-hover: #FCA5A5;
+  --danger-bg-soft: rgba(239, 68, 68, 0.12);
+  --danger-border-soft: rgba(239, 68, 68, 0.28);
+  --warning: #FBBF24;
+  --warning-bg-soft: rgba(251, 191, 36, 0.12);
+  --warning-border-soft: rgba(251, 191, 36, 0.28);
+  --success: #34D399;
+  --success-bg-soft: rgba(52, 211, 153, 0.12);
+  --success-border-soft: rgba(52, 211, 153, 0.28);
+  --info-bg-soft: rgba(96, 165, 250, 0.12);
+  --info-border-soft: rgba(96, 165, 250, 0.28);
+  --info: #60A5FA;
+  --chart-blue: #38BDF8;
+  --chart-violet: #C4B5FD;
+  --chart-teal: #5EEAD4;
+  --chart-amber: #FCD34D;
+  --chart-rose: #FDA4AF;
+
+  /* Moss sidebar redesign tokens */
+  --moss-sidebar-bg: #18181B;
+  --moss-sidebar-border: var(--border-soft);
+  /* Inset only: creates sidebar depth without casting shadow over the chat canvas. */
+  --moss-sidebar-edge-shadow: inset -10px 0 18px -18px rgba(0, 0, 0, 0.36);
+  --moss-sidebar-text-primary: var(--fg-primary);
+  --moss-sidebar-text-secondary: var(--fg-secondary);
+  --moss-sidebar-text-muted: var(--fg-tertiary);
+  --moss-sidebar-item-hover-bg: var(--bg-hover-v11);
+  --moss-sidebar-item-active-bg: rgba(255, 255, 255, 0.08);
+  --moss-sidebar-item-disabled-fg: var(--text-disabled);
+  --moss-sidebar-active-dot: var(--fg-primary);
+  --moss-sidebar-new-session-bg: #FAFAFA;
+  --moss-sidebar-new-session-fg: #E86A45;
+  --moss-sidebar-new-session-hover-bg: rgba(232, 106, 69, 0.12);
+  --moss-sidebar-showcase-bg: rgba(96, 165, 250, 0.12);
+  --moss-sidebar-showcase-hover-bg: rgba(96, 165, 250, 0.18);
+  --moss-sidebar-showcase-border: rgba(96, 165, 250, 0.28);
+  --moss-sidebar-showcase-fg: #60A5FA;
+  --moss-sidebar-popover-bg: var(--dropdown-bg);
+  --moss-sidebar-popover-shadow: var(--shadow-lg);
+  --moss-sidebar-tooltip-bg: #383835;
+  --moss-sidebar-tooltip-fg: #FFFFFF;
+  --moss-sidebar-tooltip-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --moss-sidebar-danger-fg: var(--danger);
+  --moss-sidebar-danger-hover-bg: var(--danger-bg-soft);
+
+  /* Moss default home tokens */
+  --moss-home-bg: #0A0A0F;
+  --moss-home-dot: rgba(255, 255, 255, 0.08);
+  --moss-home-dot-highlight: rgba(255, 255, 255, 0.28);
+  --moss-home-cursor-spotlight: rgba(255, 255, 255, 0.12);
+  --moss-home-title-fg: var(--text-primary);
+  --moss-home-title-accent: #E86A45;
+  --moss-home-new-badge-shine: rgba(255, 255, 255, 0.62);
+  --moss-home-text-strong: var(--moss-home-title-accent);
+  --moss-home-recommend-bg: rgba(18, 18, 24, 0.88);
+  --moss-home-recommend-border: var(--border-default);
+  --moss-home-recommend-tab-fg: var(--text-secondary);
+  --moss-home-recommend-tab-active-fg: var(--text-primary);
+  --moss-home-recommend-tab-active-border: var(--text-primary);
+  --moss-home-recommend-row-fg: var(--text-secondary);
+  --moss-home-recommend-row-border: var(--border-subtle);
+  --moss-home-recommend-row-hover-bg: var(--hover-bg);
+  --moss-home-recommend-fade-duration: 220ms;
+  --moss-home-recommend-fade-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* 语义别名：admin/settings 页面使用的状态色和单色反色按钮底色 */
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --button-bg: var(--btn-mono-bg);
+}
+
+/* ===== Light Theme ===== */
+[data-theme="light"] {
+  /* Backgrounds - 温暖的米白色调，层次分明 */
+  --bg-primary: #FAF9F7;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F5F4F2;
+  --bg-elevated: #FFFFFF;
+  --admin-drawer-overlay: rgba(24, 24, 27, 0.28);
+  
+  /* Glass - 柔和的毛玻璃效果（性能优化：降低 blur） */
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-bg-light: rgba(255, 255, 255, 0.95);
+  --glass-blur: 8px;
+  --glass-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  
+  /* Borders - 细腻的边框 */
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-muted: rgba(0, 0, 0, 0.04);
+  --border-faint: rgba(0, 0, 0, 0.03);
+
+  /* File preview cards */
+  --preview-card-bg: #FFFFFF;
+  --preview-card-border: rgba(0, 0, 0, 0.1);
+  --code-preview-bg: #f5f4f2;
+  --code-preview-bar: rgba(0, 0, 0, 0.04);
+  
+  /* Text - 清晰的层次（加深以确保可读性） */
+  --text-primary: #1A1A1A;
+  --text-secondary: #3A3A3A;
+  --text-tertiary: #5A5A5A;
+  --text-muted: #7A7A7A;
+  --text-placeholder: #9A9A9A;
+  
+  /* Interactive */
+  --interactive-default: #F0EFED;
+  --interactive-hover: #E8E7E5;
+  --interactive-active: #FFFFFF;
+  
+  /* Glows - 亮色主题下更柔和 */
+  --glow-purple: rgba(124, 58, 237, 0.04);
+  --glow-blue: rgba(59, 130, 246, 0.03);
+  --glow-violet: rgba(168, 85, 247, 0.03);
+  
+  /* Lines */
+  --line-subtle: rgba(0, 0, 0, 0.03);
+  
+  /* Component specific */
+  --sidebar-bg: #FFFFFF;
+  --input-bg: #FFFFFF;
+  --chat-main-bg: #FCFCFB;
+  --chat-feedback-option-muted: rgba(9, 30, 64, 0.47);
+  --chat-feedback-option-selected-text: rgba(9, 30, 64, 0.9);
+  --chat-feedback-face-ink: rgba(11, 11, 11, 0.85);
+  --chat-feedback-face-solved-bg: #FFD75A;
+  --chat-feedback-face-partial-bg: #F2D15D;
+  --chat-feedback-face-unsolved-bg: #FF8652;
+  --bubble-user: #F0EFED;
+  --bubble-agent: #FFFFFF;
+  --avatar-bg: #F0EFED;
+  --user-avatar-bg: #E4E4E7;
+  --user-avatar-text: #3F3F46;
+  --send-btn-bg: #F0EFED;
+  --send-btn-icon: #5A5A5A;
+  --tab-active-bg: #FFFFFF;
+  --table-header-bg: #F5F4F2;
+
+  /* Roundtable card */
+  --rt-card-bg: #F0F1F5;
+  --rt-card-border: 1px solid rgba(0,0,0,0.05);
+  --rt-card-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.02);
+  --rt-topline-opacity: 0.5;
+  --rt-avatar-inner-bg: linear-gradient(145deg, #F3F4F6, #E5E7EB);
+  --rt-avatar-fg-gradient: radial-gradient(circle at 50% 45%, transparent 30%, rgba(243,244,246,0.3) 70%);
+  --rt-accent-host: #6366F1;
+  --rt-bar-bg: rgba(0,0,0,0.03);
+  --rt-bar-border: rgba(0,0,0,0.06);
+  --rt-typing-dot: rgba(0,0,0,0.3);
+  --rt-tag-host-bg: rgba(129,140,248,0.08);
+  --rt-tag-host-color: #6366F1;
+  --rt-tag-ord-bg: rgba(96,165,250,0.08);
+  --rt-tag-ord-color: #3B82F6;
+  --rt-tag-free-bg: rgba(52,211,153,0.08);
+  --rt-tag-free-color: #059669;
+  --rt-dot-line: rgba(0,0,0,0.08);
+  --rt-dot-future-bg: rgba(0,0,0,0.05);
+  --rt-dot-future-border: rgba(0,0,0,0.1);
+  --rt-chip-bg: rgba(0,0,0,0.03);
+  --rt-chip-border: rgba(0,0,0,0.08);
+  --rt-conclusion-bg: rgba(0,0,0,0.02);
+  --rt-conclusion-border: rgba(0,0,0,0.06);
+  --rt-bg-art-opacity: 0.28;
+  --rt-bg-art-hover-opacity: 0.38;
+  
+  /* 浅色背景上的文字 - 中等深度 */
+  --text-on-muted-bg: #5A5A5A;
+  
+  /* Card shadows */
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+  --card-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.03);
+  
+  /* Panel shadows - 侧边栏/工作室等面板的悬浮感 */
+  --panel-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.015);
+  
+  /* Dropdown */
+  --dropdown-bg: #FFFFFF;
+  --dropdown-border: rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  
+  /* Thinking Mode - 亮色主题 */
+  --thinking-auto-icon: #7C3AED;
+  --thinking-auto-bg: rgba(124, 58, 237, 0.08);
+  --thinking-enabled-icon: #2563EB;
+  --thinking-enabled-bg: rgba(37, 99, 235, 0.08);
+  --thinking-disabled-icon: #D97706;
+  --thinking-disabled-bg: rgba(217, 119, 6, 0.08);
+  --text-on-accent: #FFFFFF;
+  
+  /* Hover states - 亮色主题专用 */
+  --hover-bg: rgba(0, 0, 0, 0.04);
+  --hover-bg-strong: rgba(0, 0, 0, 0.06);
+  --active-bg: rgba(0, 0, 0, 0.08);
+  --selected-bg: rgba(0, 0, 0, 0.05);
+  
+  /* Code blocks - 亮色主题 */
+  --code-block-bg: #F8F8F8;
+  --code-block-header: #F0F0F0;
+  --code-block-border: rgba(0, 0, 0, 0.08);
+  --inline-code-bg: rgba(0, 0, 0, 0.06);
+  --inline-code-color: #C41A16;
+  
+  /* Logo - 亮色主题 */
+  --logo-ring: #27272A;
+  --logo-core: #18181B;
+  --logo-accent: #3F3F46;
+  --logo-text: #18181B;
+  
+  /* Send Button - 亮色主题 */
+  --send-btn-default-bg: rgba(0, 0, 0, 0.06);
+  --send-btn-default-icon: #71717A;
+  --send-btn-active-bg: #DE6A43;
+  --send-btn-active-icon: #FFFFFF;
+  --send-btn-active-shadow: 0 6px 14px rgba(222, 106, 67, 0.26);
+  
+  /* File Icons - 亮色主题（稍深一些） */
+  --file-icon-persona: #7C3AED;
+  --file-icon-table: #059669;
+  --file-icon-image: #7C3AED;
+  --file-icon-markdown: #2563EB;
+  --file-icon-pdf: #DC2626;
+  --file-icon-code: #EA580C;
+  
+  /* File Link - 亮色主题 */
+  --file-link-color: #2563EB;
+  
+  /* File Card - 亮色主题 */
+  --file-card-bg: rgba(0, 0, 0, 0.05);
+  --file-card-icon-bg: rgba(0, 0, 0, 0.05);
+  
+  /* Upload Preview - 亮色主题 */
+  --upload-preview-bg: #F2F2F2;
+  --upload-preview-border: transparent;
+  --upload-preview-error-bg: rgba(239, 68, 68, 0.08);
+  --upload-preview-error-border: #EF4444;
+  --upload-preview-error-text: #DC2626;
+  --upload-icon-bg: #FFFFFF;
+  --upload-icon-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  --upload-remove-btn-bg: rgba(24, 24, 27, 0.92);
+  --upload-remove-btn-icon: #ffffff;
+  --upload-remove-btn-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  --upload-progress-bg: #F05A5A;
+  --upload-progress-line: rgba(240, 90, 90, 0.45);
+  --file-ref-token-text: #2563EB;
+  --file-ref-token-bg: rgba(37, 99, 235, 0.10);
+  
+  /* Drag & Drop Overlay - 亮色主题 */
+  --drag-overlay-bg: rgba(250, 250, 250, 0.92);
+  --drag-icon-bg: rgba(0, 0, 0, 0.06);
+  --drag-icon-color: #52525B;
+  
+  /* Agent Card - 亮色主题 */
+  --agent-card-bg: rgba(0, 0, 0, 0.02);
+  --agent-card-border: rgba(0, 0, 0, 0.06);
+  --agent-card-selected-bg: rgba(59, 130, 246, 0.08);
+  --agent-card-selected-border: rgba(59, 130, 246, 0.5);
+  --agent-create-btn-bg: transparent;
+  --agent-create-btn-text: #71717A;
+  --agent-create-btn-border: #D4D4D8;
+  --agent-create-btn-hover-bg: rgba(0, 0, 0, 0.04);
+  --badge-default-bg: rgba(59, 130, 246, 0.15);
+  --badge-default-text: #2563EB;
+  --accent-color: #2563EB;
+  --accent-bg: rgba(37, 99, 235, 0.1);
+  
+  /* Modal - 亮色主题 */
+  --modal-backdrop: rgba(0, 0, 0, 0.4);
+  --modal-bg: #FFFFFF;
+  --modal-border: #E4E4E7;
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  
+  /* Form Inputs - 亮色主题 */
+  --input-bg: #FAFAFA;
+  --input-border: #E4E4E7;
+  --sender-bg: var(--bg-secondary);
+  --sender-border: #E6E9EF;
+  --sender-shadow: 0 0 2px rgba(9, 30, 64, 0.02), 0 1px 4px rgba(9, 30, 64, 0.06);
+  --chat-toast-shadow: 0 4px 16px rgba(9, 30, 64, 0.08), 0 8px 24px rgba(9, 30, 64, 0.06);
+  --chat-popover-shadow: 0 4px 16px rgba(9, 30, 64, 0.10), 0 12px 32px rgba(9, 30, 64, 0.06);
+  --chat-tooltip-bg: #3F506A;
+  --chat-tooltip-text: #FFFFFF;
+  --chat-followup-bg: var(--bg-secondary);
+  --chat-followup-hover-bg: rgba(9, 30, 64, 0.07);
+  --chat-followup-border: #EEF1F6;
+  --chat-followup-text: rgba(9, 30, 64, 0.66);
+  --chat-followup-text-hover: rgba(9, 30, 64, 0.9);
+  /* Chat running text should read neutral, not blue-tinted. */
+  --chat-running-text-base: color-mix(in srgb, var(--text-muted) 68%, transparent);
+  --chat-running-text-highlight: var(--text-secondary);
+  --chat-checkbox-border: #C2C6CC;
+  /* Feedback controls share the same mono action color as upload/reference CTAs. */
+  --chat-checkbox-checked-bg: var(--btn-mono-bg);
+  --chat-button-primary-bg: var(--btn-mono-bg);
+  --chat-button-primary-text: var(--btn-mono-text);
+  
+  /* Toggle - 亮色主题 */
+  --toggle-bg: #F4F4F5;
+  --toggle-active-bg: #2563EB;
+  --toggle-active-text: #FFFFFF;
+  
+  /* Mode Indicators - 亮色主题 */
+  --kernel-mode-bg: rgba(16, 185, 129, 0.08);
+  --kernel-mode-border: rgba(16, 185, 129, 0.2);
+  --kernel-mode-text: #059669;
+  --kernel-mode-icon: #10B981;
+  --custom-mode-bg: rgba(245, 158, 11, 0.08);
+  --custom-mode-border: rgba(245, 158, 11, 0.2);
+  --custom-mode-text: #D97706;
+  --custom-mode-icon: #F59E0B;
+  
+  /* Primary Button - 亮色主题 */
+  --btn-primary-bg: #2563EB;
+  --btn-primary-text: #FFFFFF;
+  
+  /* Success color for light theme */
+  --color-success: #16A34A;
+  
+  /* Scroll to Bottom Button - 亮色主题 */
+  --scroll-btn-bg: rgba(255, 255, 255, 0.92);
+  --scroll-btn-border: rgba(0, 0, 0, 0.08);
+  --scroll-btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --scroll-btn-icon: #71717A;
+  
+  /* Plan Mode Indicator - 亮色主题 */
+  --plan-indicator-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
+  --plan-indicator-border: rgba(139, 92, 246, 0.35);
+  --plan-indicator-shimmer: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.2) 50%, transparent 100%);
+  --plan-indicator-pulse: rgba(139, 92, 246, 0.35);
+  --plan-indicator-icon-bg: rgba(139, 92, 246, 0.2);
+  --plan-indicator-icon: #7C3AED;
+  --plan-indicator-title: #6D28D9;
+  --plan-indicator-badge-bg: rgba(139, 92, 246, 0.2);
+  --plan-indicator-badge-text: #6D28D9;
+  --plan-indicator-btn-bg: rgba(139, 92, 246, 0.15);
+  --plan-indicator-btn-text: #6D28D9;
+  
+  /* Plan Review Card - 亮色主题 */
+  --plan-review-header-bg: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  --plan-review-badge-bg: rgba(22, 163, 74, 0.15);
+  --plan-review-badge-text: #15803D;
+  --plan-review-approve-bg: #18181B;
+  --plan-review-approve-text: #FFFFFF;
+  
+  /* Diff Preview - 亮色主题（更深的颜色以提高可读性） */
+  --diff-add-bg: rgba(22, 163, 74, 0.12);
+  --diff-add-text: #15803d;
+  --diff-add-mark: #16a34a;
+  --diff-remove-bg: rgba(220, 38, 38, 0.1);
+  --diff-remove-text: #b91c1c;
+  --diff-remove-mark: #dc2626;
+  
+  /* Skeleton - 亮色主题 */
+  --skeleton-bg: rgba(0, 0, 0, 0.06);
+  --skeleton-shine: rgba(0, 0, 0, 0.04);
+
+  /* Questionnaire Submitted - 亮色主题（偏黑底） */
+  --questionnaire-element-bg: rgba(0, 0, 0, 0.08);
+  --questionnaire-element-text: rgba(0, 0, 0, 0.6);
+
+  /* Agent Studio（亮色下 rgba 黑色需要更高不透明度才可读） */
+  --studio-bg: #FAF9F7;
+  --studio-surface: rgba(0, 0, 0, 0.035);
+  --studio-surface-hover: rgba(0, 0, 0, 0.06);
+  --studio-surface-right: rgba(0, 0, 0, 0.02);
+  --studio-prompt-block-bg: linear-gradient(120deg, rgba(247, 251, 255, 0.92) 0%, rgba(251, 253, 255, 0.88) 46%, rgba(253, 250, 255, 0.92) 100%);
+  --studio-prompt-block-border: rgba(193, 183, 255, 0.62);
+  --studio-prompt-block-title: rgba(78, 93, 122, 0.90);
+  --studio-prompt-block-text: rgba(82, 96, 124, 0.82);
+  --studio-editor-bg: #FFFFFF;
+  --studio-editor-border: rgba(197, 205, 218, 0.78);
+  --studio-editor-text: rgba(8, 35, 76, 0.94);
+  --studio-pill-bg: rgba(0, 0, 0, 0.06);
+  --studio-pill-active: rgba(0, 0, 0, 0.09);
+  --studio-text-bright: rgba(0, 0, 0, 0.92);
+  --studio-text-primary: rgba(0, 0, 0, 0.85);
+  --studio-text-secondary: rgba(0, 0, 0, 0.78);
+  --studio-text-body: rgba(0, 0, 0, 0.72);
+  --studio-text-muted: rgba(0, 0, 0, 0.55);
+  --studio-text-desc: rgba(0, 0, 0, 0.55);
+  --studio-text-label: rgba(0, 0, 0, 0.50);
+  --studio-text-faint: rgba(0, 0, 0, 0.45);
+  --studio-text-inactive: rgba(0, 0, 0, 0.40);
+  --studio-text-ghost: rgba(0, 0, 0, 0.25);
+  --studio-text-placeholder: rgba(0, 0, 0, 0.35);
+  --studio-text-input: rgba(0, 0, 0, 0.85);
+  --studio-border-input: rgba(0, 0, 0, 0.10);
+  --studio-border-marker: rgba(0, 0, 0, 0.12);
+  --studio-toggle-track-off: rgba(0, 0, 0, 0.06);
+  --studio-toggle-track-mid: rgba(0, 0, 0, 0.09);
+  --studio-toggle-thumb-mid: rgba(0, 0, 0, 0.30);
+  --studio-toggle-thumb-off: rgba(0, 0, 0, 0.15);
+  --studio-avatar-ring: rgba(0, 0, 0, 0.35);
+  --studio-status-off: rgba(0, 0, 0, 0.10);
+  --studio-dropdown-bg: rgba(255, 255, 255, 0.96);
+  --studio-dropdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+
+  /* Platform pages aliases — 参见 dark 主题块内的同名注释 */
+  --border-default: #E4E4E7;
+  --bg-hover: var(--hover-bg);
+  --text-disabled: #C4C4C7;
+  --accent: var(--accent-color);
+  --accent-hover: #1D4ED8;
+
+  /* ===== v11 UI Tokens (light) ===== */
+  --bg-canvas: #FAF9F7;
+  --bg-sidebar: #FFFFFF;
+  --bg-drawer: #FFFFFF;
+  --bg-hover-v11: rgba(0, 0, 0, 0.04);
+  --accent-v11: #18181B;
+  --on-accent: #FAFAFA;
+  --border-soft: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.16);
+  --fg-primary: #18181B;
+  --fg-secondary: #52525B;
+  --fg-tertiary: #71717A;
+  --chat-min-w: 400px;
+  --btn-mono-bg: #18181B;
+  --btn-mono-text: #FFFFFF;
+  --btn-mono-hover-bg: #27272A;
+  --btn-mono-disabled-bg: #D4D4D8;
+  --btn-mono-disabled-text: #FFFFFF;
+  --danger: #DC2626;
+  --danger-hover: #B91C1C;
+  --danger-bg-soft: rgba(239, 68, 68, 0.08);
+  --danger-border-soft: rgba(239, 68, 68, 0.2);
+  --warning: #B45309;
+  --warning-bg-soft: #FFF8E1;
+  --warning-border-soft: rgba(245, 158, 11, 0.3);
+  --success: #059669;
+  --success-bg-soft: #F0FDF4;
+  --success-border-soft: rgba(34, 197, 94, 0.25);
+  --info-bg-soft: #EAF3FF;
+  --info-border-soft: rgba(59, 130, 246, 0.25);
+  --info: #1D4ED8;
+  --chart-blue: #0EA5E9;
+  --chart-violet: #8B5CF6;
+  --chart-teal: #14B8A6;
+  --chart-amber: #F59E0B;
+  --chart-rose: #F43F5E;
+
+  /* Moss sidebar redesign tokens */
+  /* Slightly darker than the canvas; tuned with the inset edge shadow for Codex-like layering. */
+  --moss-sidebar-bg: #F2F1ED;
+  --moss-sidebar-border: var(--border-soft);
+  /* Inset only: creates sidebar depth without casting shadow over the chat canvas. */
+  --moss-sidebar-edge-shadow: inset -10px 0 18px -18px rgba(15, 23, 42, 0.18);
+  --moss-sidebar-text-primary: var(--fg-primary);
+  --moss-sidebar-text-secondary: var(--fg-secondary);
+  --moss-sidebar-text-muted: var(--fg-tertiary);
+  --moss-sidebar-item-hover-bg: var(--bg-hover-v11);
+  --moss-sidebar-item-active-bg: rgba(0, 0, 0, 0.08);
+  --moss-sidebar-item-disabled-fg: var(--text-disabled);
+  --moss-sidebar-active-dot: var(--fg-primary);
+  --moss-sidebar-new-session-bg: #E8E6E1;
+  --moss-sidebar-new-session-fg: #D95E3A;
+  --moss-sidebar-new-session-hover-bg: rgba(217, 94, 58, 0.10);
+  --moss-sidebar-showcase-bg: rgba(57, 135, 229, 0.05);
+  --moss-sidebar-showcase-hover-bg: rgba(57, 135, 229, 0.09);
+  --moss-sidebar-showcase-border: #E5EFFF;
+  --moss-sidebar-showcase-fg: #2C60DB;
+  --moss-sidebar-popover-bg: var(--dropdown-bg);
+  --moss-sidebar-popover-shadow: var(--shadow-lg);
+  --moss-sidebar-tooltip-bg: #383835;
+  --moss-sidebar-tooltip-fg: #FFFFFF;
+  --moss-sidebar-tooltip-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+  --moss-sidebar-danger-fg: var(--danger);
+  --moss-sidebar-danger-hover-bg: var(--danger-bg-soft);
+
+  /* Moss default home tokens */
+  --moss-home-bg: #FAF9F7;
+  --moss-home-dot: rgba(24, 24, 27, 0.14);
+  --moss-home-dot-highlight: rgba(24, 24, 27, 0.56);
+  --moss-home-cursor-spotlight: rgba(24, 24, 27, 0.055);
+  --moss-home-title-fg: var(--text-primary);
+  --moss-home-title-accent: #D95E3A;
+  --moss-home-new-badge-shine: rgba(255, 255, 255, 0.72);
+  --moss-home-text-strong: var(--moss-home-title-accent);
+  --moss-home-recommend-bg: rgba(255, 255, 255, 0.94);
+  --moss-home-recommend-border: var(--border-default);
+  --moss-home-recommend-tab-fg: var(--text-secondary);
+  --moss-home-recommend-tab-active-fg: var(--text-primary);
+  --moss-home-recommend-tab-active-border: var(--text-primary);
+  --moss-home-recommend-row-fg: var(--text-secondary);
+  --moss-home-recommend-row-border: var(--border-subtle);
+  --moss-home-recommend-row-hover-bg: var(--hover-bg);
+  --moss-home-recommend-fade-duration: 220ms;
+  --moss-home-recommend-fade-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* 语义别名：admin/settings 页面使用的状态色和单色反色按钮底色 */
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --button-bg: var(--btn-mono-bg);
+}
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+/* ===== Scrollbar Styles ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--interactive-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--interactive-hover);
+}
+
+/* 隐藏滚动条（保持滚动功能） */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+/* 会话记录详情：完整输入/完整输出滚动区，增强滚动条可见性 */
+.session-log-detail-scroll {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--text-secondary) var(--bg-tertiary); /* Firefox */
+}
+
+.session-log-detail-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.session-log-detail-scroll::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+}
+
+.session-log-detail-scroll::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 10px;
+  border: 2px solid var(--bg-tertiary);
+}
+
+.session-log-detail-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+/* ===== Streaming Cursor ===== */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.skeleton-line {
+  background: var(--skeleton-bg);
+  border-radius: 6px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes streaming-dot-breathe {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1);
+  }
+}
+
+.streaming-pulse-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--text-muted);
+  animation: streaming-dot-breathe 1.35s ease-in-out infinite;
+}
+
+.assistant-streaming-status {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 16px;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+@keyframes agent-generating-pulse {
+  0%, 100% { opacity: 0.42; }
+  50% { opacity: 0.95; }
+}
+
+.agent-generating-hint {
+  padding-left: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  animation: agent-generating-pulse 1.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agent-generating-hint {
+    animation: none;
+    opacity: 0.72;
+  }
+}
+
+/* ===== Code Block Styles ===== */
+code, pre {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+pre {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+[data-theme="light"] code {
+  background: rgba(0, 0, 0, 0.05);
+  color: #4A4A4A;
+}
+
+/* 亮色主题 - 代码块样式优化 */
+[data-theme="light"] .markdown-content .relative.group {
+  background: #F5F4F2 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .markdown-content code.px-1\.5 {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: #C41A16;
+}
+
+[data-theme="light"] pre {
+  background: #F5F4F2 !important;
+}
+
+[data-theme="light"] .hljs,
+[data-theme="light"] pre code {
+  background: transparent !important;
+}
+
+/* 亮色主题 - 代码块文字清晰度优化 */
+[data-theme="light"] .code-block-container {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="light"] .code-block-container code,
+[data-theme="light"] .code-block-container span {
+  text-shadow: none !important;
+  font-weight: 500;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* ===== Text Selection ===== */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: inherit;
+}
+
+/* ===== Light Theme Overrides for Tailwind Classes ===== */
+[data-theme="light"] .hover\:bg-zinc-800\/30:hover,
+[data-theme="light"] .hover\:bg-zinc-800\/50:hover {
+  background-color: var(--hover-bg) !important;
+}
+
+[data-theme="light"] .hover\:bg-zinc-700\/50:hover {
+  background-color: var(--hover-bg-strong) !important;
+}
+
+[data-theme="light"] .bg-zinc-800\/50,
+[data-theme="light"] .bg-zinc-700\/50 {
+  background-color: var(--selected-bg) !important;
+}
+
+[data-theme="light"] .bg-zinc-800,
+[data-theme="light"] .bg-zinc-900\/50 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+[data-theme="light"] .bg-zinc-700 {
+  background-color: var(--interactive-default) !important;
+}
+
+[data-theme="light"] .hover\:bg-zinc-600:hover,
+[data-theme="light"] .hover\:bg-zinc-700:hover {
+  background-color: var(--interactive-hover) !important;
+}
+
+[data-theme="light"] .text-zinc-200,
+[data-theme="light"] .text-zinc-300 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .text-zinc-400 {
+  color: var(--text-tertiary) !important;
+}
+
+[data-theme="light"] .text-zinc-500 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .border-zinc-600,
+[data-theme="light"] .border-zinc-700 {
+  border-color: var(--border-subtle) !important;
+}
+
+[data-theme="light"] .bg-zinc-900\/95 {
+  background-color: var(--bg-secondary) !important;
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme="light"] .border-zinc-700\/80 {
+  border-color: var(--border-subtle) !important;
+}
+
+/* 亮色主题 - 新任务按钮样式 */
+[data-theme="light"] .bg-zinc-800.text-zinc-50,
+[data-theme="light"] button.bg-zinc-800 {
+  background-color: #F0EFED !important;
+  color: #5A5A5A !important;
+}
+
+[data-theme="light"] .bg-zinc-800.text-zinc-50:hover,
+[data-theme="light"] button.bg-zinc-800:hover,
+[data-theme="light"] .hover\:bg-zinc-700.text-zinc-50:hover {
+  background-color: #E8E7E5 !important;
+}
+
+/* 亮色主题 - 附件按钮和图标颜色加深 */
+[data-theme="light"] button .text-zinc-500,
+[data-theme="light"] .text-zinc-500 {
+  color: #5A5A5A !important;
+}
+
+[data-theme="light"] button:hover .text-zinc-500,
+[data-theme="light"] .hover\:text-zinc-300:hover {
+  color: #3A3A3A !important;
+}
+
+/* 亮色主题 - 用户头像：统一浅色背景 + 中等深度文字 */
+[data-theme="light"] .bg-zinc-700.text-zinc-50 {
+  background-color: #F0EFED !important;
+  color: #6A6A6A !important;
+}
+
+/* 亮色主题 - Agent 头像：统一浅色背景 */
+[data-theme="light"] .bg-zinc-800.text-zinc-400 {
+  background-color: #F0EFED !important;
+  color: #7A7A7A !important;
+}
+
+/* ===== 亮色主题 - AgentsMd 组件适配 ===== */
+[data-theme="light"] .text-emerald-400 {
+  color: #059669 !important;
+}
+
+[data-theme="light"] .bg-emerald-500\/20 {
+  background-color: rgba(5, 150, 105, 0.12) !important;
+}
+
+[data-theme="light"] .bg-emerald-500\/30 {
+  background-color: rgba(5, 150, 105, 0.18) !important;
+}
+
+[data-theme="light"] .hover\:bg-emerald-500\/30:hover {
+  background-color: rgba(5, 150, 105, 0.18) !important;
+}
+
+[data-theme="light"] .text-amber-400 {
+  color: #D97706 !important;
+}
+
+[data-theme="light"] .bg-amber-500\/20 {
+  background-color: rgba(217, 119, 6, 0.12) !important;
+}
+
+[data-theme="light"] .bg-amber-500\/30 {
+  background-color: rgba(217, 119, 6, 0.18) !important;
+}
+
+[data-theme="light"] .hover\:bg-amber-500\/30:hover {
+  background-color: rgba(217, 119, 6, 0.18) !important;
+}
+
+[data-theme="light"] .hover\:text-amber-300:hover {
+  color: #B45309 !important;
+}
+
+[data-theme="light"] .text-zinc-600 {
+  color: #6B7280 !important;
+}
+
+[data-theme="light"] .bg-surface-100\/50,
+[data-theme="light"] .bg-surface-200 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .bg-surface-100 {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="light"] .hover\:bg-surface-200\/50:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .hover\:bg-surface-300:hover {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .border-surface-200 {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ===== 亮色主题 - IterationCard 组件适配 ===== */
+[data-theme="light"] .border-surface-200 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .bg-surface-50 {
+  background-color: #FFFFFF !important;
+}
+
+[data-theme="light"] .hover\:bg-surface-100\/50:hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="light"] .bg-accent\/5,
+[data-theme="light"] .bg-accent\/20,
+[data-theme="light"] .bg-accent\/30 {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+[data-theme="light"] .border-accent\/50 {
+  border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+[data-theme="light"] .text-accent {
+  color: #16A34A !important;
+}
+
+[data-theme="light"] .bg-success\/5,
+[data-theme="light"] .bg-success\/20 {
+  background-color: rgba(34, 197, 94, 0.08) !important;
+}
+
+[data-theme="light"] .border-success\/30 {
+  border-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+[data-theme="light"] .text-success {
+  color: #16A34A !important;
+}
+
+[data-theme="light"] .text-white {
+  color: #18181B !important;
+}
+
+[data-theme="light"] .bg-secondary\/20 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+[data-theme="light"] .text-secondary {
+  color: #2563EB !important;
+}
+
+/* ===== 亮色主题 - 工具/消息流组件适配 ===== */
+[data-theme="light"] .bg-black\/20 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .bg-black\/30 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] pre.text-zinc-300,
+[data-theme="light"] pre.text-zinc-400 {
+  color: #374151 !important;
+}
+
+/* 亮色主题 - 深色代码/结果展示区域 */
+[data-theme="light"] [class*="bg-[#1a1a2e]"],
+[data-theme="light"] .bg-\[\#1a1a2e\] {
+  background-color: #F5F5F5 !important;
+}
+
+[data-theme="light"] [class*="bg-[#1a1a2e]"] pre,
+[data-theme="light"] [class*="bg-[#1a1a2e]"] .text-zinc-300,
+[data-theme="light"] .bg-\[\#1a1a2e\] pre,
+[data-theme="light"] .bg-\[\#1a1a2e\] .text-zinc-300 {
+  color: #374151 !important;
+}
+
+/* 亮色主题 - 工具调用卡片 */
+[data-theme="light"] .bg-surface {
+  background-color: #FFFFFF !important;
+}
+
+[data-theme="light"] .bg-surface-50 {
+  background-color: #FAFAFA !important;
+}
+
+[data-theme="light"] .bg-surface-100 {
+  background-color: #F5F5F5 !important;
+}
+
+[data-theme="light"] .bg-surface-200 {
+  background-color: #EFEFEF !important;
+}
+
+[data-theme="light"] .bg-surface-300 {
+  background-color: #E5E5E5 !important;
+}
+
+[data-theme="light"] .border-surface-200 {
+  border-color: #E0E0E0 !important;
+}
+
+[data-theme="light"] .border-surface-300 {
+  border-color: #D0D0D0 !important;
+}
+
+[data-theme="light"] .text-error {
+  color: #DC2626 !important;
+}
+
+[data-theme="light"] .bg-error\/5 {
+  background-color: rgba(220, 38, 38, 0.05) !important;
+}
+
+[data-theme="light"] .bg-error\/10 {
+  background-color: rgba(220, 38, 38, 0.08) !important;
+}
+
+[data-theme="light"] .bg-error\/20 {
+  background-color: rgba(220, 38, 38, 0.12) !important;
+}
+
+[data-theme="light"] .border-error\/30 {
+  border-color: rgba(220, 38, 38, 0.2) !important;
+}
+
+[data-theme="light"] .hover\:bg-accent\/10:hover {
+  background-color: rgba(34, 197, 94, 0.08) !important;
+}
+
+/* 亮色主题 - 消息类型标签颜色 */
+[data-theme="light"] .bg-purple-500\/20 {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+[data-theme="light"] .text-purple-400 {
+  color: #7C3AED !important;
+}
+
+[data-theme="light"] .bg-blue-500\/20 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+[data-theme="light"] .bg-emerald-500\/20 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+[data-theme="light"] .bg-amber-500\/20 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+}
+
+/* 亮色主题 - 消息流头部深色区块 */
+[data-theme="light"] .rounded-lg.bg-zinc-800\/80,
+[data-theme="light"] .bg-zinc-800\/80 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .bg-zinc-800 {
+  background-color: #F0F0F0 !important;
+}
+
+[data-theme="light"] .bg-zinc-900 {
+  background-color: #E8E8E8 !important;
+}
+
+/* ===== Link Styles ===== */
+a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-primary);
+}
+
+/* ===== Input Focus ===== */
+input:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
+/* ===== Utility Classes ===== */
+@layer utilities {
+  .animate-in {
+    animation: fadeIn var(--transition-normal) ease-out;
+  }
+  
+  /* Glass effect - Enhanced */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+  
+  .glass-light {
+    background: var(--glass-bg-light);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+  
+  [data-theme="light"] .glass,
+  [data-theme="light"] .glass-light {
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Subtle border */
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+  
+  .border-muted {
+    border-color: var(--border-muted);
+  }
+  
+  /* Text colors */
+  .text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-tertiary {
+    color: var(--text-tertiary);
+  }
+  
+  .text-muted {
+    color: var(--text-muted);
+  }
+  
+  /* Background colors */
+  .bg-primary {
+    background-color: var(--bg-primary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  
+  .bg-tertiary {
+    background-color: var(--bg-tertiary);
+  }
+  
+  .bg-elevated {
+    background-color: var(--bg-elevated);
+  }
+
+  .file-card {
+    outline: none;
+  }
+  .file-card:hover {
+    border-color: var(--border-active, rgba(255,255,255,0.15)) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .file-card:not(:hover) {
+    border-color: var(--border-subtle) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ===== Roundtable Card Animations ===== */
+@keyframes rt-tri-h1 { 0%,100%{transform:rotate(-12deg)} 50%{transform:rotate(-6deg) translateY(5px)} }
+@keyframes rt-tri-h2 { 0%,100%{transform:rotate(8deg)} 50%{transform:rotate(14deg) translate(-6px,4px)} }
+@keyframes rt-tri-h3 { 0%,100%{transform:rotate(-25deg) scale(1)} 50%{transform:rotate(-18deg) scale(1.08) translate(4px,-3px)} }
+@keyframes rt-sq-1 { 0%,100%{transform:rotate(15deg)} 50%{transform:rotate(20deg) translate(-4px,3px)} }
+@keyframes rt-sq-2 { 0%,100%{transform:rotate(35deg)} 50%{transform:rotate(30deg) translate(5px,-4px)} }
+@keyframes rt-sq-3 { 0%,100%{transform:rotate(55deg) scale(1)} 50%{transform:rotate(48deg) scale(1.05) translate(-3px,5px)} }
+@keyframes rt-morph-1 {
+  0%,100%{border-radius:50% 50% 40% 60%/55% 45% 55% 45%;transform:translate(0,0) scale(1)}
+  33%{border-radius:40% 60% 55% 45%/45% 55% 45% 55%;transform:translate(5px,-8px) scale(1.05)}
+  66%{border-radius:55% 45% 45% 55%/50% 50% 50% 50%;transform:translate(-8px,5px) scale(0.95)}
+}
+@keyframes rt-morph-2 {
+  0%,100%{border-radius:45% 55% 50% 50%/50% 50% 50% 50%;transform:translate(0,0)}
+  50%{border-radius:55% 45% 45% 55%/45% 55% 50% 50%;transform:translate(10px,6px)}
+}
+@keyframes rt-morph-3 {
+  0%,100%{border-radius:55% 45% 50% 50%/45% 55% 45% 55%;transform:translate(0,0) scale(1)}
+  50%{border-radius:45% 55% 45% 55%/55% 45% 55% 45%;transform:translate(-6px,-10px) scale(1.08)}
+}
+@keyframes rt-morph-4 {
+  0%,100%{border-radius:50% 50% 45% 55%/50% 50% 50% 50%;transform:translate(0,0)}
+  50%{border-radius:45% 55% 55% 45%/55% 45% 50% 50%;transform:translate(8px,5px)}
+}
+@keyframes rt-morph-5 {
+  0%,100%{border-radius:45% 55% 55% 45%/50% 45% 55% 50%;transform:translate(0,0) scale(1)}
+  50%{border-radius:55% 45% 45% 55%/45% 55% 50% 50%;transform:translate(-5px,8px) scale(1.1)}
+}
+@keyframes rt-fluid-shift { 0%,100%{transform:scale(1) rotate(0deg)} 50%{transform:scale(1.1) rotate(10deg)} }
+@keyframes rt-live-pulse { 0%,100%{transform:scale(1);opacity:0.6} 50%{transform:scale(1.5);opacity:0} }
+@keyframes rt-dot-now { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+@keyframes rt-typing { 0%,60%,100%{opacity:0.25;transform:translateY(0)} 30%{opacity:1;transform:translateY(-2.5px)} }
+@keyframes rt-wave { 0%,100%{transform:scaleY(0.35)} 50%{transform:scaleY(1)} }
+
+/* Roundtable Card Hover */
+.rt-card:hover {
+  transform: translateY(-2px) scale(1.003);
+}
+:root:not([data-theme="light"]) .rt-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.28), 0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+[data-theme="light"] .rt-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.04);
+}
+.rt-card:hover .rt-bg-art {
+  opacity: var(--rt-bg-art-hover-opacity) !important;
+}
+
+/* ═══ Channel Bar & Chat Panel (Redesign V2) ═══ */
+
+:root, [data-theme="dark"] {
+  --ch-bar-bg: rgba(18, 18, 22, 0.55);
+  --ch-bar-border: rgba(255, 255, 255, 0.08);
+  --ch-bar-glow: rgba(255, 255, 255, 0.04);
+  --ch-panel-bg: #1C1B22;
+  --ch-panel-border: rgba(255, 255, 255, 0.06);
+  --ch-panel-shadow: 0 8px 40px rgba(0,0,0,0.15), 0 0 0 0.5px rgba(255,255,255,0.03) inset;
+  --ch-msg-bg-human: rgba(99, 102, 241, 0.08);
+  --ch-msg-border-human: rgba(99, 102, 241, 0.12);
+  --ch-input-bg: rgba(255, 255, 255, 0.05);
+  --ch-input-border: rgba(255, 255, 255, 0.08);
+  --ch-input-focus: rgba(99, 102, 241, 0.25);
+  --ch-conclusion-bg: rgba(59, 130, 246, 0.06);
+  --ch-conclusion-border: rgba(59, 130, 246, 0.12);
+  --ch-indicator: rgba(255, 255, 255, 0.85);
+  --ch-pill-bg: rgba(255, 255, 255, 0.06);
+  --ch-pill-border: rgba(255, 255, 255, 0.04);
+  --ch-expanded-bg: rgba(30, 30, 38, 0.92);
+  --ch-expanded-border: rgba(255, 255, 255, 0.06);
+  --ch-row-active-bg: rgba(255, 255, 255, 0.06);
+  --ch-group-label: rgba(255, 255, 255, 0.3);
+  --ch-empty-btn-bg: var(--ch-create-bg);
+  --ch-empty-btn-border: rgba(255, 255, 255, 0.08);
+  --ch-send-bg: #fff;
+  --ch-send-icon: #1a1a2e;
+  --ch-input-pill-border: rgba(255, 255, 255, 0.1);
+  --ch-hero-title: rgba(255, 255, 255, 0.95);
+  --ch-hero-subtitle: rgba(255, 255, 255, 0.5);
+  --ch-msg-name: rgba(255, 255, 255, 0.9);
+  --ch-msg-text: rgba(255, 255, 255, 0.7);
+  --ch-msg-time: rgba(255, 255, 255, 0.3);
+  --ch-mention-bg: rgba(99, 102, 241, 0.12);
+  --ch-reaction-bg: rgba(255, 255, 255, 0.06);
+  --ch-reaction-border: rgba(255, 255, 255, 0.08);
+  --ch-user-msg-bg: rgba(255, 253, 245, 0.04);
+  --ch-create-bg: #1C1B22;
+  --ch-create-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  --ch-create-btn-bg: rgba(255, 255, 255, 0.08);
+  --ch-create-btn-border: rgba(255, 255, 255, 0.1);
+  --ch-create-btn-text: rgba(255, 255, 255, 0.85);
+  --ch-card-moderator: #2d2640;
+  --ch-card-ordered: #1e2d40;
+  --ch-card-free: #1e3028;
+  --ch-card-text-muted-mod: #b8a0d8;
+  --ch-card-text-muted-ord: #8ab0d8;
+  --ch-card-text-muted-free: #80b898;
+  --ch-orb-glow-opacity: 0.15;
+  --ch-divider: rgba(255, 255, 255, 0.06);
+  --ch-header-border: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] {
+  --ch-bar-bg: rgba(245, 245, 248, 0.6);
+  --ch-bar-border: rgba(0, 0, 0, 0.07);
+  --ch-bar-glow: rgba(255, 255, 255, 0.6);
+  --ch-panel-bg: #FEFCF6;
+  --ch-panel-border: rgba(0, 0, 0, 0.06);
+  --ch-panel-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 0 0 0.5px rgba(0,0,0,0.03) inset;
+  --ch-msg-bg-human: rgba(99, 102, 241, 0.06);
+  --ch-msg-border-human: rgba(99, 102, 241, 0.10);
+  --ch-input-bg: rgba(0, 0, 0, 0.03);
+  --ch-input-border: rgba(0, 0, 0, 0.08);
+  --ch-input-focus: rgba(99, 102, 241, 0.20);
+  --ch-conclusion-bg: rgba(59, 130, 246, 0.04);
+  --ch-conclusion-border: rgba(59, 130, 246, 0.10);
+  --ch-indicator: rgba(0, 0, 0, 0.7);
+  --ch-pill-bg: rgba(255, 255, 255, 0.93);
+  --ch-pill-border: rgba(0, 0, 0, 0.03);
+  --ch-expanded-bg: rgba(255, 255, 255, 0.93);
+  --ch-expanded-border: rgba(0, 0, 0, 0.04);
+  --ch-row-active-bg: rgba(0, 0, 0, 0.03);
+  --ch-group-label: rgba(0, 0, 0, 0.25);
+  --ch-empty-btn-bg: var(--ch-create-bg);
+  --ch-empty-btn-border: #EEEEEE;
+  --ch-send-bg: #1a1a2e;
+  --ch-send-icon: #fff;
+  --ch-input-pill-border: #E8E8E8;
+  --ch-hero-title: #1a1a2e;
+  --ch-hero-subtitle: #888888;
+  --ch-msg-name: #1a1a2e;
+  --ch-msg-text: #444444;
+  --ch-msg-time: #cccccc;
+  --ch-mention-bg: #EEE9FF;
+  --ch-reaction-bg: #F5F5F5;
+  --ch-reaction-border: #EAEAEA;
+  --ch-user-msg-bg: #FFFDF5;
+  --ch-create-bg: #FEFCF6;
+  --ch-create-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  --ch-create-btn-bg: #FFFFFF;
+  --ch-create-btn-border: #E5E5E5;
+  --ch-create-btn-text: #1a1a2e;
+  --ch-card-moderator: #DDD0F2;
+  --ch-card-ordered: #C8DDF5;
+  --ch-card-free: #C2E5D3;
+  --ch-card-text-muted-mod: #5B3E8A;
+  --ch-card-text-muted-ord: #3A5A8A;
+  --ch-card-text-muted-free: #3A6B4A;
+  --ch-orb-glow-opacity: 0.12;
+  --ch-divider: #E0E0E4;
+  --ch-header-border: #F0F0F0;
+}
+
+@keyframes ch-breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes ch-orb-breathe {
+  0%, 100% { box-shadow: 0 0 8px 1px var(--_glow); }
+  50% { box-shadow: 0 0 14px 3px var(--_glow); }
+}
+
+@keyframes ch-msg-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ch-icon:hover { transform: scale(1.06); }
+.ch-icon { transition: transform 0.15s ease; }
+
+.ch-orb { transition: transform 0.15s ease, opacity 0.3s ease; }
+.ch-orb:hover { transform: scale(1.08); }
+.ch-orb-active { animation: ch-orb-breathe 3s ease-in-out infinite; }
+
+.ch-msg { animation: ch-msg-in 0.25s ease-out both; }
+
+@keyframes ch-typing {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-2px); }
+}
+
+@keyframes ch-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ch-panel-scroll::-webkit-scrollbar { width: 3px; }
+.ch-panel-scroll::-webkit-scrollbar-track { background: transparent; }
+.ch-panel-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+[data-theme="light"] .ch-panel-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); }
+
+/* SubAgent status pulse */
+@keyframes sa-status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.sa-status-pulse {
+  animation: sa-status-pulse 1.5s ease-in-out infinite;
+}
+
+/* SubAgent card shimmer */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* SubAgent shimmer overlay — dark theme (default) */
+.sa-shimmer-overlay {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.06) 35%,
+    rgba(255,255,255,0.14) 50%,
+    rgba(255,255,255,0.06) 65%,
+    transparent 100%
+  );
+}
+
+/* SubAgent shimmer overlay — light theme: stronger contrast */
+[data-theme="light"] .sa-shimmer-overlay {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0,0,0,0.04) 30%,
+    rgba(0,0,0,0.09) 50%,
+    rgba(0,0,0,0.04) 70%,
+    transparent 100%
+  );
+}
+
+@keyframes action-feed-running-shine {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes timeline-loading-spin {
+  from {
+    transform: translate(-50%, -50%) scale(var(--action-feed-spinner-scale, 0.7)) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(var(--action-feed-spinner-scale, 0.7)) rotate(360deg);
+  }
+}
+
+.action-feed-running-status {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--chat-running-text-base) 0%,
+    var(--chat-running-text-base) 40%,
+    var(--chat-running-text-highlight) 50%,
+    var(--chat-running-text-base) 60%,
+    var(--chat-running-text-base) 100%
+  );
+  background-size: 180% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: action-feed-running-shine 1.4s linear infinite;
+}
+
+.action-feed-loading-spinner,
+.timeline-loading-icon {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  overflow: visible;
+  opacity: 0.78;
+  flex-shrink: 0;
+}
+
+/* Tapered CSS spinner: preserves the original trailing fade while avoiding pixelated tiny assets. */
+.action-feed-loading-spinner::before,
+.timeline-loading-icon::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: conic-gradient(
+    from -90deg,
+    transparent 0deg,
+    transparent 72deg,
+    currentColor 255deg,
+    currentColor 360deg
+  );
+  border-radius: 999px;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1.9px), #000 calc(100% - 1.9px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1.9px), #000 calc(100% - 1.9px));
+  transform: translate(-50%, -50%) scale(var(--action-feed-spinner-scale, 0.7));
+  transform-origin: center;
+  animation: timeline-loading-spin 1s linear infinite;
+  will-change: transform;
+}
+
+.chat-session-board-new-badge::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -80%;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--moss-home-new-badge-shine) 50%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  animation: chat-session-board-badge-shine 2.8s ease-in-out infinite;
+}
+
+@keyframes chat-session-board-badge-shine {
+  0%,
+  38% {
+    transform: translateX(0) skewX(-18deg);
+  }
+  72%,
+  100% {
+    transform: translateX(360%) skewX(-18deg);
+  }
+}
+
+.inline-file-ref-token:hover {
+  padding-left: 15px !important;
+}
+
+.inline-file-ref-remove {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+.inline-file-ref-token:hover .inline-file-ref-remove {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action-feed-running-status,
+  .action-feed-loading-spinner::before,
+  .timeline-loading-icon::before,
+  .chat-session-board-new-badge::after {
+    animation: none;
+  }
+}

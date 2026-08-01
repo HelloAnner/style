@@ -1,0 +1,58 @@
+{
+  "id": "moss",
+  "name": "Moss Conversation & Reasoning",
+  "version": "0.1.0",
+  "status": "reusable",
+  "referenceMode": "strict",
+  "requiredThemes": ["light", "dark"],
+  "createdAt": "2026-08-01T17:18:20+08:00",
+  "updatedAt": "2026-08-01T17:18:20+08:00",
+  "description": "Moss 前端对话、系统色调与思维链工作过程设计档案。",
+  "sourceCount": 14,
+  "completion": {
+    "requiredItems": 16,
+    "completedItems": 10,
+    "openItems": 6,
+    "blockingItems": 5,
+    "openRequests": 3,
+    "selfAuditPassed": false
+  },
+  "coverage": {
+    "desktop": "partial",
+    "mobile": "partial",
+    "lightTheme": "partial",
+    "darkTheme": "partial",
+    "componentStates": "partial",
+    "motion": "partial",
+    "accessibility": "partial"
+  },
+  "entrypoints": {
+    "agent": "AGENTS.md",
+    "guide": "system/style-guide.md",
+    "tokens": "system/tokens.json",
+    "lightTokens": "system/themes/light.tokens.json",
+    "darkTokens": "system/themes/dark.tokens.json",
+    "implementation": "system/implementation.md",
+    "acceptance": "quality/acceptance.md",
+    "todo": "quality/TODO.md",
+    "requests": "quality/REQUESTS.md",
+    "completionReport": "quality/completion-report.md"
+  },
+  "lastValidated": null,
+  "sources": [
+    {"id":"SRC-001","type":"source","origin":"/Users/anner/fine/ai/dev/frontend/src/styles/globals.css","localPath":"sources/source-code/styles/globals.css","sha256":"62bf5156d2fdd0723d0e27b0869061b2298b51a3b50b4f87dba64df2bfa49d73","theme":"shared","route":null,"viewport":null,"dpr":null,"state":null,"collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-002","type":"source","origin":"frontend/src/components/common/ThemeProvider.tsx","localPath":"sources/source-code/common/ThemeProvider.tsx","sha256":"ae709982eb906151a918b47d5ec71c6382c7277c1646ba328d80ef52996cc15c","theme":"shared","route":null,"viewport":null,"dpr":null,"state":null,"collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-003","type":"source","origin":"frontend/src/components/Chat/ReasoningTraceSection.tsx","localPath":"sources/source-code/Chat/ReasoningTraceSection.tsx","sha256":"00e5849c64f5f36aa89a7902190d5edde4e3f92dd58f55f1f85cfc0afadd2367","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"running+completed","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-004","type":"source","origin":"frontend/src/components/Chat/ActionFeed/ActionFeed.tsx","localPath":"sources/source-code/Chat/ActionFeed/ActionFeed.tsx","sha256":"c397baaab4b12109988108ff96419658d00e679e1c685c377923fc7a46987a60","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"running+completed","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-005","type":"source","origin":"frontend/src/components/Chat/ActionFeed/ActionItem.tsx","localPath":"sources/source-code/Chat/ActionFeed/ActionItem.tsx","sha256":"2084afc49fb901e6e233e05b97a52542d3a7e57458d6ab0003decd0692d7f469","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"pending+running+streaming+completed+failed","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-006","type":"source","origin":"frontend/src/components/Chat/ActionFeed/ToolDisplayCard.tsx","localPath":"sources/source-code/Chat/ActionFeed/ToolDisplayCard.tsx","sha256":"cdfaf6562fdfb5d003231a9b168e2bd6d74d892d2e06699e3234a47f56fbaa8c","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"loading+completed","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-007","type":"source","origin":"frontend/src/components/Chat/AssistantMessageFrame.tsx","localPath":"sources/source-code/Chat/AssistantMessageFrame.tsx","sha256":"c325a19826b3b508a328d32049959ec0acd9774d5d4eae31689a7c0bf8162ef6","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"default","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-008","type":"source","origin":"frontend/src/components/Chat/AssistantResponseBody.tsx","localPath":"sources/source-code/Chat/AssistantResponseBody.tsx","sha256":"b0c1b8db50b301c77c107f7687c50b4677d6b0277ecc37d420690b21747c686d","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"streaming+complete+empty","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-009","type":"source","origin":"frontend/src/components/Chat/MessageList.tsx","localPath":"sources/source-code/Chat/MessageList.tsx","sha256":"f1b2f6b3d1bc544aab6b81b0ea9dc7b01ba9b7775c934bb9cd02e5cf81f07a62","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"default+scrolling+streaming","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-010","type":"source","origin":"frontend/src/components/Chat/InputBar.tsx","localPath":"sources/source-code/Chat/InputBar.tsx","sha256":"cc9dc723fa58b9397c5b890d989d1a385b8d68e5b9cb4ad5ac41b0922416d045","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"default+active+running+upload","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-011","type":"source","origin":"frontend/src/components/Chat/MarkdownContent.tsx","localPath":"sources/source-code/Chat/MarkdownContent.tsx","sha256":"685f21d0aa1ae9cd8aa53e9e69b81ccb87d990e66f96b686b7b0bc218094dd88","theme":"shared","route":"conversation","viewport":null,"dpr":null,"state":"default","collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-012","type":"source","origin":"frontend/tailwind.config.js","localPath":"sources/source-code/tailwind.config.js","sha256":"cf6b34287095ea00960892d9c7fe2e3be849ac3b5a42b48aa701dc47e3835b34","theme":"shared","route":null,"viewport":null,"dpr":null,"state":null,"collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-013","type":"source","origin":"frontend/index.html","localPath":"sources/source-code/index.html","sha256":"63a6d0f7366a10685b4441d71831f2b782ee4dde61913b9a22b0c06a38c42c8f","theme":"shared","route":null,"viewport":null,"dpr":null,"state":null,"collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"},
+    {"id":"SRC-014","type":"asset","origin":"frontend/public/fonts/google-fonts.css","localPath":"sources/source-code/fonts/google-fonts.css","sha256":"c207f156e67b4f81310eb1b2f014ca6244963cb719bf1a6140769f701fda9a1a","theme":"shared","route":null,"viewport":null,"dpr":null,"state":null,"collectedAt":"2026-08-01T17:18:20+08:00","authorized":"provided"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "environment": {
+    "browser": "Google Chrome via Playwright CLI",
+    "os": "macOS",
+    "locale": "zh-CN",
+    "timezone": "Asia/Shanghai",
+    "deviceScaleFactor": 1
+  },
+  "captures": [
+    {"evidenceId":"EVD-001","url":"file://examples/reference/thinking-chain.html?theme=light","route":"reference/thinking-chain","theme":"light","viewport":{"width":1440,"height":900},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__light__1440x900__running-completed.png","sha256":"d457e0e6d50821315314e2b1596c2d513a8051673364e376f0c47e9f2f65738d","capturedAt":"2026-08-01T17:18:20+08:00"},
+    {"evidenceId":"EVD-002","url":"file://examples/reference/thinking-chain.html?theme=dark","route":"reference/thinking-chain","theme":"dark","viewport":{"width":1440,"height":900},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__dark__1440x900__running-completed.png","sha256":"1429f4381e8f87253f2c65f41ddb79d21d21e3a989414820487bfd0e4c5b54a1","capturedAt":"2026-08-01T17:18:20+08:00"},
+    {"evidenceId":"EVD-003","url":"file://examples/reference/thinking-chain.html?theme=light","route":"reference/thinking-chain","theme":"light","viewport":{"width":390,"height":844},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__light__390x844__running-completed.png","sha256":"462eb137894fcf3e19f9737b9c9f77d3758e2ce77fdef1267b3cf0f8458de6b1","capturedAt":"2026-08-01T17:18:20+08:00"},
+    {"evidenceId":"EVD-004","url":"file://examples/reference/thinking-chain.html?theme=dark","route":"reference/thinking-chain","theme":"dark","viewport":{"width":390,"height":844},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__dark__390x844__running-completed.png","sha256":"c463a6677bddbcdcde3aade16eaed37be074e182de9c714c952bdc4f1317b784","capturedAt":"2026-08-01T17:18:20+08:00"}
+  ],
+  "note": "All captures are derived reference renders, not source-product baselines."
+}
