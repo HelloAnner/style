@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Moss conversation workspace reference</title>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme')||'light'</script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" data-testid="sidebar">
+    <header class="sidebar-brand"><strong>MOSS · 谋士</strong><button class="icon-button" id="collapse" title="收起">◧</button></header>
+    <section class="agent-picker"><div class="section-label">我的 Agent</div><button class="side-item active"><span class="agent-glyph">客</span><span>客户洞察</span><i class="active-dot"></i></button><button class="side-item"><span class="agent-glyph risk">险</span><span>风险管理</span></button></section>
+    <div class="side-divider"></div>
+    <button class="new-session"><span class="plus-compose">✎</span>新会话</button>
+    <nav class="session-list">
+      <section class="session-group"><button class="group-title">收藏 <span>⌄</span></button><button class="session-item"><span>年度经营复盘框架</span><span class="more">•••</span></button></section>
+      <section class="session-group"><button class="group-title">今天 <span>⌄</span></button><button class="session-item current"><span>华东区域销售变化分析</span><span class="more">•••</span></button><button class="session-item"><span>重点客户风险排查</span><i class="unread"></i><span class="more">•••</span></button><button class="session-item"><span>竞品动态汇总</span><i class="generating"></i><span class="more">•••</span></button></section>
+      <section class="session-group"><button class="group-title">昨天 <span>⌄</span></button><button class="session-item"><span>渠道转化率分析</span><span class="more">•••</span></button></section>
+      <section class="session-group"><button class="group-title">更早 <span>›</span></button></section>
+    </nav>
+    <footer class="sidebar-footer"><button class="showcase">◇ <span>案例中心</span><b>✦</b></button><div class="footer-tools"><button class="footer-tool active">▱ 我的文件</button><button class="footer-tool">↻ 自动化</button></div></footer>
+    <button class="user-entry"><span class="user-avatar">A</span><span>Anne</span></button>
+  </aside>
+
+  <main class="chat-panel">
+    <header class="chat-header"><div class="chat-title">华东区域销售变化分析 <button class="header-icon" title="收藏">♡</button></div><div class="header-actions"><button class="header-icon">↗</button><i></i><button class="header-icon">▥</button><button class="header-icon">↻</button><button class="header-icon active">▱</button></div></header>
+    <div class="message-scroll">
+      <div class="messages">
+        <article class="user-message"><div class="user-bubble">请分析销售数据，找出华东区域增长的主要原因，并给出下一步行动建议。</div></article>
+        <article class="assistant-message">
+          <header class="assistant-head"><span class="moss-mark">M</span><strong>Moss</strong><time>刚刚</time></header>
+          <section class="reasoning">
+            <div class="running-status">正在处理中...</div>
+            <div class="trace-group"><span class="connector"></span><div class="trace-row"><span class="trace-icon complete">✓</span><span>先确认字段口径、时间范围和异常值，再拆解区域与渠道贡献。</span></div><div class="tool-list"><div class="tool-row"><span class="tool-icon">▣</span><span>阅读 “sales_2026.csv”</span><time>1.2s</time></div><div class="tool-row"><span class="tool-icon">⌕</span><span>检查缺失值与异常分布</span><time>842ms</time></div></div></div>
+            <div class="trace-group"><span class="connector"></span><div class="trace-row"><span class="trace-icon complete">✓</span><span>增长主要来自直营渠道，需要核对客户结构是否发生变化。</span></div><div class="tool-list"><div class="tool-row"><span class="tool-icon">▥</span><span>执行 Python 分组统计</span><time>2.4s</time></div></div></div>
+            <div class="trace-group"><div class="trace-row"><span class="trace-icon spinner"></span><span>整理证据、影响和可直接执行的建议。</span></div></div>
+          </section>
+          <section class="answer-card"><h3>结论</h3><p>华东区域增长主要由<strong>直营渠道的大客户复购</strong>驱动，而非新增客户数量。增长集中在三个重点行业，客单价与复购率同时提升。</p><h4>建议动作</h4><ol><li>复用华东直营团队的客户分层与触达节奏。</li><li>单独排查华南渠道的高价值客户流失节点。</li><li>未来四周按周监测复购率、客单价与转化周期。</li></ol></section>
+          <div class="post-actions"><button>□</button><button>♡</button><button>♧</button></div>
+        </article>
+      </div>
+    </div>
+    <footer class="composer-area"><div class="composer"><div class="composer-placeholder">描述需求，@引用文件</div><div class="composer-actions"><button class="attach">＋</button><button class="send">↑</button></div></div><div class="ai-note">内容由 AI 生成，请仔细甄别</div></footer>
+  </main>
+
+  <section class="right-region">
+    <aside class="workspace-drawer">
+      <header class="workspace-header"><div><span>▱</span><strong>我的文件</strong></div><div><button class="icon-button">□</button><button class="icon-button" id="close-files">×</button></div></header>
+      <div class="workspace-toolbar"><div class="segments"><button class="selected">当前会话</button><button>全部文件</button></div><span class="file-stat">6个文件，8.4 MB</span><button class="upload">⇧ <span>上传文件</span></button></div>
+      <div class="workspace-subtoolbar"><label class="search">⌕<input placeholder="搜索"></label><div class="workspace-controls"><button>☑ 批量选择</button><div class="view-toggle"><button class="selected" data-view="grid">▦</button><button data-view="list">☷</button></div></div></div>
+      <div class="file-grid">
+        <article class="file-card"><div class="file-preview pdf"><span>PDF</span></div><div class="file-meta"><strong>华东区域销售复盘.pdf</strong><small>2.8 MB</small></div></article>
+        <article class="file-card"><div class="file-preview sheet"><span>XLS</span></div><div class="file-meta"><strong>sales_2026.xlsx</strong><small>1.6 MB</small></div></article>
+        <article class="file-card"><div class="file-preview md"><span>MD</span></div><div class="file-meta"><strong>分析结论与建议.md</strong><small>24.3 KB</small></div></article>
+        <article class="file-card"><div class="file-preview image"><span>IMG</span></div><div class="file-meta"><strong>渠道贡献趋势图.png</strong><small>864 KB</small></div></article>
+        <article class="file-card"><div class="file-preview ppt"><span>PPT</span></div><div class="file-meta"><strong>管理层汇报材料.pptx</strong><small>3.1 MB</small></div></article>
+        <article class="file-card"><div class="file-preview json"><span>JSON</span></div><div class="file-meta"><strong>metrics_snapshot.json</strong><small>18.2 KB</small></div></article>
+      </div>
+    </aside>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

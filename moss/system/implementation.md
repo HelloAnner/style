@@ -22,14 +22,17 @@
 
 ## 5. 构建顺序
 
-1. App shell：260/48 sidebar，chat min 400。
-2. Message list：900px 内容列、24px inline/top、32px bottom、24px gap。
-3. Assistant frame：24px mark、名称、时间。
-4. **Reasoning trace**：状态机与 event sequence 先于视觉。
-5. ActionFeed：过程节点、connector、工具缩进、528px 滚动。
-6. Assistant response surface。
-7. Composer。
-8. Markdown、附件、反馈与其他长尾组件。
+1. App shell：260/48 sidebar，chat min400，right panel 50%/min480/inset8。
+2. Expanded/collapsed Sidebar：Brand → Agent → New session → Groups → Footer → User。
+3. Session header：48px title/actions，滚动 surface。
+4. Message list：900px 内容列、24px inline/top、32px bottom、24px gap。
+5. Assistant frame：24px mark、名称、时间。
+6. **Reasoning trace**：状态机与 event sequence 先于视觉。
+7. ActionFeed：过程节点、connector、工具缩进、528px 滚动。
+8. Assistant response surface。
+9. Composer：max900、min116、outer bottom31。
+10. Workspace drawer：header → scope/stat/upload → search/batch/view → file grid/list/preview。
+11. Markdown、附件、反馈与其他长尾组件。
 
 ## 6. 思维链最小 DOM
 
@@ -53,13 +56,20 @@
 - 预览清理 Markdown，按 96 code points + 句号规则截断。
 - 过程内部贴底；用户手动上滚后停止自动跟随。
 
-## 8. 响应式
+## 8. 可运行组件参考
+
+- 完整工作台：`examples/reference/conversation-workspace/index.html?theme=light|dark`
+- 实现拆为 `index.html`、`styles.css`、`app.js`，无外部框架依赖。
+- 已实现 sidebar 折叠、会话 active 切换、文件区关闭、grid/list 和搜索；用于消费与布局回归，不是来源产品 baseline。
+- 原始 React 实现见 `sources/source-code/{App.tsx,Sidebar/,Chat/,Workspace/}`；产品图标见 `sources/source-code/assets/`。
+
+## 9. 响应式
 
 来源无可验证移动实现。参考页在 390px 隐藏耗时只是建议，不是权威规则。目标若必须移动端，先获得来源证据；否则记录推荐扩展与偏差。禁止根级 400px min-width 造成页面横向滚动。
 
-## 9. 验证
+## 10. 验证
 
 - 运行 `python3 examples/reference/check-profile.py`。
-- 参考渲染：浏览器打开 `examples/reference/thinking-chain.html?theme=light|dark`。
+- 参考渲染：浏览器打开 `examples/reference/thinking-chain.html?theme=light|dark` 与 `examples/reference/conversation-workspace/index.html?theme=light|dark`。
 - 正式视觉回归必须另取来源产品 baseline：1440×900 和 390×844、DPR1、zh-CN、相同数据；至少 running、completed-collapsed、expanded、failed、long trace。
 - 字体 ready 后截图；diff 不得用宽松阈值掩盖结构偏差。

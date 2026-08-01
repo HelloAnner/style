@@ -1,0 +1,334 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  outline: none;
+}
+
+.preview:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--border-default);
+}
+
+.toolbar {
+  display: grid;
+  flex: none;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  color: var(--text-primary);
+}
+
+.fileInfo svg {
+  flex: none;
+  color: var(--warning);
+}
+
+.fileInfo span {
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.zoomControls {
+  justify-content: flex-end;
+}
+
+.iconButton,
+.zoomButton,
+.retryButton {
+  min-height: 36px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  cursor: pointer;
+}
+
+.iconButton:hover:not(:disabled),
+.zoomButton:hover:not(:disabled),
+.retryButton:hover:not(:disabled) {
+  background: var(--hover-bg);
+}
+
+.iconButton:focus-visible,
+.zoomButton:focus-visible,
+.retryButton:focus-visible {
+  outline: 2px solid var(--border-default);
+  outline-offset: 2px;
+}
+
+.iconButton:disabled,
+.zoomButton:disabled {
+  color: var(--text-muted);
+  cursor: default;
+  opacity: 0.55;
+}
+
+.iconButton {
+  width: 36px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.zoomButton {
+  min-width: 56px;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.retryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.pageCounter {
+  min-width: 88px;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.thumbnailRail {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 12px;
+  width: 224px;
+  min-height: 0;
+  padding: 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  scrollbar-gutter: stable;
+}
+
+.thumbnailButton {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 100%;
+  padding: 6px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  cursor: pointer;
+}
+
+.thumbnailButton:hover {
+  border-color: var(--border-hover);
+  background: var(--hover-bg);
+}
+
+.thumbnailButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.thumbnailButtonActive {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.thumbnailButtonActive:hover {
+  border-color: var(--accent-hover);
+}
+
+.thumbnailCanvas {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 7px;
+  background: var(--bg-tertiary);
+  pointer-events: none;
+}
+
+.thumbnailFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.thumbnailNumber {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  min-width: 24px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}
+
+.warning {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 50%;
+  padding: 6px 10px;
+  border: 1px solid var(--warning-border-soft);
+  border-radius: 6px;
+  color: var(--warning);
+  background: var(--warning-bg-soft);
+  font-size: 12px;
+  transform: translateX(-50%);
+}
+
+.viewer {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 32px;
+}
+
+.state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+  background: var(--bg-secondary);
+}
+
+.state strong {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+  border: 2px solid var(--border-default);
+  border-top-color: var(--text-secondary);
+  border-radius: 50%;
+  animation: pptx-spin 0.8s linear infinite;
+}
+
+.retryButton {
+  margin-top: 4px;
+}
+
+@keyframes pptx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .toolbar {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .fileInfo {
+    grid-column: 1 / -1;
+  }
+
+  .controlGroup {
+    justify-content: flex-start;
+  }
+
+  .zoomControls {
+    justify-content: flex-end;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .thumbnailRail {
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    height: 112px;
+    padding: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    scrollbar-gutter: auto;
+  }
+
+  .thumbnailButton {
+    width: 154px;
+  }
+
+  .viewer {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.8s;
+  }
+}

@@ -18,6 +18,17 @@
 | SRC-012 | `tailwind.config.js` | `source-code/tailwind.config.js` | shared | 尺度与遗留色板 |
 | SRC-013 | `frontend/index.html` | `source-code/index.html` | shared | locale、字体入口 |
 | SRC-014 | `google-fonts.css` | `source-code/fonts/google-fonts.css` | shared | 字体声明 |
+| SRC-015 | `App.tsx` | `source-code/App.tsx` | shell/right-panel | 工作台总布局 |
+| SRC-016..021 | `components/Chat/*` | `source-code/Chat/` | conversation states | 会话组装、header、消息角色与标记 |
+| SRC-022..029 | `components/Sidebar/*` | `source-code/Sidebar/` | expanded sidebar | 品牌、Agent、会话分组/状态、底部入口 |
+| SRC-030..035 | `components/Workspace/*` | `source-code/Workspace/` | file drawer states | 抽屉、工具栏、网格/列表、文件预览、骨架 |
+| SRC-036..038 | `components/Sidebar/*` | `source-code/Sidebar/` | user/collapsed/flyout | 用户入口、48px rail 与浮层 |
+| SRC-039 | sidebar/file-panel/file icon assets | `source-code/assets/` | shared | 59 个产品图标原件；哈希见资产清单 |
+| SRC-040 | 完整 Chat 非测试组件 bundle | `source-code/Chat/` | conversation | 74个实现文件与 bundle 哈希 |
+| SRC-041 | 完整 Sidebar 非测试组件 bundle | `source-code/Sidebar/` | navigation | 16个实现文件与 bundle 哈希 |
+| SRC-042 | 完整 Workspace 非测试组件 bundle | `source-code/Workspace/` | file drawer | 20个实现文件与 bundle 哈希 |
+
+详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共42个登记项，完整组件 bundle 共110个文件。
 
 ## 授权与限制
 

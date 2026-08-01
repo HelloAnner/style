@@ -6,7 +6,10 @@
       "SRC-001",
       "SRC-003",
       "SRC-004",
-      "SRC-005"
+      "SRC-005",
+      "SRC-015",
+      "SRC-022",
+      "SRC-030"
     ],
     "precision": "exact-source",
     "theme": "dark"
@@ -67,9 +70,37 @@
     "messagePaddingInline": "24px",
     "messagePaddingTop": "24px",
     "messageGap": "24px",
-    "traceMaxHeight": "528px"
+    "traceMaxHeight": "528px",
+    "rightPanelRatio": "50%",
+    "rightPanelMinWidth": "480px",
+    "rightPanelInset": "8px",
+    "homeMaxWidth": "1180px",
+    "homeCardMaxWidth": "800px"
+  },
+  "breakpoint": {
+    "homeCompact": "760px",
+    "homeTabsCompact": "1200px"
   },
   "component": {
+    "sidebar": {
+      "brandHeight": "56px",
+      "itemHeight": "36px",
+      "itemMarginInline": "12px",
+      "itemRadius": "8px",
+      "groupLabelHeight": "20px",
+      "groupLabelSize": "12px",
+      "footerActionHeight": "32px",
+      "showcaseHeight": "38px",
+      "userHeight": "36px",
+      "railAction": "32px"
+    },
+    "chatHeader": {
+      "height": "48px",
+      "paddingInline": "16px",
+      "action": "32px",
+      "actionRadius": "8px",
+      "gap": "8px"
+    },
     "assistantHeader": {
       "avatar": "24px",
       "gap": "8px",
@@ -96,11 +127,27 @@
       "completedToggleHeight": "34px"
     },
     "composer": {
+      "outerPadding": "0 24px 31px",
       "minHeight": "116px",
       "radius": "16px",
       "borderWidth": "0.5px",
       "sendButton": "34px",
       "sendRadius": "17px"
+    },
+    "workspace": {
+      "radius": "6px",
+      "borderWidth": "0.5px",
+      "headerPadding": "12px 16px",
+      "headerTitleSize": "16px",
+      "toolbarPrimaryPadding": "12px 16px 6px",
+      "toolbarSecondaryPadding": "6px 16px 12px",
+      "segmentHeight": "32px",
+      "searchWidth": "240px",
+      "searchHeight": "30px",
+      "fileGridMin": "180px",
+      "filePreviewHeight": "120px",
+      "fileCardPadding": "4px",
+      "fileCardRadius": "6px"
     }
   },
   "color": {
@@ -148,11 +195,42 @@
     "running": {
       "base": "color-mix(in srgb, #71717A 68%, transparent)",
       "highlight": "#E4E4E7"
+    },
+    "sidebar": {
+      "background": "#18181B",
+      "textPrimary": "#FAFAFA",
+      "textSecondary": "#A1A1AA",
+      "textMuted": "#71717A",
+      "itemHover": "rgba(255, 255, 255, 0.06)",
+      "itemActive": "rgba(255, 255, 255, 0.08)",
+      "newSessionBackground": "#FAFAFA",
+      "newSessionText": "#E86A45",
+      "newSessionHover": "rgba(232, 106, 69, 0.12)",
+      "showcaseBackground": "rgba(96, 165, 250, 0.12)",
+      "showcaseBorder": "rgba(96, 165, 250, 0.28)",
+      "showcaseText": "#60A5FA"
+    },
+    "home": {
+      "background": "#0A0A0F",
+      "dot": "rgba(255, 255, 255, 0.08)",
+      "dotHighlight": "rgba(255, 255, 255, 0.28)",
+      "spotlight": "rgba(255, 255, 255, 0.12)",
+      "recommendationBackground": "rgba(18, 18, 24, 0.88)"
+    },
+    "workspace": {
+      "drawer": "#18181B",
+      "preview": "rgba(255, 255, 255, 0.03)",
+      "fileCard": "#1A1A20",
+      "monoButtonBackground": "#FAFAFA",
+      "monoButtonText": "#18181B"
     }
   },
   "shadow": {
+    "sidebarEdge": "inset -10px 0 18px -18px rgba(0, 0, 0, 0.36)",
     "composer": "0 0 2px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24)",
     "popover": "0 8px 24px rgba(0, 0, 0, 0.32)",
-    "send": "0 6px 14px rgba(222, 106, 67, 0.28)"
+    "send": "0 6px 14px rgba(222, 106, 67, 0.28)",
+    "fileCard": "none",
+    "fileCardHover": "0 8px 24px rgba(0, 0, 0, 0.24)"
   }
 }

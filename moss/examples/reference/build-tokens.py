@@ -15,12 +15,16 @@ SHARED = {
     "space": {"1": "4px", "2": "6px", "3": "8px", "4": "10px", "5": "12px", "6": "14px", "7": "16px", "8": "20px", "9": "24px", "10": "32px"},
     "radius": {"sm": "8px", "md": "10px", "lg": "12px", "xl": "16px", "pill": "999px"},
     "motion": {"fast": "150ms", "normal": "200ms", "slow": "300ms", "traceReveal": "180ms", "messageEnter": "300ms", "runningShine": "1400ms", "spinner": "1000ms", "ease": "cubic-bezier(0.4, 0, 0.2, 1)", "easeOut": "ease-out"},
-    "layout": {"sidebarExpanded": "260px", "sidebarCollapsed": "48px", "chatMinWidth": "400px", "conversationMaxWidth": "900px", "messagePaddingInline": "24px", "messagePaddingTop": "24px", "messageGap": "24px", "traceMaxHeight": "528px"},
+    "layout": {"sidebarExpanded": "260px", "sidebarCollapsed": "48px", "chatMinWidth": "400px", "conversationMaxWidth": "900px", "messagePaddingInline": "24px", "messagePaddingTop": "24px", "messageGap": "24px", "traceMaxHeight": "528px", "rightPanelRatio": "50%", "rightPanelMinWidth": "480px", "rightPanelInset": "8px", "homeMaxWidth": "1180px", "homeCardMaxWidth": "800px"},
+    "breakpoint": {"homeCompact": "760px", "homeTabsCompact": "1200px"},
     "component": {
+        "sidebar": {"brandHeight": "56px", "itemHeight": "36px", "itemMarginInline": "12px", "itemRadius": "8px", "groupLabelHeight": "20px", "groupLabelSize": "12px", "footerActionHeight": "32px", "showcaseHeight": "38px", "userHeight": "36px", "railAction": "32px"},
+        "chatHeader": {"height": "48px", "paddingInline": "16px", "action": "32px", "actionRadius": "8px", "gap": "8px"},
         "assistantHeader": {"avatar": "24px", "gap": "8px", "marginBottom": "6px", "minHeight": "24px"},
         "assistantBody": {"padding": "16px 18px", "streamingPadding": "16px 18px 34px", "radius": "8px", "borderWidth": "1px"},
         "reasoning": {"rowMinHeight": "30px", "thinkingIconSlot": "16px", "thinkingGap": "8px", "thinkingPaddingBlock": "4px", "toolIconSlot": "14px", "toolGap": "7px", "toolIndent": "15.5px", "connectorLeft": "7.5px", "connectorWidth": "1.25px", "previewMaxCharacters": 96, "completedToggleHeight": "34px"},
-        "composer": {"minHeight": "116px", "radius": "16px", "borderWidth": "0.5px", "sendButton": "34px", "sendRadius": "17px"}
+        "composer": {"outerPadding": "0 24px 31px", "minHeight": "116px", "radius": "16px", "borderWidth": "0.5px", "sendButton": "34px", "sendRadius": "17px"},
+        "workspace": {"radius": "6px", "borderWidth": "0.5px", "headerPadding": "12px 16px", "headerTitleSize": "16px", "toolbarPrimaryPadding": "12px 16px 6px", "toolbarSecondaryPadding": "6px 16px 12px", "segmentHeight": "32px", "searchWidth": "240px", "searchHeight": "30px", "fileGridMin": "180px", "filePreviewHeight": "120px", "fileCardPadding": "4px", "fileCardRadius": "6px"}
     }
 }
 
@@ -34,9 +38,12 @@ THEMES = {
             "interaction": {"hover": "rgba(0, 0, 0, 0.04)", "active": "rgba(0, 0, 0, 0.08)", "selected": "rgba(0, 0, 0, 0.05)"},
             "accent": {"brand": "#D95E3A", "send": "#DE6A43", "link": "#2563EB", "info": "#1D4ED8"},
             "feedback": {"danger": "#DC2626", "warning": "#B45309", "success": "#059669"},
-            "running": {"base": "color-mix(in srgb, #7A7A7A 68%, transparent)", "highlight": "#3A3A3A"}
+            "running": {"base": "color-mix(in srgb, #7A7A7A 68%, transparent)", "highlight": "#3A3A3A"},
+            "sidebar": {"background": "#F2F1ED", "textPrimary": "#18181B", "textSecondary": "#52525B", "textMuted": "#71717A", "itemHover": "rgba(0, 0, 0, 0.04)", "itemActive": "rgba(0, 0, 0, 0.08)", "newSessionBackground": "#E8E6E1", "newSessionText": "#D95E3A", "newSessionHover": "rgba(217, 94, 58, 0.10)", "showcaseBackground": "rgba(57, 135, 229, 0.05)", "showcaseBorder": "#E5EFFF", "showcaseText": "#2C60DB"},
+            "home": {"background": "#FAF9F7", "dot": "rgba(24, 24, 27, 0.14)", "dotHighlight": "rgba(24, 24, 27, 0.56)", "spotlight": "rgba(24, 24, 27, 0.055)", "recommendationBackground": "rgba(255, 255, 255, 0.94)"},
+            "workspace": {"drawer": "#FFFFFF", "preview": "rgba(11, 11, 11, 0.03)", "fileCard": "#FFFFFF", "monoButtonBackground": "#18181B", "monoButtonText": "#FFFFFF"}
         },
-        "shadow": {"composer": "0 0 2px rgba(9, 30, 64, 0.02), 0 1px 4px rgba(9, 30, 64, 0.06)", "popover": "0 4px 16px rgba(9, 30, 64, 0.10), 0 12px 32px rgba(9, 30, 64, 0.06)", "send": "0 6px 14px rgba(222, 106, 67, 0.26)"}
+        "shadow": {"sidebarEdge": "inset -10px 0 18px -18px rgba(15, 23, 42, 0.18)", "composer": "0 0 2px rgba(9, 30, 64, 0.02), 0 1px 4px rgba(9, 30, 64, 0.06)", "popover": "0 4px 16px rgba(9, 30, 64, 0.10), 0 12px 32px rgba(9, 30, 64, 0.06)", "send": "0 6px 14px rgba(222, 106, 67, 0.26)", "fileCard": "0 1px 2px rgba(9, 30, 64, 0.04)", "fileCardHover": "0 8px 24px rgba(9, 30, 64, 0.08)"}
     },
     "dark": {
         "color": {
@@ -47,13 +54,16 @@ THEMES = {
             "interaction": {"hover": "rgba(255, 255, 255, 0.05)", "active": "rgba(255, 255, 255, 0.10)", "selected": "rgba(255, 255, 255, 0.06)"},
             "accent": {"brand": "#E86A45", "send": "#DE6A43", "link": "#60A5FA", "info": "#60A5FA"},
             "feedback": {"danger": "#F87171", "warning": "#FBBF24", "success": "#34D399"},
-            "running": {"base": "color-mix(in srgb, #71717A 68%, transparent)", "highlight": "#E4E4E7"}
+            "running": {"base": "color-mix(in srgb, #71717A 68%, transparent)", "highlight": "#E4E4E7"},
+            "sidebar": {"background": "#18181B", "textPrimary": "#FAFAFA", "textSecondary": "#A1A1AA", "textMuted": "#71717A", "itemHover": "rgba(255, 255, 255, 0.06)", "itemActive": "rgba(255, 255, 255, 0.08)", "newSessionBackground": "#FAFAFA", "newSessionText": "#E86A45", "newSessionHover": "rgba(232, 106, 69, 0.12)", "showcaseBackground": "rgba(96, 165, 250, 0.12)", "showcaseBorder": "rgba(96, 165, 250, 0.28)", "showcaseText": "#60A5FA"},
+            "home": {"background": "#0A0A0F", "dot": "rgba(255, 255, 255, 0.08)", "dotHighlight": "rgba(255, 255, 255, 0.28)", "spotlight": "rgba(255, 255, 255, 0.12)", "recommendationBackground": "rgba(18, 18, 24, 0.88)"},
+            "workspace": {"drawer": "#18181B", "preview": "rgba(255, 255, 255, 0.03)", "fileCard": "#1A1A20", "monoButtonBackground": "#FAFAFA", "monoButtonText": "#18181B"}
         },
-        "shadow": {"composer": "0 0 2px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24)", "popover": "0 8px 24px rgba(0, 0, 0, 0.32)", "send": "0 6px 14px rgba(222, 106, 67, 0.28)"}
+        "shadow": {"sidebarEdge": "inset -10px 0 18px -18px rgba(0, 0, 0, 0.36)", "composer": "0 0 2px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24)", "popover": "0 8px 24px rgba(0, 0, 0, 0.32)", "send": "0 6px 14px rgba(222, 106, 67, 0.28)", "fileCard": "none", "fileCardHover": "0 8px 24px rgba(0, 0, 0, 0.24)"}
     }
 }
 
-META = {"profile": "moss", "sourceCommit": "195a663d2323af7c668a1db9e0a1be442a2c2b49", "evidence": ["SRC-001", "SRC-003", "SRC-004", "SRC-005"], "precision": "exact-source"}
+META = {"profile": "moss", "sourceCommit": "195a663d2323af7c668a1db9e0a1be442a2c2b49", "evidence": ["SRC-001", "SRC-003", "SRC-004", "SRC-005", "SRC-015", "SRC-022", "SRC-030"], "precision": "exact-source"}
 
 
 def flatten(value, prefix=()):

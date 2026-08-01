@@ -6,7 +6,7 @@
 - 关闭：REQ-001 / TODO-011。
 
 ## GAP-002 — 无来源产品视觉 baseline
-- 当前证据：源码 + 档案参考截图 EVD-001..004。
+- 当前证据：42项来源登记/资产 + 思维链参考 EVD-001..004 + 完整工作台参考 EVD-005..006。
 - 影响：不能发现运行时 CSS 覆盖、真实字体和组合差异。
 - 关闭：REQ-001 / TODO-012。
 
@@ -21,7 +21,7 @@
 - 关闭：REQ-003 / TODO-014。
 
 ## GAP-005 — 状态长尾
-- 缺少：hover、focus-visible、timeout、cancelled、subagent、widget、长工具链真实组合。
+- 缺少：hover、focus-visible、timeout、cancelled、subagent、widget、长工具链、sidebar flyout/menu/rename、文件 batch/preview/error 的真实组合。
 - 影响：核心组件状态矩阵 partial。
 - 关闭：TODO-015。
 

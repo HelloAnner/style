@@ -11,6 +11,12 @@
 | 新消息 | opacity 0→1, y 20→0；`300ms easeOut` | SRC-009 |
 | 完成 chevron | rotate 180°；`150ms` | SRC-003 |
 | 特殊工具卡片 | x -16→0；`280ms easeOut`；shimmer 2s | SRC-006 |
+| Sidebar width | 260↔48；`200ms easeInOut` | SRC-015 |
+| Right panel width | `300ms` custom ease-in-out | SRC-015 |
+| Header scrolled surface | `180ms ease` | SRC-018 |
+| Session item state/highlight | hover/menu `150ms`；board highlight `320ms`，持续3s | SRC-028 |
+| File card hover | border/shadow/transform `150ms` | SRC-032 |
+| Home recommendation enter | 520ms cubic-bezier(.16,1,.3,1)；tabs/rows 380/460ms | SRC-016 |
 
 ## Reduced motion
 

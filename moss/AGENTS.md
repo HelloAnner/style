@@ -26,16 +26,18 @@
 1. `system/style-guide.md`
 2. `system/tokens.json`
 3. `system/themes/<theme>.tokens.json` 与 `<theme>.css`
-4. `analysis/components.md`（思维链为最高优先级）
-5. `analysis/patterns.md`
-6. `analysis/layout.md`
-7. `system/implementation.md`
-8. `quality/acceptance.md`
-9. 需要核实时查 `sources/index.md` 和 `sources/source-code/`
+4. `analysis/conversation-workspace.md`
+5. `analysis/sidebar.md`
+6. `analysis/file-workspace.md`
+7. `analysis/components.md`（思维链为最高优先级）
+8. `analysis/patterns.md` 与 `analysis/layout.md`
+9. `system/implementation.md`
+10. `quality/acceptance.md`
+11. 需要核实时查 `sources/index.md`、`sources/source-code/` 和产品图标原件
 
 只有 manifest 为 `complete` 且目标范围 validated，才能无条件声称严格一致。当前档案不是 complete；带缺口使用前须说明 dark 运行态、移动端和真实页面视觉回归缺口。
 
-实现顺序：字体/资源 → Token → 页面壳 → 消息列 → assistant frame → 思维链/工具时间线 → 正文 → 输入框 → 状态/响应式 → 双主题比较。思维链必须保持“过程说明节点 + 细竖线 + 缩进工具动作”的层级，不得改成彩色卡片瀑布、日志终端或大面积高亮。
+实现顺序：字体/产品图标 → Token → App shell → 260/48px Sidebar → 会话 header → 消息列 → assistant frame → 思维链/工具时间线 → 正文 → 116px composer → 50% inset 文件 drawer → 文件 grid/list → 状态/响应式 → 双主题比较。思维链必须保持“过程说明节点 + 细竖线 + 缩进工具动作”的层级；侧栏当前态必须保持中性；文件区必须保留 8px inset drawer，不得改成彩色卡片瀑布、日志终端、贴边 split pane 或大面积高亮。
 
 ## 采集或更新
 

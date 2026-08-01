@@ -71,3 +71,21 @@
 非 compact 外层对齐内容列；min-height 116px；radius 16px；0.5px sender border；文本 14/22，输入区 min 60/max 160；发送按钮 34px/radius17，空态中性，内容态 `#DE6A43`；底部 11/16/500 免责声明。
 
 `Observed · exact-source · high · SRC-010`
+
+## Chat session header
+
+48px 高；active session padding inline16；标题14/22/400；操作32×32/radius8/gap8。收藏紧跟标题，右侧为分享/divider/看板/自动化/文件。滚动后 surface 180ms 出现。完整规则见 [conversation-workspace.md](conversation-workspace.md)。
+
+`Observed · exact-source · high · SRC-018`
+
+## Sidebar / session list
+
+260px 展开、48px 折叠；内容 item 36px、margin inline12、radius8。Active 仅中性 surface + 500 weight；unread 8px danger dot；generating 13px spinner。完整规则见 [sidebar.md](sidebar.md)。
+
+`Observed · exact-source · high · SRC-022..029, SRC-036..038`
+
+## Workspace drawer / file cards
+
+Right panel 50%、min480、外 inset8。Drawer radius6/0.5px border；两行 toolbar；grid card min180、preview120；list row44。完整规则见 [file-workspace.md](file-workspace.md)。
+
+`Observed · exact-source · high · SRC-030..035, SRC-039`

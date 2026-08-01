@@ -28,7 +28,9 @@
 
 思维链状态图标由内联 SVG/CSS 构成：完成 14px 圆勾，失败 14px 圆形警告，运行 15px/14px 锥形 spinner。工具种类使用 12.5–14px 产品路径，不统一缩放为同一 Lucide glyph。
 
-`Observed · exact-source · high · shared · SRC-004, SRC-005`
+侧栏、文件抽屉和文件类型使用来源导出的 SVG/PNG 资产；59 个原件与逐文件哈希保存于 `sources/source-code/assets/`。消费时应优先复用这些原件，不以 emoji 或通用 icon 猜测替换。
+
+`Observed · exact-source · high · shared · SRC-004, SRC-005, SRC-039`
 
 ## 层级
 

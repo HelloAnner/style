@@ -22,3 +22,15 @@
 - 发现：参考实现双主题和两视口可稳定渲染；移动窄屏隐藏耗时列能避免拥挤，但这是 Recommended 扩展，不是来源事实。
 - 限制：截图是档案参考实现，不是 Moss 产品 baseline，不能关闭真实视觉回归缺口。
 - 覆盖变化：参考实现 validated；来源产品仍 partial。
+
+## EXP-20260801-03
+- 输入：用户要求完整补齐 Moss 对话页面、主题、左侧会话列表、右侧文件区和组件实现。
+- 目标：从“思维链重点档案”扩展为“完整对话工作台档案”。
+- 环境：只读 `rg/find/read/shasum`；Google Chrome via Playwright；未读取 `.env`，未运行来源业务代码。
+- 动作：完整读取 App shell、ChatContainer/Thread/Header/Message、展开/折叠 Sidebar、Agent 列表、会话分组/状态、WorkspaceDrawer、FileGrid、文件预览与 CSS module；反查组件尺寸和主题变量；追加28个来源登记项、Chat/Sidebar/Workspace完整非测试组件bundle（110文件）与59个图标原件。
+- 新增：`analysis/conversation-workspace.md`、`analysis/sidebar.md`、`analysis/file-workspace.md`、`evidence/measurements/conversation-workspace-source-map.md`、`examples/reference/conversation-workspace/`。
+- 发现：桌面工作台核心几何是 260/48px sidebar + min 400px chat + 50%/min480 right panel；右面板使用 8px inset 和 6px drawer radius；会话列表高度统一 36px；文件卡最小 180px、preview 120px。
+- 验证：档案参考实现以 light/dark、1440×900 成功渲染，交互包含侧栏折叠、会话选择、文件区关闭、grid/list 和搜索。
+- 限制：仍没有来源产品登录态 baseline；dark 仍被来源 ThemeProvider 固定 light；移动端仍无来源事实。
+- 覆盖变化：完整桌面对话工作台达到 source-observed + reference-rendered；状态保持 reusable。
+- 完成 TODO：TODO-017..023。

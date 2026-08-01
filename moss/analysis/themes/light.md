@@ -18,6 +18,20 @@
 
 `Observed · exact-source · high · light · SRC-001`
 
-思维链在暖米白 canvas 上直接排版；完成圆勾和主过程文字使用 secondary，工具动作退到 tertiary，耗时与运行标题使用 muted。正文才使用白色 surface。
+## 工作台扩展
+
+| 语义 | 值 |
+|---|---|
+| sidebar surface | `#F2F1ED` |
+| sidebar hover / active | `rgba(0,0,0,.04)` / `rgba(0,0,0,.08)` |
+| new session text / hover | `#D95E3A` / `rgba(217,94,58,.10)` |
+| showcase surface / border / text | `rgba(57,135,229,.05)` / `#E5EFFF` / `#2C60DB` |
+| home dot / highlight / spotlight | `rgba(24,24,27,.14)` / `.56` / `.055` |
+| drawer / file card | `#FFFFFF` / `#FFFFFF` |
+| mono button | `#18181B` + `#FFFFFF` text |
+
+`Observed · exact-source · high · light · SRC-001, SRC-022, SRC-030`
+
+思维链在暖米白 canvas 上直接排版；完成圆勾和主过程文字使用 secondary，工具动作退到 tertiary，耗时与运行标题使用 muted。正文与文件抽屉使用白色 surface。
 
 运行态产品当前固定此主题。参考实现截图：`EVD-001`、`EVD-003`，但不是来源产品 baseline。

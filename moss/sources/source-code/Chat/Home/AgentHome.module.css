@@ -1,0 +1,442 @@
+.background {
+  --moss-home-cursor-x: 50%;
+  --moss-home-cursor-y: 35%;
+  --moss-home-spotlight-opacity: 0.9;
+
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--moss-home-bg);
+  isolation: isolate;
+}
+
+.dotLayer,
+.highlightDotLayer,
+.spotlightLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dotLayer {
+  z-index: 0;
+  background-image: radial-gradient(circle, var(--moss-home-dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.highlightDotLayer {
+  z-index: 1;
+  background-image: radial-gradient(circle, var(--moss-home-dot-highlight) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(
+    circle at var(--moss-home-cursor-x) var(--moss-home-cursor-y),
+    var(--moss-home-dot-highlight) 0,
+    transparent 300px
+  );
+  opacity: var(--moss-home-spotlight-opacity);
+  transition: opacity 160ms ease;
+}
+
+.spotlightLayer {
+  z-index: 2;
+  background: radial-gradient(
+    circle at var(--moss-home-cursor-x) var(--moss-home-cursor-y),
+    var(--moss-home-cursor-spotlight) 0,
+    transparent 320px
+  );
+  opacity: var(--moss-home-spotlight-opacity);
+  transition: opacity 160ms ease;
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeLayout {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.titleBlock {
+  display: grid;
+  justify-items: center;
+}
+
+.title {
+  max-width: 800px;
+  margin: 0;
+  color: var(--moss-home-title-fg);
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.titleAccent {
+  color: var(--moss-home-title-accent);
+}
+
+.highlightText {
+  color: var(--moss-home-text-strong);
+  font-weight: 700;
+}
+
+.recommendations {
+  width: min(100%, 800px);
+  margin: 0 auto;
+  padding: 8px 16px 12px;
+  border: 0.5px solid var(--moss-home-recommend-border);
+  border-radius: 16px;
+  background: var(--moss-home-recommend-bg);
+  overflow: hidden;
+}
+
+.recommendationMotion {
+  --moss-home-recommend-enter-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  position: relative;
+  animation: recommendation-card-enter 520ms var(--moss-home-recommend-enter-ease) both;
+  transform-origin: 50% 16px;
+  will-change: opacity, transform, filter;
+}
+
+.recommendationMotion::before {
+  content: '';
+  position: absolute;
+  inset: -8px -16px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 30%,
+    var(--moss-home-recommend-row-hover-bg) 48%,
+    transparent 66%,
+    transparent 100%
+  );
+  opacity: 0;
+  transform: translateX(-18%);
+  animation: recommendation-sheen 760ms var(--moss-home-recommend-enter-ease) both;
+}
+
+.recommendationTabs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  min-height: 38px;
+  padding: 0 0 0 12px;
+  gap: 24px;
+  border-bottom: 0.5px solid var(--moss-home-recommend-row-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.recommendationTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendationTab {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--moss-home-recommend-tab-fg);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  animation: recommendation-tab-enter 380ms var(--moss-home-recommend-enter-ease) both;
+}
+
+.recommendationTab:nth-child(1) {
+  animation-delay: 70ms;
+}
+
+.recommendationTab:nth-child(2) {
+  animation-delay: 95ms;
+}
+
+.recommendationTab:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.recommendationTab:nth-child(4) {
+  animation-delay: 145ms;
+}
+
+.recommendationTab:nth-child(5) {
+  animation-delay: 170ms;
+}
+
+.recommendationTab:nth-child(n + 6) {
+  animation-delay: 195ms;
+}
+
+.recommendationTab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  border-radius: 1px;
+  background: transparent;
+}
+
+.recommendationTab[aria-selected='true'] {
+  color: var(--moss-home-recommend-tab-active-fg);
+  font-weight: 600;
+}
+
+.recommendationTab[aria-selected='true']::after {
+  background: var(--moss-home-recommend-tab-active-border);
+}
+
+.questionList {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: start;
+  grid-auto-rows: minmax(39px, auto);
+  transition:
+    opacity var(--moss-home-recommend-fade-duration) var(--moss-home-recommend-fade-ease),
+    transform var(--moss-home-recommend-fade-duration) var(--moss-home-recommend-fade-ease);
+}
+
+.recommendationTabs + .questionList {
+  margin-top: 4px;
+}
+
+.questionList_entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.questionList_entering {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.questionList_leaving {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.questionButton {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 39px;
+  padding: 8px 12px 9px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--moss-home-recommend-row-fg);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: recommendation-row-enter 460ms var(--moss-home-recommend-enter-ease) both;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.questionButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 0.5px;
+  background: var(--moss-home-recommend-row-border);
+}
+
+.recommendationTabs + .questionList .questionButton:first-child::before {
+  display: none;
+}
+
+.questionButton:nth-child(1) {
+  animation-delay: 150ms;
+}
+
+.questionButton:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.questionButton:nth-child(3) {
+  animation-delay: 210ms;
+}
+
+.questionButton:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.questionButton:nth-child(n + 5) {
+  animation-delay: 270ms;
+}
+
+.questionButton:hover,
+.questionButton:focus-visible {
+  background: var(--moss-home-recommend-row-hover-bg);
+}
+
+.questionButton:focus-visible,
+.recommendationTab:focus-visible {
+  outline: 2px solid var(--moss-home-title-accent);
+  outline-offset: -2px;
+}
+
+@media (max-width: 1200px) {
+  .recommendationTabs {
+    gap: 20px;
+  }
+
+  .recommendationTab {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .homeLayout {
+    padding: 0 18px;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .recommendations {
+    border-radius: 14px;
+    padding: 8px 12px 12px;
+  }
+
+  .recommendationTabs {
+    min-height: 38px;
+    padding-left: 10px;
+    gap: 18px;
+  }
+
+  .recommendationTab {
+    font-size: 14px;
+  }
+
+  .questionButton {
+    min-height: 39px;
+    padding: 8px 10px 9px;
+    font-size: 14px;
+  }
+
+  .questionButton::before {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@keyframes recommendation-card-enter {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(14px) scale(0.985);
+  }
+
+  62% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes recommendation-tab-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes recommendation-row-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes recommendation-sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-18%);
+  }
+
+  30% {
+    opacity: 0.72;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(18%);
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .highlightDotLayer,
+  .spotlightLayer {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlightDotLayer,
+  .spotlightLayer,
+  .recommendationMotion,
+  .recommendationMotion::before,
+  .recommendationTab,
+  .questionList,
+  .questionButton {
+    animation: none;
+    transition: none;
+  }
+
+  .questionList_entering,
+  .questionList_leaving {
+    transform: none;
+  }
+}

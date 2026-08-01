@@ -4,6 +4,14 @@
 
 正式比较固定：Chrome 版本、macOS、locale zh-CN、timezone Asia/Shanghai、DPR1、字体 ready、相同内容和事件顺序。Desktop 1440×900；mobile 断点待来源确认，暂以 390×844 只作参考。
 
+## App shell / Sidebar / Header
+
+- [ ] Sidebar expanded/collapsed 精确为260/48，200ms easeInOut。
+- [ ] Brand 56px；Agent/New session/Session item 均36px密度。
+- [ ] Current/unread/generating/menu/rename/group collapse 状态与来源一致。
+- [ ] Header 48px、action32px、标题14/22；滚动 surface 180ms。
+- [ ] Right panel 50%、min480、外 inset8；drawer radius6。
+
 ## 思维链（最高优先级）
 
 - [ ] 来源产品 light/dark baseline 齐全。
@@ -24,6 +32,15 @@
 - [ ] Composer 116px min、16px radius、0.5px border、34px send。
 - [ ] Light/dark 每个 semantic Token 与展开文件一致。
 - [ ] Inter/JetBrains Mono/CJK fallback 实际加载已确认。
+
+## Composer / 文件工作区
+
+- [ ] Composer max900、min116、radius16、outer bottom31、send34。
+- [ ] Workspace header、scope/stat/upload、search/batch/view 两行工具栏精确。
+- [ ] Grid card min180、preview120、file icon64、meta 14/22 + 12/20。
+- [ ] List row44及列宽28/flex/58/68/100/58匹配。
+- [ ] Grid/list/hover/referenced/selected/loading/empty/error/preview 状态匹配。
+- [ ] 使用来源产品图标原件且哈希可追溯。
 
 ## 状态与可访问性
 

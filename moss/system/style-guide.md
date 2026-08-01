@@ -1,8 +1,8 @@
-# Moss 对话与思维链 Style Guide
+# Moss 完整对话工作台 Style Guide
 
 ## 定义
 
-Moss 是低噪声、可审计的 AI 工作台：温暖中性画布承载克制的消息 surface，工作过程用细时间线解释“思考与行动”，橙色只承担品牌和发送动作。
+Moss 是低噪声、可审计的 AI 工作台：中性会话侧栏组织上下文，温暖画布承载对话与思维链，inset 文件抽屉承载产物；橙色只承担品牌、新会话和发送动作。
 
 ## 视觉指纹
 
@@ -15,6 +15,8 @@ Moss 是低噪声、可审计的 AI 工作台：温暖中性画布承载克制�
 7. 正文 surface 8px radius、16×18px padding、1px subtle border。
 8. 完成后思维链收起为 34px 状态 toggle。
 9. Light 品牌橙 `#D95E3A`、dark `#E86A45`；发送均 `#DE6A43`。
+10. Sidebar 260/48px、内容行36px；Right drawer 50%/min480、外 inset8。
+11. 文件 grid card min180、preview120、radius6；list row44。
 
 ## 主题
 
@@ -39,7 +41,19 @@ UI 使用 Inter；代码使用 JetBrains Mono；中文 fallback 需按实际平�
 
 ## 页面模式
 
-对话回合按“用户输入 → assistant header → 工作过程 → 正文/widget → 后操作”排列。不要把思维链放进正文卡片，也不要默认显示原始 tool JSON。
+完整桌面壳按“Sidebar → Chat → Optional right drawer”排列。Sidebar 展开260/折叠48；Chat min400；right panel 50%、min480、padding8。对话回合按“用户输入 → assistant header → 工作过程 → 正文/widget → 后操作”排列。不要把思维链放进正文卡片，也不要默认显示原始 tool JSON。
+
+### Sidebar
+
+Brand 56px；Agent/新会话/会话 item 均以36px密度组织；分组标题12/20。Active session 用中性 surface + 500 weight；unread 8px danger dot，generating 13px spinner。Footer 案例中心38px，工具32px。
+
+### 会话 Header / Composer
+
+Header 48px，操作32px。Composer max900、min116、radius16、0.5px border；发送34px。Header 与 composer 都位于消息滚动容器外。
+
+### 文件 Drawer
+
+Drawer radius6/0.5px border；header 12×16；两行 toolbar；grid card min180/preview120；list row44。使用 `sources/source-code/assets/file-icons/` 原件，不以 emoji 替换。
 
 ## Do
 
@@ -52,6 +66,8 @@ UI 使用 Inter；代码使用 JetBrains Mono；中文 fallback 需按实际平�
 - 不做蓝紫霓虹 AI glow、彩虹步骤卡或大面积渐变。
 - 不把 spinner、通用 Lucide 或框架默认 timeline 替换产品图标。
 - 不把 dark 由 light 反色生成。
+- 不把当前会话改成橙色 active 条，不把右文件区做成贴边直角 pane。
+- 不把产品 sidebar/file icons 替换为 emoji 或任意通用图标。
 - 不把参考页截图当来源产品 baseline。
 
 ## 风险与偏差

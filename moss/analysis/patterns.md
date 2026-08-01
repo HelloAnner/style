@@ -29,6 +29,16 @@
 - 正文 Markdown 允许表格横向滚动、代码块独立 surface。
 - 消息列表流式增长时仅在用户仍贴底时跟随。
 
+## 完整工作台组合
+
+桌面组合固定为“导航 rail/side panel + chat + optional inset drawer”。侧栏 active session、header title 和会话内容必须指向同一会话；右侧“我的文件”是与 chat 同组的 50% 面板，不是 modal。打开文件区时保留 chat，并压缩到剩余宽度；右 panel 最大化才降低 chat opacity。
+
+`Observed · exact-source · high · SRC-015, SRC-016, SRC-022, SRC-030`
+
+## 文件引用闭环
+
+侧栏/会话 header 的“我的文件”打开 drawer；默认有 session 时显示“当前会话”，否则“全部文件”。File card 的引用动作回流到 composer；未共享的全局文件先确认共享。该流程的视觉入口、scope tabs、引用状态和 composer token 应使用同一套 link/accent semantics。
+
 ## 新业务映射
 
 任何“后台步骤、工具执行、检索、数据处理、子任务”都先映射到过程说明 + action row。只有结果需要持续阅读或交互时才使用正文卡片/特殊工具卡片。不要为业务字段新建另一套时间线视觉。

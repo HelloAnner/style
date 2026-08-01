@@ -12,6 +12,13 @@
 - [x] TODO-008 `high` 生成双主题思维链参考实现。（2026-08-01，examples/reference/）
 - [x] TODO-009 `high` 在 1440×900 和 390×844 渲染参考实现。（2026-08-01，EVD-001..004）
 - [x] TODO-010 `high` 完成 JSON、entrypoint、关键 Token 自检。（2026-08-01，check-profile.py）
+- [x] TODO-017 `blocker` 完成 App shell、完整 Chat、Sidebar 与 Workspace 源码/资产追加归档。（2026-08-01，SRC-015..039）
+- [x] TODO-018 `high` 深入分析展开/折叠 Sidebar、Agent 与会话分组/状态。（2026-08-01，analysis/sidebar.md）
+- [x] TODO-019 `high` 深入分析会话 header、消息滚动、空首页与 composer 组合。（2026-08-01，analysis/conversation-workspace.md）
+- [x] TODO-020 `high` 深入分析右侧文件 drawer、toolbar、grid/list/batch/preview/loading。（2026-08-01，analysis/file-workspace.md）
+- [x] TODO-021 `high` 交付完整对话工作台可运行组件参考及交互代码。（2026-08-01，examples/reference/conversation-workspace/）
+- [x] TODO-022 `high` 完成 light/dark 1440×900 完整工作台参考渲染。（2026-08-01，EVD-005, EVD-006）
+- [x] TODO-023 `blocker` 原样保存 Chat/Sidebar/Workspace 全部非测试组件实现，共110个文件及 bundle 哈希。（2026-08-01，SRC-040..042）
 
 ## 开放
 
