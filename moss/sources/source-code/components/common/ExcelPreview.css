@@ -1,0 +1,359 @@
+/* Excel 预览组件主题化样式
+ *
+ * 设计要点：
+ * - 所有颜色走 CSS 变量，适配明暗主题
+ * - 表头 sticky + 行号列 sticky，模拟冻结窗格
+ * - 斑马纹 + 行 hover 提升长表可读性
+ * - Pill 风格工作表 Tab
+ */
+
+.excel-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-top: none;
+  border-radius: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+/* 状态面板：loading / error / empty */
+.excel-preview-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+  min-height: 200px;
+  padding: 32px;
+  text-align: center;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border-radius: 0;
+}
+
+.excel-preview-state-icon {
+  color: var(--text-tertiary);
+}
+
+.excel-preview-state-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.excel-preview-state.error .excel-preview-state-icon,
+.excel-preview-state.error .excel-preview-state-title {
+  color: var(--danger);
+}
+
+/* 工具栏 */
+.excel-preview-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.excel-preview-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.excel-preview-info-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.excel-preview-sheet-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.excel-preview-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.excel-preview-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.excel-preview-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--info-border-soft);
+  background: var(--info-bg-soft);
+  color: var(--info);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.excel-preview-page-text {
+  min-width: 80px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.excel-preview-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.excel-preview-icon-btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+
+.excel-preview-icon-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* 表格区域 */
+.excel-preview-table-container {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--bg-primary);
+}
+
+.excel-preview-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: max-content;
+}
+
+.excel-preview-table th,
+.excel-preview-table td {
+  border-bottom: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* 表头 */
+.excel-preview-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: inset 0 -1px 0 var(--border-default);
+}
+
+/* 让表头两端的圆角与外容器呼应 */
+.excel-preview-table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.excel-preview-table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.excel-preview-table thead th:last-child {
+  border-right: none;
+}
+
+.excel-preview-header-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.excel-preview-col-name {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.excel-preview-header-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 行号列 */
+.excel-preview-row-num {
+  position: sticky;
+  left: 0;
+  z-index: 11;
+  width: 50px;
+  min-width: 50px;
+  text-align: center;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border-right: 1px solid var(--border-default);
+}
+
+/* 左上角单元格：同时 sticky top + left */
+.excel-preview-table thead th.excel-preview-row-num {
+  z-index: 12;
+  background: var(--bg-tertiary);
+}
+
+/* 表体 */
+.excel-preview-table tbody tr {
+  background: var(--bg-primary);
+  transition: background 120ms ease;
+}
+
+.excel-preview-table tbody tr:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.excel-preview-table tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.excel-preview-table tbody td {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.excel-preview-table tbody td:last-child {
+  border-right: none;
+}
+
+.excel-preview-cell-content {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.excel-preview-cell-number {
+  text-align: right;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--text-primary);
+}
+
+.excel-preview-cell-empty {
+  color: var(--text-tertiary);
+}
+
+/* 工作表 Tabs */
+.excel-preview-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.excel-preview-tabs-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.excel-preview-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.excel-preview-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  white-space: nowrap;
+}
+
+.excel-preview-tab:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.excel-preview-tab.active {
+  background: var(--accent-bg-soft, var(--info-bg-soft));
+  color: var(--accent, var(--info));
+  border-color: var(--accent-border-soft, var(--info-border-soft));
+}
+
+.excel-preview-tab-count {
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.excel-preview-tab.active .excel-preview-tab-count {
+  color: inherit;
+  opacity: 0.75;
+}
+
+/* 表格空状态 */
+.excel-preview-table-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .excel-preview-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .excel-preview-pagination {
+    align-self: flex-end;
+  }
+
+  .excel-preview-meta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

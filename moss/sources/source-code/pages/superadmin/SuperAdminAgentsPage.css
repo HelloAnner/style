@@ -1,0 +1,508 @@
+/* ── Tab 导航 ── */
+.sa-agents-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border-subtle);
+  margin-bottom: 0;
+}
+
+.sa-agents-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.sa-agents-tab:hover {
+  color: var(--text-primary);
+}
+
+.sa-agents-tab.is-active {
+  color: var(--btn-primary-bg);
+  border-bottom-color: var(--btn-primary-bg);
+  font-weight: 600;
+}
+
+/* ── 通用卡片 ── */
+.sa-agents-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.sa-agents-card-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sa-agents-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sa-agents-card-body {
+  padding: 0;
+}
+
+/* ── 搜索栏 ── */
+.sa-agents-search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sa-agents-search-input {
+  flex: 1;
+  min-width: 240px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+}
+
+.sa-agents-search-input:focus {
+  border-color: var(--btn-primary-bg);
+  box-shadow: 0 0 0 2px var(--info-bg-soft);
+}
+
+.sa-agents-btn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.sa-agents-btn:hover {
+  background: var(--hover-bg);
+}
+
+.sa-agents-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sa-agents-btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-bg);
+}
+
+.sa-agents-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.sa-agents-btn-warning {
+  background: var(--warning-bg-soft);
+  color: var(--warning);
+  border-color: var(--warning-border-soft);
+}
+
+.sa-agents-btn-danger {
+  background: var(--danger-bg-soft);
+  color: var(--danger);
+  border-color: var(--danger-border-soft);
+}
+
+/* ── 表格 ── */
+.sa-agents-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.sa-agents-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.sa-agents-table td {
+  padding: 11px 14px;
+  font-size: 13px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.sa-agents-table tbody tr:hover {
+  background: var(--hover-bg);
+}
+
+.sa-agents-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── 状态徽标 ── */
+.sa-agents-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sa-agents-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sa-agents-badge.success {
+  background: var(--success-bg-soft);
+  color: var(--success);
+}
+.sa-agents-badge.success::before {
+  background: var(--success);
+}
+
+.sa-agents-badge.warning {
+  background: var(--warning-bg-soft);
+  color: var(--warning);
+}
+.sa-agents-badge.warning::before {
+  background: var(--warning);
+}
+
+.sa-agents-badge.muted {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+.sa-agents-badge.muted::before {
+  background: var(--text-muted);
+}
+
+.sa-agents-badge.info {
+  background: var(--info-bg-soft);
+  color: var(--info);
+}
+.sa-agents-badge.info::before {
+  background: var(--info);
+}
+
+/* ── 分页 ── */
+.sa-agents-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.sa-agents-pagination-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.sa-agents-page-btn {
+  height: 32px;
+  min-width: 32px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sa-agents-page-btn:hover:not(:disabled) {
+  background: var(--hover-bg);
+}
+
+.sa-agents-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── 空态 / 加载态 ── */
+.sa-agents-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.sa-agents-empty-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  opacity: 0.4;
+}
+
+.sa-agents-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ── 提示信息 ── */
+.sa-agents-alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin: 12px 18px;
+}
+
+.sa-agents-alert.error {
+  background: var(--danger-bg-soft);
+  border: 1px solid var(--danger-border-soft);
+  color: var(--danger);
+}
+
+.sa-agents-alert.success {
+  background: var(--success-bg-soft);
+  border: 1px solid var(--success-border-soft);
+  color: var(--success);
+}
+
+.sa-agents-alert.info {
+  background: var(--info-bg-soft);
+  border: 1px solid var(--info-border-soft);
+  color: var(--info);
+}
+
+/* ── 工具策略 ── */
+.sa-agents-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sa-agents-stats-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 0 18px 12px;
+}
+
+.sa-agents-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sa-agents-stat-label {
+  color: var(--text-muted);
+}
+
+.sa-agents-stat-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── 工具搜索 ── */
+.sa-agents-tool-search {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── 分类组头 ── */
+.sa-agents-category-header {
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sa-agents-category-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sa-agents-category-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.sa-agents-category-actions button {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sa-agents-category-actions button:hover {
+  background: var(--hover-bg);
+}
+
+/* ── 工具行 ── */
+.sa-agents-tool-row {
+  display: grid;
+  grid-template-columns: 44px 1fr 140px 2fr;
+  align-items: center;
+  padding: 9px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 13px;
+}
+
+.sa-agents-tool-row:hover {
+  background: var(--hover-bg);
+}
+
+.sa-agents-tool-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sa-agents-tool-id {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.sa-agents-tool-category {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.sa-agents-tool-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── Toggle Switch ── */
+.sa-agents-toggle {
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.sa-agents-toggle.on {
+  background: var(--btn-primary-bg);
+  justify-content: flex-end;
+}
+
+.sa-agents-toggle.off {
+  background: var(--border-subtle);
+  justify-content: flex-start;
+}
+
+.sa-agents-toggle-knob {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+/* ── Section Header ── */
+.sa-agents-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sa-agents-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sa-agents-section-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* ── Batch Panel Overrides ── */
+.sa-agents-batch-wrapper {
+  padding: 18px;
+}
+
+/* ── Tool policy table ── */
+.sa-agents-tool-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.sa-agents-tool-table th {
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.sa-agents-tool-table td {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.sa-agents-tool-table tbody tr:hover {
+  background: var(--hover-bg);
+}

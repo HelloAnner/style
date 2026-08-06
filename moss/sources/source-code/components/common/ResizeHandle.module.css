@@ -1,0 +1,38 @@
+.handle {
+  position: relative;
+  width: 8px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  z-index: 50;
+}
+
+/* 扩大隐形交互命中区域：视觉上更轻，实际仍易拖拽 */
+.handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background: var(--border-subtle);
+  border-radius: 1px;
+  opacity: 0;
+  transition: background 160ms ease, opacity 160ms ease;
+}
+
+.handle:hover .line,
+.handle[data-active='true'] .line {
+  background: var(--border-soft);
+  opacity: 1;
+}

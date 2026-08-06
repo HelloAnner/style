@@ -21,5 +21,14 @@
 | Full conversation reference | validation | validated* | validated* | n/a | n/a | sidebar+chat+files | EVD-005,006 | TODO-012 |
 | Font loading | foundation | partial | partial | partial | partial | Inter/mono/CJK fallback | SRC-013,014 | TODO-014 |
 | Reduced motion | foundation | partial | partial | partial | partial | core CSS + home | SRC-001 | TODO-016 |
+| Board panel | pattern | observed | observed | none | none | tabs/queryform/streaming/loading/empty/error/maximize | SRC-043..045 | TODO-011,012,015 |
+| Shared vocabulary (common) | foundation | observed | observed | n/a | n/a | button/tooltip/select/dropdown/modal/switch/skeleton | SRC-046,065 | TODO-012,015 |
+| Superadmin console | pattern | observed | partial | none | none | shell/card/table/form/toggle/modal | SRC-053,056 | TODO-011,012 |
+| Tenant admin | pattern | observed | partial | none | none | nav/search/editor/tabs | SRC-055 | TODO-011,012 |
+| Auth pages | pattern | observed | n/a(light-only) | none | none | entry/invite/verify/bind | SRC-057 | TODO-013 |
+| Share/replay pages | pattern | observed | observed | none | none | replay/file/cta/error | SRC-058 | TODO-012,013 |
+| Onboarding/showcase/settings | pattern | observed | n/a(light-only) | none | none | flow/marketing/preferences | SRC-059..061 | TODO-013 |
+| Studio modules | pattern | observed | observed | none | none | agent/automation/skill/tool editors | SRC-047..052,054 | TODO-012,015 |
+| Roundtable/graph | component | observed | observed | none | none | participants/messages/graph | SRC-051 | TODO-012,015 |
 
 移动列的 `none/partial` 反映来源产品事实不足；不能以参考实现补成 observed。

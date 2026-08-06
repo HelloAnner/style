@@ -1,4 +1,4 @@
-# Moss 完整对话工作台设计档案
+# Moss 前端全量设计档案
 
 ## 一句话风格定义
 
@@ -6,10 +6,10 @@
 
 ## 状态与完成率
 
-- 版本：`0.2.0`
+- 版本：`0.4.0`
 - 状态：`reusable`（带明确缺口可复用，不等于完整）
-- 完成率：`17/23 = 73.9%`
-- 深入范围：主题、App shell、展开/折叠侧栏、Agent/会话列表、会话 header、消息与思维链、composer、空会话首页、右侧“我的文件”抽屉、grid/list/batch/search/loading。
+- 完成率：`19/25 = 76.0%`
+- 深入范围：主题、App shell、展开/折叠侧栏、Agent/会话列表、会话 header、消息与思维链、composer、空会话首页、右侧“我的文件”抽屉、grid/list/batch/search/loading、右侧智能看板；共享组件层、superadmin/tenant admin 控制台、auth/onboarding/share/showcase/settings、Agent/Automation/Skills/Tools Studio、圆桌/图谱——前端非测试源码已全量归档。
 - Blocker：真实产品 dark 运行态、来源产品登录态截图/计算样式、移动端、字体许可、完整交互状态视觉回归。
 
 ## 最重要的入口
@@ -18,6 +18,11 @@
 - [左侧导航与会话列表](analysis/sidebar.md)
 - [右侧文件工作区](analysis/file-workspace.md)
 - [思维链与组件](analysis/components.md)
+- [右侧智能看板](analysis/boards.md)
+- [共享组件层与 Token 家族](analysis/common-components.md)
+- [管理控制台](analysis/admin-console.md)
+- [认证/公开/外围页面](analysis/auth-public-pages.md)
+- [Studio 与功能模块](analysis/studio-modules.md)
 - [Style Guide](system/style-guide.md)
 - [实现指南](system/implementation.md)
 - [聚合 Token](system/tokens.json)
@@ -51,7 +56,7 @@
 
 ## 来源与证据
 
-- [42 个来源登记项](sources/index.md)
+- [65 个来源登记项](sources/index.md)
 - [源码与59个产品图标快照](sources/source-code/README.md)
 - [工作台源码映射](evidence/measurements/conversation-workspace-source-map.md)
 - [探索日志](sources/exploration-log.md)

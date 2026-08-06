@@ -30,8 +30,17 @@
 | SRC-043 | pages/boards bundle | `source-code/boards/` | board drawer+page | BoardPanelDrawer、BoardHomePage 等 4 文件与哈希 |
 | SRC-044 | components/Dashboard bundle | `source-code/Dashboard/` | board panel states | 12 文件 + dashboard.css(6701行) 与哈希 |
 | SRC-045 | Dashboard/inputs bundle | `source-code/Dashboard/inputs/` | query form controls | 14 个查询表单控件与哈希 |
+| SRC-046 | components/common bundle | `source-code/components/common/` | shared vocabulary | 40 个共享组件与哈希 |
+| SRC-047..054 | Agent/Automation/Billing/modals/Project/Skills/superadmin/Tools | `source-code/components/*/` | feature modules | 30 个功能组件与哈希 |
+| SRC-055 | pages/admin bundle | `source-code/pages/admin/` | tenant admin | 24 文件与哈希 |
+| SRC-056 | pages/superadmin bundle | `source-code/pages/superadmin/` | superadmin console | 49 文件与哈希（含 SuperAdminLayout.css 2126 行） |
+| SRC-057 | pages/auth bundle | `source-code/pages/auth/` | auth light-only | 8 文件与哈希（_shared.tsx C 色板） |
+| SRC-058 | pages/share bundle | `source-code/pages/share/` | public share | 12 文件与哈希 |
+| SRC-059..063 | onboarding/settings/showcase/legacy/feishu | `source-code/pages/*/` | misc pages | 10 文件与哈希 |
+| SRC-064 | app 级文件 | `source-code/pages/ROOT-SHA256SUMS` | app-level | SessionFilePreviewPage + components/index.ts |
+| SRC-065 | lib 样式支撑 | `source-code/lib/` | widget/client theme | widgetTheme.ts、clientTheme.ts、motion.tsx |
 
-详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共45个登记项，完整组件 bundle 共140个文件。
+详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共65个登记项，前端非测试源码已全量归档（bundle 文件总数 316）。
 
 ## 授权与限制
 

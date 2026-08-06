@@ -1,0 +1,96 @@
+@media (max-width: 640px) {
+  .share-replay-message-list {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  .share-replay-message-body {
+    width: 100%;
+    max-width: none !important;
+    min-width: 0;
+  }
+
+  .share-replay-user-row,
+  .share-replay-agent-row {
+    position: relative;
+    display: block;
+  }
+
+  .share-replay-user-avatar,
+  .share-replay-agent-avatar {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+
+  .share-replay-user-avatar {
+    right: 0;
+  }
+
+  .share-replay-agent-avatar {
+    left: 0;
+  }
+
+  .share-replay-user-header,
+  .share-replay-agent-header {
+    box-sizing: border-box;
+    min-height: 32px;
+    margin-bottom: 8px !important;
+  }
+
+  .share-replay-user-header {
+    padding-right: 40px !important;
+  }
+
+  .share-replay-agent-header {
+    padding-left: 40px !important;
+  }
+
+  .share-replay-user-card {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 88% !important;
+  }
+
+  .share-replay-agent-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .share-page-bottom-dock {
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+    padding-bottom: max(14px, env(safe-area-inset-bottom)) !important;
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+  }
+
+  .share-page-agent-badge {
+    display: none !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .share-file-workspace-maximize {
+    display: none !important;
+  }
+
+  .share-page-workspace-shell {
+    position: absolute;
+    inset: 48px 0 0;
+    z-index: 30;
+    width: 100%;
+    height: auto !important;
+    margin-top: 0 !important;
+    background: var(--bg-primary);
+  }
+
+  .share-page-workspace-shell > [role='separator'] {
+    display: none;
+  }
+
+  .share-page-workspace-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+}

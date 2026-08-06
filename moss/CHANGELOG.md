@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.4.0 — 2026-08-06
+
+### Sources
+- 全量补齐：common 共享组件 40、功能组件（Agent/Automation/Billing/modals/Project/Skills/superadmin/Tools）30、pages（admin 24 / superadmin 49 / auth 8 / share 12 / onboarding 4 / settings 3 / showcase / legacy / feishu / 根级文件）103、lib 样式支撑 3，共 176 个原件、20 份新 SHA-256 清单（SRC-046..065）。来源总数 65；前端非测试源码现已**全量归档**。
+
+### Analysis
+- 新增 `common-components.md`：globals.css 12 个 Token 家族地图、CorevoDesignButton/FineDesignTooltip/Select 四变体/DropdownMenu/ConfirmDialog/MossSwitch/骨架等共享组件精确规则、z-index 与圆角阶梯。
+- 新增 `admin-console.md`：superadmin 壳（240 侧栏、`#F8F9FB`、3px active marker）与 fi-config-* 组件系统（卡 8/20、钮 36/10、输入 40、toggle 44×24、modal 14/420）、租户 admin 内联壳区分。
+- 新增 `auth-public-pages.md`：auth `_shared.tsx` C 色板（light-only，与工作台变量隔离）、showcase parchment 变量、share 只读投影规则。
+- 新增 `studio-modules.md`：四个 Studio 通则、`--studio-*` 35 变量六组、圆桌 `--rt-*`、第三套 toggle。
+
+### Quality
+- GAP-007 关闭（TODO-024 完成）。完成率 76.0%（19/25），状态仍为 reusable：dark 运行态、视觉 baseline、移动端、字体许可、状态矩阵、可访问性六个开放项不变。
+
+### Breaking changes
+- 档案范围从“对话工作台”扩展为“Moss 前端全量”；消费 Agent 必须按区域选 Token 家族（见 common-components.md §1）。
+
 ## 0.3.0 — 2026-08-06
 
 ### Sources

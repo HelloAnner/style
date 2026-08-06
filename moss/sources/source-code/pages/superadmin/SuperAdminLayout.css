@@ -1,0 +1,2126 @@
+.fi-superadmin-shell {
+  height: 100vh;
+  background: #F8F9FB;
+  display: flex;
+  overflow: hidden;
+}
+
+.fi-superadmin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.fi-superadmin-sidebar-brand {
+  min-height: 56px;
+  padding: 0 20px;
+  border: none;
+  border-bottom: 1px solid var(--border-soft);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-primary);
+  font-size: 16px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.fi-superadmin-sidebar-brand-logo {
+  width: 26px;
+  height: 26px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.fi-superadmin-sidebar-nav {
+  flex: 1;
+  min-height: 0;
+  padding: 18px 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fi-superadmin-sidebar-nav,
+.sa-showcase-modal-panel {
+  scrollbar-width: none;
+}
+
+.fi-superadmin-sidebar-nav:hover,
+.fi-superadmin-sidebar-nav:focus-within,
+.sa-showcase-modal-panel:hover,
+.sa-showcase-modal-panel:focus-within {
+  scrollbar-width: thin;
+  scrollbar-color: var(--fg-tertiary) transparent;
+}
+
+.fi-superadmin-sidebar-nav::-webkit-scrollbar,
+.sa-showcase-modal-panel::-webkit-scrollbar {
+  width: 0;
+}
+
+.fi-superadmin-sidebar-nav:hover::-webkit-scrollbar,
+.fi-superadmin-sidebar-nav:focus-within::-webkit-scrollbar,
+.sa-showcase-modal-panel:hover::-webkit-scrollbar,
+.sa-showcase-modal-panel:focus-within::-webkit-scrollbar {
+  width: 6px;
+}
+
+.fi-superadmin-sidebar-nav::-webkit-scrollbar-track,
+.sa-showcase-modal-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fi-superadmin-sidebar-nav::-webkit-scrollbar-thumb,
+.sa-showcase-modal-panel::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: var(--fg-tertiary);
+}
+
+.fi-superadmin-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fi-superadmin-nav-group-title {
+  margin: 0;
+  padding: 0 10px 8px;
+  color: var(--fg-tertiary);
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.fi-superadmin-nav-item {
+  position: relative;
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--fg-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.fi-superadmin-nav-item:hover {
+  background: var(--bg-hover-v11);
+  color: var(--fg-primary);
+}
+
+.fi-superadmin-nav-item.is-active {
+  background: var(--selected-bg);
+  color: var(--fg-primary);
+  font-weight: 600;
+  cursor: default;
+}
+
+.fi-superadmin-nav-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.fi-superadmin-nav-active-marker {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 18px;
+  border-radius: 0 4px 4px 0;
+  background: var(--fg-primary);
+  transform: translateY(-50%);
+}
+
+.fi-superadmin-nav-icon {
+  flex-shrink: 0;
+}
+
+.fi-superadmin-nav-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .fi-superadmin-shell {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .fi-superadmin-sidebar {
+    width: auto;
+    max-height: 42vh;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .fi-superadmin-sidebar-nav {
+    overflow-y: auto;
+  }
+
+  .fi-superadmin-content {
+    overflow-y: visible;
+  }
+}
+
+/* 桌面端：内容区独立滚动，侧栏固定 */
+.fi-superadmin-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.fi-superadmin-content button,
+.fi-superadmin-config-main button {
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.fi-superadmin-config-main {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px;
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fi-config-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fi-config-header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fi-config-header-title {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.fi-config-header-subtitle {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fi-config-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+}
+
+.fi-config-tab {
+  height: 34px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.fi-config-tab:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.fi-config-tab.is-active {
+  background: var(--btn-mono-bg);
+  color: var(--btn-mono-text);
+  font-weight: 600;
+  cursor: default;
+}
+
+.fi-config-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.fi-config-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fi-config-page-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.fi-config-page-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fi-config-card {
+  width: 100%;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fi-config-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fi-config-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.fi-config-section-title {
+  position: relative;
+  padding-left: 10px;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.fi-config-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+.fi-config-section-desc {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fi-config-divider {
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.fi-config-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.fi-config-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fi-config-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fi-config-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fi-config-label {
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.fi-config-input,
+.fi-config-textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.fi-config-input:focus,
+.fi-config-textarea:focus {
+  border-color: var(--btn-primary-bg);
+  box-shadow: 0 0 0 2px var(--info-bg-soft);
+}
+
+.fi-config-input:disabled,
+.fi-config-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fi-config-input {
+  height: 40px;
+  padding: 0 12px;
+}
+
+.fi-config-textarea {
+  min-height: 80px;
+  padding: 12px;
+  resize: vertical;
+  line-height: 20px;
+}
+
+.fi-config-inline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fi-config-table-wrap {
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  overflow: auto;
+  background: var(--bg-secondary);
+}
+
+.fi-config-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.fi-config-table th,
+.fi-config-table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: middle;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.fi-config-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: var(--text-tertiary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.fi-config-table td {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.fi-config-table tbody tr:hover td {
+  background: var(--bg-hover-v11);
+}
+
+.fi-config-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.fi-config-table.compact th,
+.fi-config-table.compact td {
+  padding: 10px 12px;
+}
+
+.fi-config-table.zebra tbody tr:nth-child(even) td {
+  background: var(--bg-tertiary);
+}
+
+.fi-config-table.zebra tbody tr:nth-child(even):hover td {
+  background: var(--bg-hover-v11);
+}
+
+.fi-config-table .numeric,
+.fi-config-table th.numeric,
+.fi-config-table td.numeric {
+  text-align: right;
+}
+
+.fi-config-table .center,
+.fi-config-table th.center,
+.fi-config-table td.center {
+  text-align: center;
+}
+
+.fi-config-table .nowrap {
+  white-space: nowrap;
+}
+
+.fi-config-table .truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 320px;
+}
+
+.fi-config-footer {
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.fi-config-updated-at {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.fi-prompt-page-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fi-prompt-config-card {
+  flex: none;
+  min-height: auto;
+  gap: 14px;
+}
+
+.fi-prompt-editor-field {
+  flex: none;
+  min-height: auto;
+}
+
+.fi-prompt-textarea {
+  flex: none;
+  height: clamp(360px, 52vh, 560px);
+  min-height: 360px;
+  resize: none;
+  overflow: auto;
+}
+
+.fi-prompt-scope-section {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-default);
+}
+
+.fi-prompt-scope-textarea {
+  min-height: 180px;
+  height: 220px;
+  resize: vertical;
+}
+
+.fi-prompt-config-footer {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--border-default);
+  border-radius: 0;
+  background: transparent;
+}
+
+.fi-config-button {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.fi-config-button:hover:not(:disabled) {
+  background: var(--bg-hover-v11);
+  border-color: var(--border-subtle);
+}
+
+.fi-config-button.primary {
+  border-color: var(--btn-mono-bg);
+  background: var(--btn-mono-bg);
+  color: var(--btn-mono-text);
+}
+
+.fi-config-button.primary:hover:not(:disabled) {
+  background: var(--btn-mono-hover-bg);
+}
+
+.fi-config-button.warning {
+  border-color: var(--warning-border-soft);
+  background: var(--warning-bg-soft);
+  color: var(--warning);
+}
+
+.fi-config-button.warning:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+.fi-config-button.danger {
+  border-color: var(--danger-border-soft);
+  background: var(--danger);
+  color: #FFFFFF;
+  /* 白色在红色危险按钮上两主题通用 */
+}
+
+.fi-config-button.danger:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+.fi-config-button.compact {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+}
+
+.fi-config-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fi-config-status {
+  min-width: 80px;
+  height: 26px;
+  border-radius: 999px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.fi-config-status.ready {
+  border-color: var(--success-border-soft);
+  background: var(--success-bg-soft);
+  color: var(--success);
+}
+
+.fi-config-status.draft {
+  border-color: var(--warning-border-soft);
+  background: var(--warning-bg-soft);
+  color: var(--warning);
+}
+
+.fi-config-status.off {
+  border-color: var(--border-default);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.fi-config-toggle {
+  width: 44px;
+  height: 24px;
+  border: 1px solid var(--border-default);
+  border-radius: 999px;
+  padding: 2px;
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.fi-config-toggle.is-on {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.fi-config-toggle span {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  /* 滑块为装饰性元素，白色在两种主题下都与轨道形成足够对比，两主题通用 */
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transition: transform 200ms ease;
+}
+
+.fi-config-toggle.is-on span {
+  transform: translateX(20px);
+}
+
+.fi-config-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fi-config-muted {
+  color: var(--text-muted);
+}
+
+.fi-config-text-danger {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.fi-config-text-danger:hover {
+  color: var(--danger-hover);
+}
+
+.fi-config-text-success {
+  color: var(--success);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.fi-config-alert {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.fi-config-alert.error {
+  border-color: var(--danger-border-soft);
+  background: var(--danger-bg-soft);
+  color: var(--danger);
+}
+
+.fi-config-alert.success {
+  border-color: var(--success-border-soft);
+  background: var(--success-bg-soft);
+  color: var(--success);
+}
+
+.fi-config-alert.warning {
+  border-color: var(--warning-border-soft);
+  background: var(--warning-bg-soft);
+  color: var(--warning);
+}
+
+.fi-config-loading {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.fi-config-loading-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.fi-config-loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border-subtle);
+  border-top-color: var(--accent);
+  border-radius: 999px;
+  animation: fi-config-spin 0.8s linear infinite;
+}
+
+@keyframes fi-config-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fi-skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.fi-skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+}
+
+.fi-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--bg-hover-v11),
+    transparent
+  );
+  animation: fi-skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.fi-skeleton.text {
+  height: 14px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.fi-skeleton.title {
+  height: 18px;
+  width: 60%;
+  border-radius: 4px;
+}
+
+.fi-skeleton.value {
+  height: 28px;
+  width: 80%;
+  border-radius: 6px;
+}
+
+.fi-skeleton.circle {
+  border-radius: 999px;
+}
+
+.fi-skeleton.card {
+  border-radius: 12px;
+  height: 80px;
+}
+
+.fi-config-card-compact {
+  width: 100%;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fi-config-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fi-config-card-title {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.fi-config-card-subtitle {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fi-config-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fi-config-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.fi-config-badge.success {
+  border-color: var(--success-border-soft);
+  background: var(--success-bg-soft);
+  color: var(--success);
+}
+
+.fi-config-badge.neutral {
+  border-color: var(--border-default);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.fi-config-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.fi-config-modal-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 20px;
+  width: min(420px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-lg);
+}
+
+.fi-config-modal-panel.wide {
+  width: min(520px, calc(100vw - 32px));
+}
+
+.fi-config-modal-title {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.fi-config-modal-body {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.fi-config-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.fi-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.fi-empty-state-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  color: var(--text-tertiary);
+}
+
+.fi-empty-state.error .fi-empty-state-icon {
+  background: var(--danger-bg-soft);
+  color: var(--danger);
+}
+
+.fi-empty-state.search .fi-empty-state-icon {
+  background: var(--info-bg-soft);
+  color: var(--info);
+}
+
+.fi-empty-state-title {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fi-empty-state-desc {
+  max-width: 320px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.fi-empty-state-action {
+  margin-top: 4px;
+}
+
+.fi-config-pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fi-config-page-info {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.fi-config-search-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fi-config-search-input {
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 0 10px;
+  outline: none;
+  min-width: 180px;
+}
+
+.fi-config-search-input:focus {
+  border-color: var(--btn-primary-bg);
+  box-shadow: 0 0 0 2px var(--info-bg-soft);
+}
+
+.fi-prompt-config-layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fi-prompt-agent-tabs-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fi-prompt-agent-tabs-row .fi-config-label {
+  flex-shrink: 0;
+}
+
+.fi-prompt-agent-tabs {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.fi-prompt-agent-tab {
+  height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-tertiary);
+  padding: 0 14px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.fi-prompt-agent-tab:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.fi-prompt-agent-tab.is-active {
+  border-color: var(--btn-mono-bg);
+  background: var(--btn-mono-bg);
+  color: var(--btn-mono-text);
+  cursor: default;
+}
+
+.fi-prompt-agent-tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 1100px) {
+  .fi-config-grid,
+  .fi-config-grid.three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .fi-superadmin-config-main {
+    height: auto;
+    overflow: visible;
+    padding: 20px;
+  }
+
+  .fi-config-tabs {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .fi-config-tab {
+    flex: 0 0 auto;
+  }
+
+  .fi-config-grid,
+  .fi-config-grid.two,
+  .fi-config-grid.three {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ===== ToggleSwitch component ===== */
+
+.fi-config-toggle-row:not(.is-disabled) {
+  cursor: pointer;
+}
+
+.fi-config-toggle input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.fi-config-toggle.is-disabled input,
+.fi-config-toggle-row.is-disabled .fi-config-toggle input {
+  cursor: not-allowed;
+}
+
+.fi-config-toggle.compact {
+  width: 40px;
+  height: 22px;
+  padding: 2px;
+}
+
+.fi-config-toggle.compact span {
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+}
+
+.fi-config-toggle.compact.is-on span {
+  transform: translateX(18px);
+}
+
+.fi-config-tool-item-name-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+/* ===== Icon button ===== */
+
+.fi-config-icon-button.danger:disabled {
+  color: var(--text-muted);
+}
+
+/* ===== Compact input ===== */
+.fi-config-input.compact {
+  height: 36px;
+}
+
+/* ===== Option card ===== */
+.fi-config-option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* ===== Remaining utility classes ===== */
+.fi-config-alert.small {
+  font-size: 11px;
+}
+
+.fi-config-tool-label.inline {
+  margin-left: 8px;
+}
+
+/* ================= Dashboard page ================= */
+
+.fi-dashboard-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fi-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.fi-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.fi-dashboard-stat-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.fi-dashboard-stat-card:hover {
+  background: var(--bg-hover-v11);
+  border-color: var(--border-default);
+  transform: translateY(-1px);
+}
+
+.fi-dashboard-stat-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--info-bg-soft);
+  color: var(--info);
+}
+
+.fi-dashboard-stat-icon.success {
+  background: var(--success-bg-soft);
+  color: var(--success);
+}
+
+.fi-dashboard-stat-icon.warning {
+  background: var(--warning-bg-soft);
+  color: var(--warning);
+}
+
+.fi-dashboard-stat-icon.primary {
+  background: var(--info-bg-soft);
+  color: var(--accent);
+}
+
+.fi-dashboard-stat-content {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fi-dashboard-stat-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fi-dashboard-stat-value {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fi-dashboard-section-title {
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.fi-dashboard-quick-entries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.fi-dashboard-quick-entry {
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.fi-dashboard-quick-entry:hover {
+  background: var(--bg-hover-v11);
+  border-color: var(--border-default);
+}
+
+.fi-dashboard-quick-entry:hover .fi-dashboard-quick-entry-arrow {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.fi-dashboard-quick-entry-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.fi-dashboard-quick-entry-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.fi-dashboard-quick-entry-subtitle {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.fi-dashboard-quick-entry-arrow {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--text-tertiary);
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.fi-dashboard-chart-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.fi-dashboard-chart-card {
+  padding: 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  background: var(--bg-tertiary);
+}
+
+.fi-dashboard-chart-header {
+  margin-bottom: 14px;
+}
+
+.fi-dashboard-chart-title {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.fi-dashboard-chart-subtitle {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fi-dashboard-chart-body {
+  width: 100%;
+  height: 260px;
+}
+
+.fi-dashboard-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.fi-dashboard-chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.fi-dashboard-chart-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.fi-dashboard-chart-tooltip {
+  padding: 12px 14px;
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-lg);
+}
+
+.fi-dashboard-chart-tooltip-title {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.fi-dashboard-chart-tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.fi-dashboard-chart-tooltip-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.fi-dashboard-chart-tooltip-value {
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .fi-dashboard-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .fi-dashboard-page {
+    padding: 20px;
+  }
+
+  .fi-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .fi-dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fi-dashboard-chart-body {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fi-dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= SuperAdminPlatformConfigPage shared utilities ================= */
+
+.fi-config-row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fi-config-toggle-row {
+  -webkit-user-select: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fi-config-toggle-row.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.fi-config-field-box {
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  padding: 14px;
+  gap: 10px;
+}
+
+.fi-config-field-box.tertiary {
+  background: var(--bg-tertiary);
+}
+
+.fi-config-unit,
+.fi-config-field-desc {
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.fi-config-tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fi-config-tool-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+}
+
+.fi-config-tool-title {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.fi-config-tool-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fi-config-tool-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.fi-config-tool-search-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  padding: 0 10px;
+  min-height: 38px;
+}
+
+.fi-config-tool-search-row input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  height: 36px;
+  font-size: 14px;
+}
+
+.fi-config-tool-search-row button {
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.fi-config-tool-search-row button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fi-config-tool-suggestion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  text-align: left;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.fi-config-tool-suggestion:hover:not(:disabled) {
+  background: var(--bg-hover-v11);
+}
+
+.fi-config-tool-suggestion:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fi-config-tool-suggestion-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fi-config-tool-suggestion-name {
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fi-config-tool-suggestion-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fi-config-tool-suggestion-type {
+  white-space: nowrap;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.fi-config-tool-item {
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  padding: 6px 8px;
+}
+
+.fi-config-tool-item.required {
+  background: var(--bg-tertiary);
+}
+
+.fi-config-tool-item.disabled {
+  opacity: 0.66;
+}
+
+.fi-config-tool-item-grid-system {
+  grid-template-columns: minmax(0, 1fr) 118px 74px 78px;
+}
+
+.fi-config-tool-item-grid-default {
+  grid-template-columns: minmax(0, 1fr) 74px 78px;
+}
+
+.fi-config-tool-item-name {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.fi-config-tool-item-tag {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.fi-config-tool-item-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.fi-config-icon-button {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fi-config-icon-button:hover:not(:disabled) {
+  background: var(--bg-hover-v11);
+}
+
+.fi-config-icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fi-config-icon-button.danger {
+  width: auto;
+  padding: 0 8px;
+  gap: 4px;
+  color: var(--danger);
+}
+
+.fi-config-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+
+.fi-config-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.fi-config-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.fi-config-status-dot.is-on {
+  background: var(--success);
+}
+
+.fi-config-status-label {
+  color: var(--text-muted);
+}
+
+.fi-config-status-value {
+  font-weight: 600;
+}
+
+.fi-config-textarea.code {
+  min-height: 36px;
+  height: auto;
+  padding: 8px 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.fi-config-option-card {
+  text-align: left;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fi-config-option-card:hover:not(:disabled) {
+  border-color: var(--border-default);
+}
+
+.fi-config-option-card.selected {
+  border-color: var(--accent-color);
+  background: var(--accent-bg);
+}
+
+.fi-config-option-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fi-config-option-title {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.fi-config-option-desc {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.fi-config-option-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.fi-config-option-card.selected .fi-config-option-hint {
+  color: var(--accent-color);
+}
+
+.fi-config-toggle-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.sa-filter-bar {
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.sa-filter-bar input:not([type='checkbox']):not([type='radio']),
+.sa-filter-bar button {
+  height: 36px;
+  box-sizing: border-box;
+  font: inherit;
+  letter-spacing: 0;
+}
+
+.sa-filter-bar input::placeholder {
+  font: inherit;
+  color: var(--text-muted);
+}
+
+.sa-filter-bar input[type='date'],
+.sa-filter-bar input[type='datetime-local'] {
+  font-variant-numeric: tabular-nums;
+}
+
+.sa-filter-bar input[type='date']::-webkit-datetime-edit,
+.sa-filter-bar input[type='datetime-local']::-webkit-datetime-edit {
+  font: inherit;
+}
+
+.sa-table {
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.sa-table thead th {
+  padding: 10px 16px !important;
+  border-bottom: 1px solid var(--border-default) !important;
+  background: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.sa-table tbody td {
+  vertical-align: middle;
+}
+
+.sa-table:not(.compact) tbody td {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.sa-table tbody tr:last-child > td {
+  border-bottom: none !important;
+}
+
+.sa-table tbody tr:hover > td {
+  background: var(--bg-hover-v11);
+}
+
+.sa-table-cell-top {
+  vertical-align: top !important;
+}
+
+.sa-table-cell-center {
+  text-align: center;
+}
+
+.sa-table-cell-nowrap {
+  white-space: nowrap;
+}
+
+.sa-table-empty {
+  padding: 32px !important;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.sa-showcase-table-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.sa-showcase-table {
+  width: 100%;
+  min-width: 960px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.sa-showcase-table col:nth-child(1) {
+  width: 31%;
+}
+
+.sa-showcase-table col:nth-child(2) {
+  width: 25%;
+}
+
+.sa-showcase-table col:nth-child(3) {
+  width: 7%;
+}
+
+.sa-showcase-table col:nth-child(4),
+.sa-showcase-table col:nth-child(5) {
+  width: 10%;
+}
+
+.sa-showcase-table col:nth-child(6) {
+  width: 17%;
+}
+
+.sa-showcase-modal-panel {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sa-audit-table td:first-child,
+.sa-audit-table td:nth-child(3),
+.sa-audit-table td:nth-child(5) {
+  white-space: nowrap;
+}
+
+.sa-table-status {
+  min-width: 48px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sa-table-status.is-success {
+  border: 1px solid var(--success-border-soft);
+  background: var(--success-bg-soft);
+  color: var(--success);
+}
+
+.sa-table-status.is-danger {
+  border: 1px solid var(--danger-border-soft);
+  background: var(--danger-bg-soft);
+  color: var(--danger);
+}
+
+/* 主列表在桌面端使用受约束的内部滚动区，避免表格把管理后台整体页面撑高。 */
+.fi-superadmin-list-page {
+  overflow: hidden;
+}
+
+.sa-main-list-panel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sa-main-list-viewport {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.sa-main-list-footer {
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .fi-superadmin-content.fi-superadmin-list-page {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .sa-main-list-panel {
+    flex: 0 0 auto;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .sa-main-list-viewport {
+    flex: 0 0 auto;
+    min-height: auto;
+    overflow: auto;
+  }
+}
+
+.sa-segmented-tabs {
+  width: fit-content;
+  padding: 3px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  display: flex;
+  gap: 2px;
+}
+
+.sa-segmented-tabs button {
+  height: 32px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sa-segmented-tabs button:hover:not(.is-active) {
+  background: var(--bg-hover-v11);
+  color: var(--text-primary);
+}
+
+.sa-segmented-tabs button.is-active {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: default;
+}
+
+.sa-tenants-row-actions,
+.sa-tenants-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sa-tenants-row-actions {
+  justify-content: flex-end;
+}
+
+.sa-tenants-row-actions button,
+.sa-tenants-pagination button {
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sa-tenants-row-actions button:hover:not(:disabled),
+.sa-tenants-pagination button:hover:not(:disabled) {
+  background: var(--bg-hover-v11);
+}
+
+.sa-tenants-row-actions button:disabled,
+.sa-tenants-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fi-config-tool-loading {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.fi-config-tool-suggestions,
+.fi-config-tool-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.fi-config-advanced-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.fi-config-field-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
