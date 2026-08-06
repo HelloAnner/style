@@ -19,6 +19,7 @@
 - [x] TODO-021 `high` 交付完整对话工作台可运行组件参考及交互代码。（2026-08-01，examples/reference/conversation-workspace/）
 - [x] TODO-022 `high` 完成 light/dark 1440×900 完整工作台参考渲染。（2026-08-01，EVD-005, EVD-006）
 - [x] TODO-023 `blocker` 原样保存 Chat/Sidebar/Workspace 全部非测试组件实现，共110个文件及 bundle 哈希。（2026-08-01，SRC-040..042）
+- [x] TODO-025 `high` 归档右侧智能看板：pages/boards + components/Dashboard + inputs 共 30 文件与 dashboard.css，完成看板专题分析。（2026-08-06，SRC-043..045，analysis/boards.md）
 
 ## 开放
 
@@ -70,6 +71,16 @@
   - 完成标准：来源截图/计算样式与状态矩阵全部 observed 或 validated。
   - 证据：待补
   - 关联请求：REQ-001
+
+- [ ] TODO-024 `high`
+  - 范围：shared
+  - 缺少：对话工作台与看板以外路由/组件的归档决策与采集（GAP-007）：common 共享组件 35/36 未归档；Agent/Automation/Billing/modals/Project/Skills/Tools 未归档；admin/superadmin/auth/share/settings 等 86 个页面未归档。
+  - 影响：超出对话工作台的“参考 moss”需求无证据。
+  - 负责：both
+  - 需要用户提供：确认档案范围（仅对话工作台 or 扩展）。
+  - 完成标准：范围决策写入 manifest description；若扩展，按批追加来源与分析。
+  - 证据：本次复查，commit 195a663d 未变。
+  - 关联请求：待用户答复后登记
 
 - [ ] TODO-016 `high`
   - 范围：shared

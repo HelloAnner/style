@@ -12,7 +12,7 @@
 
 主要类型：工作台对话、空会话首页、会话详情、工作区/智能看板右抽屉、管理、设置、公开分享、onboarding。工作台壳为 `260/48px sidebar + flex chat + 可选 50% right panel`；对话最小宽 `400px`。
 
-深入范围现覆盖完整桌面对话工作台：App shell、展开/折叠侧栏、Agent 切换、分组会话列表、active/unread/generating/rename 状态、会话 header、消息流、用户/assistant 消息、思维链/工具动作、Markdown 正文、输入框、右侧文件抽屉、scope/search/upload/batch/grid/list/preview/loading。管理、设置、分享、圆桌、看板内容本体仍仅盘点。
+深入范围现覆盖完整桌面对话工作台：App shell、展开/折叠侧栏、Agent 切换、分组会话列表、active/unread/generating/rename 状态、会话 header、消息流、用户/assistant 消息、思维链/工具动作、Markdown 正文、输入框、右侧文件抽屉、scope/search/upload/batch/grid/list/preview/loading；以及右侧智能看板：drawer 壳、tab、查询表单、流式反馈、loading/empty/error、iframe 渲染（见 `boards.md`）。管理、设置、分享、圆桌仍仅盘点。
 
 `Observed · exact-source · high · desktop · SRC-009, SRC-010`
 

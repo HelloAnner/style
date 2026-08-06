@@ -1,7 +1,7 @@
 {
   "id": "moss",
   "name": "Moss Conversation Workspace",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "reusable",
   "referenceMode": "strict",
   "requiredThemes": [
@@ -9,13 +9,13 @@
     "dark"
   ],
   "createdAt": "2026-08-01T17:18:20+08:00",
-  "updatedAt": "2026-08-01T19:15:48+08:00",
+  "updatedAt": "2026-08-06T23:32:32+08:00",
   "description": "Moss 完整对话工作台：主题、侧栏会话列表、会话页、思维链、输入框与右侧文件工作区设计档案。",
-  "sourceCount": 42,
+  "sourceCount": 45,
   "completion": {
-    "requiredItems": 23,
-    "completedItems": 17,
-    "openItems": 6,
+    "requiredItems": 25,
+    "completedItems": 18,
+    "openItems": 7,
     "blockingItems": 5,
     "openRequests": 3,
     "selfAuditPassed": false
@@ -629,6 +629,48 @@
       "dpr": null,
       "state": "complete-component-bundle",
       "collectedAt": "2026-08-01T19:15:48+08:00",
+      "authorized": "provided"
+    },
+    {
+      "id": "SRC-043",
+      "type": "source",
+      "origin": "frontend/src/pages/boards/ (non-test complete bundle, 4 files)",
+      "localPath": "sources/source-code/boards/SHA256SUMS",
+      "sha256": "b74db27646501000dc933f79d3761a1a2e4405fc2669cf450d4447890392f461",
+      "theme": "shared",
+      "route": "boards",
+      "viewport": null,
+      "dpr": null,
+      "state": "drawer+page complete-bundle",
+      "collectedAt": "2026-08-06T23:32:32+08:00",
+      "authorized": "provided"
+    },
+    {
+      "id": "SRC-044",
+      "type": "source",
+      "origin": "frontend/src/components/Dashboard/ (non-test bundle, 12 files + dashboard.css)",
+      "localPath": "sources/source-code/Dashboard/SHA256SUMS",
+      "sha256": "5e53ed91f7e1731bff20009a58302960b0ff35c4e91b6943dcd638d0177f4791",
+      "theme": "shared",
+      "route": "boards",
+      "viewport": null,
+      "dpr": null,
+      "state": "panel+tabbar+queryform+renderer+empty+loading+skeleton",
+      "collectedAt": "2026-08-06T23:32:32+08:00",
+      "authorized": "provided"
+    },
+    {
+      "id": "SRC-045",
+      "type": "source",
+      "origin": "frontend/src/components/Dashboard/inputs/ (non-test complete bundle, 14 files)",
+      "localPath": "sources/source-code/Dashboard/inputs/SHA256SUMS",
+      "sha256": "19c145e8e3013e5be741bb974b2f17bd7440392daa1eb49a50a00c9a8693f297",
+      "theme": "shared",
+      "route": "boards",
+      "viewport": null,
+      "dpr": null,
+      "state": "query-form-controls complete-bundle",
+      "collectedAt": "2026-08-06T23:32:32+08:00",
       "authorized": "provided"
     }
   ]

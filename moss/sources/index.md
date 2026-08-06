@@ -27,8 +27,11 @@
 | SRC-040 | 完整 Chat 非测试组件 bundle | `source-code/Chat/` | conversation | 74个实现文件与 bundle 哈希 |
 | SRC-041 | 完整 Sidebar 非测试组件 bundle | `source-code/Sidebar/` | navigation | 16个实现文件与 bundle 哈希 |
 | SRC-042 | 完整 Workspace 非测试组件 bundle | `source-code/Workspace/` | file drawer | 20个实现文件与 bundle 哈希 |
+| SRC-043 | pages/boards bundle | `source-code/boards/` | board drawer+page | BoardPanelDrawer、BoardHomePage 等 4 文件与哈希 |
+| SRC-044 | components/Dashboard bundle | `source-code/Dashboard/` | board panel states | 12 文件 + dashboard.css(6701行) 与哈希 |
+| SRC-045 | Dashboard/inputs bundle | `source-code/Dashboard/inputs/` | query form controls | 14 个查询表单控件与哈希 |
 
-详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共42个登记项，完整组件 bundle 共110个文件。
+详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共45个登记项，完整组件 bundle 共140个文件。
 
 ## 授权与限制
 

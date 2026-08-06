@@ -29,3 +29,8 @@
 - 事实：部分 CSS 尊重 reduced-motion；全局 focus outline 被移除，Framer Motion 分支不完整。
 - 影响：键盘焦点和减弱动效行为不能验收。
 - 关闭：TODO-016；修复需用户批准并记录偏差。
+
+## GAP-007 — 档案范围仅覆盖对话工作台，其余路由/组件未归档
+- 事实（2026-08-01 后复查，commit 195a663d 未变）：前端实际有 86 个页面文件（admin 22、superadmin 42、auth 7、share 7、boards/settings/showcase/onboarding/feishu/legacy 等）与未归档组件目录 Agent(5)、Automation(5)、Billing(2)、modals(2)、Project(3)、Skills(2)、superadmin(2)、Tools(4)；common/ 36 个共享组件中仅归档 ThemeProvider。2026-08-06 已归档右侧看板（pages/boards + Dashboard + inputs，SRC-043..045）。
+- 影响：若用户要求“参考 moss”做管理后台、设置、分享页、看板、圆桌等新业务，档案无证据可严格复刻。
+- 关闭：需用户确认档案范围——维持“对话工作台”定位（则更新 description 明确排除），或扩范围逐批归档（先 common 共享组件与 settings/share，再 admin/superadmin）。

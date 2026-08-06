@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.0 — 2026-08-06
+
+### Sources
+- 追加右侧智能看板：pages/boards（4 文件）、components/Dashboard（12 文件 + dashboard.css 6701 行）、Dashboard/inputs（14 文件），共 30 个原件及三份 SHA-256 清单（SRC-043..045）。来源总数 45，bundle 文件总数 140。
+- 复查确认来源 commit 未变（195a663d），既有 42 项来源无漂移。
+
+### Analysis
+- 新增 `analysis/boards.md`：看板 drawer 壳（复用 WorkspaceDrawer module.css）、居中 tab 双变体（line/segment）与紧凑/dropdown 溢出策略、12 列查询表单与 color-mix 焦点体系、2px glint stream rail + 整版 shimmer 骨架双层流式反馈、放大镜 loading（产品确认视觉）、分类型 empty 引导、iframe 渲染器与 9 色板注入、状态矩阵、light 偏向字面量冲突清单。
+
+### Quality
+- 新增 GAP-007（对话工作台以外路由/组件未归档）与 TODO-024（范围决策，待用户确认）。
+- 版本升至 0.3.0，完成率 72.0%（18/25），状态仍为 reusable。
+
+### Breaking changes
+- 消费入口扩展：看板需求必须读 `analysis/boards.md`；看板 drawer 壳禁止新写，必须复用 file drawer 几何。
+
 ## 0.2.0 — 2026-08-01
 
 ### Sources
