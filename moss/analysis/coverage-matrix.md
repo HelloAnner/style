@@ -30,5 +30,8 @@
 | Onboarding/showcase/settings | pattern | observed | n/a(light-only) | none | none | flow/marketing/preferences | SRC-059..061 | TODO-013 |
 | Studio modules | pattern | observed | observed | none | none | agent/automation/skill/tool editors | SRC-047..052,054 | TODO-012,015 |
 | Roundtable/graph | component | observed | observed | none | none | participants/messages/graph | SRC-051 | TODO-012,015 |
+| Public runtime capture | validation | validated(public) | derived(forced) | validated(public) | derived(forced) | showcase/join-error/share-loading/CAS-redirect | EVD-007..034 | TODO-011,012 |
+| Mobile policy | foundation | observed | observed | observed | observed | guard≤960+coarse; showcase无适配 | EVD-015,016, SRC-046 | — |
+| State matrix | foundation | observed | observed | partial | partial | hover/focus/disabled/active 全区域 | analysis/state-matrix.md | TODO-016 |
 
 移动列的 `none/partial` 反映来源产品事实不足；不能以参考实现补成 observed。

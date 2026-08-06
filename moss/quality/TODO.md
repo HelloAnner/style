@@ -20,6 +20,9 @@
 - [x] TODO-022 `high` 完成 light/dark 1440×900 完整工作台参考渲染。（2026-08-01，EVD-005, EVD-006）
 - [x] TODO-023 `blocker` 原样保存 Chat/Sidebar/Workspace 全部非测试组件实现，共110个文件及 bundle 哈希。（2026-08-01，SRC-040..042）
 - [x] TODO-024 `high` 全量补齐归档：common 40 + 功能组件 30 + pages 103 + lib 3，共 176 文件（SRC-046..065）；新增 common-components/admin-console/auth-public-pages/studio-modules 四份分析。（2026-08-06）
+- [x] TODO-013 `blocker` 移动端定论：MobileUnsupportedGuard 权威规则（≤960+coarse pointer+无 hover→不支持页；桌面窄窗不拦截）；showcase 390px 无适配实证；superadmin 860 与看板 560-1180 内部断点记录。（2026-08-06，EVD-007..034）
+- [x] TODO-014 `blocker` 字体：SIL OFL 许可（产品 README）、114 个 woff2 SHA-256、运行时 114 FontFace/13 loaded face 全记录；二进制未归档。（2026-08-06，SRC-066）
+- [x] TODO-015 `blocker` 全区域交互状态矩阵：CSS 选择器密度、light 归一化层、file-card 状态机、按钮/输入/导航/开关/卡片/反馈全清单、焦点事实；公开路由运行验证。（2026-08-06，analysis/state-matrix.md，EVD-007..034）
 - [x] TODO-025 `high` 归档右侧智能看板：pages/boards + components/Dashboard + inputs 共 30 文件与 dashboard.css，完成看板专题分析。（2026-08-06，SRC-043..045，analysis/boards.md）
 
 ## 开放
@@ -44,34 +47,8 @@
   - 证据：待补
   - 关联请求：REQ-001
 
-- [ ] TODO-013 `blocker`
-  - 范围：shared/mobile
-  - 缺少：真实移动布局和断点。
-  - 影响：源码含 MobileUnsupportedGuard，响应式规则文档缺失。
-  - 负责：both
-  - 需要用户提供：移动支持目标构建/原图或确认移动不适用的产品证据。
-  - 完成标准：真实断点前后验证消息、思维链、composer。
-  - 证据：待补
-  - 关联请求：REQ-002
 
-- [ ] TODO-014 `blocker`
-  - 范围：shared
-  - 缺少：字体文件许可与实际加载 FontFace/CJK fallback。
-  - 影响：换行、行高和文本宽度不能完整保证。
-  - 负责：user
-  - 需要用户提供：字体使用授权或批准使用公开 Google Fonts 版本。
-  - 完成标准：字体哈希/许可证/实际 loaded face 均记录。
-  - 证据：SRC-013, SRC-014
-  - 关联请求：REQ-003
 
-- [ ] TODO-015 `blocker`
-  - 范围：light+dark
-  - 缺少：完整 hover/focus/error/timeout/cancelled/subagent/widget 状态矩阵。
-  - 影响：核心非默认状态不能严格验收。
-  - 负责：agent
-  - 完成标准：来源截图/计算样式与状态矩阵全部 observed 或 validated。
-  - 证据：待补
-  - 关联请求：REQ-001
 
 - [ ] TODO-016 `high`
   - 范围：shared

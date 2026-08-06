@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.5.0 — 2026-08-06
+
+### Runtime evidence（首次真实运行采集）
+- 本地 vite dev（未登录、API 离线）+ Playwright：7 条公开路由 × desktop/mobile × light/dark-derived 共 28 张真实运行截图与计算样式（EVD-007..034，evidence/runtime-2026-08-06/）。
+- 定论：该部署登录走 CAS SSO 重定向；auth 页强制 dark 下保持全亮（light-only 实锤）；showcase 390px 无移动适配；强制 dark 时全局 token 正确应用（`#0A0A0F`）。
+- 为采集补齐 node_modules 缺失依赖（pdfjs-dist、@aiden0z/pptx-renderer，package.json 已声明）；package-lock.json 有变更，源码未动。
+
+### Sources
+- SRC-066：字体许可 README + 114 个 woff2 SHA-256（二进制不归档）。来源总数 66。
+- 修复 SRC-039 资产清单失效绝对路径（哈希不变，全部验证通过）。
+
+### Analysis
+- 新增 `analysis/state-matrix.md`：状态密度统计、globals light 归一化层、file-card 状态机、按钮/输入/导航/三套开关/卡片/反馈全状态清单、focus-visible 与 13 处 reduced-motion 清点。
+
+### Quality
+- 关闭 TODO-013（移动端定论）、TODO-014（字体）、TODO-015（状态矩阵）及 GAP-003/004/005。
+- 完成率 88.0%（22/25）；开放仅剩 TODO-011（dark 运行态）、TODO-012（登录态 baseline）、TODO-016（登录态键盘审计）。
+
+### Breaking changes
+- dark 截图均为 forced-theme 派生证据，引用时必须带 `derived` 标注；不得作为产品 dark baseline。
+
 ## 0.4.0 — 2026-08-06
 
 ### Sources

@@ -39,8 +39,9 @@
 | SRC-059..063 | onboarding/settings/showcase/legacy/feishu | `source-code/pages/*/` | misc pages | 10 文件与哈希 |
 | SRC-064 | app 级文件 | `source-code/pages/ROOT-SHA256SUMS` | app-level | SessionFilePreviewPage + components/index.ts |
 | SRC-065 | lib 样式支撑 | `source-code/lib/` | widget/client theme | widgetTheme.ts、clientTheme.ts、motion.tsx |
+| SRC-066 | 字体许可与哈希 | `source-code/fonts/FONT-SHA256SUMS` | font license | SIL OFL README + 114 woff2 哈希（二进制不归档） |
 
-详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共65个登记项，前端非测试源码已全量归档（bundle 文件总数 316）。
+详细逐文件来源、SHA-256、状态范围见 `../manifest.json`；当前共66个登记项，前端非测试源码已全量归档（bundle 文件总数 316）。运行证据：EVD-001..006 为参考实现渲染；EVD-007..034 为本地 dev 真实运行采集（公开路由，dark 为派生），见 `../evidence/runtime-2026-08-06/`。
 
 ## 授权与限制
 

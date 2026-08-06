@@ -5,7 +5,7 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[2]
 manifest = json.loads((root / "manifest.json").read_text())
 tokens = json.loads((root / "system/tokens.json").read_text())
-assert manifest["sourceCount"] == len(manifest["sources"]) == 65
+assert manifest["sourceCount"] == len(manifest["sources"]) == 66
 assert tokens["themes"]["light"]["color"]["surface"]["canvas"] == "#FAF9F7"
 assert tokens["themes"]["dark"]["color"]["surface"]["canvas"] == "#0A0A0F"
 assert tokens["shared"]["component"]["reasoning"]["connectorWidth"] == "1.25px"

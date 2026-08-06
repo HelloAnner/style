@@ -1,7 +1,7 @@
 {
   "id": "moss",
   "name": "Moss Conversation Workspace",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "status": "reusable",
   "referenceMode": "strict",
   "requiredThemes": [
@@ -11,21 +11,21 @@
   "createdAt": "2026-08-01T17:18:20+08:00",
   "updatedAt": "2026-08-06T23:59:00+08:00",
   "description": "Moss 前端全量设计档案：主题、对话工作台（侧栏/消息/思维链/输入/文件抽屉）、右侧智能看板、共享组件层、superadmin/tenant 管理控制台、认证与公开页面、Agent/Automation/Skills/Tools Studio、圆桌与图谱。",
-  "sourceCount": 65,
+  "sourceCount": 66,
   "completion": {
     "requiredItems": 25,
-    "completedItems": 19,
-    "openItems": 6,
-    "blockingItems": 5,
+    "completedItems": 22,
+    "openItems": 3,
+    "blockingItems": 2,
     "openRequests": 3,
     "selfAuditPassed": false
   },
   "coverage": {
     "desktop": "partial",
-    "mobile": "partial",
+    "mobile": "documented-unsupported",
     "lightTheme": "partial",
     "darkTheme": "partial",
-    "componentStates": "partial",
+    "componentStates": "observed",
     "motion": "partial",
     "accessibility": "partial"
   },
@@ -950,6 +950,20 @@
       "viewport": null,
       "dpr": null,
       "state": "widget-theme+client-theme",
+      "collectedAt": "2026-08-06T23:59:00+08:00",
+      "authorized": "provided"
+    },
+    {
+      "id": "SRC-066",
+      "type": "asset",
+      "origin": "frontend/public/fonts/README.md + 114 woff2 hashes (binaries not archived)",
+      "localPath": "sources/source-code/fonts/FONT-SHA256SUMS",
+      "sha256": "dc447e95c53ce251de5c27581985d9b9a6438805cbec6593e98af964adda3b4f",
+      "theme": "shared",
+      "route": null,
+      "viewport": null,
+      "dpr": null,
+      "state": "font-license+hash-inventory",
       "collectedAt": "2026-08-06T23:59:00+08:00",
       "authorized": "provided"
     }

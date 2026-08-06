@@ -7,12 +7,618 @@
     "deviceScaleFactor": 1
   },
   "captures": [
-    {"evidenceId":"EVD-001","url":"file://examples/reference/thinking-chain.html?theme=light","route":"reference/thinking-chain","theme":"light","viewport":{"width":1440,"height":900},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__light__1440x900__running-completed.png","sha256":"d457e0e6d50821315314e2b1596c2d513a8051673364e376f0c47e9f2f65738d","capturedAt":"2026-08-01T17:18:20+08:00"},
-    {"evidenceId":"EVD-002","url":"file://examples/reference/thinking-chain.html?theme=dark","route":"reference/thinking-chain","theme":"dark","viewport":{"width":1440,"height":900},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__dark__1440x900__running-completed.png","sha256":"1429f4381e8f87253f2c65f41ddb79d21d21e3a989414820487bfd0e4c5b54a1","capturedAt":"2026-08-01T17:18:20+08:00"},
-    {"evidenceId":"EVD-003","url":"file://examples/reference/thinking-chain.html?theme=light","route":"reference/thinking-chain","theme":"light","viewport":{"width":390,"height":844},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__light__390x844__running-completed.png","sha256":"462eb137894fcf3e19f9737b9c9f77d3758e2ce77fdef1267b3cf0f8458de6b1","capturedAt":"2026-08-01T17:18:20+08:00"},
-    {"evidenceId":"EVD-004","url":"file://examples/reference/thinking-chain.html?theme=dark","route":"reference/thinking-chain","theme":"dark","viewport":{"width":390,"height":844},"dpr":1,"state":"running+completed","captureType":"viewport","selector":null,"waitCondition":"200ms","path":"examples/validation/thinking-chain__dark__390x844__running-completed.png","sha256":"c463a6677bddbcdcde3aade16eaed37be074e182de9c714c952bdc4f1317b784","capturedAt":"2026-08-01T17:18:20+08:00"},
-    {"evidenceId":"EVD-005","url":"file://examples/reference/conversation-workspace/index.html?theme=light","route":"reference/conversation-workspace","theme":"light","viewport":{"width":1440,"height":900},"dpr":1,"state":"active-conversation+expanded-sidebar+files-grid","captureType":"viewport","selector":null,"waitCondition":"1000ms","path":"examples/validation/conversation-workspace__light__1440x900__conversation-files.png","sha256":"3cfcc5a078acc68c5b20b022b8c3de75856be330ab0ec7d8a22020018ca119de","capturedAt":"2026-08-01T19:15:48+08:00"},
-    {"evidenceId":"EVD-006","url":"file://examples/reference/conversation-workspace/index.html?theme=dark","route":"reference/conversation-workspace","theme":"dark","viewport":{"width":1440,"height":900},"dpr":1,"state":"active-conversation+expanded-sidebar+files-grid","captureType":"viewport","selector":null,"waitCondition":"1000ms","path":"examples/validation/conversation-workspace__dark__1440x900__conversation-files.png","sha256":"730eca1d84eac3b69e1d1722eb3a7c4cb9bd766aa7b3cae7e36d104b11523319","capturedAt":"2026-08-01T19:15:48+08:00"}
+    {
+      "evidenceId": "EVD-001",
+      "url": "file://examples/reference/thinking-chain.html?theme=light",
+      "route": "reference/thinking-chain",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "running+completed",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "200ms",
+      "path": "examples/validation/thinking-chain__light__1440x900__running-completed.png",
+      "sha256": "d457e0e6d50821315314e2b1596c2d513a8051673364e376f0c47e9f2f65738d",
+      "capturedAt": "2026-08-01T17:18:20+08:00"
+    },
+    {
+      "evidenceId": "EVD-002",
+      "url": "file://examples/reference/thinking-chain.html?theme=dark",
+      "route": "reference/thinking-chain",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "running+completed",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "200ms",
+      "path": "examples/validation/thinking-chain__dark__1440x900__running-completed.png",
+      "sha256": "1429f4381e8f87253f2c65f41ddb79d21d21e3a989414820487bfd0e4c5b54a1",
+      "capturedAt": "2026-08-01T17:18:20+08:00"
+    },
+    {
+      "evidenceId": "EVD-003",
+      "url": "file://examples/reference/thinking-chain.html?theme=light",
+      "route": "reference/thinking-chain",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "running+completed",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "200ms",
+      "path": "examples/validation/thinking-chain__light__390x844__running-completed.png",
+      "sha256": "462eb137894fcf3e19f9737b9c9f77d3758e2ce77fdef1267b3cf0f8458de6b1",
+      "capturedAt": "2026-08-01T17:18:20+08:00"
+    },
+    {
+      "evidenceId": "EVD-004",
+      "url": "file://examples/reference/thinking-chain.html?theme=dark",
+      "route": "reference/thinking-chain",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "running+completed",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "200ms",
+      "path": "examples/validation/thinking-chain__dark__390x844__running-completed.png",
+      "sha256": "c463a6677bddbcdcde3aade16eaed37be074e182de9c714c952bdc4f1317b784",
+      "capturedAt": "2026-08-01T17:18:20+08:00"
+    },
+    {
+      "evidenceId": "EVD-005",
+      "url": "file://examples/reference/conversation-workspace/index.html?theme=light",
+      "route": "reference/conversation-workspace",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "active-conversation+expanded-sidebar+files-grid",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "1000ms",
+      "path": "examples/validation/conversation-workspace__light__1440x900__conversation-files.png",
+      "sha256": "3cfcc5a078acc68c5b20b022b8c3de75856be330ab0ec7d8a22020018ca119de",
+      "capturedAt": "2026-08-01T19:15:48+08:00"
+    },
+    {
+      "evidenceId": "EVD-006",
+      "url": "file://examples/reference/conversation-workspace/index.html?theme=dark",
+      "route": "reference/conversation-workspace",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "active-conversation+expanded-sidebar+files-grid",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "1000ms",
+      "path": "examples/validation/conversation-workspace__dark__1440x900__conversation-files.png",
+      "sha256": "730eca1d84eac3b69e1d1722eb3a7c4cb9bd766aa7b3cae7e36d104b11523319",
+      "capturedAt": "2026-08-01T19:15:48+08:00"
+    },
+    {
+      "evidenceId": "EVD-007",
+      "url": "http://localhost:3000/join-invalid",
+      "route": "join-invalid",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/join-invalid-desktop-dark.png",
+      "sha256": "65946b2c3dc6640cb40f92dca322f0499d65c76df0af3b69003e4a89c7e09289",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-008",
+      "url": "http://localhost:3000/join-invalid",
+      "route": "join-invalid",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/join-invalid-desktop-light.png",
+      "sha256": "65946b2c3dc6640cb40f92dca322f0499d65c76df0af3b69003e4a89c7e09289",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-009",
+      "url": "http://localhost:3000/join-invalid",
+      "route": "join-invalid",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/join-invalid-mobile-dark.png",
+      "sha256": "bf0c8fb99fe33e626a1eb9589f482dc9538227f44ad40667969d102f4c4680ad",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-010",
+      "url": "http://localhost:3000/join-invalid",
+      "route": "join-invalid",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/join-invalid-mobile-light.png",
+      "sha256": "bf0c8fb99fe33e626a1eb9589f482dc9538227f44ad40667969d102f4c4680ad",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-011",
+      "url": "http://localhost:3000/login",
+      "route": "login",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/login-desktop-dark.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-012",
+      "url": "http://localhost:3000/login",
+      "route": "login",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/login-desktop-light.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-013",
+      "url": "http://localhost:3000/login",
+      "route": "login",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/login-mobile-dark.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-014",
+      "url": "http://localhost:3000/login",
+      "route": "login",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/login-mobile-light.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-015",
+      "url": "http://localhost:3000/register",
+      "route": "register",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/register-desktop-dark.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-016",
+      "url": "http://localhost:3000/register",
+      "route": "register",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/register-desktop-light.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-017",
+      "url": "http://localhost:3000/register",
+      "route": "register",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/register-mobile-dark.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-018",
+      "url": "http://localhost:3000/register",
+      "route": "register",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/register-mobile-light.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-019",
+      "url": "http://localhost:3000/share-invalid",
+      "route": "share-invalid",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/share-invalid-desktop-dark.png",
+      "sha256": "2952455ec2154663ca4bce8238e7be79a24f3b2161f109ef48381a1b4678d806",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-020",
+      "url": "http://localhost:3000/share-invalid",
+      "route": "share-invalid",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/share-invalid-desktop-light.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-021",
+      "url": "http://localhost:3000/share-invalid",
+      "route": "share-invalid",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/share-invalid-mobile-dark.png",
+      "sha256": "21944b8db13678116fea26b34d9e928b4879c1f1ee6296cb6b6b752167395266",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-022",
+      "url": "http://localhost:3000/share-invalid",
+      "route": "share-invalid",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/share-invalid-mobile-light.png",
+      "sha256": "b4b18c5830e579ec0a1b038247229d3b9dab1d7a9096d671f4375267db0ddfb0",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-023",
+      "url": "http://localhost:3000/",
+      "route": "showcase",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/showcase-desktop-dark.png",
+      "sha256": "08eff9f8c69dc4cf7ac62fc339ea1da25e0419933fe13b7d9f6ae1a9740ed47e",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-024",
+      "url": "http://localhost:3000/",
+      "route": "showcase",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/showcase-desktop-light.png",
+      "sha256": "1fdbb3b36a17803d403025bb14e6a61862a979d48478ea49140e48760fd9dd9d",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-025",
+      "url": "http://localhost:3000/",
+      "route": "showcase",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/showcase-mobile-dark.png",
+      "sha256": "183be440972dcf34454e601ce0ff8e3cbac89238fd0296f9a14f13103d78cee5",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-026",
+      "url": "http://localhost:3000/",
+      "route": "showcase",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/showcase-mobile-light.png",
+      "sha256": "792763a6a9ff762ca33ab12942aa56fb98abbd0b5896d6db99b63308d4deb3f7",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-027",
+      "url": "http://localhost:3000/superadmin-verify",
+      "route": "superadmin-verify",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/superadmin-verify-desktop-dark.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-028",
+      "url": "http://localhost:3000/superadmin-verify",
+      "route": "superadmin-verify",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/superadmin-verify-desktop-light.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-029",
+      "url": "http://localhost:3000/superadmin-verify",
+      "route": "superadmin-verify",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/superadmin-verify-mobile-dark.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-030",
+      "url": "http://localhost:3000/superadmin-verify",
+      "route": "superadmin-verify",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/superadmin-verify-mobile-light.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-031",
+      "url": "http://localhost:3000/workspace-create",
+      "route": "workspace-create",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/workspace-create-desktop-dark.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-032",
+      "url": "http://localhost:3000/workspace-create",
+      "route": "workspace-create",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/workspace-create-desktop-light.png",
+      "sha256": "d5398960a510b55c800892e2fc1da886d043e35e2c5caeb71dc94d93d5b32a20",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-033",
+      "url": "http://localhost:3000/workspace-create",
+      "route": "workspace-create",
+      "theme": "dark-derived(forced)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/workspace-create-mobile-dark.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    },
+    {
+      "evidenceId": "EVD-034",
+      "url": "http://localhost:3000/workspace-create",
+      "route": "workspace-create",
+      "theme": "light (product-runtime)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "state": "local-dev unauthenticated, API offline",
+      "captureType": "viewport",
+      "selector": null,
+      "waitCondition": "networkidle+800ms",
+      "path": "evidence/runtime-2026-08-06/workspace-create-mobile-light.png",
+      "sha256": "417ead24d31f08402a27ce28eb5c5d11777f46aaff52666463fa646fc44458f8",
+      "capturedAt": "2026-08-06T23:59:00+08:00"
+    }
   ],
-  "note": "All captures are derived reference renders, not source-product baselines."
+  "note": "EVD-001..006 derived reference renders. EVD-007..034 real local dev-runtime captures of public routes; dark ones are forced-theme derived, not product dark runtime."
 }

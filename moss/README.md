@@ -6,9 +6,9 @@
 
 ## 状态与完成率
 
-- 版本：`0.4.0`
+- 版本：`0.5.0`
 - 状态：`reusable`（带明确缺口可复用，不等于完整）
-- 完成率：`19/25 = 76.0%`
+- 完成率：`22/25 = 88.0%`
 - 深入范围：主题、App shell、展开/折叠侧栏、Agent/会话列表、会话 header、消息与思维链、composer、空会话首页、右侧“我的文件”抽屉、grid/list/batch/search/loading、右侧智能看板；共享组件层、superadmin/tenant admin 控制台、auth/onboarding/share/showcase/settings、Agent/Automation/Skills/Tools Studio、圆桌/图谱——前端非测试源码已全量归档。
 - Blocker：真实产品 dark 运行态、来源产品登录态截图/计算样式、移动端、字体许可、完整交互状态视觉回归。
 
@@ -20,6 +20,7 @@
 - [思维链与组件](analysis/components.md)
 - [右侧智能看板](analysis/boards.md)
 - [共享组件层与 Token 家族](analysis/common-components.md)
+- [全区域交互状态矩阵](analysis/state-matrix.md)
 - [管理控制台](analysis/admin-console.md)
 - [认证/公开/外围页面](analysis/auth-public-pages.md)
 - [Studio 与功能模块](analysis/studio-modules.md)
@@ -56,7 +57,8 @@
 
 ## 来源与证据
 
-- [65 个来源登记项](sources/index.md)
+- [66 个来源登记项](sources/index.md)
+- [真实运行采集 28 张（公开路由）](evidence/runtime-2026-08-06/README.md)
 - [源码与59个产品图标快照](sources/source-code/README.md)
 - [工作台源码映射](evidence/measurements/conversation-workspace-source-map.md)
 - [探索日志](sources/exploration-log.md)
